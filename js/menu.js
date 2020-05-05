@@ -8,7 +8,7 @@ $(document).ready(function() {
 	
 	// Hover over hamburger to show menu
 	$( ".hamburger" ).hover(function() {
-		$( "#mega-menu" ).slideToggle( "slow", function() {
+		$( "#mega-menu" ).show( "slow", function() {
 			$( ".close" ).show();
 			$( ".hamburger" ).hide();
 		});

@@ -50,10 +50,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 				</a>
 			</div>		
 			
+			<!-- Hamburger -->
 			<button class="hamburger" type="button">
 				<img class='menu-burger-<?php echo $page_color; ?>' src="<?php echo get_template_directory_uri(); ?>
 					/assets/menu/menu-burger-<?php echo $page_color; ?>.png">
 			</button>
+			
+			<!-- Close button -->
 			<button class="close" type="button">
 				<img class='menu-close-<?php echo $page_color; ?>' src="<?php echo get_template_directory_uri(); ?>
 					/assets/menu/menu-close-<?php echo $page_color; ?>.png">
