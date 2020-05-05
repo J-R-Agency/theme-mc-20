@@ -1,6 +1,134 @@
-#main-menu > li {
-	list-style: none;
-	a {
-		color: black;
+#mega-menu {
+	background-color: $light-grey;
+	padding: 0 2rem;
+	@include respond-to('md') {
+		padding: 0 7.5rem;
 	}
+}
+
+.menu-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	&-right {
+		padding: 2rem;
+		text-align: center;
+		
+		@include respond-to('md') {
+			padding: 3rem 5rem;	
+		}
+		
+		a:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.helpful-stuff-arrow {
+	width: 100px;
+}
+
+#main-nav {
+	padding: 1rem;
+	
+	background-color: transparent;
+	transition: background-color 0.5s linear;
+}
+
+.nav-link {
+	padding: .3rem 0;
+}
+
+.menu  {
+	padding: 0;
+	li {
+		list-style: none;
+		a {
+		color: $navy;
+		font-size: 1.2rem;
+		@include _dm-sans-bold;
+		
+			&:after {
+				content: "";
+				display: block;
+				height: 5px;
+			}
+		
+			&:hover {
+				text-decoration: none;
+				&:after {
+				    content: "";
+				    display: block;
+				    height: 5px;
+				    background-repeat: no-repeat;
+				    background-position: center bottom;				
+				}
+			}
+		}	
+	}
+}
+
+// CYAN UNDERLINE
+#main-menu-cyan, #secondary-menu-cyan {
+	li > a {
+		&:hover {
+			&:after {
+				background-image: url("../assets/graphics/underline-menu-cyan.png");
+			}
+		}
+	}
+}
+
+// GREEN UNDERLINE
+#main-menu-green, #secondary-menu-green {
+	li > a {
+		&:hover {
+			&:after {
+				background-image: url("../assets/graphics/underline-menu-green.png");
+			}
+		}
+	}
+}
+
+// PINK UNDERLINE
+#main-menu-pink, #secondary-menu-pink {
+	li > a {
+		&:hover {
+			&:after {
+				background-image: url("../assets/graphics/underline-menu-pink.png");
+			}
+		}
+	}
+}
+
+// YELLOW UNDERLINE
+#main-menu-yellow, #secondary-menu-yellow {
+	li > a {
+		&:hover {
+			&:after {
+				background-image: url("../assets/graphics/underline-menu-yellow.png");
+			}
+		}
+	}
+}
+
+
+// MENU BURGER
+.menu-burger, .menu-close {
+	width: 75px;
+}
+
+.hamburger, .close-menu {
+	border: 0;
+	background-color: transparent;
+}
+
+// LOGO
+
+.logo {
+	width: 200px;	
+}
+
+.logo-mini {
+	width: 90px;
 }

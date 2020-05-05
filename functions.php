@@ -39,8 +39,14 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
-//Enqueue javascript
+// Enqueue javascript
 function my_theme_scripts() {
     wp_enqueue_script( 'menu', get_template_directory_uri() . '/js/menu.js', array( 'jquery' ), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
+
+// Register Menus
+function register_my_menu() {
+  register_nav_menu('secondary-menu',__( 'Secondary Menu' ));
+}
+add_action( 'init', 'register_my_menu' );

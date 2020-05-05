@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">
+		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark" aria-labelledby="main-nav-label">
 
 			<h2 id="main-nav-label" class="sr-only">
 				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -43,22 +43,29 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<!-- Your site title as branding in the menu --> 
 			<div class='site-logo'>
 				<a href="<?php echo get_site_url(); ?>">
-					<img class="logo-<?php echo $bw; ?>-<?php echo $page_color; ?>"
+					<!-- Regular logo -->
+					<img class="logo"
 					src="<?php echo get_template_directory_uri(); ?>
 					/assets/logos/logo-<?php echo $bw; ?>-<?php echo $page_color; ?>.png"
+					alt="Matchstick Creative Logo">
+					
+					<!-- Mini logo -->
+					<img class="logo-mini"
+					src="<?php echo get_template_directory_uri(); ?>
+					/assets/logos/logo-mini-<?php echo $page_color; ?>.png"
 					alt="Matchstick Creative Logo">
 				</a>
 			</div>		
 			
 			<!-- Hamburger -->
 			<button class="hamburger" type="button">
-				<img class='menu-burger-<?php echo $page_color; ?>' src="<?php echo get_template_directory_uri(); ?>
+				<img class='menu-burger' src="<?php echo get_template_directory_uri(); ?>
 					/assets/menu/menu-burger-<?php echo $page_color; ?>.png">
 			</button>
 			
 			<!-- Close button -->
-			<button class="close" type="button">
-				<img class='menu-close-<?php echo $page_color; ?>' src="<?php echo get_template_directory_uri(); ?>
+			<button class="close-menu" type="button">
+				<img class='menu-close' src="<?php echo get_template_directory_uri(); ?>
 					/assets/menu/menu-close-<?php echo $page_color; ?>.png">
 			</button>
 
@@ -67,18 +74,43 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php endif; ?>
 			
 		</nav><!-- .site-navigation -->
-			<div id='mega-menu'>
-						<!-- The WordPress Menu goes here -->
+			<div id='mega-menu' class='mega-menu-<?php echo $page_color; ?>'>
+				
+				<div class='menu-container'>
+					
+					<div class='menu-container-left'>
+						<!-- Main Menu -->
 						<?php
 						wp_nav_menu(
 							array(
 								'theme_location'  => 'primary',
-								'fallback_cb'     => '',
-								'menu_id'         => 'main-menu',
-								'depth'           => 2,
-								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+								'menu_id'         => 'main-menu-'.$page_color,
 							)
 						);
 						?>
+						
+						<!-- Secondary Menu -->
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location'  => 'secondary-menu',
+								'menu_id'         => 'secondary-menu-'.$page_color,
+							)
+						);
+						?>
+					</div>
+					
+					<div class='menu-container-right'>
+						<a href="#">
+							<p><strong>Helpful Stuff</strong></p>
+							<p>Read our latest guides</p>
+							<img class='helpful-stuff-arrow'
+							src="<?php echo get_template_directory_uri(); ?>/assets/graphics/arrow-menu-<?php echo $page_color; ?>.png">
+						</a>
+					</div>
+					
+				</div>
+					
+				
 			</div>
 	</div><!-- #wrapper-navbar end -->

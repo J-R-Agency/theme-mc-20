@@ -13,10 +13,9 @@ defined( 'ABSPATH' ) || exit;
 
 $bw = 'black';
 $page_color = 'cyan';
-$header_transparent = true;
 
 include( locate_template( 'header.php', false, false ) );  ?>
 
-Hello world
+<?php the_title(); ?>
 
 <?php get_footer(); ?>

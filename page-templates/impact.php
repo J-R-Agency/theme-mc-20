@@ -11,8 +11,11 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); ?>
+$bw = 'black';
+$page_color = 'yellow';
 
-Hello world
+include( locate_template( 'header.php', false, false ) );  ?>
+
+<?php the_title(); ?>
 
 <?php get_footer(); ?>

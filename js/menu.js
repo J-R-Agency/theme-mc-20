@@ -4,20 +4,30 @@ $(document).ready(function() {
 
 	// Hide menu and close button on start
 	$( "#mega-menu" ).hide();
-	$( ".close" ).hide();
+	$( ".close-menu" ).hide();
+	$( ".logo-mini" ).hide();
 	
-	// Hover over hamburger to show menu
-	$( ".hamburger" ).hover(function() {
+	// Click on hamburger to show menu
+	$( ".hamburger" ).click(function() {
+		$( "#main-nav" ).css("background-color","#F5F5F5");
+		$( ".logo" ).hide("fast");
+		$( ".logo-mini" ).show("fast");
+		
 		$( "#mega-menu" ).show( "slow", function() {
-			$( ".close" ).show();
+			$( ".close-menu" ).show();
 			$( ".hamburger" ).hide();
+			
 		});
 	});
 	
 	// Click close to hide menu
-	$( ".close" ).click(function() {
-		$( "#mega-menu" ).slideToggle( "slow", function() {
-			$( ".close" ).hide();
+	$( ".close-menu" ).click(function() {
+		$( "#main-nav" ).css("background-color","transparent");
+		$( ".logo" ).show("fast");
+		$( ".logo-mini" ).hide("fast");
+			
+		$( "#mega-menu" ).hide( "slow", function() {
+			$( ".close-menu" ).hide();
 			$( ".hamburger" ).show();
 		});
 	});

@@ -1,33 +1,27 @@
-@mixin _work-sans-regular {
-	font-family: 'work-sans-regular';
+@mixin _dm-sans-regular {
+	font-family: 'dm-sans-regular';
 }
 
-@mixin _work-sans-semibold {
-	font-family: 'work-sans-semibold';	
-}
-
-@mixin _work-sans-light {
-	font-family: 'work-sans-light';	
+@mixin _dm-sans-bold {
+	font-family: 'dm-sans-bold';	
 }
 
 a {
-	@include _work-sans-regular;
+	@include _dm-sans-regular;
+	color: $navy;
 }
 
-h1 {
-	@include _work-sans-semibold;
-}
-
-h2 {
-	@include _work-sans-regular;
-	font-size: 1.5rem;
+h1, h2 {
+	@include _dm-sans-bold;
+	color: $navy;
 }
 
 p, span, li {
-	@include _work-sans-light;
-	font-size: 1.2rem;
-	strong {
-		@include _work-sans-semibold;
-		font-weight: initial;
-	}
+	@include _dm-sans-regular;
+	color: $navy;
+}
+
+strong {
+	@include _dm-sans-bold;
+	color: $navy;
 }
