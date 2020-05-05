@@ -29,3 +29,18 @@ $understrap_includes = array(
 foreach ( $understrap_includes as $file ) {
 	require_once get_template_directory() . '/inc' . $file;
 }
+
+/*-- ADD ACF OPTIONS --*/
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	acf_add_options_sub_page("Header");
+
+}
+
+//Enqueue javascript
+function my_theme_scripts() {
+    wp_enqueue_script( 'menu', get_template_directory_uri() . '/js/menu.js', array( 'jquery' ), '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
