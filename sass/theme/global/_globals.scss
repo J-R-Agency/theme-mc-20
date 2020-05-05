@@ -1,0 +1,23 @@
+@mixin global-padding {
+	padding: 3rem 1rem;
+	@include respond-to('md'){
+		padding: 5rem 10rem;
+	}	
+}
+
+@mixin vertical-center {
+	display: flex;
+	align-items: center;
+}
+
+.vertical-center {
+	@include vertical-center;
+}
+
+.generic {
+	@include global-padding;
+}
+
+
+// COLORS ----
+
