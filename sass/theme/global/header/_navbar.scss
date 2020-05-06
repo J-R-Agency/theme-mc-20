@@ -80,8 +80,8 @@
 @mixin underline-hover {
 	display: block;
 	height: 5px;
-	background-position: center bottom;
-	width: 80%;
+	background-position: left;
+	width: 30%;
 }
 
 @mixin arrow-hover {
