@@ -33,7 +33,6 @@ $(document).ready(function() {
 		$( "#mega-menu" ).slideUp( "slow", function() {
 			$( ".close-menu" ).hide();
 			$( ".hamburger" ).show();
-			
 		});
 	});
 });
