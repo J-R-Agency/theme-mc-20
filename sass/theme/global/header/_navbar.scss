@@ -29,6 +29,9 @@
 
 .helpful-stuff-arrow {
 	width: 100px;
+	&:hover {
+		transform:scale(1.2);
+	}
 }
 
 #main-nav {
@@ -71,10 +74,6 @@
 			}
 		}	
 	}
-}
-
-.header-info {
-	margin: 2rem 0;
 }
 
 @mixin underline-hover {
@@ -208,6 +207,15 @@
 	width: 90px;
 }
 
+// HEADER INFO
+.header-info {
+	margin: 2rem 0;
+	a:hover {
+		text-decoration: none;
+	}
+}
+
+
 // SOCIAL MEDIA
 .header-social-media {
 	background-size: contain;
@@ -220,6 +228,9 @@
 			width: 40px;
 			object-fit: contain;
 			padding: 0 0.6rem;
+			&:hover {
+				filter: brightness(0) invert(1);
+			}
 		}
 	}
 }
