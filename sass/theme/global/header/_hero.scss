@@ -22,6 +22,9 @@ $desktop-hero-height: 100vh;
 	@include respond-to ('md') {
 		height: $desktop-hero-height;
 	}
+	h1 {
+		margin-bottom: 2rem;
+	}
 	&.darken {
 		background-color: rgba(0, 0, 0, 0.3);
 		h1, p {
