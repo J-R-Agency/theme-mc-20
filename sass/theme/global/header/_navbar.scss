@@ -2,14 +2,17 @@
 	background-color: $light-grey;
 	padding: 0 2rem 2rem 2rem;
 	@include respond-to('md') {
-		padding: 0 7.5rem 3rem 7.5rem;
+		padding: 0 9rem 3rem 9rem;
 	}
 }
 
 .menu-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
+	@include respond-to('md') {
+		flex-direction: row;	
+	}
 	&-right {
 		padding: 2rem;
 		text-align: center;
@@ -68,6 +71,10 @@
 			}
 		}	
 	}
+}
+
+.header-info {
+	margin: 2rem 0;
 }
 
 @mixin underline-hover {

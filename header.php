@@ -99,6 +99,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 						);
 						?>
 						
+						<div class='header-info'>
+							<a href='tel:<?php the_field('company_phone', 'option'); ?>'>
+								<h3 class='bold'><?php the_field('company_phone', 'option'); ?></h3>
+							</a>
+							<a href='mailto:<?php the_field('company_email', 'option'); ?>'>
+								<h3 class='bold'><?php the_field('company_email', 'option'); ?></h3>
+							</a>
+						</div>
+						
 						<div class='header-social-media' style="background-image:url('<?php echo get_template_directory_uri();?>/assets/graphics/header-sm-bg-<?php echo $page_color;?>.png');">
 							<?php include(get_template_directory() . '/global-templates/template-parts/social-media.php'); ?>
 						</div>
