@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 $bw = 'black';
 $page_color = 'yellow';
-$header_position = 'relative';
+$header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
 

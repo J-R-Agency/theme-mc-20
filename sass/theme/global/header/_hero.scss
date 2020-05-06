@@ -1,5 +1,8 @@
 .hero {
-	height: 100vh;
+	height: 50vh;
 	background-size: cover;
 	width: 100%;
+	@include respond-to ('md') {
+		height: 100vh;
+	}
 }

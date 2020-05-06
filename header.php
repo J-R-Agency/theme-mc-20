@@ -27,6 +27,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 	
 	<input type="hidden" id="header_pos" value="<?php echo $header_position; ?>">
 	
+	<?php if ($header_position != 'absolute') {
+		$header_position = 'relative';
+	} ?>
+	
 	<!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar">
 
