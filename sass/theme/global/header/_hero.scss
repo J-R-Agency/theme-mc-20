@@ -26,7 +26,7 @@ $desktop-hero-height: 100vh;
 	h1 {
 		margin-bottom: 2rem;
 		font-size: 2rem;
-		margin-top: 6rem;
+		margin-top: 3rem;
 		@include respond-to ('md') {
 			margin-top: 0;
 			font-size: 2.5rem;
