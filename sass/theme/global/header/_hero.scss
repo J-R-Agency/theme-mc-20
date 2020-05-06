@@ -25,8 +25,11 @@ $desktop-hero-height: 100vh;
 	h1 {
 		margin-bottom: 2rem;
 	}
+	&.none {
+		background: transparent;
+	}
 	&.darken {
-		background-color: rgba(0, 0, 0, 0.3);
+		background-color: rgba(0, 0, 0, 0.2);
 		h1, p {
 			color: white;
 		}
