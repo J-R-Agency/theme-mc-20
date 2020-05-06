@@ -1,8 +1,43 @@
+$mobile-hero-height: 50vh;
+$desktop-hero-height: 100vh;
+
 .hero {
-	height: 50vh;
+	height: $mobile-hero-height;
 	background-size: cover;
 	width: 100%;
 	@include respond-to ('md') {
-		height: 100vh;
+		height: $desktop-hero-height;
+	}
+}
+
+.hero-filter {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: $mobile-hero-height;
+	position: absolute;
+	@include respond-to ('md') {
+		height: $desktop-hero-height;
+	}
+	&.darken {
+		background-color: rgba(0, 0, 0, 0.3);
+		h1, p {
+			color: white;
+		}
+	}
+	&.light-radial {
+		background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(230,230,230,0) 100%); 
+		h1, p {
+			color: $navy;
+		}
+	}
+	&.dark-radial {
+		background: radial-gradient(circle, rgba(0,0,0,0.5) 0%, rgba(230,230,230,0) 100%);
+		h1, p {
+			color: white;
+		}
 	}
 }
