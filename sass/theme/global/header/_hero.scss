@@ -19,11 +19,18 @@ $desktop-hero-height: 100vh;
 	width: 100%;
 	height: $mobile-hero-height;
 	position: absolute;
+	text-align: center;
 	@include respond-to ('md') {
 		height: $desktop-hero-height;
 	}
 	h1 {
 		margin-bottom: 2rem;
+		font-size: 2rem;
+		margin-top: 6rem;
+		@include respond-to ('md') {
+			margin-top: 0;
+			font-size: 2.5rem;
+		}
 	}
 	&.none {
 		background: transparent;
