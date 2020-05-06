@@ -13,8 +13,10 @@ defined( 'ABSPATH' ) || exit;
 
 $bw = 'white';
 $page_color = 'pink';
+$header_position = 'absolute';
 
 include( locate_template( 'header.php', false, false ) );  ?>
+
 
 <?php the_title(); ?>
 

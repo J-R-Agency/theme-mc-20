@@ -24,7 +24,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
-
+	
+	<input type="hidden" id="header_pos" value="<?php echo $header_position; ?>">
+	
 	<!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar">
 
