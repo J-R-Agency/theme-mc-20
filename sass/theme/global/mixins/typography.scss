@@ -21,7 +21,9 @@ p, span, li {
 	color: $navy;
 }
 
-strong {
+h3 {
 	@include _dm-sans-bold;
+	margin: 0;
+	font-size: 1.2rem;
 	color: $navy;
 }

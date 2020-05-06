@@ -13,7 +13,7 @@ $(document).ready(function() {
 		$( ".logo" ).hide("fast");
 		$( ".logo-mini" ).show("fast");
 		
-		$( "#mega-menu" ).show( "slow", function() {
+		$( "#mega-menu" ).slideDown( "slow", function() {
 			$( ".close-menu" ).show();
 			$( ".hamburger" ).hide();
 			
@@ -26,7 +26,7 @@ $(document).ready(function() {
 		$( ".logo" ).show("fast");
 		$( ".logo-mini" ).hide("fast");
 			
-		$( "#mega-menu" ).hide( "slow", function() {
+		$( "#mega-menu" ).slideUp( "slow", function() {
 			$( ".close-menu" ).hide();
 			$( ".hamburger" ).show();
 		});

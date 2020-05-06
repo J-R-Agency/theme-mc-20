@@ -1,8 +1,8 @@
 #mega-menu {
 	background-color: $light-grey;
-	padding: 0 2rem;
+	padding: 0 2rem 2rem 2rem;
 	@include respond-to('md') {
-		padding: 0 7.5rem;
+		padding: 0 7.5rem 3rem 7.5rem;
 	}
 }
 
@@ -29,10 +29,14 @@
 }
 
 #main-nav {
-	padding: 1rem;
-	
 	background-color: transparent;
 	transition: background-color 0.5s linear;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	@include respond-to('md') {
+		padding: 1rem 7.5rem;
+	}
 }
 
 .nav-link {
@@ -43,6 +47,7 @@
 	padding: 0;
 	li {
 		list-style: none;
+		height: 35px;
 		a {
 		color: $navy;
 		font-size: 1.2rem;
@@ -58,21 +63,82 @@
 				text-decoration: none;
 				&:after {
 				    content: "";
-				    display: block;
-				    height: 5px;
-				    background-repeat: no-repeat;
-				    background-position: center bottom;				
+				    background-repeat: no-repeat;	
 				}
 			}
 		}	
 	}
 }
 
-// CYAN UNDERLINE
-#main-menu-cyan, #secondary-menu-cyan {
+@mixin underline-hover {
+	display: block;
+	height: 5px;
+	background-position: center bottom;
+	width: 80%;
+}
+
+@mixin arrow-hover {
+	display: inline-block;
+	height: 15px;
+	background-position: center;
+	width: 50px;
+}
+
+
+// CYAN ARROW
+#main-menu-cyan {
 	li > a {
 		&:hover {
 			&:after {
+				@include arrow-hover;
+				background-image: url("../assets/graphics/arrow-menu-mini-cyan.png");
+			}
+		}
+	}
+}
+
+// GREEN ARROW
+#main-menu-green {
+	li > a {
+		&:hover {
+			&:after {
+				@include arrow-hover;
+				background-image: url("../assets/graphics/arrow-menu-mini-green.png");
+			}
+		}
+	}
+}
+
+// PINK ARROW
+#main-menu-pink {
+	li > a {
+		&:hover {
+			&:after {
+				@include arrow-hover;
+				background-image: url("../assets/graphics/arrow-menu-mini-pink.png");
+			}
+		}
+	}
+}
+
+// YELLOW ARROW
+#main-menu-yellow {
+	li > a {
+		&:hover {
+			&:after {
+				@include arrow-hover;
+				background-image: url("../assets/graphics/arrow-menu-mini-yellow.png");
+			}
+		}
+	}
+}
+
+// CYAN UNDERLINE
+#secondary-menu-cyan {
+	li > a {
+		&:hover {
+			&:after {
+				@include underline-hover;
 				background-image: url("../assets/graphics/underline-menu-cyan.png");
 			}
 		}
@@ -80,10 +146,11 @@
 }
 
 // GREEN UNDERLINE
-#main-menu-green, #secondary-menu-green {
+#secondary-menu-green {
 	li > a {
 		&:hover {
 			&:after {
+				@include underline-hover;
 				background-image: url("../assets/graphics/underline-menu-green.png");
 			}
 		}
@@ -91,10 +158,11 @@
 }
 
 // PINK UNDERLINE
-#main-menu-pink, #secondary-menu-pink {
+#secondary-menu-pink {
 	li > a {
 		&:hover {
 			&:after {
+				@include underline-hover;
 				background-image: url("../assets/graphics/underline-menu-pink.png");
 			}
 		}
@@ -102,16 +170,16 @@
 }
 
 // YELLOW UNDERLINE
-#main-menu-yellow, #secondary-menu-yellow {
+#secondary-menu-yellow {
 	li > a {
 		&:hover {
 			&:after {
+				@include underline-hover;
 				background-image: url("../assets/graphics/underline-menu-yellow.png");
 			}
 		}
 	}
 }
-
 
 // MENU BURGER
 .menu-burger, .menu-close {
@@ -131,4 +199,20 @@
 
 .logo-mini {
 	width: 90px;
+}
+
+// SOCIAL MEDIA
+.header-social-media {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 130px;
+	a {
+		img {
+			height: 40px;
+			width: 40px;
+			object-fit: contain;
+			padding: 0 0.6rem;
+		}
+	}
 }

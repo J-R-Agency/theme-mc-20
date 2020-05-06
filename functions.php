@@ -36,7 +36,7 @@ if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page();
 	acf_add_options_sub_page("Header");
-
+	acf_add_options_sub_page("Company Info");
 }
 
 // Enqueue javascript

@@ -98,11 +98,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 							)
 						);
 						?>
+						
+						<div class='header-social-media' style="background-image:url('<?php echo get_template_directory_uri();?>/assets/graphics/header-sm-bg-<?php echo $page_color;?>.png');">
+							<?php include(get_template_directory() . '/global-templates/template-parts/social-media.php'); ?>
+						</div>
 					</div>
 					
 					<div class='menu-container-right'>
 						<a href="#">
-							<p><strong>Helpful Stuff</strong></p>
+							<h3>Helpful Stuff</h3>
 							<p>Read our latest guides</p>
 							<img class='helpful-stuff-arrow'
 							src="<?php echo get_template_directory_uri(); ?>/assets/graphics/arrow-menu-<?php echo $page_color; ?>.png">
