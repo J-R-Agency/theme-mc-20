@@ -24,6 +24,11 @@
 
 
 // COLORS ----
+.bg-white {
+	background-color: white;
+	color: $navy;
+}
+
 .bg-navy {
 	background-color: $navy;
 	color: white;
@@ -34,4 +39,5 @@
 
 .bg-light-grey {
 	background-color: $light-grey;
+	color: $navy;
 }

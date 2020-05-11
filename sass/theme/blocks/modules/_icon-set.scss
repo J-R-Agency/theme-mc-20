@@ -1,0 +1,33 @@
+.icon-set {
+	text-align: center;
+}
+
+.icon-set-container {
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.three-columns {
+	flex-basis: 100%;
+	@include respond-to ('md') {
+		flex-basis: 33%;
+	}
+}
+
+.icon-set-wrapper {
+	padding: 1rem 0;
+	@include respond-to('md') {
+		padding: 3rem 0;
+	}
+	img {
+		width: 150px;
+		height: 150px;
+		object-fit: contain;
+	}
+	h3 {
+		margin: 2rem 0 0 0;
+	}
+}
+
