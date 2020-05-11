@@ -4,6 +4,9 @@
 	@include respond-to('md') {
 		padding: 0 9rem 3rem 9rem;
 	}
+	a {
+		color: $navy;
+	}
 }
 
 .menu-container {

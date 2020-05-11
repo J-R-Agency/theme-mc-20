@@ -19,4 +19,4 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <?php the_title(); ?>
 
-<?php get_footer(); ?>
+<?php include( locate_template( 'footer.php', false, false ) ); ?>

@@ -19,8 +19,19 @@
 
 .generic {
 	@include global-padding;
+	color: $navy;
 }
 
 
 // COLORS ----
+.bg-navy {
+	background-color: $navy;
+	color: white;
+	a {
+		color: white;
+	}
+}
 
+.bg-light-grey {
+	background-color: $light-grey;
+}

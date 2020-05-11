@@ -8,21 +8,17 @@
 
 a {
 	@include _dm-sans-regular;
-	color: $navy;
 }
 
 h1, h2 {
 	@include _dm-sans-bold;
-	color: $navy;
 }
 
 p, li {
 	@include _dm-sans-regular;
-	color: $navy;
 }
 
 h3 {
 	@include _dm-sans-bold;
 	font-size: 1.2rem;
-	color: $navy;
 }
