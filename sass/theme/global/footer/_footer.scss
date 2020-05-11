@@ -1,6 +1,9 @@
 .footer {
 	color: white;
-	padding: 3rem 7.5rem;
+	padding: 2rem;
+	@include respond-to('md') {
+		padding: 3rem 7.5rem;
+	}
 	
 	.site-logo {
 		width: 150px;
@@ -9,19 +12,31 @@
 
 .footer-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
+	@include respond-to('md') {
+		flex-direction: row;
+	}
 	.footer-container-left {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-end;
+		align-items: flex-start;
+		padding: 1.5rem 0;
+		@include respond-to('md') {
+			align-items: flex-end;
+			padding: 0;
+		}
 	}
 }
 
 .footer-social-media {
 	padding: 2rem 0;
+	display: flex;
 	a {
-		margin-left: 1rem;
+		margin: 0 1rem 0 0;
+		@include respond-to('md') {
+			margin: 0 0 0 1rem;
+		}
 		img {
 			width: 25px;
 		}
