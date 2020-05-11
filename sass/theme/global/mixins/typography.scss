@@ -16,7 +16,7 @@ h1, h2 {
 	color: $navy;
 }
 
-p, span, li {
+p, li {
 	@include _dm-sans-regular;
 	color: $navy;
 }

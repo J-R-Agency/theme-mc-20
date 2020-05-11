@@ -1,0 +1,92 @@
+@mixin circle {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	display: inline;
+}
+
+@mixin underline {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom;
+	display: inline;
+}
+
+.circle {
+	&-cyan-1 {
+		@include circle;
+		background-image: url('../assets/graphics/circle-cyan-1.svg');
+	}
+	&-cyan-2 {
+		@include circle;
+		background-image: url('../assets/graphics/circle-cyan-2.svg');
+	}
+	
+	&-pink-1 {
+		@include circle;
+		background-image: url('../assets/graphics/circle-pink-1.svg');
+	}
+	&-pink-2 {
+		@include circle;
+		background-image: url('../assets/graphics/circle-pink-2.svg');
+		
+	}
+	
+	&-green-1 {
+		@include circle;
+		background-image: url('../assets/graphics/circle-green-1.svg');
+	}
+	&-green-2 {
+		@include circle;
+		background-image: url('../assets/graphics/circle-green-2.svg');
+	}
+	
+	&-yellow-1 {
+		@include circle;
+		background-image: url('../assets/graphics/circle-yellow-1.svg');
+	}
+	&-yellow-2 {
+		@include circle;
+		background-image: url('../assets/graphics/circle-yellow-2.svg');
+	}
+	
+}
+
+.underline {
+	&-cyan-1 {
+		@include underline;
+		background-image: url('../assets/graphics/underline-cyan-1.svg');	
+	}
+	&-cyan-2 {
+		@include underline;
+		background-image: url('../assets/graphics/underline-cyan-2.svg');	
+	}
+	
+	&-pink-1 {
+		@include underline;
+		background-image: url('../assets/graphics/underline-pink-1.svg');	
+	}
+	&-pink-2 {
+		@include underline;
+		background-image: url('../assets/graphics/underline-pink-2.svg');	
+	}
+	
+	&-green-1 {
+		@include underline;
+		background-image: url('../assets/graphics/underline-green-1.svg');	
+	}
+	&-green-2 {
+		@include underline;
+		background-image: url('../assets/graphics/underline-green-2.svg');	
+	}
+	
+	&-yellow-1 {
+		@include underline;
+		background-image: url('../assets/graphics/underline-yellow-1.svg');	
+	}
+	&-yellow-2 {
+		@include underline;
+		background-image: url('../assets/graphics/underline-yellow-2.svg');	
+	}
+	
+}
