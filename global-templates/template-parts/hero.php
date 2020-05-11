@@ -28,7 +28,7 @@ $theme_path = get_template_directory_uri();
 		</div>
 		<div class='hero-standfirst'>
 			<h1 class='hero-title <?php echo sanitize_title($title); ?>'><?php echo strip_tags($hero['hero_title'],'<span>'); ?></h1>
-			<p><?php echo strip_tags($hero['hero_subtitle'],'<span>'); ?></p>
+			<h3><?php echo strip_tags($hero['hero_subtitle'],'<span>'); ?></h3>
 		</div>
 	<?php else:?>	
 		<div class='hero-filter <?php the_field('hero_filter');?>'>

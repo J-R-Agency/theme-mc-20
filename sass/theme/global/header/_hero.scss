@@ -68,6 +68,9 @@ $desktop-hero-height: 100vh;
 .hero-standfirst {
 	text-align: center;
 	padding: 2rem 0;
+	h3 {
+		padding: 1rem;
+	}
 	h1 {
 		color: white;
 		background-repeat: no-repeat;
@@ -80,6 +83,10 @@ $desktop-hero-height: 100vh;
 		}
 		&.content {
 			background-image: url('../assets/graphics/title-content-pink.svg');
+			font-size: 1.5rem;
+			@include respond-to ('md') {
+				font-size: 2rem;
+			}
 		}
 	}
 }
