@@ -7,6 +7,8 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
+$theme_path = get_template_directory_uri();
 ?>
 
 <?php
@@ -189,12 +191,53 @@ if( have_rows('flexible_content_block') ):
 			</section>
 			";
 			
-		endif; // Final endif
 
-                    
+          // ------------------------------- //
+         // - CASE: PERSON HIGHLIGHT BLOCK -//
+        // ------------------------------- //
+        elseif( get_row_layout() == 'person_highlight_block' ):
+
+            $phb_title = get_sub_field('phb_title');
+            $phb_image = get_sub_field('phb_image');
+            $phb_content = get_sub_field('phb_content');
+            $phb_social_media = get_sub_field('phb_social_media');
+			
+			echo "
+			<section class='generic bg-light-grey'>
+				<div class='ph-container'>
+				
+					<div class='ph-left'>
+						<h2>".$phb_title."</h2>
+						<img class='portrait' src='".$phb_image['url']."'>
+						<div class='ph-social-media' style='background-image:url(".$theme_path."/assets/graphics/header-sm-bg-".$page_color.".png);'>";
+							
+						if( have_rows('phb_social_media') ):
+						   while( have_rows('phb_social_media') ): the_row(); 
+						
+						        $phb_sm_type = get_sub_field('phb_sm_type');
+						        $phb_sm_link = get_sub_field('phb_sm_link');
+										
+								echo "<a href='".$phb_sm_link['url']."' target='_blank'>
+									<img src='".$theme_path."/assets/social-media/".$phb_sm_type."-navy.png'>
+								</a>";
+										
+							endwhile;
+						endif;
+							
+			echo "		</div>
+					</div>
+					<div class='ph-right'>
+						".$phb_content."
+					</div>
+					
+				</div>
+			</section>
+			";			
+			
+			
+		endif; // Final endif        
     // End loop.
     endwhile;
-
 // No value.
 else :
     

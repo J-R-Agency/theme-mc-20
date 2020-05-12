@@ -1,0 +1,53 @@
+.ph-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	@include respond-to ('md') {
+		flex-direction: row;
+	}
+	
+	.ph-left {
+		display: flex;
+		align-items: center;
+		align-content: center;
+		flex-direction: column;
+		flex-basis: 100%;
+		@include respond-to ('md') {
+			flex-basis: 40%;
+		}
+	}
+	
+	.ph-right {
+		flex-basis: 100%;
+		@include respond-to ('md') {
+			flex-basis: 50%;
+		}
+	}
+}
+
+.portrait {
+	border-radius: 50%;
+	margin: 2rem 0;
+}
+
+
+// SOCIAL MEDIA
+.ph-social-media {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 130px;
+	text-align: center;
+	margin-bottom: 1rem;
+	a {
+		img {
+			height: 40px;
+			width: 40px;
+			object-fit: contain;
+			padding: 0 0.5rem;
+			&:hover {
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+}
