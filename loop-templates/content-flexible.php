@@ -214,9 +214,11 @@ if( have_rows('flexible_content_block') ):
 									
 							echo "
 							<div class='plb-wrapper'>
-								<img class='plb-icon' src='".$plb_icon['url']."' alt='".$plb_icon['alt']."'>
-								<a href='".$plb_page['url']."'><h3>".$plb_page['title']."</h3></a>
-								<div class='arrow-link-".$page_color."'></div>
+								<a href='".$plb_page['url']."'>
+									<img class='plb-icon' src='".$plb_icon['url']."' alt='".$plb_icon['alt']."'>
+									<h3>".$plb_page['title']."</h3>
+									<div class='arrow-link-".$page_color."'></div>
+								</a>
 							</div>";
 									
 						endwhile;
