@@ -191,6 +191,41 @@ if( have_rows('flexible_content_block') ):
 			</section>
 			";
 			
+			
+			
+          // ---------------------------- //
+         // --- CASE: PAGE LINK BLOCK ---//
+        // ---------------------------- //
+        elseif( get_row_layout() == 'page_links_block' ):
+
+            $plb_title = get_sub_field('plb_title');
+            $plb_pages = get_sub_field('plb_pages');
+			
+			echo "
+			<section class='generic bg-white page-links-block'>
+				<h2>".$plb_title."</h2>
+				<div class='plb-container'>";
+				
+					if( have_rows('plb_pages') ):
+					   while( have_rows('plb_pages') ): the_row(); 
+					
+					        $plb_icon = get_sub_field('plb_icon');
+					        $plb_page = get_sub_field('plb_page');
+									
+							echo "
+							<div class='plb-wrapper'>
+								<img class='plb-icon' src='".$plb_icon['url']."' alt='".$plb_icon['alt']."'>
+								<a href='".$plb_page['url']."'><h3>".$plb_page['title']."</h3></a>
+								<div class='arrow-link-".$page_color."'></div>
+							</div>";
+									
+						endwhile;
+					endif;	
+									
+			echo "</div>
+			</section>
+			";			
+			
 
           // ------------------------------- //
          // - CASE: PERSON HIGHLIGHT BLOCK -//
@@ -203,7 +238,7 @@ if( have_rows('flexible_content_block') ):
             $phb_social_media = get_sub_field('phb_social_media');
 			
 			echo "
-			<section class='generic bg-light-grey'>
+			<section class='generic-slant bg-light-grey'>
 				<div class='ph-container'>
 				
 					<div class='ph-left'>
@@ -230,6 +265,42 @@ if( have_rows('flexible_content_block') ):
 						".$phb_content."
 					</div>
 					
+				</div>
+			</section>
+			";			
+			
+
+          // ---------------------------- //
+         // ----- CASE: TEAM BLOCK ----- //
+        // ---------------------------- //
+        elseif( get_row_layout() == 'team_block' ):
+
+            $tb_title = get_sub_field('tb_title');
+            $tb_team_members = get_sub_field('tb_team_members');
+			
+			echo "
+			<section class='generic-slant-2 bg-navy team-block'>
+				<h2>".$tb_title."</h2>
+				<div class='tb-container'>";
+							
+					if( have_rows('tb_team_members') ):
+					   while( have_rows('tb_team_members') ): the_row(); 
+					
+					        $team_member_portrait = get_sub_field('team_member_portrait');
+					        $team_member_name = get_sub_field('team_member_name');
+					        $team_member_position = get_sub_field('team_member_position');
+									
+							echo "
+							<div class='tb-wrapper'>
+								<img class='team-portrait' src='".$team_member_portrait['url']."' alt='".$team_member_portrait['alt']."'>
+								<h3>".$team_member_name."</h3>
+								<p>".$team_member_position."</p>
+							</div>";
+									
+						endwhile;
+					endif;
+							
+			echo "
 				</div>
 			</section>
 			";			

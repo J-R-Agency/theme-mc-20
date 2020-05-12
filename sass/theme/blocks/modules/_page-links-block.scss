@@ -1,0 +1,25 @@
+.page-links-block {
+	text-align: center;
+	a {
+		color: $navy;
+		h3 {
+			margin: 2rem 0;
+		}
+	}
+}
+
+.plb-icon {
+	height: 100px;
+	width: 100px;
+	object-fit: contain;
+}
+
+.plb-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	.plb-wrapper {
+		flex-basis: 33%;
+		padding: 2rem 0;
+	}
+}
