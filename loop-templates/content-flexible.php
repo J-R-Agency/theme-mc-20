@@ -38,12 +38,50 @@ if( have_rows('flexible_content_block') ):
           // -------------------------- //
          // --- CASE: CONTENT BLOCK ---//
         // -------------------------- //
-        elseif( get_row_layout() == 'module_content_block' ):
+        elseif( get_row_layout() == 'content_block' ):
 
-            $mcb_title = get_sub_field('mcb_title'); // Text
-            $mcb_content = get_sub_field('mcb_content'); // WYSIWYG block
-            $mcb_image = get_sub_field('mcb_image'); // Image
-            $mcb_style = get_sub_field('mcb_style'); // Select 
+            $cb_title = get_sub_field('cb_title'); // Text
+            $cb_image = get_sub_field('cb_image'); // Image
+            $cb_style = get_sub_field('cb_style'); // Select
+            $cb_image = get_sub_field('cb_image');
+            $cb_background_color = get_sub_field('cb_background_color');
+            $cb_copy = get_sub_field('cb_copy');
+            $cb_column_left = get_sub_field('cb_column_left');
+            $cb_column_right = get_sub_field('cb_column_right');
+            
+            if ($cb_style == 'primary'):
+            	echo "
+            		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
+            			<h2>".strip_tags($cb_copy,'<span>')."</h2>
+            		</section>
+            	";
+            elseif ($cb_style == 'secondary'):
+            	echo "
+            		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
+            		
+            			<h2>".strip_tags($cb_title,'<span>')."</h2>
+            			
+            			<div class='cb-container'>
+	            			<div class='cb-left'>
+	            				".$cb_column_left."
+	            			</div>
+	            			
+	            			<div class='cb-right'>
+	            				".$cb_column_right."
+	            			</div>
+	            		</div>
+	            		
+            		</section>
+            	";
+            elseif ($cb_style == 'tertiary'):
+            	echo "
+            		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
+            			<img src='".$cb_image['url']."' alt='".$cb_image['alt']."'>
+            			<h2>".strip_tags($cb_title,'<span>')."</h2>
+            			<p>".strip_tags($cb_copy,'<span>')."</p>
+            		</section>
+            	";
+            endif;
 			
 					
 		
@@ -136,6 +174,20 @@ if( have_rows('flexible_content_block') ):
 			</section>
 			";
 
+
+          // --------------------------- //
+         // ----- CASE: LINK BLOCK -----//
+        // --------------------------- //
+        elseif( get_row_layout() == 'link_block' ):
+
+            $lb_link = get_sub_field('lb_link');
+            $lb_background_color = get_sub_field('lb_background_color');
+			
+			echo "
+			<section class='link-block bg-".$lb_background_color."'>
+				<a href='".$lb_link['url']."'>".$lb_link['title']."<div class='arrow-link-".$page_color."'></div></a>
+			</section>
+			";
 			
 		endif; // Final endif
 

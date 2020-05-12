@@ -17,6 +17,6 @@ $header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
 
-<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
+<?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>

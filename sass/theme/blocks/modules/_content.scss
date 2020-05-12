@@ -1,0 +1,37 @@
+.content-primary {
+	text-align: center;
+}
+
+.content-secondary {
+	.cb-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@include respond-to('md') {
+			flex-direction: row;
+		}
+		.cb-left {
+			flex-basis: 100%;
+			@include respond-to('md') {
+				flex-basis: 46%;
+			}
+		}
+		.cb-right {
+			flex-basis: 100%;
+			@include respond-to('md') {
+				flex-basis: 46%;
+			}
+		}
+	}
+	
+}
+
+.content-tertiary {
+	text-align: center;
+	p {
+		font-size: 1.5rem;
+	}
+	img {
+		padding: 1rem;
+	}
+}

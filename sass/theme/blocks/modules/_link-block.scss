@@ -1,0 +1,48 @@
+.link-block {
+	border-bottom: solid 2px $light-grey;
+	text-align: right;
+	padding: 1rem 1rem;
+	@include respond-to('md'){
+		padding: 1rem 5rem;
+	}
+	@include respond-to('lg'){
+		padding: 1rem 10rem;
+	}		
+	
+	a {
+		color: black;
+		@include _dm-sans-bold;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	
+}
+
+@mixin arrow-link {
+	height: 20px;
+	width: 30px;
+	display: inline-block;
+	margin: 0 1rem;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+	
+.arrow-link-cyan {
+	@include arrow-link;
+	background-image: url('../assets/graphics/arrow-link-cyan.svg');
+}
+
+.arrow-link-pink {
+	@include arrow-link;
+	background-image: url('../assets/graphics/arrow-link-pink.svg');
+}
+.arrow-link-green {
+	@include arrow-link;
+	background-image: url('../assets/graphics/arrow-link-green.svg');
+}
+.arrow-link-yellow {
+	@include arrow-link;
+	background-image: url('../assets/graphics/arrow-link-yellow.svg');
+}
