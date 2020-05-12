@@ -1,0 +1,68 @@
+$desktop-cta-height: 500px;
+$mobile-cta-height: 400px;
+
+.cta-filter {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+	height: $mobile-cta-height;
+	@include global-padding;
+	
+	@include respond-to('md') {
+		height: $desktop-cta-height;
+	}
+	h1 {
+		margin-bottom: 1rem;
+	}
+	p {
+		margin-bottom: 5rem;
+	}
+	&.none {
+		background: transparent;
+		h1, p {
+			color: $navy;
+		}
+	}
+	&.darken {
+		background-color: rgba(0, 0, 0, 0.2);
+		h1, p {
+			color: white;
+		}
+	}
+	&.lighten {
+		background-color: rgba(255, 255, 255, 0.2);
+		h1, p {
+			color: $navy;
+		}
+	}
+	&.radial {
+		background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0.4) 100%); 
+		h1, p {
+			color: $navy;
+		}
+	}
+}
+
+.cta-block {
+	height: $mobile-cta-height;
+	background-size: cover;
+	background-position: center;
+	@include respond-to('md') {
+		height: $desktop-cta-height;
+		background-position: top;
+	}
+}
+
+.cta-post-it {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 3rem 2rem;
+	width: 100%;
+	clip-path: polygon(83% 0, 100% 17%, 100% 100%, 0% 100%, 0% 0%);
+	@include respond-to('md') {
+		width: 350px;
+		padding: 4rem 2rem;
+	}
+}

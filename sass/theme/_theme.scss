@@ -6,6 +6,7 @@
 @import "global/mixins/typography";
 @import "global/typography"; 
 @import "global/highlights"; 
+@import "global/buttons"; 
 @import "global/globals"; 
 
 
@@ -18,7 +19,7 @@
 
 // Modules
 @import "blocks/modules/icon-set";
-
+@import "blocks/modules/cta";
 
 // Cards
 @import "blocks/cards/blog-card";// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here

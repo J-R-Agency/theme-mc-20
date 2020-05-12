@@ -16,6 +16,13 @@
 	}
 }
 
+.five-columns {
+	flex-basis: 100%;
+	@include respond-to ('md') {
+		flex-basis: 20%;
+	}	
+}
+
 .icon-set-wrapper {
 	padding: 1rem 0;
 	@include respond-to('md') {
@@ -23,7 +30,7 @@
 	}
 	img {
 		width: 150px;
-		height: 150px;
+		height: 100px;
 		object-fit: contain;
 	}
 	h3 {
