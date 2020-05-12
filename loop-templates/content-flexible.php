@@ -307,7 +307,58 @@ if( have_rows('flexible_content_block') ):
 			</section>
 			";			
 			
-			
+
+          // ----------------------------- //
+         // -- CASE: TESTIMONIAL BLOCK -- //
+        // ----------------------------- //
+        elseif( get_row_layout() == 'testimonials_block' ):
+
+            $testimonials = get_sub_field('testimonials');
+            		
+				if( have_rows('testimonials') ):
+					$i = 1; // Set the increment variable
+					echo "
+					<section class='generic bg-navy testimonials-block'>
+						<div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
+							<div class='carousel-inner'>
+					";
+				    while( have_rows('testimonials') ): the_row(); 
+				
+				        $quote = get_sub_field('quote');
+				        $citation = get_sub_field('citation');
+				        $activeState;
+						
+						if($i == 1) {
+							$activeState = 'active';
+						} else {
+							$activeState = '';
+						}
+							
+						echo "
+							<div class='carousel-item ".$activeState."'>
+								<img class='quote-icon' src='".$theme_path."/assets/graphics/quotes-pink.png'>
+								<h3>".$quote."</h3>
+								<p>".$citation."</p>
+							</div>
+						";
+						$i++;
+					endwhile;
+					echo "
+						</div>
+						<a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
+					    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+					    <span class='sr-only'>Previous</span>
+					  </a>
+					  <a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>
+					    <span class='carousel-control-next-icon' aria-hidden='true'></span>
+					    <span class='sr-only'>Next</span>
+					  </a>
+					</div>
+				</section>
+				";	
+				endif;
+
+		
 		endif; // Final endif        
     // End loop.
     endwhile;
