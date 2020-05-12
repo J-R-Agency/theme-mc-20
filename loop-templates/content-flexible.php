@@ -52,7 +52,7 @@ if( have_rows('flexible_content_block') ):
             if ($cb_style == 'primary'):
             	echo "
             		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
-            			<h2>".strip_tags($cb_copy,'<span>')."</h2>
+            			<h2>".strip_tags($cb_copy,'<span><p>')."</h2>
             		</section>
             	";
             elseif ($cb_style == 'secondary'):
