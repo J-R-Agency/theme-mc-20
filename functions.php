@@ -50,3 +50,10 @@ function register_my_menu() {
   register_nav_menu('secondary-menu',__( 'Secondary Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
+
+//Add categories to pages
+function add_taxonomies_to_pages() {
+ register_taxonomy_for_object_type( 'post_tag', 'page' );
+ register_taxonomy_for_object_type( 'category', 'page' );
+ }
+add_action( 'init', 'add_taxonomies_to_pages' );
