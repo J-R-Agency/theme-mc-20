@@ -98,7 +98,7 @@ if( have_rows('flexible_content_block') ):
             $isb_icons = get_sub_field('isb_icons'); // Select 
 			
 			
-			echo "<section class='generic ".$isb_background_color." icon-set'>
+			echo "<section class='generic bg-".$isb_background_color." icon-set'>
 						<h2>".strip_tags($isb_title,'<span>')."</h2>
 							<div class='icon-set-container'>";
 						
