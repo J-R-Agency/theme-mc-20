@@ -149,7 +149,7 @@ if( have_rows('flexible_content_block') ):
 				
 				echo "<h1>".$cta_title."</h1>
 					 <p>".$cta_intro."</p>
-					 <div class='button-navy'><a href='".$cta_link['url']."'>".$cta_link['title']."</a></div>";
+					 <div class='button-navy'><a href='".$cta_link['url']."' target='".$cta_link['target']."'>".$cta_link['title']."</a></div>";
 				
 				if ($cta_style == 'secondary'):
 					echo "</div>";
@@ -240,7 +240,7 @@ if( have_rows('flexible_content_block') ):
             $phb_social_media = get_sub_field('phb_social_media');
 			
 			echo "
-			<section class='generic-slant bg-light-grey'>
+			<section class='slant bg-light-grey'>
 				<div class='ph-container'>
 				
 					<div class='ph-left'>
@@ -281,7 +281,7 @@ if( have_rows('flexible_content_block') ):
             $tb_team_members = get_sub_field('tb_team_members');
 			
 			echo "
-			<section class='generic-slant-2 bg-navy team-block'>
+			<section class='slant-top bg-navy team-block'>
 				<h2>".$tb_title."</h2>
 				<div class='tb-container'>";
 							
@@ -357,6 +357,33 @@ if( have_rows('flexible_content_block') ):
 				</section>
 				";	
 				endif;
+
+
+
+          // --------------------------------- //
+         // -- CASE: IMAGE & CONTENT BLOCK -- //
+        // --------------------------------- //
+        elseif( get_row_layout() == 'image_and_content_block' ):
+
+            $icb_image = get_sub_field('icb_image');
+            $icb_title = get_sub_field('icb_title');
+            $icb_content = get_sub_field('icb_content');
+			
+			echo "
+			<section class='slant-bottom bg-light-grey image-content-block'>
+				
+				<div class='icb-container'>
+					<div class='icb-left'>
+						<img src='".$icb_image['url']."' alt='".$icb_image['alt']."'>
+					</div>
+					<div class='icb-right'>
+						<h2>".$icb_title."</h2>
+						".$icb_content."
+					</div>
+				</div>
+			</section>
+			";			
+
 
 		
 		endif; // Final endif        

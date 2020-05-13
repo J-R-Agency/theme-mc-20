@@ -1,0 +1,35 @@
+.icb-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	
+	.icb-left {
+		flex-basis: 100%;
+		display: flex;
+		justify-content: center;
+		@include respond-to('md') {
+			flex-basis: 40%;
+		}
+		img {
+			width: 200px;
+			height: 200px;
+			object-fit: contain;
+			margin-bottom: 3rem;
+			@include respond-to('md') {
+				width: 250px;
+				height: 250px;
+				margin: 0;
+			}
+		}
+	}
+	.icb-right {
+		flex-basis: 100%;
+		@include respond-to('md') {
+			flex-basis: 45%;
+		}
+		h2 {
+			margin-bottom: 2rem;
+		}
+	}
+}
