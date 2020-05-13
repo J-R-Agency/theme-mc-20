@@ -33,7 +33,10 @@ $fcs-desktop-height: 400px;
 }
 
 .cs-content {
-	width: 50%;
+	width: 100%;
+	@include respond-to('lg') {
+		width: 50%;
+	}
 }
 
 .fcs-quote-block, .cs-quote-block {
