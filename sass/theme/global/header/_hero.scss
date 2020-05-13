@@ -41,28 +41,19 @@ $desktop-hero-height: 100vh;
 		font-size: 1rem;
 	}
 	&.none {
-		background: transparent;
+		@include none;
 	}
 	&.darken {
-		background-color: rgba(0, 0, 0, 0.2);
-		h1, p {
-			color: white;
-		}
+		@include darken;
 	}
 	&.light-radial {
-		background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(230,230,230,0) 100%); 
-		h1, p {
-			color: $navy;
-		}
+		@include light-radial;
 	}
 	&.dark-radial {
-		background: radial-gradient(circle, rgba(0,0,0,0.5) 0%, rgba(230,230,230,0) 100%);
-		h1, p {
-			color: white;
-		}
+		@include dark-radial;
 	}
 	&.small {
-		@include respond-to ('md') {
+		@include respond-to ('lg') {
 			height: 70vh;
 		}
 	}

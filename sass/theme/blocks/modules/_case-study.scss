@@ -1,0 +1,32 @@
+.cs-intro-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	.cs-intro-left {
+		flex-basis: 100%;
+		text-align: center;
+		ul {
+			list-style: none;
+			padding: 0;
+			li {
+				color: #9297A0;
+				padding: 0.5rem 0 2rem 0;
+			}
+		}
+		@include respond-to ('md') {
+			flex-basis: 30%;
+			text-align: left;
+		}
+	}
+	.cs-intro-right {
+		flex-basis: 100%;
+		
+		@include respond-to ('md') {
+			flex-basis: 65%;
+		}
+		h2 {
+			padding: 1rem 0;
+		}
+	}
+}
