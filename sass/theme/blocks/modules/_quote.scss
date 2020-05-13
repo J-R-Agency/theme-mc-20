@@ -12,7 +12,7 @@ $fcs-desktop-height: 400px;
 	display: inline-block;
 }
 
-.fcs-content {
+.fcs-content, .cs-content {
 	border-top: 1px solid white;
 	border-bottom: 1px solid white;
 	padding: 2rem 0;
@@ -32,8 +32,11 @@ $fcs-desktop-height: 400px;
 	}
 }
 
-.fcs-quote-block {
+.cs-content {
+	width: 50%;
+}
 
+.fcs-quote-block, .cs-quote-block {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
