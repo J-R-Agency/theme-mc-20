@@ -48,9 +48,21 @@
 		margin: 0;
 	}
 	.wp-block-image {
+		margin: 0;
 		img {
 			width: 100%;
 		}
+	}
+}
+
+.case-studies-block {
+	padding: 3rem 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include respond-to ('md') {
+		padding: 5rem 10rem 1rem 10rem;
+		display: block;
 	}
 }
 

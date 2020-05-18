@@ -52,12 +52,15 @@ include( locate_template( 'header.php', false, false ) );  ?>
         $csq_citation = get_sub_field('csq_citation');
 
         ?>
-        <section class='cs-quote-block'>
-	        <div class='cs-content'>
-		    	<h2><?php echo strip_tags($csq_quote); ?></h2>
-				<p><?php echo strip_tags($csq_citation); ?></p>
-	        </div>
-        </section>
+        
+        <?php if($csq_quote): ?>
+	        <section class='cs-quote-block'>
+		        <div class='cs-content'>
+			    	<h2><?php echo strip_tags($csq_quote); ?></h2>
+					<p><?php echo strip_tags($csq_citation); ?></p>
+		        </div>
+	        </section>
+        <?php endif; ?>
         
     <?php endwhile; ?>
 <?php endif; ?>

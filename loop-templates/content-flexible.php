@@ -170,9 +170,57 @@ if( have_rows('flexible_content_block') ):
             $csb_title = get_sub_field('csb_title');
 			
 			echo "
-			<section class='generic bg-white'>
+			<section class='generic bg-white case-studies-block'>
 				<h2>".$csb_title."</h2>
-			
+				<div class='case-studies-container'>
+				";
+				
+				
+				$pageSlug = get_page_by_path( 'our-work' );
+				
+				$args = array(
+				    'post_type'      => 'page', //write slug of post type
+				    'posts_per_page' => 3,
+				    'post_parent'    => $pageSlug->ID, //place here id of your parent page
+				    'order'          => 'ASC',
+				    'orderby'        => 'menu_order'
+				 );
+				 
+				$children = new WP_Query( $args );
+				 
+				if ( $children->have_posts() ) :
+				 
+				     while ( $children->have_posts() ) : $children->the_post();
+					 	
+					 	$cs_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+					 	$categories = get_the_category();
+					 	
+					 	
+				        echo "
+				        	<a href='",the_permalink(),"'>
+				        		<div class='cs-thumb-filter'>
+				        			<h3>",the_title(),"</h3>
+				        			<p>";
+				        			foreach ( $categories as $i => $category ) {
+										echo esc_html( $category->name );
+									    if ( $i > -1 ) {
+										    echo " <span class='separator'>/</span> ";
+									    }
+									}
+						echo		"</p>
+				        		</div>
+				        		<div class='cs-thumb-wrapper' style='background-image:url(".$cs_img.");'></div>						     
+						    </a> 
+						";
+				 
+				    endwhile; 
+				endif; 
+				wp_reset_query();
+								
+			echo "</div>
+			</section>
+			<section class='link-block bg-light-grey'>
+				<a href='".site_url()."/our-work'>See more projects<div class='arrow-link-pink'></div></a>
 			</section>
 			";
 
@@ -383,7 +431,6 @@ if( have_rows('flexible_content_block') ):
 				</div>
 			</section>
 			";			
-
 
 		
 		endif; // Final endif        

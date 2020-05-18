@@ -1,0 +1,46 @@
+.case-studies-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	a {
+		margin: 1rem 0;
+	}
+	@include respond-to('md') {
+		flex-direction: row;
+	}
+}
+
+$cs-thumb-width: 300px;
+$cs-thumb-height: 200px;
+$cs-thumb-margin-desktop: 0 1rem;
+$cs-thumb-margin-mobile: 1rem 0;
+
+.cs-thumb-wrapper { 
+	width: $cs-thumb-width;
+	height: $cs-thumb-height;
+	background-size: cover;
+	background-position: center;
+
+}
+
+.cs-thumb-filter {
+	width: $cs-thumb-width;
+	height: $cs-thumb-height;
+	position: absolute;
+	padding: 1rem;
+	background-image: linear-gradient(to right bottom,rgba(255,255,255,1),rgba(150,150,150,0), rgba(255,255,255,.1));
+	color: $navy;
+
+	&:hover {
+		background-color: $pink;
+		color: white;
+		background-image: url('../assets/graphics/cs-thumb-arrow.svg');
+		background-size: 50%;
+		background-repeat: no-repeat;
+		background-position: center 75%;
+	}
+	
+	.separator:last-of-type {
+		display: none;
+	}
+}
