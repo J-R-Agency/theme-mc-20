@@ -17,6 +17,32 @@ $header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
 
+<!-- SERVICE, IMPACT AND EMPATHY -->
+<?php if( have_rows('service_impact_empathy') ): ?>
+	<section class='sie-container'>
+    <?php while( have_rows('service_impact_empathy') ): the_row();
+	    $sie_title = get_sub_field('sie_title');
+	    $sie_image = get_sub_field('sie_image');
+    ?>
+		<div class='sie-wrapper'>
+			<div class='sie-image'>
+				<img src='<?php echo $sie_image['url']; ?>'>
+				<h2><?php echo strip_tags($sie_title); ?></h2>
+			</div>
+		<?php if( have_rows('sie_list') ): ?>
+			<ul>
+			 <?php while( have_rows('sie_list') ): the_row();
+			    $sie_list_item = get_sub_field('sie_list_item');
+		    ?>
+		    	<li><?php echo $sie_list_item; ?></li>
+		    <?php endwhile; ?>
+			</ul>
+		<?php endif; ?>
+		</div>
+    <?php endwhile; ?>
+    </section>
+<?php endif; ?>	    
+	    
 <!-- QUOTE -->
 <?php if( have_rows('cs_quote') ): ?>
     <?php while( have_rows('cs_quote') ): the_row(); 

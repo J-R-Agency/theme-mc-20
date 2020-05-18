@@ -34,3 +34,51 @@
 .wp-block-columns {
 	margin-top: 28px;
 }
+
+// Service, Impact, Empathy
+
+.sie-container {
+	display: flex;
+	justify-content: space-evenly;
+	height: initial;
+	flex-direction: column;
+	@include respond-to ('md') {
+		flex-direction: row;
+		height: 300px;
+	}
+}
+
+.sie-wrapper {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	position: relative;
+	transform: translateY(0);
+	@include respond-to ('md') {
+		transform: translateY(-25%);
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		li {
+			margin: 1rem 0;
+			color: $green;
+		}
+	}
+}
+
+.sie-image {
+	background-color: $light-grey;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem 4rem;
+	align-items: center;
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
+	img {
+		height: 125px;
+	}
+	h2 {
+		margin-top: 2rem;
+		font-size: 1.5rem;
+	}
+}
