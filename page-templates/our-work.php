@@ -36,7 +36,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		<?php
 			echo '<ul class="nav nav-tabs cs-categories-list" role="tablist">
 		    		<li>
-		                <a class="nav-link" href="#all" role="tab" data-toggle="tab">All</a>
+		                <a href="#all" role="tab" data-toggle="tab">All</a>
 		            </li>
 		    
 		    ';
@@ -48,7 +48,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		    foreach($categories as $category) { 
 		        echo 
 		            '<li>
-		                <a class="nav-link" href="#'.$category->slug.'" data-toggle="tab">    
+		                <a href="#'.$category->slug.'" data-toggle="tab">    
 		                    '.$category->name.'
 		                </a>
 		            </li>';
