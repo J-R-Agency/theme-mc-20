@@ -35,7 +35,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		<h2>More Inspiring Stories</h2>
 		<?php
 			echo '<ul class="nav nav-tabs cs-categories-list" role="tablist">
-		    		<li class="all">
+		    		<li>
 		                <a href="#all" role="tab" data-toggle="tab">All</a>
 		            </li>
 		    
