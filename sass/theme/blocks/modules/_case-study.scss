@@ -33,6 +33,11 @@
 
 .wp-block-columns {
 	margin-top: 28px;
+	.wp-block-column {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 }
 
 // Service, Impact, Empathy

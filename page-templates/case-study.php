@@ -54,7 +54,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
         ?>
         <section class='cs-quote-block'>
 	        <div class='cs-content'>
-		    	<h3><?php echo strip_tags($csq_quote); ?></h3>
+		    	<h2><?php echo strip_tags($csq_quote); ?></h2>
 				<p><?php echo strip_tags($csq_citation); ?></p>
 	        </div>
         </section>

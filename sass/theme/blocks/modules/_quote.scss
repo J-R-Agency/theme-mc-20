@@ -18,9 +18,8 @@ $fcs-desktop-height: 400px;
 	padding: 2rem 0;
 	color: white;
 	filter: brightness(100%);
-	h3 {
+	h3, h2 {
 		margin-bottom: 2rem;
-		line-height: 2rem;
 		&:before {
 			@include quote-img;
 			background-image: url("../assets/graphics/left-quote.svg");
