@@ -48,7 +48,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		    foreach($categories as $category) { 
 		        echo 
 		            '<li>
-		                <a href="#'.$category->slug.'" role="tab" data-toggle="tab">    
+		                <a href="#'.$category->slug.'" data-toggle="tab">    
 		                    '.$category->name.'
 		                </a>
 		            </li>';
