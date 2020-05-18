@@ -62,4 +62,14 @@ include( locate_template( 'header.php', false, false ) );  ?>
     <?php endwhile; ?>
 <?php endif; ?>
 
+<!-- WP CONTENT -->
+<section class='cs-content-container'>
+<?php
+	if (have_posts()) : while (have_posts()) : the_post();
+			the_content();
+		endwhile;
+	endif;	
+?>
+</section>
+
 <?php include( locate_template( 'footer.php', false, false ) ); ?>

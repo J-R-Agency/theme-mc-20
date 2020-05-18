@@ -31,14 +31,29 @@
 	}
 }
 
-.wp-block-columns {
-	margin-top: 28px;
-	.wp-block-column {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+.fcs-content-container {
+	.wp-block-columns {
+		margin-top: 28px;
+		.wp-block-column {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}	
+}
+
+.cs-content-container {
+	.wp-block-columns {
+		@include global-padding;
+		margin: 0;
+	}
+	.wp-block-image {
+		img {
+			width: 100%;
+		}
 	}
 }
+
 
 // Service, Impact, Empathy
 

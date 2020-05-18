@@ -99,7 +99,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 
 
-<section class='generic bg-white'>
+<section class='generic bg-white fcs-content-container'>
 <h2>Our <span class='underline-green-1'>Response</span></h2>
 <?php
 	if (have_posts()) : while (have_posts()) : the_post();
