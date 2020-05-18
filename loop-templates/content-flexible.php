@@ -182,8 +182,7 @@ if( have_rows('flexible_content_block') ):
 				    'post_type'      => 'page', //write slug of post type
 				    'posts_per_page' => 3,
 				    'post_parent'    => $pageSlug->ID, //place here id of your parent page
-				    'order'          => 'ASC',
-				    'orderby'        => 'menu_order'
+				    'order'          => 'DESC',
 				 );
 				 
 				$children = new WP_Query( $args );
