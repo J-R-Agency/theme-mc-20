@@ -1,9 +1,12 @@
 .case-studies-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	flex-wrap: wrap;
 	a {
 		margin: 1rem 0;
+		@include respond-to('md') {
+			margin: 1rem 1rem 1rem 0;
+		}
 	}
 	@include respond-to('md') {
 		flex-direction: row;

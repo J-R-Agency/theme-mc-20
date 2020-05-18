@@ -173,11 +173,9 @@ if( have_rows('flexible_content_block') ):
 			<section class='generic bg-white case-studies-block'>
 				<h2>".$csb_title."</h2>
 				<div class='case-studies-container'>
-				";
-				
-				
+				";		
 				$pageSlug = get_page_by_path( 'our-work' );
-				
+								
 				$args = array(
 				    'post_type'      => 'page', //write slug of post type
 				    'posts_per_page' => 3,
@@ -189,32 +187,16 @@ if( have_rows('flexible_content_block') ):
 				 
 				if ( $children->have_posts() ) :
 				 
-				     while ( $children->have_posts() ) : $children->the_post();
+				    while ( $children->have_posts() ) : $children->the_post();
 					 	
-					 	$cs_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-					 	$categories = get_the_category();
-					 	
-					 	
-				        echo "
-				        	<a href='",the_permalink(),"'>
-				        		<div class='cs-thumb-filter'>
-				        			<h3>",the_title(),"</h3>
-				        			<p>";
-				        			foreach ( $categories as $i => $category ) {
-										echo esc_html( $category->name );
-									    if ( $i > -1 ) {
-										    echo " <span class='separator'>/</span> ";
-									    }
-									}
-						echo		"</p>
-				        		</div>
-				        		<div class='cs-thumb-wrapper' style='background-image:url(".$cs_img.");'></div>						     
-						    </a> 
-						";
-				 
-				    endwhile; 
+						$cs_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+						$categories = get_the_category();
+						
+						include (get_template_directory().'/global-templates/template-parts/case-study-card.php');	
+					
+					endwhile;
 				endif; 
-				wp_reset_query();
+				wp_reset_query();						
 								
 			echo "</div>
 			</section>
