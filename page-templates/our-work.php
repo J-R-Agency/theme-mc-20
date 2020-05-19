@@ -36,7 +36,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		<?php
 			echo '<ul class="nav nav-tabs cs-categories-list" role="tablist">
 		    		<li>
-		                <a href="#all" role="tab" data-toggle="tab">All</a>
+		                <a class="active" href="#all" role="tab" data-toggle="tab">All</a>
 		            </li>
 		    
 		    ';

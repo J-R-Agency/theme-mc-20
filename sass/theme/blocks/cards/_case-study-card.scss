@@ -2,38 +2,53 @@
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	a {
-		margin: 1rem 0;
-		@include respond-to('md') {
-			margin: 1rem 1rem 1rem 0;
-		}
-	}
 	@include respond-to('md') {
 		flex-direction: row;
 	}
+	a {
+		margin: 1rem 0;
+		@include respond-to('md') {
+			margin: 0 1rem 1rem 0;	
+		}
+		@include respond-to('lg') {
+			margin: 1rem 1rem 1rem 0;
+		}
+	}
 }
 
-$cs-thumb-width: 300px;
-$cs-thumb-height: 200px;
+$cs-thumb-width-desktop: 300px;
+$cs-thumb-width-mobile: 280px;
+
+$cs-thumb-height-desktop: 200px;
+$cs-thumb-height-mobile: 180px;
+
 $cs-thumb-margin-desktop: 0 1rem;
 $cs-thumb-margin-mobile: 1rem 0;
 
 .cs-thumb-wrapper { 
-	width: $cs-thumb-width;
-	height: $cs-thumb-height;
+	width: $cs-thumb-width-mobile;
+	height: $cs-thumb-height-mobile;
 	background-size: cover;
 	background-position: center;
-
+	@include respond-to('lg') {
+		width: $cs-thumb-width-desktop;
+		height: $cs-thumb-height-desktop;		
+	}
 }
 
 .cs-thumb-filter {
-	width: $cs-thumb-width;
-	height: $cs-thumb-height;
+	width: $cs-thumb-width-mobile;
+	height: $cs-thumb-height-mobile;
 	position: absolute;
 	padding: 1rem;
 	background-image: linear-gradient(to right bottom,rgba(255,255,255,1),rgba(150,150,150,0), rgba(255,255,255,.1));
 	color: $navy;
-
+	
+	@include respond-to('lg') {
+		width: $cs-thumb-width-desktop;
+		height: $cs-thumb-height-desktop;		
+	}
+	
 	&:hover {
 		background-color: $pink;
 		color: white;

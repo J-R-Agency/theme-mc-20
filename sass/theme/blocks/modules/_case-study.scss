@@ -120,6 +120,10 @@
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 2rem;
+	flex-direction: column;
+	@include respond-to('lg') {
+		flex-direction: row;
+	}
 	.nav-tabs {
 		border: none;
 	}
@@ -134,9 +138,18 @@
 	align-items: center;
 	padding: 0;
 	li {
-		padding: 0 1rem;
+		padding: 0 1rem 0 0;
+		@include respond-to('lg') {
+			padding: 0 1rem;
+		}
 		a {
 			color: $navy;
+			&.active, &:hover, &:after {
+				text-decoration: underline;
+				text-decoration-thickness: 4px;
+				text-decoration-color: $pink;
+				text-decoration-skip-ink: none;
+			}
 		}
 	}
 }
