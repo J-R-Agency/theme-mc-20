@@ -3,7 +3,7 @@
 		function changePage(listElement, pager) {
 			//var listElement = $('.all');
 			//var pager = '.pager-all';
-			var perPage = 3; 
+			var perPage = 6; 
 			var numItems = listElement.children().size();
 			var numPages = Math.ceil(numItems/perPage);
 							
