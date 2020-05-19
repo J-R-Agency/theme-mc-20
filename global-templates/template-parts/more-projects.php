@@ -22,7 +22,7 @@ $theme_path = get_template_directory_uri();
 	<div class='more-case-studies-container'>
 		<?php
 			
-		$pageSlug = get_page_by_path( 'our-work' );
+		$pageSlug = get_page_by_path( 'our-work#case-studies-container' );
 		$currentID = get_the_ID();
 			
 		$args = array(
