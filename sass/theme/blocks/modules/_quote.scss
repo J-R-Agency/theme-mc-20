@@ -3,7 +3,7 @@ $fcs-desktop-height: 400px;
 
 @mixin quote-img {
 	padding: 0 1rem;
-	height: 20px;
+	height: 25px;
 	width: 20px;
 	content: "";
 	background-repeat: no-repeat;
@@ -50,5 +50,30 @@ $fcs-desktop-height: 400px;
 	
 	@include respond-to('md') {
 		padding: 2rem 10rem;
+	}
+}
+
+/* -- POST QUOTE -- */
+.wp-block-quote {
+	text-align: center;
+	@include global-padding;
+	border-top: 1px solid $pink;
+	border-bottom: 1px solid $pink;
+	margin: 2rem 0;
+	p {
+		color: $pink;
+		font-size: 2rem;
+		margin: 0;
+		&:before {
+			@include quote-img;
+			background-image: url("../assets/graphics/left-quote-pink.svg");
+		}
+		&:after {
+			@include quote-img;
+			background-image: url("../assets/graphics/right-quote-pink.svg");
+		}
+	}
+	cite {
+		font-style: normal;
 	}
 }

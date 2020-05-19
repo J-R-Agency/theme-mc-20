@@ -15,8 +15,8 @@
 			  curr++;
 			}
 			
-			$("<span class='prev-btn'>Prev</span>").prependTo(pager);
-			$("<span class='next-btn'>Next</span>").appendTo(pager);
+			/*$("<span class='prev-btn'>Prev</span>").prependTo(pager);
+			$("<span class='next-btn'>Next</span>").appendTo(pager);*/
 			
 			$(pager + ' .page_link:first').addClass('active');
 			
@@ -35,7 +35,7 @@
 			  $(this).addClass('active');
 			});
 			
-			$(pager + ' .prev-btn').click(function() {
+			/*$(pager + ' .prev-btn').click(function() {
 				previous();
 				
 			});
@@ -59,7 +59,7 @@
 			  if($('.tab-pane').next('.tab-pane').length==true){
 			    goTo(goToPage);
 			  }
-			}
+			}*/
 			
 			function goTo(page){
 			  var startAt = page * perPage,
