@@ -48,7 +48,7 @@
 			function previous(){
 			  console.log ("Previous");
 			  var goToPage = parseInt($(pager).data("curr")) - 1;
-			  if($('.tab-pane .active').prev('.page_link').length==true){
+			  if($('.tab-pane.active').prev('.tab-pane').length==true){
 			    goTo(goToPage);
 			  } 
 			}
@@ -56,7 +56,7 @@
 			function next(){
 				console.log("Next");
 			  var goToPage = parseInt($(pager).data("curr")) + 1;
-			  if($('.tab-pane').next('.page_link').length==true){
+			  if($('.tab-pane').next('.tab-pane').length==true){
 			    goTo(goToPage);
 			  }
 			}
