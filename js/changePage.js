@@ -15,15 +15,15 @@
 			  curr++;
 			}
 			
-			/*$("<span class='prev-btn'>Prev</span>").prependTo(pager);
-			$("<span class='next-btn'>Next</span>").appendTo(pager);*/
+			$("<span class='prev-btn'>Prev</span>").prependTo(pager);
+			$("<span class='next-btn'>Next</span>").appendTo(pager);
 			
 			$(pager + ' .page_link:first').addClass('active');
 			
-			/*$(".tab").click(function(){
+			$(".tab").click(function(){
 				$('.page_link').removeClass('active');
 				$(pager + ' .page_link:first').addClass('active');
-			});*/
+			});
 			
 			listElement.children().css('display', 'none');
 			listElement.children().slice(0, perPage).css('display', 'block');
@@ -35,7 +35,7 @@
 			  $(this).addClass('active');
 			});
 			
-			/*$(pager + ' .prev-btn').click(function() {
+			$(pager + ' .prev-btn').click(function() {
 				previous();
 				
 			});
@@ -48,18 +48,18 @@
 			function previous(){
 			  console.log ("Previous");
 			  var goToPage = parseInt($(pager).data("curr")) - 1;
-			  if($('.active').prev('.page_link').length==true){
+			  if($('.tab-pane .active').prev('.page_link').length==true){
 			    goTo(goToPage);
-			  }
+			  } 
 			}
 			
 			function next(){
 				console.log("Next");
 			  var goToPage = parseInt($(pager).data("curr")) + 1;
-			  if($('.active').next('.page_link').length==true){
+			  if($('.tab-pane').next('.page_link').length==true){
 			    goTo(goToPage);
 			  }
-			}*/
+			}
 			
 			function goTo(page){
 			  var startAt = page * perPage,
