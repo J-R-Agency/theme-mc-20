@@ -16,7 +16,7 @@ $theme_path = get_template_directory_uri();
 </section>
 <section class='generic bg-white'>
 	<div class='more-projects-header'>
-		<a class='link' href='<?php site_url(); ?>/our-work#case-studies-container'><div class='arrow-link-<?php echo $page_color; ?>-prev'></div>Back to all projects</a>
+		<a class='link' href='<?php echo site_url(); ?>/our-work#cs-title'><div class='arrow-link-<?php echo $page_color; ?>-prev'></div>Back to all projects</a>
 		<h2>More Projects</h2>
 	</div>
 	<div class='more-case-studies-container'>

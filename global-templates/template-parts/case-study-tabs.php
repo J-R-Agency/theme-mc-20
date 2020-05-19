@@ -11,7 +11,7 @@ $theme_path = get_template_directory_uri();
 ?>
 
 <div class='case-studies-header'>
-	<h2>More Inspiring Stories</h2>
+	<h2 id='cs-title'>More Inspiring Stories</h2>
 	<?php
 		echo '<ul class="nav nav-tabs cs-categories-list" role="tablist">
 	    		<li>
