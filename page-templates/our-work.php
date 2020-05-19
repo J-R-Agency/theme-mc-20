@@ -70,7 +70,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		    
 		    	</div>
 		    	<div class='cs-pagination pagination-large'>
-			        <ul class='pager-all'></ul>
+			        <ul class='pager-all' curr='0'></ul>
 			    </div>
 		    </div>";
 		    
@@ -78,7 +78,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		        echo "<div class='tab-pane' id='". $category->slug."'>
 		        		<div>
 		        		<div class='cs-pagination pagination-large pagination-".$category->slug."'>
-			        		<ul class='pager-".$category->slug."'></ul>
+			        		<ul class='pager-".$category->slug."' curr='0'></ul>
 						</div>
 		        </div>
 		        			<div class='case-studies-container csc-".$category->slug."'>
