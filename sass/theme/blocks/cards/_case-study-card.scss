@@ -1,28 +1,10 @@
-.case-studies-container {
-	$cs-thumb-width-desktop: 300px;
-	$cs-thumb-width-mobile: 280px;
-	
-	$cs-thumb-height-desktop: 200px;
-	$cs-thumb-height-mobile: 180px;
-	
-	$cs-thumb-margin-desktop: 0 1rem;
-	$cs-thumb-margin-mobile: 1rem 0;
-	
-	&.more {
-		$cs-thumb-width-desktop: 450px;
-		
-		$cs-thumb-height-desktop: 300px;
-		
-		$cs-thumb-margin-desktop: 0 1rem;
-		$cs-thumb-margin-mobile: 1rem 0;		
-	}
-	
+$cs-thumb-margin-desktop: 0 1rem;
+$cs-thumb-margin-mobile: 1rem 0;
+
+@mixin case-studies-container {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	@include respond-to('md') {
-		flex-direction: row;
-	}
 	a {
 		margin: 1rem 0;
 		@include respond-to('md') {
@@ -32,44 +14,106 @@
 			margin: 1rem 1rem 1rem 0;
 		}
 	}
+	@include respond-to('md') {
+		flex-direction: row;
+	}
+}
+
+@mixin cs-thumb-wrapper {
+	background-size: cover;
+	background-position: center;
+}
+
+@mixin cs-thumb-filter {
+	position: absolute;
+	padding: 1rem;
+	background-image: linear-gradient(to right bottom,rgba(255,255,255,1),rgba(150,150,150,0), rgba(255,255,255,.1));
+	color: $navy;
+	&:hover {
+		background-color: $pink;
+		color: white;
+		background-image: url('../assets/graphics/cs-thumb-arrow.svg');
+		background-size: 50%;
+		background-repeat: no-repeat;
+		background-position: center 75%;
+	}
+	
+	.separator:last-of-type {
+		display: none; 
+	}	
+}
+
+.case-studies-container {
+	$cs-thumb-width-desktop: 300px;
+	$cs-thumb-width-mobile: 280px;
+	
+	$cs-thumb-height-desktop: 200px;
+	$cs-thumb-height-mobile: 180px;
+	
+	@include case-studies-container;
 	
 	.cs-thumb-wrapper { 
 		width: $cs-thumb-width-mobile;
 		height: $cs-thumb-height-mobile;
-		background-size: cover;
-		background-position: center;
+		@include cs-thumb-wrapper;
+		
 		@include respond-to('lg') {
 			width: $cs-thumb-width-desktop;
 			height: $cs-thumb-height-desktop;		
-		}
+		}			
+		
 	}
 	
 	.cs-thumb-filter {
 		width: $cs-thumb-width-mobile;
 		height: $cs-thumb-height-mobile;
-		position: absolute;
-		padding: 1rem;
-		background-image: linear-gradient(to right bottom,rgba(255,255,255,1),rgba(150,150,150,0), rgba(255,255,255,.1));
-		color: $navy;
+		
+		@include cs-thumb-filter;
 		
 		@include respond-to('lg') {
 			width: $cs-thumb-width-desktop;
 			height: $cs-thumb-height-desktop;		
 		}
-		
-		&:hover {
-			background-color: $pink;
-			color: white;
-			background-image: url('../assets/graphics/cs-thumb-arrow.svg');
-			background-size: 50%;
-			background-repeat: no-repeat;
-			background-position: center 75%;
-		}
-		
-		.separator:last-of-type {
-			display: none;
-		}
 	}	
+	
+}
+
+.more-case-studies-container {
+	$mcs-thumb-width-desktop: 400px;
+	$mcs-thumb-width-mobile: 300px;
+	
+	$mcs-thumb-height-desktop: 250px;
+	$mcs-thumb-height-mobile: 180px;
+	
+	$mcs-thumb-margin-desktop: 0 1rem;
+	$mcs-thumb-margin-mobile: 1rem 0;
+	
+	@include case-studies-container;
+	a {
+	.cs-thumb-wrapper { 
+		width: $mcs-thumb-width-mobile;
+		height: $mcs-thumb-height-mobile;
+		@include cs-thumb-wrapper;
+		
+		@include respond-to('lg') {
+			width: $mcs-thumb-width-desktop;
+			height: $mcs-thumb-height-desktop;		
+		}			
+	}
+	
+	.cs-thumb-filter {
+		width: $mcs-thumb-width-mobile;
+		height: $mcs-thumb-height-mobile;
+		
+		@include cs-thumb-filter;
+		
+		@include respond-to('lg') {
+			width: $mcs-thumb-width-desktop;
+			height: $mcs-thumb-height-desktop;		
+		}
+	}			
+	}
+
 	
 }
 
