@@ -31,46 +31,20 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <!-- CASE STUDIES -->
 <section class="generic bg-white">
-	<div class='case-studies-header'>
-		<h2>More Inspiring Stories</h2>
-		<?php
-			echo '<ul class="nav nav-tabs cs-categories-list" role="tablist">
-		    		<li>
-		                <a class="active" href="#all" role="tab" data-toggle="tab">All</a>
-		            </li>
-		    
-		    ';
-		    $args = array(
-		        'orderby' => 'name',
-		        'order' => 'ASC'
-		    );
-		    $categories = get_categories($args);
-		    foreach($categories as $category) { 
-		        echo 
-		            '<li>
-		                <a href="#'.$category->slug.'" data-toggle="tab">    
-		                    '.$category->name.'
-		                </a>
-		            </li>';
-		    }
-		    echo '</ul>';
-		?>
-	</div>
+	<?php include_once (get_template_directory() . '/global-templates/template-parts/case-study-tabs.php'); ?>
 	<div class='case-studies-container'>		
 		<?php
-		    
-		
 		    echo '<div class="tab-content">';
 		    
 		    echo "<div class='tab-pane active' id='all'>
-		    		<div class='case-studies-container'>
+		    		<div class='case-studies-container all'>
 		    ";
 		    
 		        $pageSlug = get_page_by_path( 'our-work' );
 								
 				$args = array(
 				    'post_type'      => 'page', //write slug of post type
-				    'posts_per_page' => 6,
+				    'posts_per_page' => -1,
 				    'post_parent'    => $pageSlug->ID, //place here id of your parent page
 				    'order'          => 'DESC',
 				    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 0)
@@ -88,21 +62,33 @@ include( locate_template( 'header.php', false, false ) );  ?>
 						include (get_template_directory().'/global-templates/template-parts/case-study-card.php');	
 					
 					endwhile;
+					
 				endif; 
-				wp_reset_query();	
+				wp_reset_query();
 		        
-		    echo "</div>
+		    echo "
+		    
+		    	</div>
+		    	<div class='cs-pagination pagination-large'>
+			        <ul class='pager-all'></ul>
+			    </div>
 		    </div>";
 		    
 		    foreach($categories as $category) { 
 		        echo "<div class='tab-pane' id='". $category->slug."'>
-		        		<div class='case-studies-container'>
+		        		<div>
+		        		<div class='cs-pagination pagination-large pagination-".$category->slug."'>
+			        		<ul class='pager-".$category->slug."'></ul>
+						</div>
+		        </div>
+		        			<div class='case-studies-container csc-".$category->slug."'>
 		        ";
+		        
 				$pageSlug = get_page_by_path( 'our-work' );
 								
 				$args = array(
 				    'post_type'      => 'page', //write slug of post type
-				    'posts_per_page' => 6,
+				    'posts_per_page' => -1,
 				    'post_parent'    => $pageSlug->ID, //place here id of your parent page
 				    'order'          => 'DESC',
 				    'category_name' => $category->slug,
@@ -119,23 +105,22 @@ include( locate_template( 'header.php', false, false ) );  ?>
 						$categories = get_the_category();
 						
 						include (get_template_directory().'/global-templates/template-parts/case-study-card.php');	
-					
+						
 					endwhile;
-				endif; 
+				endif;
+				
+				echo "</div>"; // End csc
+				
+				echo "";
+				
 				wp_reset_query();	
 				
-		        echo '</div>
-		        </div>';
-		    } 
-		    echo '</div>';
+		        
+		        echo "</div>"; // End container
+		    }
+		    
+		    echo "</div>"; // End tab pane
 		?>		
-	</div>
-	
-	<!-- Pagination -->
-	<div class="row">
-		<div class="col-12">
-			<?php understrap_pagination(); ?>
-		</div>
 	</div>
 	
 </section>

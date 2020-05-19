@@ -153,3 +153,35 @@
 		}
 	}
 }
+
+.tab-content {
+	width: 100%;
+}
+
+.cs-pagination {
+	background-color: $light-grey;
+	padding: 1rem 0;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		li {
+			a {
+				color: $navy;
+				padding: 1rem;
+				font-weight: bold;
+				margin: 0;
+				&:hover, &.activated {
+					background-image:url('../assets/graphics/pagination-circle.svg');
+					background-size: contain;
+					text-decoration: none;
+					background-repeat: no-repeat;
+					background-position: center;
+					padding: 1rem;
+				}
+			}
+		}
+	}
+}
