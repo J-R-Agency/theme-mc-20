@@ -75,4 +75,6 @@ include( locate_template( 'header.php', false, false ) );  ?>
 ?>
 </section>
 
+<?php include (get_template_directory().'/global-templates/template-parts/more-projects.php'); ?>
+
 <?php include( locate_template( 'footer.php', false, false ) ); ?>

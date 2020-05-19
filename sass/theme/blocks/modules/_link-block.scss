@@ -19,6 +19,11 @@
 	
 }
 
+.link {
+	display: flex;
+	align-items: center;
+}
+
 @mixin arrow-link {
 	height: 20px;
 	width: 30px;
@@ -41,6 +46,12 @@
 .arrow-link-green {
 	@include arrow-link;
 	background-image: url('../assets/graphics/arrow-link-green.svg');
+	&-prev {
+		@include arrow-link;
+		margin: 0 1rem 0 0;
+		background-image: url('../assets/graphics/arrow-link-green.svg');
+		transform:scaleX(-1);
+	}
 }
 .arrow-link-yellow {
 	@include arrow-link;
