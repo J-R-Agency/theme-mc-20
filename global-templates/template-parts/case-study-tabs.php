@@ -15,7 +15,7 @@ $theme_path = get_template_directory_uri();
 	<?php
 		echo '<ul class="nav nav-tabs cs-categories-list" role="tablist">
 	    		<li>
-	                <a id="tab-all" class="active" href="#all" role="tab" data-toggle="tab">All</a>
+	                <a class="tab" id="tab-all" class="active" href="#all" role="tab" data-toggle="tab">All</a>
 	            </li>
 	    
 	    ';

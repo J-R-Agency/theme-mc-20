@@ -3,7 +3,7 @@
 		function changePage(listElement, pager) {
 			//var listElement = $('.all');
 			//var pager = '.pager-all';
-			var perPage = 2; 
+			var perPage = 3; 
 			var numItems = listElement.children().size();
 			var numPages = Math.ceil(numItems/perPage);
 							
@@ -15,10 +15,15 @@
 			  curr++;
 			}
 			
-			$("<span class='prev-btn'>Prev</span>").prependTo(pager);
-			$("<span class='next-btn'>Next</span>").appendTo(pager);
+			/*$("<span class='prev-btn'>Prev</span>").prependTo(pager);
+			$("<span class='next-btn'>Next</span>").appendTo(pager);*/
 			
 			$(pager + ' .page_link:first').addClass('active');
+			
+			/*$(".tab").click(function(){
+				$('.page_link').removeClass('active');
+				$(pager + ' .page_link:first').addClass('active');
+			});*/
 			
 			listElement.children().css('display', 'none');
 			listElement.children().slice(0, perPage).css('display', 'block');
@@ -26,11 +31,11 @@
 			$(pager + ' li a').click(function(){
 			  var clickedPage = $(this).html().valueOf() - 1;
 			  goTo(clickedPage,perPage);
-			  $('.page_link').removeClass('activated');
-			  $(this).addClass('activated');
+			  $('.page_link').removeClass('active');
+			  $(this).addClass('active');
 			});
 			
-			$(pager + ' .prev-btn').click(function() {
+			/*$(pager + ' .prev-btn').click(function() {
 				previous();
 				
 			});
@@ -42,7 +47,7 @@
 			
 			function previous(){
 			  console.log ("Previous");
-			  var goToPage = parseInt($(pager).attr("curr")) - 1;
+			  var goToPage = parseInt($(pager).data("curr")) - 1;
 			  if($('.active').prev('.page_link').length==true){
 			    goTo(goToPage);
 			  }
@@ -50,11 +55,11 @@
 			
 			function next(){
 				console.log("Next");
-			  goToPage = parseInt($(pager).attr("curr")) + 1;
-			  if($('.active_page').next('.page_link').length==true){
+			  var goToPage = parseInt($(pager).data("curr")) + 1;
+			  if($('.active').next('.page_link').length==true){
 			    goTo(goToPage);
 			  }
-			}
+			}*/
 			
 			function goTo(page){
 			  var startAt = page * perPage,

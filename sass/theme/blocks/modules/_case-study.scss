@@ -173,7 +173,7 @@
 				padding: 1rem;
 				font-weight: bold;
 				margin: 0;
-				&:hover, &.activated {
+				&:hover, &.active {
 					background-image:url('../assets/graphics/pagination-circle.svg');
 					background-size: contain;
 					text-decoration: none;
