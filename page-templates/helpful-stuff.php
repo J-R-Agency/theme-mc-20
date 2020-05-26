@@ -60,7 +60,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		        
 		        $args = array(
 				    'post_type'      => 'post', //write slug of post type
-				    'posts_per_page' => -1,
+				    'posts_per_page' => 2,
 				    'order'          => 'DESC',
 				    'category_name' => $category->slug,
 				 );
@@ -74,7 +74,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 						$card_color = 'light-grey';
 						$categories = get_the_category();
 						
-						include (get_template_directory().'/global-templates/template-parts/case-study-card.php');	
+						include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
 						
 					endwhile;
 				endif;
