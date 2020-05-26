@@ -21,6 +21,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <!-- Blog -->
 <section class='generic bg-white'>
+	<h2 style="text-align: center; padding-bottom: 2rem;">Tasty Blogging Things</h2>
 	<?php
 					
 		$args = array(
