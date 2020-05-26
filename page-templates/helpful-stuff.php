@@ -17,6 +17,7 @@ $header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
 
+
 <!-- BLOG POSTS -->
 <section class="generic bg-white">
 	<?php include_once (get_template_directory() . '/global-templates/template-parts/blog-tabs.php'); ?>
@@ -53,7 +54,14 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		    echo "</div>
 		    </div>";
 		    
-		    foreach($categories as $category) { 
+		    
+		    $args = array(
+		        'orderby' => 'name',
+		        'order' => 'ASC'
+		    );
+		    $categories = get_categories($args);
+		    
+		    foreach($categories as $category) {
 		        echo "<div class='tab-pane' id='". $category->slug."'>
 		        		<div class='blog-posts-container bpc-".$category->slug."'>
 		        ";

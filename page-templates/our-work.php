@@ -77,11 +77,11 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		    foreach($categories as $category) { 
 		        echo "<div class='tab-pane' id='". $category->slug."'>
 		        		<div>
-		        		<div class='cs-pagination pagination-large pagination-".$category->slug."'>
-			        		<ul class='pager-".$category->slug."' curr='0'></ul>
+			        		<div class='cs-pagination pagination-large pagination-".$category->slug."'>
+				        		<ul class='pager-".$category->slug."' curr='0'></ul>
+							</div>
 						</div>
-		        </div>
-		        			<div class='case-studies-container csc-".$category->slug."'>
+		        		<div class='case-studies-container csc-".$category->slug."'>
 		        ";
 		        
 				$pageSlug = get_page_by_path( 'our-work' );
@@ -110,8 +110,6 @@ include( locate_template( 'header.php', false, false ) );  ?>
 				endif;
 				
 				echo "</div>"; // End csc
-				
-				echo "";
 				
 				wp_reset_query();	
 				
