@@ -119,7 +119,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</div>
 					
 					<div class='menu-container-right'>
-						<a href="#">
+						<a href="<?php echo site_url();?>/helpful-stuff">
 							<h3>Helpful Stuff</h3>
 							<p>Read our latest guides</p>
 							<img class='helpful-stuff-arrow'

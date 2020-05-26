@@ -11,6 +11,8 @@ $theme_path = get_template_directory_uri();
 $category = get_the_category();
 $cls = '';
 
+$featured_image_position = get_field('featured_image_position');
+
 if ( ! empty( $categories ) ) {
   foreach ( $categories as $cat ) {
     $cls .= $cat->slug . ' ';

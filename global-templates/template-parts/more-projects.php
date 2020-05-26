@@ -1,6 +1,6 @@
 <?php
 /**
- * Case study card
+ * More Projects
  *
  * @package understrap
  */

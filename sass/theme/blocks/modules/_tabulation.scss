@@ -1,0 +1,141 @@
+/*-- BLOG --*/
+
+@mixin blog-container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	a {
+		margin: 1rem 0;
+		@include respond-to('md') {
+			margin: 0 1rem 1rem 0;	
+		}
+		@include respond-to('lg') {
+			margin: 1rem 1rem 1rem 0;
+		}
+	}
+	@include respond-to('md') {
+		flex-direction: row;
+	}
+}
+
+.active > div > .blog-card-container {
+	display: flex !important;
+}
+
+.blog-container {
+	$cs-thumb-width-desktop: 300px;
+	$cs-thumb-width-mobile: 280px;
+	
+	$cs-thumb-height-desktop: 200px;
+	$cs-thumb-height-mobile: 180px;
+	
+	@include blog-container;
+}
+
+.blog-posts-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+	flex-direction: column;
+	@include respond-to('lg') {
+		flex-direction: row;
+	}
+	.nav-tabs {
+		border: none;
+	}
+	.tab-uncategorized, #tab-masterclasses, #tab-female-founders {
+		display: none;
+		visbility: hidden;
+	}
+}
+
+.bp-categories-list {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	padding: 0;
+	li {
+		padding: 0 1rem 1rem 0;
+		@include respond-to('lg') {
+			padding: 0 1rem;
+		}
+		a {
+			color: $navy;
+			&.active, &:hover, &:after {
+				text-decoration: underline;
+				text-decoration-thickness: 4px;
+				text-decoration-color: $pink;
+				text-decoration-skip-ink: none;
+			}
+		}
+	}
+}
+
+
+/*-- CASE STUDIES --*/
+
+.case-studies-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+	flex-direction: column;
+	@include respond-to('lg') {
+		flex-direction: row;
+	}
+	.nav-tabs {
+		border: none;
+	}
+	.tab-uncategorized {
+		display: none;
+	}
+}
+
+.cs-categories-list {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	padding: 0;
+	li {
+		padding: 0 1rem 1rem 0;
+		@include respond-to('lg') {
+			padding: 0 1rem;
+		}
+		a {
+			color: $navy;
+			&.active, &:hover, &:after {
+				text-decoration: underline;
+				text-decoration-thickness: 4px;
+				text-decoration-color: $pink;
+				text-decoration-skip-ink: none;
+			}
+		}
+	}
+}
+
+.cs-pagination {
+	background-color: $light-grey;
+	padding: 1rem 0;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		li {
+			a {
+				color: $navy;
+				padding: 1rem;
+				font-weight: bold;
+				margin: 0;
+				&:hover, &.active {
+					background-image:url('../assets/graphics/pagination-circle.svg');
+					background-size: contain;
+					text-decoration: none;
+					background-repeat: no-repeat;
+					background-position: center;
+					padding: 1rem;
+				}
+			}
+		}
+	}
+}
