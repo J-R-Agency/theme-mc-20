@@ -58,3 +58,12 @@ function add_taxonomies_to_pages() {
  register_taxonomy_for_object_type( 'category', 'page' );
  }
 add_action( 'init', 'add_taxonomies_to_pages' );
+
+//Add read time
+function prefix_estimated_reading_time( $content = '', $wpm = 300 ) {
+	$clean_content = strip_shortcodes( $content );
+	$clean_content = strip_tags( $clean_content );
+	$word_count = str_word_count( $clean_content );
+	$time = ceil( $word_count / $wpm );
+	return $time;
+}
