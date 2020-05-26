@@ -60,7 +60,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	@include respond-to ('md') {
+	@include respond-to ('lg') {
 		padding: 5rem 10rem 1rem 10rem;
 		display: block;
 	}

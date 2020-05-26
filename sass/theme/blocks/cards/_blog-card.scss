@@ -1,0 +1,144 @@
+// Ribbon
+@mixin ribbon( $ribbon-color:black, $size-left:1em, $size-right:1em) {
+    position: relative;
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+    }
+    &:before {
+        border-bottom: $size-left solid $ribbon-color;
+        top: -$size-left;
+        border-left: $size-left solid transparent;
+        left: 0;
+    }
+    &:after {
+		width: 0;
+		height: 0;
+		border-top: 20px solid transparent;
+		border-left: 40px solid $ribbon-color;
+		border-bottom: 20px solid transparent;
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+		position: relative;
+		top: -3em;
+		left: 5.3em;
+		transform: scaleX(.5);
+    }
+}
+
+
+.ribbon-container {
+    display: inline-block;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    padding: 0.5rem;
+    background: $pink;
+    left: -1em;
+	bottom: -2em;
+	
+	&.content {
+		background: $green;
+	}
+	
+	&.experience {
+		background: $pink;
+	}
+	
+	&.female-founders {
+		background: $cyan;
+	}
+	
+	&.identity {
+		background: $yellow;
+	}
+	
+}
+
+.blog-category {
+	@include ribbon($pink, 1em, 0);
+	 
+	&.content {
+		@include ribbon($green, 1em, 0);
+	}
+	
+	&.experience {
+		@include ribbon($pink, 1em, 0);
+	}
+	
+	&.female-founders {
+		@include ribbon($cyan, 1em, 0);
+	}
+	
+	&.identity {
+		@include ribbon($yellow, 1em, 0);
+	}
+	 
+	ul {
+		list-style: none;
+		padding: 0;
+		li {
+			a {
+				color: $navy;
+				@include _dm-sans-bold
+			}
+		}
+	}
+	
+}
+
+
+.blog-card-container {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem 0;
+	flex-wrap: wrap;
+	height: auto;
+	color: $navy;
+	
+	@include respond-to ('lg') {
+		flex-direction: row;
+		height: 300px;
+	}
+		
+	&.light-grey {
+		background-color: $light-grey;
+	}
+}
+
+.blog-card-left {
+	flex-basis: 100%;
+	@include respond-to ('lg') {
+		flex-basis: 60%;
+	}
+}
+
+.blog-card-right {
+	flex-basis: 100%;
+	@include respond-to ('lg') {
+		flex-basis: 40%;
+	}
+	img {
+		height: 100%;
+		object-fit: cover;			
+	}
+}
+
+.blog-card-info {
+	padding: 0 2rem 3rem 2rem;
+	@include respond-to ('lg') {
+		padding: 0 0 0 2rem;
+	}
+
+	.blog-title {
+		color: $navy;
+		max-height: 80px;
+		overflow: hidden;
+		display: inline-block;
+	}
+	.blog-author {
+		padding: 0 0 1rem 0;
+	}			
+}

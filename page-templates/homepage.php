@@ -19,4 +19,33 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
 
+<!-- Blog -->
+<section class='generic bg-white'>
+	<?php
+					
+		$args = array(
+		    'post_type'      => 'post', //write slug of post type
+		    'posts_per_page' => 3,
+		    'order'          => 'DESC',
+		 );
+		 
+		 $query = new WP_Query($args);
+		 
+		if ( $query->have_posts() ) :
+		 
+		    while ( $query->have_posts() ) : $query->the_post();
+			 	
+			 	$card_color = 'light-grey';
+				$categories = get_the_category();
+				
+				include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
+			
+			endwhile;
+		endif; 
+		wp_reset_query();	
+				
+	?>	
+</section>
+		
+
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
