@@ -47,6 +47,10 @@ include( locate_template( 'header.php', false, false ) );  ?>
 				
 	?>	
 </section>
+
+<section class='link-block bg-light-grey'>
+	<a href='<?php echo site_url();?>/helpful-stuff'>Take me to more helpful stuff<div class='arrow-link-cyan'></div></a>
+</section>
 		
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
