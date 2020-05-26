@@ -38,13 +38,15 @@ if ( ! empty( $categories ) ) {
 	</div>
 	
 	<div class='blog-card-right'>
-		<?php if ( has_post_thumbnail() ) {
-	    		echo "<img src=\"" . get_the_post_thumbnail_url() . "\"
-	    				style='object-position:".$featured_image_position.";'>";
-			} else { 
-				echo "<img src='". get_template_directory_uri() ."/assets/images/blog-card-placeholder.jpg'>";
-			}
-		?>	
+		<a href="<?php the_permalink(); ?>">
+			<?php if ( has_post_thumbnail() ) {
+		    		echo "<img src=\"" . get_the_post_thumbnail_url() . "\"
+		    				style='object-position:".$featured_image_position.";'>";
+				} else { 
+					echo "<img src='". get_template_directory_uri() ."/assets/images/blog-card-placeholder.jpg'>";
+				}
+			?>
+		</a>
 	</div>				     
 	
 </div>
