@@ -188,6 +188,16 @@ include( locate_template( 'header.php', false, false ) );  ?>
 </section>
 
 
+<!-- FREE DOWNLOADS -->
+
+<section class='generic bg-white'>
+	<h2>Free <span class='underline-green-1'>Downloads</span></h2>
+	<p class='hs-subtitle'>Essential Digital Marketing Resources</p>
+	<div class='downloads-container'>
+		<?php include (get_template_directory().'/global-templates/template-parts/downloads-card.php'); ?>
+	</div>
+</section>
+
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
 
 <script>
