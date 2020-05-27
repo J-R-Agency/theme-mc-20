@@ -68,5 +68,4 @@ include( locate_template( 'header.php', false, false ) );
 	<a href='<?php echo site_url();?>/helpful-stuff'>Take me to more helpful stuff<div class='arrow-link-pink'></div></a>
 </section>
 
-<?php
-get_footer();
+<?php include( locate_template( 'footer.php', false, false ) ); ?>
