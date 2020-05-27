@@ -40,7 +40,7 @@ include( locate_template( 'header.php', false, false ) );
 			
 		$args = array(
 		    'post_type'      => 'post', //write slug of post type
-		    'posts_per_page' => 3,
+		    'posts_per_page' => 2,
 		    'order'          => 'DESC',
 		    'post__not_in' => array($currentID)
 		 );
