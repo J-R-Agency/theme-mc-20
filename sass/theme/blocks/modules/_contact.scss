@@ -1,0 +1,33 @@
+.contact-header {
+	border-bottom: 1px solid gray;
+	padding-bottom: 1rem;
+}
+
+.contact-info {
+	margin: 2rem 0;
+	a {
+		color: $navy;
+	}
+}
+
+.contact-sm-icons {
+	a {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		margin-right: 0.75rem;
+	}
+}
+
+.contact-map {
+	line-height: 0;
+}
+
+.users-container {
+	display: flex;
+	justify-content: space-between;
+	.user-profile {
+		display: flex;
+		flex-direction: column;
+	}
+}
