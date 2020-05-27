@@ -35,14 +35,21 @@
 .blog-posts-header {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	flex-direction: column;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid gray;
+	
 	@include respond-to('lg') {
 		flex-direction: row;
 	}
 	.nav-tabs {
 		border: none;
 	}
+}
+
+.hs-subtitle {
+	margin-bottom: 2rem;
 }
 
 .bp-categories-list {

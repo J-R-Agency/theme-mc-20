@@ -11,7 +11,7 @@ $theme_path = get_template_directory_uri();
 ?>
 
 <div class='blog-posts-header'>
-	<h2 id='bp-title'>Helpful Stuff</h2>
+	<h2 id='bp-title'>Helpful <span class='circle-pink-1'>Stuff</span></h2>
 	<?php
 		echo '<ul class="nav nav-tabs bp-categories-list" role="tablist">
 	    		<li>

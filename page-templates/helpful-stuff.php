@@ -21,6 +21,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 <!-- BLOG POSTS -->
 <section class="generic bg-white">
 	<?php include_once (get_template_directory() . '/global-templates/template-parts/blog-tabs.php'); ?>
+	<p class='hs-subtitle'>Be the storyteller everyone listens to </p>
 	<div class='blog-posts-container'>		
 		<?php
 		    echo '<div class="tab-content">';
@@ -110,6 +111,80 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <section class='link-block bg-light-grey'>
 	<a href='<?php echo site_url();?>/helpful-stuff'>Read more blogs<div class='arrow-link-pink'></div></a>
+</section>
+
+<!-- MASTERCLASS SERIES -->
+<section class='generic bg-white'>
+	<h2>Masterclass <span class='circle-green-1'>Series</span></h2>
+	<p class='hs-subtitle'>Expert guides for non-experts</p>
+	
+	<div class='case-studies-container'>
+	<?php		
+		$args = array(
+		    'post_type'      => 'post', //write slug of post type
+		    'posts_per_page' => 3,
+		    'order'          => 'DESC',
+		    'category__in'   => $masterclasses
+		 );
+		 
+		$mquery = new WP_Query( $args );
+		 
+		if ( $mquery->have_posts() ) :
+		 
+		    while ( $mquery->have_posts() ) : $mquery->the_post();
+			 	
+				$mc_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+				$hover_color = 'green';
+				$categories = get_the_category();
+				
+				include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
+			
+			endwhile;
+		endif; 
+		wp_reset_query();						
+						
+	?>
+	</div>
+</section>
+<section class='link-block bg-light-grey'>
+	<a href='<?php echo site_url();?>/helpful-stuff'>Read more masterclasses<div class='arrow-link-green'></div></a>
+</section>
+
+<!-- FEMALE FOUNDERS -->
+<section class='generic bg-white'>
+	<h2>Meet our <span class='underline-cyan-2' style='padding-bottom: 15px;'>#Femalefounders</span></h2>
+	<p class='hs-subtitle'>Incredible businesses, organisations and projects run by women</p>
+	
+	<div class='case-studies-container'>
+	<?php		
+		$args = array(
+		    'post_type'      => 'post', //write slug of post type
+		    'posts_per_page' => 3,
+		    'order'          => 'DESC',
+		    'category__in'   => $female_founders
+		 );
+		 
+		$mquery = new WP_Query( $args );
+		 
+		if ( $mquery->have_posts() ) :
+		 
+		    while ( $mquery->have_posts() ) : $mquery->the_post();
+			 	
+				$mc_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+				$hover_color = 'cyan';
+				$categories = get_the_category();
+				
+				include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
+			
+			endwhile;
+		endif; 
+		wp_reset_query();						
+						
+	?>
+	</div>
+</section>
+<section class='link-block bg-light-grey'>
+	<a href='<?php echo site_url();?>/helpful-stuff'>Meet more #femalefounders<div class='arrow-link-cyan'></div></a>
 </section>
 
 

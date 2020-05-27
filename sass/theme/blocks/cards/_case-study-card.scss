@@ -30,7 +30,6 @@ $cs-thumb-margin-mobile: 1rem 0;
 	background-image: linear-gradient(to right bottom,rgba(255,255,255,1),rgba(150,150,150,0), rgba(255,255,255,.1));
 	color: $navy;
 	&:hover {
-		background-color: $pink;
 		color: white;
 		background-image: url('../assets/graphics/cs-thumb-arrow.svg');
 		background-size: 50%;
@@ -73,6 +72,18 @@ $cs-thumb-margin-mobile: 1rem 0;
 		@include respond-to('lg') {
 			width: $cs-thumb-width-desktop;
 			height: $cs-thumb-height-desktop;		
+		}
+		
+		&.pink:hover {
+			background-color: $pink;
+		}
+		&.green:hover {
+			background-color: $green;
+			color: $navy;
+		}
+		&.cyan:hover {
+			background-color: $cyan;
+			color: $navy;
 		}
 	}	
 	
