@@ -19,7 +19,7 @@ $female_founder_description = get_field('female_founder_description');
 	<div class='cs-thumb-wrapper' style='background-image:url("<?php if ( has_post_thumbnail() ) {
 		    		echo get_the_post_thumbnail_url();
 				} else { 
-					echo get_template_directory_uri();
+					echo get_template_directory_uri()."/assets/images/blog-card-placeholder.jpg";
 				}
 			?>");'></div>						     
 </a> 
