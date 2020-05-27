@@ -1,0 +1,41 @@
+.understrap-pagination {
+	display: flex;
+	justify-content: center;
+}
+
+@mixin pagination-circle {
+	background-color: transparent;
+	background-image:url('../assets/graphics/pagination-circle.svg');
+	background-size: contain;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: $navy;
+	font-weight: bold;
+}
+
+.page-link {
+	color: $navy;
+	border: none;
+	font-weight: bold;
+	&:hover {
+		@include pagination-circle;
+	}
+}
+
+.page-item {
+	&.active {
+		.page-link {
+			@include pagination-circle;
+		}
+	}
+}
+
+.next, .prev {
+	&:hover {
+		background-image: none;
+	}
+	img {
+		height: 20px;
+	}
+}

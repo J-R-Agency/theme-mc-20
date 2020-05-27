@@ -37,7 +37,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 				    'post_type'      => 'post', //write slug of post type
 				    'posts_per_page' => 2,
 				    'order'          => 'DESC',
-				    'category__not_in' => $excluded_cats
+				    'category__not_in' => $excluded_cats,
 				 );
 				 
 				$query = new WP_Query( $args );
@@ -110,7 +110,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 </section>
 
 <section class='link-block bg-light-grey'>
-	<a href='<?php echo site_url();?>/helpful-stuff'>Read more blogs<div class='arrow-link-pink'></div></a>
+	<a href='<?php echo site_url();?>/archive'>Read more blogs<div class='arrow-link-pink'></div></a>
 </section>
 
 <!-- MASTERCLASS SERIES -->
@@ -147,7 +147,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	</div>
 </section>
 <section class='link-block bg-light-grey'>
-	<a href='<?php echo site_url();?>/helpful-stuff'>Read more masterclasses<div class='arrow-link-green'></div></a>
+	<a href='<?php echo site_url();?>/category/masterclasses'>Read more masterclasses<div class='arrow-link-green'></div></a>
 </section>
 
 <!-- FEMALE FOUNDERS -->
@@ -164,11 +164,11 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		    'category__in'   => $female_founders
 		 );
 		 
-		$mquery = new WP_Query( $args );
+		$ffquery = new WP_Query( $args );
 		 
-		if ( $mquery->have_posts() ) :
+		if ( $ffquery->have_posts() ) :
 		 
-		    while ( $mquery->have_posts() ) : $mquery->the_post();
+		    while ( $ffquery->have_posts() ) : $ffquery->the_post();
 			 	
 				$mc_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 				$hover_color = 'cyan';
@@ -184,7 +184,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	</div>
 </section>
 <section class='link-block bg-light-grey'>
-	<a href='<?php echo site_url();?>/helpful-stuff'>Meet more #femalefounders<div class='arrow-link-cyan'></div></a>
+	<a href='<?php echo site_url();?>/category/female-founders'>Meet more #femalefounders<div class='arrow-link-cyan'></div></a>
 </section>
 
 

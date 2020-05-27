@@ -50,8 +50,8 @@ if ( ! function_exists( 'understrap_pagination' ) ) {
 			array(
 				'mid_size'           => 2,
 				'prev_next'          => true,
-				'prev_text'          => __( '&laquo;', 'understrap' ),
-				'next_text'          => __( '&raquo;', 'understrap' ),
+				'prev_text'          => __( '<img src='.get_template_directory_uri().'/assets/graphics/pagination-previous.png>', 'understrap' ),
+				'next_text'          => __( '<img src='.get_template_directory_uri().'/assets/graphics/pagination-next.png>', 'understrap' ),
 				'type'               => 'array',
 				'current'            => max( 1, get_query_var( 'paged' ) ),
 				'screen_reader_text' => __( 'Posts navigation', 'understrap' ),

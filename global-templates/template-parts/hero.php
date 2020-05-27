@@ -48,6 +48,7 @@ $theme_path = get_template_directory_uri();
 							 { echo 'center'; }
 						else { echo $featured_image_position; } ?>">									
 		</div>
+	<?php elseif (is_category()):?>
 		
 	<?php else:?>	
 		<div class='hero-filter <?php the_field('hero_filter');?>'>
