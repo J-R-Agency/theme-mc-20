@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Service Template
+ * Template Name: Service Information Template
  *
  * Template for displaying a page just with the header and footer area and a "naked" content area in between.
  * Good for landingpages and other types of pages where you want to add a lot of custom markup.
@@ -12,12 +12,26 @@
 defined( 'ABSPATH' ) || exit;
 
 $bw = 'black';
-$page_color = 'pink';
+$page_color = 'cyan';
 $header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
 
+<?php 
+if ( have_posts() ) : 
+	echo "<section class='generic bg-slant service-content'>";
+    while ( have_posts() ) : the_post(); 
+        the_content();
+    endwhile; 
+    echo "</section>";
+endif; 
+?>
+
+<?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
+
 <section class='generic bg-light-grey'>
+	
+	<h2 style='display: flex; justify-content: center;'>Other Content Services</h2>
 	
 	<?php
 		
@@ -25,9 +39,10 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		
 	$args = array(
 	    'post_type'      => 'page', //write slug of post type
-	    'posts_per_page' => -1,
-	    'post_parent'    => $post->ID, //place here id of your parent page
-	    'order'          => 'ASC'
+	    'posts_per_page' => 4,
+	    'child_of' => $post->post_parent,
+		'exclude' => $post->ID,
+	    'order'          => 'DESC'
 	 );
 	 
 	$children = new WP_Query( $args );
@@ -39,7 +54,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		 	$page_icon = get_field('page_icon');
 		 	
 		 	echo "
-			 	<div class='icon-set-wrapper three-columns'>
+			 	<div class='icon-set-wrapper four-columns'>
 			 		<a href='",the_permalink(),"'>
 			 	";
 			 	if ($page_icon) {
@@ -60,7 +75,5 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	?>
 	
 </section>
-
-<?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
