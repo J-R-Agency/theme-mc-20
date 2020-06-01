@@ -141,7 +141,7 @@ if( have_rows('flexible_content_block') ):
 			$cta_image = get_sub_field('cta_image');
 			
 				echo "
-				<div class='cta-filter ".$cta_filter."'>";
+				<div class='cta-filter ".$cta_filter." ".$cta_style."'>";
 				
 				if ($cta_style == 'secondary'):
 					echo "<div class='cta-post-it'>";
@@ -157,7 +157,7 @@ if( have_rows('flexible_content_block') ):
 					 
 				echo "
 				</div>
-				<div class='cta-block' style='background-image:url(".$cta_image['url'].")'>
+				<div class='cta-block ".$cta_style."' style='background-image:url(".$cta_image['url'].")'>
 					
 				</div>
 				";
