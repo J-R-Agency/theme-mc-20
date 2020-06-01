@@ -76,5 +76,8 @@
 }
 
 .bg-slant {
-	 background-image: linear-gradient(176deg, white 25%, $light-grey calc(1% + 2px));
+	background-image: linear-gradient(176deg, white 12%, $light-grey calc(1% + 2px));
+	@include respond-to('md') {
+		background-image: linear-gradient(176deg, white 25%, $light-grey calc(1% + 2px));
+	}
 }
