@@ -22,3 +22,9 @@ h3 {
 	@include _dm-sans-bold;
 	font-size: 1.2rem;
 }
+
+h4 {
+	@include _dm-sans-regular;
+	font-size: 1.25rem;
+	margin-bottom: 1rem;
+}
