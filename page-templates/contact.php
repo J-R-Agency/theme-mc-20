@@ -11,6 +11,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+$theme_path = get_template_directory_uri();
 $bw = 'black';
 $page_color = 'cyan';
 $header_position = get_field('header_position');
@@ -66,20 +67,44 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	<div class='users-container'>
 		
 		<?php
-		$users = get_field("friendly_face");
-		if( $users ): ?>
-		    <?php foreach( $users as $user ):
-			    $user_id = 'user_'.$user['ID'];
-			    $position = get_field('user_position', $user_id);
-			    
-		    ?>
-		    	<div class='user-profile'>
-		            <img src="<?php echo esc_attr(get_avatar($user_id)); ?>" alt="author-avatar" />
-		            <p><?php echo $user['display_name']; ?></p>
-		            <p><?php echo $position; ?></p>
-	            </div>
-		    <?php endforeach; ?>
-		<?php endif; ?>
+		$friendly_face = get_field("friendly_face"); 
+		
+		if( have_rows('friendly_face') ):
+		   while( have_rows('friendly_face') ): the_row(); 
+		
+		        $ff_name = get_sub_field('ff_name');
+		        $ff_position = get_sub_field('ff_position');
+		        $ff_portrait = get_sub_field('ff_portrait');
+				$ff_social_media = get_sub_field('ff_social_media');
+					
+				echo "
+				<div class='ff-wrapper'>
+					<img class='team-portrait' src='".$ff_portrait['url']."' alt='".$ff_portrait['alt']."'>
+					<div class='ff-info'>
+						<p>".$ff_name."</p>
+						<p>".$ff_position."</p>";
+						
+						if( have_rows('ff_social_media') ):
+						
+							echo "<div class='ff-social-media'>";
+							while( have_rows('ff_social_media') ): the_row();
+							
+							$ffsm_type = get_sub_field('ffsm_type');
+							$ffsm_link = get_sub_field('ffsm_link');
+							
+							echo "<a href='".$ffsm_link['url']."' target='_blank'>
+										<img src='".$theme_path."/assets/social-media/".$ffsm_type."-cyan.png'>
+									</a>";
+							endwhile;
+							echo "</div>";
+						endif;
+					
+				echo "</div>
+				</div>";
+						
+			endwhile;
+		endif; ?>
+		
 		
 	</div>
 </section>
