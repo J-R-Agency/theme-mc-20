@@ -41,7 +41,7 @@ endif;
 	    'post_type'      => 'page', //write slug of post type
 	    'posts_per_page' => 4,
 	    'child_of' => $post->post_parent,
-		'exclude' => $post->ID,
+		'post__not_in' => array($currentID),
 	    'order'          => 'DESC'
 	 );
 	 
