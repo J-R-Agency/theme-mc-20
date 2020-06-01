@@ -59,12 +59,12 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <!-- CONTACT FORM -->
 <section class='slant-top bg-light-grey'>
-	Contact form coming soon
+	<?php echo do_shortcode("[contact-form-7 id='5' title='Contact Form']"); ?>
 </section>
 
 <section class='generic bg-navy'>
 	<h2>Friendly Faces</h2>
-	<div class='users-container'>
+	<div class='ff-container'>
 		
 		<?php
 		$friendly_face = get_field("friendly_face"); 
@@ -118,11 +118,20 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <script>
 	
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: {lat: -33, lng: 151},
-          disableDefaultUI: true
-        });
-      }
+	function initMap() {
+		var map = new google.maps.Map(document.getElementById('map'), {
+		  zoom: 4,
+		  center: {lat: -33, lng: 151},
+		  disableDefaultUI: true
+		});
+	}
+      
+	(function( $ ) {
+		$('.wpcf7-form-control-wrap').text($('.wpcf7-text').val());
+		$('.wpcf7-text').width($('.wpcf7-form-control-wrap').width());
+		}).on('input', function () {
+		$('.wpcf7-form-control-wrap').text($('.wpcf7-text').val());
+		$('.wpcf7-text').width($('.wpcf7-form-control-wrap').width());
+	} )( jQuery );
+	
 </script>

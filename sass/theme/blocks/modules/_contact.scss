@@ -23,20 +23,23 @@
 	line-height: 0;
 }
 
-.users-container {
+// FRIENDLY FACES
+
+.ff-container {
 	display: flex;
-	.user-profile {
-		display: flex;
-		flex-direction: column;
+	flex-direction: column;
+	@include respond-to('md') {
+		flex-direction: row;
 	}
 }
 
-/*-- FRIENDLY FACES --*/
-
 .ff-wrapper {
 	display: flex;
-	margin: 2rem 8rem 0 0;
+	margin: 2rem 0 0 0;
 	align-items: center;
+	@include respond-to('md') {
+		margin: 2rem 8rem 0 0;
+	}
 }
 
 .ff-info {
@@ -59,4 +62,65 @@
 		}
 	}
 	
+}
+
+// CONTACT FORM
+.the-form {
+	text-align: center;
+	p, .form-group, .wpcf7 .wpcf7-form p {
+		display: inline-block;
+		margin-bottom: 0;
+		font-size: 1.2rem;
+		.wpcf7-form-control-wrap {
+			display: inline-block;
+			width: 70%;
+			margin: 0.2rem;
+			@include respond-to ('md') {
+				width: 35%;
+			}
+			
+			&.your-name {
+				width: 30%;
+				@include respond-to ('md') {
+					width: 15%;
+				}
+			}
+			
+			&.your-location {
+				width: 30%;
+				@include respond-to ('md') {
+					width: 15%;
+				}
+			}			
+			
+			input {
+				border: 0;
+				margin: 0.2rem 0;
+				box-sizing: content-box;
+				padding: 0;
+				text-align: center;
+				color: #7e7e7e;
+			}
+		}		
+	}
+}
+
+.submit-the-form {
+	display: flex;
+	justify-content: center;
+}
+
+.wpcf7 input[type="submit"] {
+	background-color: $cyan;
+	color: $navy;
+	border: none;
+	width: auto;
+	font-weight: 600;
+	font-size: 0.8rem;
+}
+
+.wpcf7 input:hover[type="submit"] {
+	font-size: auto;
+	background-color: $navy;
+	color: white;
 }
