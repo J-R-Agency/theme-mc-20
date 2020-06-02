@@ -75,12 +75,14 @@ $desktop-hero-height: 100vh;
 		&.our-work {
 			background-image: url('../assets/graphics/title-our-work-pink.svg');
 		}
-		&.pink-highlight {
+		&.content {
 			background-image: url('../assets/graphics/title-content-pink.svg');
-			font-size: 1.5rem;
-			@include respond-to ('md') {
-				font-size: 2rem;
-			}
+		}
+		&.experience {
+			background-image: url('../assets/graphics/title-experience-pink.svg');
+		}
+		&.identity {
+			background-image: url('../assets/graphics/title-identity-pink.svg');
 		}
 	}
 }
