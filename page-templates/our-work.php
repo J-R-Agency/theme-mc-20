@@ -124,3 +124,10 @@ include( locate_template( 'header.php', false, false ) );  ?>
 </section>
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
+
+<script>
+	(function ($) {
+		$("#tab-masterclasses").closest('li').remove();
+		$("#tab-female-founders ").closest('li').remove();
+	})(jQuery);
+</script>
