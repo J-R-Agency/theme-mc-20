@@ -122,7 +122,18 @@ $cs-thumb-margin-mobile: 1rem 0;
 			width: $mcs-thumb-width-desktop;
 			height: $mcs-thumb-height-desktop;		
 		}
-	}			
+		
+		&.pink:hover {
+			background-color: $pink;
+		}
+		&.green:hover {
+			background-color: $green;
+			color: $navy;
+		}
+		&.cyan:hover {
+			background-color: $cyan;
+			color: $navy;
+		}		
 	}
 
 	
