@@ -420,10 +420,6 @@ if( have_rows('flexible_content_block') ):
 
             $bpb_title = get_sub_field('bpb_title');
 			$bpb_category = get_sub_field('bpb_category');
-			
-			echo "
-			<section class='generic bg-light-grey'>
-				<h2 style='text-align: center; padding-bottom: 2rem;'>".$bpb_title."</h2>";
 								
 				$args = array(
 				    'post_type'      => 'post', //write slug of post type
@@ -435,7 +431,9 @@ if( have_rows('flexible_content_block') ):
 				 $query = new WP_Query($args);
 				 
 				if ( $query->have_posts() ) :
-				 
+					echo "
+					<section class='generic bg-light-grey'>
+						<h2 style='text-align: center; padding-bottom: 2rem;'>".$bpb_title."</h2>";				 
 				    while ( $query->have_posts() ) : $query->the_post();
 					 	
 					 	$card_color = 'white';
@@ -444,10 +442,9 @@ if( have_rows('flexible_content_block') ):
 						include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
 					
 					endwhile;
+					echo "</section>";
 				endif; 
 				wp_reset_query();
-				
-			echo "</section>";		
 		
 		endif; // Final endif        
     // End loop.

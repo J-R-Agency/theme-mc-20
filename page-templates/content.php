@@ -16,8 +16,6 @@ $page_color = 'pink';
 $header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
-
-<section class='generic bg-light-grey'>
 	
 	<?php
 		
@@ -33,7 +31,9 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	$children = new WP_Query( $args );
 	 
 	if ( $children->have_posts() ) :
-	 	echo "<div class='icon-set-container'>";
+	 	echo "
+	 	<section class='generic bg-light-grey'>
+	 		<div class='icon-set-container'>";
 	    while ( $children->have_posts() ) : $children->the_post();
 		 	
 		 	$page_icon = get_field('page_icon');
@@ -53,13 +53,12 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		 	</div>";
 		
 		endwhile;
-		echo "</div>";
+		echo "</div>
+		</section>";
 	endif; 
 	wp_reset_query();	
 	
 	?>
-	
-</section>
 
 <?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
 
