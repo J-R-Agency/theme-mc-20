@@ -18,15 +18,13 @@ $mobile-cta-height: 400px;
 		margin-bottom: 1rem;
 		width: 100%;
 		@include respond-to('md') {
-			margin-bottom: 1rem;
 			width: 50%;
 		}
 	}
 	p {
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
 		width: 100%;
 		@include respond-to('md') {
-			margin-bottom: 5rem;
 			width: 50%;
 		}
 	}
