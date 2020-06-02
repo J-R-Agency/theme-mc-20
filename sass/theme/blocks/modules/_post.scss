@@ -42,7 +42,7 @@
 .wp-block-column {
 	ul {
 		padding: 0 1rem;
-		li:before {
+		li::marker {
 			color: gray;
 		}
 	}
