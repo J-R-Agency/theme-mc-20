@@ -31,7 +31,7 @@ endif;
 
 <section class='generic bg-light-grey'>
 	
-	<h2 style='display: flex; justify-content: center;'>Other Content Services</h2>
+	<h2 style='display: flex; justify-content: center;'>Other <?php $parent_title = get_the_title($post->post_parent); echo $parent_title; ?> Services</h2>
 	
 	<?php
 		
