@@ -36,7 +36,7 @@ $theme_path = get_template_directory_uri();
 		<div class='hero-filter small <?php the_field('hero_filter');?>'>
 			<h1>
 				<span class='underline-<?php echo $page_color; ?>-1' style='padding: 1.5rem 0;'>
-					<?php echo the_title(); ?>
+					<?php echo strip_tags($hero['hero_title'],'<span>'); ?>
 				</span>
 			</h1>
 			<p><?php echo strip_tags($hero['hero_subtitle'],'<span>'); ?></p>
