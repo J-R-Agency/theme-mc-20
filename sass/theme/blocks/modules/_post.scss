@@ -39,6 +39,15 @@
 	}
 }
 
+.wp-block-column {
+	ul {
+		padding: 0;
+		li:marker {
+			color: gray;
+		}
+	}
+}
+
 /*-- USER META --*/
 .entry-meta {
 	display: flex;
