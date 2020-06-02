@@ -28,7 +28,7 @@ $theme_path = get_template_directory_uri();
 						else { echo $featured_image_position; } ?>">									
 		</div>
 		<div class='hero-standfirst'>
-			<h1 class='hero-title <?php echo sanitize_title($title); ?>'><?php echo strip_tags($hero['hero_title'],'<span>'); ?></h1>
+			<h1 class='hero-title pink-highlight'><?php echo strip_tags($hero['hero_title'],'<span>'); ?></h1>
 			<h3><?php echo strip_tags($hero['hero_subtitle'],'<span>'); ?></h3>
 		</div>
 		
