@@ -16,11 +16,19 @@ $mobile-cta-height: 400px;
 	}
 	h1 {
 		margin-bottom: 1rem;
-		width: 50%;
+		width: 100%;
+		@include respond-to('md') {
+			margin-bottom: 1rem;
+			width: 50%;
+		}
 	}
 	p {
-		margin-bottom: 5rem;
-		width: 50%;
+		margin-bottom: 1rem;
+		width: 100%;
+		@include respond-to('md') {
+			margin-bottom: 5rem;
+			width: 50%;
+		}
 	}
 	&.none {
 		background: transparent;
