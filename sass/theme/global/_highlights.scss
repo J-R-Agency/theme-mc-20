@@ -17,7 +17,6 @@
 	background-size: contain;
 	background-position: bottom;
 	display: inline;
-	padding-bottom: 0.5rem;
 }
 
 .circle {
@@ -67,6 +66,7 @@
 	}
 	&-cyan-2 {
 		@include underline;
+		padding-bottom: 0.5rem;
 		background-image: url('../assets/graphics/underline-cyan-2.svg');	
 	}
 	
@@ -76,6 +76,7 @@
 	}
 	&-pink-2 {
 		@include underline;
+		padding-bottom: 0.5rem;
 		background-image: url('../assets/graphics/underline-pink-2.svg');	
 	}
 	
@@ -85,6 +86,7 @@
 	}
 	&-green-2 {
 		@include underline;
+		padding-bottom: 0.5rem;
 		background-image: url('../assets/graphics/underline-green-2.svg');	
 	}
 	
@@ -94,6 +96,7 @@
 	}
 	&-yellow-2 {
 		@include underline;
+		padding-bottom: 0.5rem;
 		background-image: url('../assets/graphics/underline-yellow-2.svg');	
 	}
 	
