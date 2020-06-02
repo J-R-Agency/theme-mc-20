@@ -137,30 +137,38 @@ if( have_rows('flexible_content_block') ):
             $cta_filter = get_sub_field('cta_filter');
             $cta_title = get_sub_field('cta_title');
             $cta_intro = get_sub_field('cta_intro');
+            $cta_link_type = get_sub_field('cta_link_type');
+            $cta_file = get_sub_field('cta_file');
             $cta_link = get_sub_field('cta_link');
 			$cta_image = get_sub_field('cta_image');
 			
-				echo "
-				<div class='cta-filter ".$cta_filter." ".$cta_style."'>";
+			echo "
+			<div class='cta-filter ".$cta_filter." ".$cta_style."'>";
+			
+			if ($cta_style == 'secondary'):
+				echo "<div class='cta-post-it'>";
+			endif;
+			
+			echo "<h1>".$cta_title."</h1>
+				 <p>".$cta_intro."</p>";
+				 
+			if ($cta_link_type == "link") {
+				echo "<div class='button-navy'><a href='".$cta_link['url']."' target='".$cta_link['target']."'>".$cta_link['title']."</a></div>";
+			} elseif ($cta_link_type == "file") {
+				echo "<div class='button-navy'><a href='".$cta_file['url']."' download>Tell me more</a></div>";
+			}
+			
+			
+			if ($cta_style == 'secondary'):
+				echo "</div>";
+			endif;
+				 
+			echo "
+			</div>
+			<div class='cta-block ".$cta_style."' style='background-image:url(".$cta_image['url'].")'>
 				
-				if ($cta_style == 'secondary'):
-					echo "<div class='cta-post-it'>";
-				endif;
-				
-				echo "<h1>".$cta_title."</h1>
-					 <p>".$cta_intro."</p>
-					 <div class='button-navy'><a href='".$cta_link['url']."' target='".$cta_link['target']."'>".$cta_link['title']."</a></div>";
-				
-				if ($cta_style == 'secondary'):
-					echo "</div>";
-				endif;
-					 
-				echo "
-				</div>
-				<div class='cta-block ".$cta_style."' style='background-image:url(".$cta_image['url'].")'>
-					
-				</div>
-				";
+			</div>
+			";
 
           // --------------------------- //
          // - CASE: CASE STUDIES BLOCK -//
