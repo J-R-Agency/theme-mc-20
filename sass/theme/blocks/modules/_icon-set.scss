@@ -16,7 +16,7 @@
 	}
 }
 
-.three-columns {
+.four-columns {
 	flex-basis: 100%;
 	@include respond-to ('md') {
 		flex-basis: 25%;
