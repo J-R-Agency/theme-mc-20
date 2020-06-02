@@ -36,11 +36,12 @@ endif;
 	<?php
 		
 	$currentID = get_the_ID();
+	$parentId = wp_get_post_parent_id( get_the_ID() );
 		
 	$args = array(
 	    'post_type'      => 'page', //write slug of post type
 	    'posts_per_page' => 4,
-	    'child_of' => $post->post_parent,
+	    'post_parent'    => $parentId,
 		'post__not_in' => array($currentID),
 	    'order'          => 'DESC'
 	 );
