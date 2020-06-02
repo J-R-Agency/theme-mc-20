@@ -16,6 +16,13 @@
 	}
 }
 
+.three-columns {
+	flex-basis: 100%;
+	@include respond-to ('md') {
+		flex-basis: 25%;
+	}
+}
+
 .five-columns {
 	flex-basis: 100%;
 	@include respond-to ('md') {
