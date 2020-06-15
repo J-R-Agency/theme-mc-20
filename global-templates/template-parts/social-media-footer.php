@@ -10,7 +10,7 @@ $theme_path = get_template_directory_uri();
 	        $social_media_link = get_sub_field('social_media_link', 'option');
 	    ?>
 					
-			<a href="<?php echo $social_media_link; ?>" target="<?php echo $social_media_link['target']; ?>">
+			<a href="<?php echo $social_media_link; ?>" target="_blank">
 				<img src="<?php echo $theme_path; ?>/assets/social-media/<?php echo $social_media_type; ?>-<?php echo $page_color; ?>.png">
 			</a>
 					
