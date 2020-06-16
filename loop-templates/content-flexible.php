@@ -374,7 +374,7 @@ if( have_rows('flexible_content_block') ):
 						echo "
 							<div class='carousel-item ".$activeState."'>
 								<img class='quote-icon' src='".$theme_path."/assets/graphics/left-quote-pink.svg'>
-								<h3>".$quote."</h3>
+								<h3 class='testimonial-quote'>".$quote."</h3>
 								<p>".$citation."</p>
 							</div>
 						";
