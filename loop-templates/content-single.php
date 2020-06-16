@@ -42,9 +42,11 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 	
+	<?php if(has_post_thumbnail()): ?>
 	<div class='post-hero'>
 		<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 	</div>
+	<?php endif; ?>
 	
 	<div class="entry-content">
 
