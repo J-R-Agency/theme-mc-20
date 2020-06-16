@@ -7,7 +7,11 @@
 }
 
 a {
+	color: $pink;
 	@include _dm-sans-regular;
+	&:hover {
+		color: $pink;
+	}
 }
 
 h1, h2 {
