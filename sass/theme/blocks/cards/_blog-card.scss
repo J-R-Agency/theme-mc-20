@@ -24,7 +24,7 @@
 		position: absolute;
 		float: right;
 		top: 0;
-		margin-left: -2px;
+		margin-left: -3px;
 		transform: scaleX(.5);
     }
 }
@@ -45,7 +45,6 @@
 	
 	&.experience {
 		background: $pink;
-		padding: 0.5rem;
 	}
 	
 	&.female-founders {
