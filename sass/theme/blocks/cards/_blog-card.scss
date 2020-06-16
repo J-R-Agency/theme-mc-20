@@ -21,9 +21,10 @@
 		display: inline-block;
 		padding: 0;
 		margin: 0;
-		position: relative;
-		top: -3em;
-		left: 5.3em;
+		position: absolute;
+		float: right;
+		top: 0;
+		margin-left: -2px;
 		transform: scaleX(.5);
     }
 }
@@ -31,12 +32,12 @@
 .ribbon-container {
     display: inline-block;
     height: 40px;
-    width: 150px;
+    width: max-content;
     text-align: center;
     padding: 0.5rem;
     background: $pink;
     left: -1em;
-	bottom: -2em;
+	bottom: 1em;
 	
 	&.content {
 		background: $green;
@@ -75,16 +76,12 @@
 		@include ribbon($yellow, 1em, 0);
 	}
 	 
-	ul {
-		list-style: none;
-		padding: 0;
-		li {
-			a {
-				color: $navy;
-				@include _dm-sans-bold
-			}
-		}
+
+	a {
+		color: $navy;
+		@include _dm-sans-bold
 	}
+
 	
 }
 
@@ -111,7 +108,10 @@
 }
 
 .blog-card-left {
+	display: flex;
 	flex-basis: 100%;
+	flex-direction: column;
+	justify-content: center;
 	@include respond-to ('lg') {
 		flex-basis: 60%;
 	}

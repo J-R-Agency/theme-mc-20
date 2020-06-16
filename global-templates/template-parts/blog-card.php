@@ -8,23 +8,24 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 $theme_path = get_template_directory_uri();
-$category = get_the_category();
-$cls = '';
+$categories = get_the_category();
 
 $featured_image_position = get_field('featured_image_position');
 
-if ( ! empty( $categories ) ) {
-  foreach ( $categories as $cat ) {
-    $cls .= $cat->slug . ' ';
-  }
-}
 ?>
 
 <div class='blog-card-container <?php echo $card_color; ?>'>
 	
 	<div class='blog-card-left'>
-		<div class='ribbon-container blog-category <?php echo $cls; ?>'>
-			<?php the_category(); ?>
+		<div class='ribbon-container blog-category <?php echo $categories[0]->slug; ?>'>
+			<?php 
+			if ( ! empty( $categories ) ) {
+				echo 
+				'<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">'
+					. esc_html( $categories[0]->name ) .
+				'</a>';
+			}
+			?>
 		</div>
 		
 		<div class='blog-card-info'>

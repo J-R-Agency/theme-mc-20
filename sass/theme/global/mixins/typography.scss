@@ -18,6 +18,10 @@ p, li {
 	@include _dm-sans-regular;
 }
 
+p {
+	font-size: 1.2rem;
+}
+
 h3 {
 	@include _dm-sans-bold;
 	font-size: 1.2rem;
