@@ -425,7 +425,8 @@ if( have_rows('flexible_content_block') ):
          // ----- CASE: BLOG POSTS BLOCK ---- //
         // --------------------------------- //
         elseif( get_row_layout() == 'blog_posts_block' ):
-
+			
+			$bpb_background_color = get_sub_field('bpb_background_color');
             $bpb_title = get_sub_field('bpb_title');
 			$bpb_category = get_sub_field('bpb_category');
 								
@@ -440,11 +441,16 @@ if( have_rows('flexible_content_block') ):
 				 
 				if ( $query->have_posts() ) :
 					echo "
-					<section class='generic bg-light-grey'>
+					<section class='generic bg-".$bpb_background_color."'>
 						<h2 style='text-align: center; padding-bottom: 2rem;'>".$bpb_title."</h2>";				 
 				    while ( $query->have_posts() ) : $query->the_post();
+					 						 	
+					 	if ($bpb_background_color == "white") {
+						 	$card_color = 'light-grey';
+					 	} elseif ($bpb_background_color == "light-grey") {
+						 	$card_color = 'white';
+					 	}
 					 	
-					 	$card_color = 'white';
 						$categories = get_the_category();
 						
 						include (get_template_directory().'/global-templates/template-parts/blog-card.php');	

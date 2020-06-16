@@ -17,40 +17,6 @@ $header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
 
-<?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
-
-<!-- Blog -->
-<section class='generic bg-white'>
-	<h2 style="text-align: center; padding-bottom: 2rem;">Tasty Blogging Things</h2>
-	<?php
-					
-		$args = array(
-		    'post_type'      => 'post', //write slug of post type
-		    'posts_per_page' => 3,
-		    'order'          => 'DESC',
-		 );
-		 
-		 $query = new WP_Query($args);
-		 
-		if ( $query->have_posts() ) :
-		 
-		    while ( $query->have_posts() ) : $query->the_post();
-			 	
-			 	$card_color = 'light-grey';
-				$categories = get_the_category();
-				
-				include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
-			
-			endwhile;
-		endif; 
-		wp_reset_query();	
-				
-	?>	
-</section>
-
-<section class='link-block bg-light-grey'>
-	<a href='<?php echo site_url();?>/helpful-stuff'>Take me to more helpful stuff<div class='arrow-link-cyan'></div></a>
-</section>
-		
+<?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>		
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
