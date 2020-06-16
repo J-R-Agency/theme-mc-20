@@ -204,5 +204,6 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	(function ($) {
 		$("#tab-masterclasses").closest('li').remove();
 		$("#tab-female-founders ").closest('li').remove();
+		$("#tab-full-service ").closest('li').remove();
 	})(jQuery);
 </script>
