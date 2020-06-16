@@ -37,7 +37,7 @@ include( locate_template( 'header.php', false, false ) ); ?>
 			    while ( $mquery->have_posts() ) : $mquery->the_post();
 				 	
 					$mc_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-					$hover_color = 'cyan';
+					$hover_color = 'pink';
 					$categories = get_the_category();
 					
 					include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
