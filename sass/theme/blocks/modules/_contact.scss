@@ -89,42 +89,37 @@
 
 // CONTACT FORM
 .the-form {
-	text-align: center;
 	p, .form-group, .wpcf7 .wpcf7-form p {
 		display: inline-block;
 		margin-bottom: 0;
 		font-size: 1.2rem;
 		.wpcf7-form-control-wrap {
 			display: inline-block;
-			width: 70%;
-			margin: 0.2rem;
-			@include respond-to ('md') {
-				width: 35%;
-			}
-			
-			&.your-name {
-				width: 30%;
-				@include respond-to ('md') {
-					width: 15%;
-				}
-			}
-			
-			&.your-location {
-				width: 30%;
-				@include respond-to ('md') {
-					width: 15%;
-				}
-			}			
-			
+			margin: 0.2rem;	
 			input {
+				width: 100%;
 				border: 0;
 				margin: 0.2rem 0;
 				box-sizing: content-box;
 				padding: 0;
-				text-align: center;
+				text-align: left;
 				color: #7e7e7e;
+				text-indent: 1rem;
+			}
+			input[type=checkbox] {
+				width: auto;
 			}
 		}		
+	}
+}
+
+.wpcf7 textarea {
+	border: 0;
+}
+
+#your-consent {
+	span {
+		margin: 0;
 	}
 }
 
@@ -148,3 +143,5 @@
 	background-color: $navy;
 	color: white;
 }
+
+
