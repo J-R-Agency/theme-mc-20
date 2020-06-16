@@ -56,7 +56,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
         <?php if($csq_quote): ?>
 	        <section class='fcs-quote-block'>
 		        <div class='fcs-content'>
-			    	<h2><?php echo strip_tags($csq_quote); ?></h2>
+			    	<h3><?php echo strip_tags($csq_quote); ?></h3>
 					<p><?php echo strip_tags($csq_citation); ?></p>
 		        </div>
 	        </section>
