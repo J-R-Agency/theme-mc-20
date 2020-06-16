@@ -19,41 +19,39 @@ include( locate_template( 'header.php', false, false ) ); ?>
 <section class="generic bg-white">
 	<h1>Identity</h1>
 	
-	<?php
-    	$identity = get_cat_ID('identity');
-		$args = array(
-		    'post_type'      => 'post', //write slug of post type
-		    'posts_per_page' => 6,
-		    'order'          => 'DESC',
-		    'post_status'	 => 'publish',
-		    'category__in'   => $identity,
-		    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 0)
-		 );
-		 
-		$query = new WP_Query( $args );
-		$wp_query = $query;
-		 
-		if ( $query->have_posts() ) :
-		 
-		    while ( $query->have_posts() ) : $query->the_post();
-			 	
-				$mc_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-				$hover_color = 'yellow';
-				$categories = get_the_category();
-				
-				include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
-				
-				
-			endwhile;
+	<div class='case-studies-container'>
+		<?php
+			$identity = get_cat_ID('identity');
 			
-		endif; 
-		wp_reset_postdata();
-	?>
-	
+			$args = array(
+			    'post_type'      => 'post', //write slug of post type
+			    'posts_per_page' => 6,
+			    'order'          => 'DESC',
+			    'category__in'   => $identity
+			 );
+			 
+			$mquery = new WP_Query( $args );
+			 
+			if ( $mquery->have_posts() ) :
+			 
+			    while ( $mquery->have_posts() ) : $mquery->the_post();
+				 	
+					$mc_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+					$hover_color = 'cyan';
+					$categories = get_the_category();
+					
+					include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
+				
+				endwhile;
+			endif; 
+			wp_reset_postdata();						
+							
+		?>
+	</div>
 	<div class='understrap-pagination'>
 		<?php understrap_pagination(); ?>
 	</div>
-	
+			
 </section>
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
