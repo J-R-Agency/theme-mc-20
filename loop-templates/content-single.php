@@ -42,9 +42,18 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 	
-	<?php if(has_post_thumbnail()): ?>
-	<div class='post-hero'>
-		<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<?php
+		$thumb = get_the_post_thumbnail_url();
+		$featured_image_position = get_field('featured_image_position');
+	?>
+	<?php if (has_post_thumbnail()): ?>
+	<div class='post-hero' style="
+					background-image: url('<?php echo $thumb; ?>');
+					background-position:
+					<?php if (!$featured_image_position)
+							 { echo 'center'; }
+						else { echo $featured_image_position; } ?>
+					">
 	</div>
 	<?php endif; ?>
 	
