@@ -3,6 +3,10 @@
 	justify-content: center;
 }
 
+.pagination {
+	align-items: center;
+}
+
 @mixin pagination-circle {
 	background-color: transparent;
 	background-image:url('../assets/graphics/pagination-circle.svg');
