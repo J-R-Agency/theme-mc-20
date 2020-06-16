@@ -30,13 +30,7 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 			</div>
 			
-			<div class='jetpack-share'>
-				<?php
-					if ( function_exists( 'sharing_display' ) ) {
-					    sharing_display( '', true );
-					}	
-				?>
-			</div>
+			<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
 
 		</div><!-- .entry-meta -->
 
