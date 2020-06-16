@@ -48,6 +48,11 @@
 	}
 }
 
+.wp-block-image img {
+	object-fit: cover;
+	margin-bottom: 2rem;
+}
+
 /*-- HERO --*/
 .post-hero {
 	width: 100%;
