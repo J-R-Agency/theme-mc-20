@@ -13,45 +13,19 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header();
+$bw = 'black';
+$page_color = 'pink';
+$header_position = get_field('header_position');
 
-$container = get_theme_mod( 'understrap_container_type' );
+include( locate_template( 'header.php', false, false ) );  ?>
 
-?>
+<section class='generic bg-white'>
+	<?php
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'loop-templates/content', 'single' );
+	}
+	?>
+</section>
 
-<div class="wrapper" id="page-wrapper">
-
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
-
-		<div class="row">
-
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
-
-			<main class="site-main" id="main">
-
-				<?php
-				while ( have_posts() ) {
-					the_post();
-					get_template_part( 'loop-templates/content', 'page' );
-
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
-				}
-				?>
-
-			</main><!-- #main -->
-
-			<!-- Do the right sidebar check -->
-			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
-
-		</div><!-- .row -->
-
-	</div><!-- #content -->
-
-</div><!-- #page-wrapper -->
-
-<?php
-get_footer();
+<?php include( locate_template( 'footer.php', false, false ) ); ?>
