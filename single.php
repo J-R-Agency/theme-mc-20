@@ -31,9 +31,10 @@ include( locate_template( 'header.php', false, false ) );
 
 	</main><!-- #main -->
 </section>
+
 <!-- More Blog Posts -->
 <section class='generic bg-light-grey'>
-	<h2 style="text-align: center; padding-bottom: 2rem;">Tasty Blogging Things</h2>
+	<h2 style="text-align: center; padding-bottom: 2rem;">More From Our Blog</h2>
 	<?php
 		
 		$currentID = get_the_ID();
@@ -67,5 +68,12 @@ include( locate_template( 'header.php', false, false ) );
 <section class='link-block bg-white'>
 	<a href='<?php echo site_url();?>/helpful-stuff'>Take me to more helpful stuff<div class='arrow-link-pink'></div></a>
 </section>
+
+<script>
+	(function ($) {
+		$(".hero-filter").remove();
+		$(".hero").remove();
+	})(jQuery);
+</script>
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
