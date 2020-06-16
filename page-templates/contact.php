@@ -27,26 +27,26 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	<div class='container contact-info'>
 		<div class='row'>
 			
-			<div class='col-12 col-md-3'>
+			<div class='col-12 col-lg-3 contact-detail'>
 				<h3>Meet</h3>
 				<?php the_field('company_address','option');?>
 			</div>
 			
-			<div class='col-12 col-md-3'>
+			<div class='col-12 col-lg-3 contact-detail'>
 				<h3>Chat</h3>
 				<a href="tel: <?php the_field('company_phone','option');?>">
 					<?php the_field('company_phone','option');?>
 				</a>
 			</div>
 			
-			<div class='col-12 col-md-3'>
+			<div class='col-12 col-lg-3 contact-detail'>
 				<h3>Stalk</h3>
 				<div class='contact-sm-icons'>
 					<?php include(get_template_directory() . '/global-templates/template-parts/social-media.php'); ?>
 				</div>
 			</div>
 			
-			<div class='col-12 col-md-3'>
+			<div class='col-12 col-lg-3 contact-detail'>
 				<h3>Write</h3>
 				<a href='mailto:<?php the_field('company_email','option');?>'>
 					<?php the_field('company_email','option');?>
@@ -62,7 +62,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	<?php echo do_shortcode("[contact-form-7 id='5' title='Contact Form']"); ?>
 </section>
 
-<section class='generic bg-navy'>
+<section class='friendly-faces generic bg-navy'>
 	<h2>Friendly Faces</h2>
 	<div class='ff-container'>
 		
