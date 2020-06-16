@@ -42,19 +42,6 @@
 	}	
 }
 
-.cs-content-container {
-	.wp-block-columns {
-		@include global-padding;
-		margin: 0;
-	}
-	.wp-block-image {
-		margin: 0;
-		img {
-			width: 100%;
-		}
-	}
-}
-
 .case-studies-block {
 	padding: 3rem 1rem;
 	display: flex;
