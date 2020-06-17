@@ -227,6 +227,9 @@ button:focus {
 	background-position: center;
 	width: 130px;
 	a {
+		&:hover {
+			text-decoration: none;
+		}
 		img {
 			height: 40px;
 			width: 40px;
