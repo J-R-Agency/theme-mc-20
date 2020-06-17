@@ -20,7 +20,7 @@ h1, h2, h5, h6 {
 	@include _dm-sans-bold;
 }
 
-p, li {
+p, li:not(.menu-item) {
 	@include _dm-sans-regular;
 	font-size: 1.2rem;
 	line-height: $line-height;
