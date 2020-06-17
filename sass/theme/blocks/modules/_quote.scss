@@ -56,10 +56,15 @@ $fcs-desktop-height: 400px;
 /* -- POST QUOTE -- */
 .wp-block-quote {
 	text-align: center;
-	@include global-padding;
 	border-top: 1px solid $pink;
 	border-bottom: 1px solid $pink;
 	margin: 2rem 0;
+	padding: 1rem 1rem;
+	@include respond-to('md'){
+		padding: 2rem 0 3rem 0;
+	}
+	
+	
 	p {
 		color: $pink;
 		font-size: 2rem;

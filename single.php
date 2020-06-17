@@ -19,9 +19,7 @@ include( locate_template( 'header.php', false, false ) );
 <section class="generic bg-white">
 	
 	<main class="site-main" id="main">
-		
-		<a class='take-back' href="javascript:history.back()">Take me back</a>
-		
+
 		<?php
 		while ( have_posts() ) {
 			the_post();

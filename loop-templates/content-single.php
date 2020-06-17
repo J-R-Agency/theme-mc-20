@@ -12,7 +12,9 @@ defined( 'ABSPATH' ) || exit;
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
-
+		
+		<a class='take-back' href="javascript:history.back()">Take me back</a>
+		
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
@@ -40,6 +42,7 @@ defined( 'ABSPATH' ) || exit;
 		$thumb = get_the_post_thumbnail_url();
 		$featured_image_position = get_field('featured_image_position');
 	?>
+	
 	<?php if (has_post_thumbnail()): ?>
 	<div class='post-hero' style="
 					background-image: url('<?php echo $thumb; ?>');

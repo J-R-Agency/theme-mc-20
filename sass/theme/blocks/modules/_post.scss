@@ -1,4 +1,12 @@
-
+article {
+	padding: 0rem 1rem;
+	@include respond-to('md'){
+		padding: 0rem 3rem;
+	}
+	@include respond-to('lg'){
+		padding: 0rem 8rem;
+	}	
+}
 
 .entry-title {
 	padding-bottom: 1rem;
