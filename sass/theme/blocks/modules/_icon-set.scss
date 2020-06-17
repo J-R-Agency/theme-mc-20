@@ -44,7 +44,7 @@
 		object-fit: contain;
 		object-position: bottom;
 	}
-	h3 {
+	h5{
 		margin: 2rem 0 0 0;
 		padding: 0 2rem;
 	}
@@ -61,7 +61,7 @@
 @mixin highlight-hover($bg-image, $text-color) {
 	a:hover {
 		text-decoration: none;
-		h3 {
+		h5 {
 			background-image: $bg-image;
 			background-size: contain;
 			text-decoration: none;

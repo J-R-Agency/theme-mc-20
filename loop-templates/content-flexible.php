@@ -125,7 +125,7 @@ if( have_rows('flexible_content_block') ):
 									}										
 											
 												if ($isb_caption) {
-													echo "<h3>".$isb_caption."</h3>";
+													echo "<h5>".$isb_caption."</h5>";
 												}
 												if ($isb_description) {
 													echo "<p>".$isb_description."</p>";

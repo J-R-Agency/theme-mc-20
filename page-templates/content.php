@@ -47,7 +47,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 			 	} else {
 				 	echo "<img src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
 			 	}
-			 	the_title("<h3>","</h3>");
+			 	the_title("<h5>","</h5>");
 			 	
 			 	echo "</a>
 		 	</div>";
