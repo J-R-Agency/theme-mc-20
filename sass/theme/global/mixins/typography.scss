@@ -23,6 +23,7 @@ h1, h2 {
 p, li {
 	@include _dm-sans-regular;
 	font-size: 1.2rem;
+	line-height: $line-height;
 }
 
 h3 {
@@ -41,8 +42,4 @@ h2 {
 	@include respond-to('lg') {
 		font-size: 2rem;
 	}
-}
-
-h1, h2, h3, h4, p, li {
-	line-height: $line-height;
 }
