@@ -34,12 +34,7 @@ button:focus {
 	}
 }
 
-.helpful-stuff-arrow {
-	width: 100px;
-	&:hover {
-		transform:scale(1.2);
-	}
-}
+
 
 #main-nav {
 	background-color: transparent;
@@ -241,5 +236,20 @@ button:focus {
 				filter: brightness(0) invert(1);
 			}
 		}
+	}
+}
+
+/*-- MENU HIGHLIGHT --*/
+.menu-highlight-icon {
+	padding: 2rem;
+	width: 200px;
+	height: 200px;
+	object-fit: contain;
+}
+
+.menu-highlight-arrow {
+	width: 100px;
+	&:hover {
+		transform:scale(1.2);
 	}
 }

@@ -119,12 +119,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</div>
 					
 					<div class='menu-container-right'>
-						<a href="<?php echo site_url();?>/helpful-stuff">
-							<h3>Helpful Stuff</h3>
-							<p>Read our latest guides</p>
-							<img class='helpful-stuff-arrow'
+						<?php $menu_highlight_section = get_field('menu_highlight_section', 'option');
+							
+							if ($menu_highlight_section):
+						?>
+						
+						<a href="<?php echo $menu_highlight_section['mhs_link']['url']; ?>" target="<?php echo $menu_highlight_section['mhs_link']['target']; ?>">
+							<img class='menu-highlight-icon' src='<?php echo $menu_highlight_section['mhs_icon']['url'];?>'>
+							<h3><?php echo $menu_highlight_section['mhs_title']; ?></h3>
+							<p><?php echo $menu_highlight_section['mhs_blurb']; ?></p>
+							<img class='menu-highlight-arrow'
 							src="<?php echo get_template_directory_uri(); ?>/assets/graphics/arrow-menu-<?php echo $page_color; ?>.png">
 						</a>
+						
+						<?php endif; ?>
 					</div>
 					
 				</div> <!-- end menu-container -->
