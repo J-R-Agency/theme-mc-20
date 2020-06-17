@@ -65,10 +65,8 @@
 		a {
 			color: $navy;
 			&.active, &:hover, &:after {
-				text-decoration: underline;
-				text-decoration-thickness: 4px;
-				text-decoration-color: $pink;
-				text-decoration-skip-ink: none;
+				text-decoration: none;
+				box-shadow: inset 0 0px 0 transparent, inset 0 -4px 0 $pink;
 			}
 		}
 	}
@@ -106,10 +104,8 @@
 		a {
 			color: $navy;
 			&.active, &:hover, &:after {
-				text-decoration: underline;
-				text-decoration-thickness: 4px;
-				text-decoration-color: $pink;
-				text-decoration-skip-ink: none;
+				text-decoration: none;
+				box-shadow: inset 0 0px 0 transparent, inset 0 -4px 0 $pink;
 			}
 		}
 	}
