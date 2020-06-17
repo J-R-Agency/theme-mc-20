@@ -44,13 +44,16 @@ defined( 'ABSPATH' ) || exit;
 	?>
 	
 	<?php if (has_post_thumbnail()): ?>
-	<div class='post-hero' style="
-					background-image: url('<?php echo $thumb; ?>');
-					background-position:
-					<?php if (!$featured_image_position)
-							 { echo 'center'; }
-						else { echo $featured_image_position; } ?>
-					">
+	<div class='post-hero-container'>
+		<div class='post-hero-filter <?php the_field('hero_filter');?>'></div>
+		<div class='post-hero' style="
+						background-image: url('<?php echo $thumb; ?>');
+						background-position:
+						<?php if (!$featured_image_position)
+								 { echo 'center'; }
+							else { echo $featured_image_position; } ?>
+						">
+		</div>
 	</div>
 	<?php endif; ?>
 	
