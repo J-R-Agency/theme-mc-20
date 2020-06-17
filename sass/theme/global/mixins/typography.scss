@@ -6,6 +6,8 @@
 	font-family: 'dm-sans-bold';	
 }
 
+$line-height: 2em;
+
 a {
 	color: $pink;
 	@include _dm-sans-regular;
@@ -39,4 +41,8 @@ h2 {
 	@include respond-to('lg') {
 		font-size: 2rem;
 	}
+}
+
+h1, h2, h3, h4, p, li {
+	line-height: $line-height;
 }
