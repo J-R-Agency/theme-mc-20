@@ -54,23 +54,15 @@ include( locate_template( 'header.php', false, false ) );  ?>
 			
 			<div class='cs-intro-right'>
 				
-		    	<!-- Intro -->
-				<?php if( have_rows('fcs_intro') ): ?>
-				    <?php while( have_rows('fcs_intro') ): the_row();
-				    ?>
-				    
-						<?php if( have_rows('fcs_intro_block') ): ?>
-						    <?php while( have_rows('fcs_intro_block') ): the_row();
-							    $fcs_title = get_sub_field('fcs_title');
-							    $fcs_content = get_sub_field('fcs_content');
-						    ?>
-						       <h2><?php echo strip_tags($fcs_title, '<span>'); ?></h2>
-						       <p><?php echo strip_tags($fcs_content); ?></p>
-						    <?php endwhile; ?>
-						<?php endif; ?>  
-										       
-				    <?php endwhile; ?>
-				<?php endif; ?>  				
+		    	<!-- Meet the Client -->
+				<?php 
+				    $fcs_client = get_field('fcs_client');
+				    $fcs_challenge = get_field('fcs_challenge');	
+				?>
+			       <h2>Meet The <span class='circle-green-2'>Client</span></h2>
+			       <p><?php echo $fcs_client; ?></p>		       
+				   <h2>The <span class='underline-green-1'>Challenge</span> At Hand</h2>
+			       <p><?php echo $fcs_challenge; ?></p>			
 				
 			</div>
 			
