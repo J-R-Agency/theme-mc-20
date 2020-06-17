@@ -109,9 +109,20 @@ if( have_rows('flexible_content_block') ):
 									$isb_icon = get_sub_field('isb_icon');
 									$isb_caption = get_sub_field('isb_caption');
 									$isb_description= get_sub_field('isb_description');
+									$isb_link = get_sub_field('isb_link');
 									
-									echo "<div class='icon-set-wrapper ".$isb_columns."-columns'>
-											<img src='".$isb_icon['url']."'>";
+									echo "<div class='icon-set-wrapper ".$isb_columns."-columns'>";
+									
+									if ($isb_link) {
+										echo "<a href='".$isb_link['url']."' target='".$isb_link['target']."'>";
+									}
+									
+									echo "<img src='".$isb_icon['url']."'>";
+									
+									if ($isb_link) {
+										echo "</a>";
+									}										
+											
 												if ($isb_caption) {
 													echo "<h3>".$isb_caption."</h3>";
 												}
