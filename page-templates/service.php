@@ -49,7 +49,7 @@ endif;
 	$children = new WP_Query( $args );
 	 
 	if ( $children->have_posts() ) :
-	 	echo "<div class='icon-set-container'>";
+	 	echo "<div class='icon-set-container service-page'>";
 	    while ( $children->have_posts() ) : $children->the_post();
 		 	
 		 	$page_icon = get_field('page_icon');
@@ -59,7 +59,7 @@ endif;
 			 		<a href='",the_permalink(),"'>
 			 	";
 			 	if ($page_icon) {
-				 	echo "<img src='".$page_icon['url']."' alt='".$page_icon['alt']."''>";
+				 	echo "<img src='".$page_icon['url']."' alt='".$page_icon['alt']."'>";
 			 	} else {
 				 	echo "<img src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
 			 	}

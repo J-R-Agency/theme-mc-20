@@ -33,7 +33,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	if ( $children->have_posts() ) :
 	 	echo "
 	 	<section class='generic bg-light-grey'>
-	 		<div class='icon-set-container'>";
+	 		<div class='icon-set-container service-nav-page'>";
 	    while ( $children->have_posts() ) : $children->the_post();
 		 	
 		 	$page_icon = get_field('page_icon');
@@ -43,7 +43,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 			 		<a href='",the_permalink(),"'>
 			 	";
 			 	if ($page_icon) {
-				 	echo "<img src='".$page_icon['url']."' alt='".$page_icon['alt']."''>";
+				 	echo "<img src='".$page_icon['url']."' alt='".$page_icon['alt']."'>";
 			 	} else {
 				 	echo "<img src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
 			 	}

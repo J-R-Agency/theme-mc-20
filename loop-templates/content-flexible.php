@@ -96,6 +96,7 @@ if( have_rows('flexible_content_block') ):
             $isb_background_color = get_sub_field('isb_background_color'); // WYSIWYG block
             $isb_title = get_sub_field('isb_title'); // Image
             $isb_icons = get_sub_field('isb_icons'); // Select 
+            $isb_page = sanitize_title(get_the_title());
 			
 			
 			echo "<section class='generic bg-".$isb_background_color." icon-set'>

@@ -56,3 +56,28 @@
 	}
 }
 
+/*-- SERVICE PAGES --*/
+
+@mixin highlight-hover($bg-image, $text-color) {
+	a:hover {
+		text-decoration: none;
+		h3 {
+			background-image: $bg-image;
+			background-size: contain;
+			text-decoration: none;
+			color: $text-color;
+			background-repeat: no-repeat;
+			background-position: center;				
+		}
+	}
+
+}
+
+.service-nav-page > .icon-set-wrapper {
+	@include highlight-hover(url(../assets/graphics/highlight-bg-pink.svg), white);
+}
+
+.service-page > .icon-set-wrapper {
+	@include highlight-hover(url(../assets/graphics/highlight-bg-cyan.svg), white);
+}
+
