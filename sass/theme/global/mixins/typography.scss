@@ -28,18 +28,18 @@ p, li {
 
 h3 {
 	@include _dm-sans-bold;
-	font-size: 1.2rem;
+	font-size: 1.7rem;
 }
 
 h4 {
 	@include _dm-sans-regular;
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 	margin-bottom: 1rem;
 	line-height: $line-height;
 }
 
 h2 {
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 	@include respond-to('lg') {
 		font-size: 2rem;
 	}
