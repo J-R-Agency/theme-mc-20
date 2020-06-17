@@ -386,7 +386,7 @@ if( have_rows('flexible_content_block') ):
 							<div class='carousel-item ".$activeState."'>
 								<img class='quote-icon' src='".$theme_path."/assets/graphics/left-quote-pink.svg'>
 								<h3 class='testimonial-quote'>".$quote."</h3>
-								<p>".$citation."</p>
+								<p class='testimonial-citation'>".$citation."</p>
 							</div>
 						";
 						$i++;
