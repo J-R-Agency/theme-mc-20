@@ -29,7 +29,9 @@
 
 .testimonial-quote {
 	padding: 0 3rem;
+	font-size: 1rem;
 	@include respond-to ('lg') {
-		padding: 0 10rem;	
+		padding: 0 10rem;
+		font-size: 1.2rem;
 	}
 }
