@@ -85,6 +85,11 @@ $cs-thumb-margin-mobile: 1rem 0;
 			background-color: $cyan;
 			color: $navy;
 		}
+		&.yellow:hover {
+			background-color: $yellow;
+			color: $navy;
+		}		
+		
 	}	
 	
 }

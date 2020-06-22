@@ -30,7 +30,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		    		<div class='blog-posts-container all'>
 		    ";
 		    	$masterclasses = get_cat_ID('masterclasses');
-		    	$female_founders = get_cat_ID('female founders');
+		    	$female_founders = get_cat_ID('female-founders');
 		    	$excluded_cats = array( $masterclasses, $female_founders );
 		    	
 				$args = array(
@@ -48,9 +48,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 					 	
 						$card_color = 'light-grey';
 						$categories = get_the_category();
-						
-						
-						
+
 						include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
 						
 						
