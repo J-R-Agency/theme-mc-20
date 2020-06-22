@@ -27,7 +27,7 @@ $cs-thumb-margin-mobile: 1rem 0;
 @mixin cs-thumb-filter {
 	position: absolute;
 	padding: 1rem;
-	background-image: linear-gradient(to right bottom,rgba(255,255,255,1),rgba(150,150,150,0), rgba(255,255,255,.1));
+	background-color: rgba(255, 255, 255, 0.3);
 	color: $navy;
 	&:hover {
 		color: white;
@@ -138,7 +138,11 @@ $cs-thumb-margin-mobile: 1rem 0;
 		&.cyan:hover {
 			background-color: $cyan;
 			color: $navy;
-		}		
+		}
+		&.yellow:hover {
+			background-color: $yellow;
+			color: $navy;
+		}
 	}
 	}
 }
