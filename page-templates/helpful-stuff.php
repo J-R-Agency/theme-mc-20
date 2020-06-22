@@ -29,8 +29,8 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		    echo "<div class='tab-pane active' id='all'>
 		    		<div class='blog-posts-container all'>
 		    ";
-		    	$masterclasses = get_cat_ID('masterclasses');
-		    	$female_founders = get_cat_ID('female-founders');
+		    	$masterclasses = get_cat_ID('Masterclasses');
+		    	$female_founders = get_cat_ID('#FemaleFounders');
 		    	$excluded_cats = array( $masterclasses, $female_founders );
 		    	
 				$args = array(
