@@ -69,12 +69,12 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		    
 		    foreach($categories as $category) {
 		        echo "<div class='tab-pane' id='". $category->slug."'>
-		        		<div class='blog-posts-container bpc-".$category->slug."'>
+		        		<div class='blog-posts-container case-studies-container bpc-".$category->slug."'>
 		        ";
 		        
 		        $args = array(
 				    'post_type'      => 'post', //write slug of post type
-				    'posts_per_page' => 2,
+				    'posts_per_page' => 6,
 				    'order'          => 'DESC',
 				    'category_name' => $category->slug,
 				 );
@@ -85,10 +85,11 @@ include( locate_template( 'header.php', false, false ) );  ?>
 				 
 				    while ( $query->have_posts() ) : $query->the_post();
 					 	
-						$card_color = 'light-grey';
+						$mc_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+						$hover_color = 'pink';
 						$categories = get_the_category();
 						
-						include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
+						include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
 						
 					endwhile;
 				endif;
