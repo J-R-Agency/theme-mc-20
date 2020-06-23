@@ -17,7 +17,11 @@ $header_position = 'relative';
 include( locate_template( 'header.php', false, false ) ); ?>
 
 <section class="generic bg-white">
-	<h1>Experience</h1>
+	<h1>
+		<?php foreach((get_the_category()) as $category){
+        echo $category->name;
+        }	?>
+    </h1>
 	
 	<div class='case-studies-container'>
 		<?php
@@ -27,7 +31,8 @@ include( locate_template( 'header.php', false, false ) ); ?>
 			    'post_type'      => 'post', //write slug of post type
 			    'posts_per_page' => 6,
 			    'order'          => 'DESC',
-			    'category__in'   => $experience
+			    'category__in'   => $experience,
+			    'paged'=>( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1
 			 );
 			 
 			$mquery = new WP_Query( $args );
