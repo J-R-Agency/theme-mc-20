@@ -80,6 +80,9 @@ $mobile-cta-height: 400px;
 	padding: 3rem 2rem;
 	width: 100%;
 	clip-path: polygon(83% 0, 100% 17%, 100% 100%, 0% 100%, 0% 0%);
+	h1 {
+		font-size: 1.8rem;
+	}
 	@include respond-to('md') {
 		width: 350px;
 		padding: 4rem 2rem;
@@ -89,6 +92,6 @@ $mobile-cta-height: 400px;
 		width: 100%;
 	}
 	h1 {
-		font-size: 1.8rem;
+		font-size: 2rem;
 	}
 }
