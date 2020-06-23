@@ -16,6 +16,7 @@ $cs-thumb-margin-mobile: 1rem 0;
 	}
 	@include respond-to('md') {
 		flex-direction: row;
+		justify-content: space-between;
 	}
 }
 
