@@ -14,10 +14,9 @@ $header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
 
-<section class='generic bg-white'>
-	<h1>404 - Missing Page</h1>
-	<p>Sorry, this page does not exist!</p>
-	<p><a href="<?php echo get_home_url(); ?>">Click here to go to the homepage.</a></p>
+<section class='generic bg-white' style='text-align: center;'>
+	<h1>404</h1>
+	<?php echo the_field('404_page_content','option')?>
 </section>	
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
