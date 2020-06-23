@@ -60,22 +60,22 @@
 }
 
 .blog-category {
-	@include ribbon($pink, 1em, 0);
+	@include ribbon($pink, -15px, 0);
 	 
 	&.content {
-		@include ribbon($green, 1em, 0);
+		@include ribbon($green, -15px, 0);
 	}
 	
 	&.experience {
-		@include ribbon($pink, 1em, 0);
+		@include ribbon($pink, -15px, 0);
 	}
 	
 	&.female-founders {
-		@include ribbon($cyan, 1em, 0);
+		@include ribbon($cyan, -15px, 0);
 	}
 	
 	&.identity {
-		@include ribbon($yellow, 1em, 0);
+		@include ribbon($yellow, -15px, 0);
 	}
 	 
 
