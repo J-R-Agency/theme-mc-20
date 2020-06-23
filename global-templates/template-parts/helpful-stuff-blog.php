@@ -60,9 +60,8 @@ $theme_path = get_template_directory_uri();
 				    echo "<div class='tab-pane active' id='all'>
 				    		<div class='blog-posts-container all'>
 				    ";
-				    	//$masterclasses = get_cat_ID('Masterclasses');
 				    	//$female_founders = get_cat_ID('#FemaleFounders');
-				    	//$excluded_cats = array( $masterclasses, $female_founders );
+				    	//$excluded_cats = array( $female_founders );
 				    	
 						$args = array(
 						    'post_type'      => 'post', //write slug of post type

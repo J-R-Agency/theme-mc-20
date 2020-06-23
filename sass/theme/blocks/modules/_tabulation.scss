@@ -64,6 +64,7 @@
 		}
 		a {
 			color: $navy;
+			font-size: 1rem;
 			&.active, &:hover, &:after {
 				text-decoration: none;
 				box-shadow: inset 0 0px 0 transparent, inset 0 -4px 0 $pink;
