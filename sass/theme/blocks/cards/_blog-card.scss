@@ -14,8 +14,7 @@
     }
     &:after {
 		width: 0;
-		height: 40px;
-		border-top: 20px solid transparent;
+		border-top: 22px solid transparent;
 		border-left: 40px solid $ribbon-color;
 		border-bottom: 20px solid transparent;
 		display: inline-block;
@@ -24,7 +23,7 @@
 		position: absolute;
 		float: right;
 		top: 0;
-		margin-left: -3px;
+		margin-left: -2px;
 		transform: scaleX(.5);
     }
 }
