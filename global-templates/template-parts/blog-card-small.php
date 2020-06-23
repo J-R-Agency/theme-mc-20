@@ -21,5 +21,6 @@ $female_founder_description = get_field('female_founder_description');
 				} else { 
 					echo get_template_directory_uri()."/assets/images/blog-card-placeholder.jpg";
 				}
-			?>");'></div>						     
+			?>");'>
+	</div>						     
 </a> 
