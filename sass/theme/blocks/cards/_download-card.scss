@@ -31,6 +31,13 @@
 	padding: 1.5rem 1rem;
 	text-align: center;
 	color: $navy;
+	
+	h3 {
+		font-size: 1.2rem;
+		max-height: 70px;
+		overflow: hidden;
+	}
+	
 	&.yellow {
 		background-color: $yellow;
 	}

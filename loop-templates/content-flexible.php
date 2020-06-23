@@ -118,18 +118,19 @@ if( have_rows('flexible_content_block') ):
 										echo "<a href='".$isb_link['url']."' target='".$isb_link['target']."'>";
 									}
 									
-									echo "<img src='".$isb_icon['url']."'>";
-									
+									echo "<img src='".$isb_icon['url']."'>";										
+											
+										if ($isb_caption) {
+											echo "<h5>".$isb_caption."</h5>";
+										}
+										if ($isb_description) {
+											echo "<p>".$isb_description."</p>";
+										}
+										
 									if ($isb_link) {
 										echo "</a>";
 									}										
-											
-												if ($isb_caption) {
-													echo "<h5>".$isb_caption."</h5>";
-												}
-												if ($isb_description) {
-													echo "<p>".$isb_description."</p>";
-												}
+										
 									echo "</div>";
 									
 								endwhile;
@@ -432,7 +433,6 @@ if( have_rows('flexible_content_block') ):
 				</div>
 			</section>
 			";			
-
           // --------------------------------- //
          // ----- CASE: BLOG POSTS BLOCK ---- //
         // --------------------------------- //
