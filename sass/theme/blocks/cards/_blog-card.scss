@@ -8,7 +8,7 @@
     }
     &:before {
         border-bottom: $size-left solid $ribbon-color;
-        top: -$size-left;
+        top: -15px;
         border-left: $size-left solid transparent;
         left: 0;
     }
@@ -23,7 +23,7 @@
 		position: absolute;
 		float: right;
 		top: 0;
-		margin-left: -2px;
+		margin-left: 0;
 		transform: scaleX(.5);
     }
 }
@@ -33,7 +33,7 @@
     height: 40px;
     width: max-content;
     text-align: center;
-    padding: 0.5rem;
+    padding: 10px;
     background: $pink;
     left: -1em;
 	bottom: -2em;
