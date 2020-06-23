@@ -21,6 +21,9 @@ $theme_path = get_template_directory_uri();
 		$bc_category = get_sub_field('bc_category');
 		$bc_link_text = get_sub_field('bc_link_text');
 		
+		$bc_cat_object = get_category($bc_category);
+		
+		
 		?>
 		
 		<section class='generic bg-white'>
@@ -56,7 +59,7 @@ $theme_path = get_template_directory_uri();
 			</div>
 		</section>
 		<section class='link-block bg-light-grey'>
-			<a href='<?php echo site_url();?>/category/<?php echo esc_html($bc_link_text->slug); ?>'><?php echo $bc_link_text; ?><div class='arrow-link-<?php echo $bc_color; ?>'></div></a>
+			<a href='<?php echo site_url();?>/category/<?php echo $bc_cat_object->slug; ?>'><?php echo $bc_link_text; ?><div class='arrow-link-<?php echo $bc_color; ?>'></div></a>
 		</section>
 		
 	<?php endwhile; ?>
