@@ -32,7 +32,7 @@ include( locate_template( 'header.php', false, false ) );
 
 <!-- More Blog Posts -->
 <section class='generic bg-light-grey'>
-	<h2 style="text-align: center; padding-bottom: 2rem;">More From Our Blog</h2>
+	<h2 style="text-align: center; padding-bottom: 2rem;">Even more Helpful Stuff</h2>
 	<?php
 		
 		$currentID = get_the_ID();

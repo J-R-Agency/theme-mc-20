@@ -25,9 +25,11 @@ $desktop-hero-height: 100vh;
 	height: $mobile-hero-height;
 	position: absolute;
 	text-align: center;
+	
 	@include respond-to ('lg') {
 		height: $desktop-hero-height;
 	}
+	
 	h1 {
 		margin-bottom: 2rem;
 		font-size: 2rem;
@@ -37,6 +39,13 @@ $desktop-hero-height: 100vh;
 			font-size: 2.5rem;
 		}
 	}
+	
+	p {
+		@include respond-to ('lg') {
+			font-size: 1.5rem;
+		}
+	}
+	
 	&.none {
 		@include none;
 	}
