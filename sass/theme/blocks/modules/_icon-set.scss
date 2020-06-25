@@ -56,6 +56,12 @@
 	}
 }
 
+
+.home .icon-set-wrapper img{
+	object-position: center;
+
+}
+
 /*-- SERVICE PAGES --*/
 
 @mixin highlight-hover($bg-image, $text-color) {
