@@ -43,7 +43,7 @@ $featured_image_position = get_field('featured_image_position');
 	<div class='blog-card-right'>
 		<a href="<?php the_permalink(); ?>">
 			<?php if ( has_post_thumbnail() ) {
-		    		echo "<img src=\"" . get_the_post_thumbnail('medium') . "\"
+		    		echo "<img src=\"" . get_the_post_thumbnail($post->ID, 'medium') . "\"
 		    				style='object-position:".$featured_image_position.";'>";
 				} else { 
 					echo "<img src='". get_template_directory_uri() ."/assets/images/blog-card-placeholder.jpg'>";
