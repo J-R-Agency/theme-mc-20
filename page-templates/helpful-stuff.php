@@ -24,6 +24,8 @@ include( locate_template( 'header.php', false, false ) );  ?>
 <!-- BLOG CATEGORIES -->
 <?php include (get_template_directory().'/global-templates/template-parts/helpful-stuff-categories.php'); ?>
 
+<?php if( have_rows('downloads') ): ?>
+
 <!-- FREE DOWNLOADS -->
 
 <section class='generic bg-white'>
@@ -33,6 +35,8 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		<?php include (get_template_directory().'/global-templates/template-parts/downloads-card.php'); ?>
 	</div>
 </section>
+
+<?php endif; ?>
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
 
