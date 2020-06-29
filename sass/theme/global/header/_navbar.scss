@@ -6,6 +6,9 @@ button:focus {
 	background-color: $light-grey;
 	padding: 0 2rem 2rem 2rem;
 	@include respond-to('md') {
+		padding: 0 3rem 3rem 3rem;
+	}
+	@include respond-to('lg') {
 		padding: 0 9rem 3rem 9rem;
 	}
 	a {
