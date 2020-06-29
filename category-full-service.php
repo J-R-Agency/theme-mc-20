@@ -17,6 +17,9 @@ $header_position = 'relative';
 include( locate_template( 'header.php', false, false ) ); ?>
 
 <section class="generic bg-white">
+	
+	<a class='take-back' href="javascript:history.back()">Take me back</a>
+	
 	<h1>
 		<?php foreach((get_the_category()) as $category){
         echo $category->name;
