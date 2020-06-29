@@ -1,7 +1,7 @@
 @mixin global-padding {
 	padding: 3rem 1rem;
 	@include respond-to('md'){
-		padding: 3rem 5rem;
+		padding: 3rem 1rem;
 	}
 	@include respond-to('lg'){
 		padding: 5rem 10rem;
