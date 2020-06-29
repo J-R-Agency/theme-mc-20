@@ -49,7 +49,7 @@ $fcs-desktop-height: 400px;
 	background-repeat: no-repeat;	
 	
 	@include respond-to('md') {
-		padding: 3rem 10rem;
+		padding: 3rem 5rem;
 	}
 	@include respond-to('lg') {
 		padding: 2rem 5rem;
