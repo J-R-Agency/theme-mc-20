@@ -8,6 +8,7 @@
 		height: 400px;
 	}
 	@include respond-to ('lg') {
+		padding: 2% 3rem;
 		height: 300px;
 	}
 }
