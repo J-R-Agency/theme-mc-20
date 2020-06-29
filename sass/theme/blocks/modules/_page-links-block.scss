@@ -18,8 +18,13 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	flex-wrap: wrap;
+	
 	.plb-wrapper {
-		flex-basis: 33%;
+		flex-basis: 100%;
 		padding: 2rem 0;
+		@include respond-to('md'){
+			flex-basis: 33%;
+		}
 	}
 }
