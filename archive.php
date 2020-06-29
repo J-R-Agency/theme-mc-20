@@ -17,6 +17,9 @@ $header_position = 'relative';
 include( locate_template( 'header.php', false, false ) ); ?>
 
 <section class="generic bg-white">
+	
+	<a class='take-back' href="javascript:history.back()">Take me back</a>
+	
 	<h1>Blog Posts</h1>
 	
 	<?php
