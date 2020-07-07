@@ -38,19 +38,19 @@
     left: -1em;
 	bottom: -2em;
 	
-	&.content {
+	&.ribbon-green {
 		background: $green;
 	}
 	
-	&.experience {
+	&.ribbon-pink {
 		background: $pink;
 	}
 	
-	&.female-founders {
+	&.ribbon-cyan {
 		background: $cyan;
 	}
 	
-	&.identity {
+	&.ribbon-yellow {
 		background: $yellow;
 	}
 	@include respond-to('lg') {
@@ -62,20 +62,20 @@
 .blog-category {
 	@include ribbon($pink, 1em, 0);
 	 
-	&.content {
-		@include ribbon($green, 1em, 0);
-	}
-	
-	&.experience {
+	&.ribbon-pink {
 		@include ribbon($pink, 1em, 0);
 	}
 	
-	&.female-founders {
+	&.ribbon-yellow {
+		@include ribbon($yellow, 1em, 0);
+	}
+	
+	&.ribbon-cyan {
 		@include ribbon($cyan, 1em, 0);
 	}
 	
-	&.identity {
-		@include ribbon($yellow, 1em, 0);
+	&.ribbon-green {
+		@include ribbon($green, 1em, 0);
 	}
 	 
 

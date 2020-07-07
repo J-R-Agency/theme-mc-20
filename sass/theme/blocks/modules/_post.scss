@@ -33,7 +33,6 @@ article {
 	display: flex;
 	align-items: center;
 	&:before {
-		background-image:url('../assets/graphics/arrow-link-pink.svg');
 		background-repeat:no-repeat;
 		background-size: contain;
 		background-position: center;
@@ -43,6 +42,31 @@ article {
 		margin-right: 5px;
 		transform: scaleX(-1);
 		display: inline-block
+	}
+	
+	&.pink {
+		color: $pink;
+		&:before {
+			background-image:url('../assets/graphics/arrow-link-pink.svg');
+		}
+	}
+	&.cyan {
+		color: $cyan;
+		&:before {
+			background-image:url('../assets/graphics/arrow-link-cyan.svg');
+		}		
+	}
+	&.green {
+		color: $green;
+		&:before {
+			background-image:url('../assets/graphics/arrow-link-green.svg');
+		}		
+	}
+	&.yellow {
+		color: $yellow;
+		&:before {
+			background-image:url('../assets/graphics/arrow-link-yellow.svg');
+		}		
 	}
 }
 

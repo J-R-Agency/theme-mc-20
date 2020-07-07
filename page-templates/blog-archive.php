@@ -1,4 +1,5 @@
-<?php /**
+<?php
+/**
  * Template Name: Blog Archive Template
  *
  * Template for displaying a page just with the header and footer area and a "naked" content area in between.
@@ -20,7 +21,7 @@ include( locate_template( 'header.php', false, false ) ); ?>
 	
 	<a class='take-back' href="javascript:history.back()">Take me back</a>
 	
-	<h1><?php echo the_title(); ?></h1>
+	<h1>Blog Posts</h1>
 	
 	<?php
 		//$masterclasses = get_cat_ID('masterclasses');

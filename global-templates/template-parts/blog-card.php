@@ -11,13 +11,13 @@ $theme_path = get_template_directory_uri();
 $categories = get_the_category();
 
 $featured_image_position = get_field('featured_image_position');
-
+$category_color = get_field('category_color', $categories[0]);
 ?>
 
 <div class='blog-card-container <?php echo $card_color; ?>'>
 	
 	<div class='blog-card-left'>
-		<div class='ribbon-container blog-category <?php echo $categories[0]->slug; ?>'>
+		<div class='ribbon-container blog-category ribbon-<?php echo $category_color; ?>'>
 			<?php 
 			if ( ! empty( $categories ) ) {
 				echo 
