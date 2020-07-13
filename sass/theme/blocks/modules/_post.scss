@@ -131,7 +131,7 @@ $post-hero-height-large: 500px;
 	padding: 1rem 0;
 	flex-direction: column;
 	align-items: center;
-	@include respond-to('lg') {
+	@include respond-to('md') {
 		flex-direction: row;
 		align-items: flex-start;
 	}
@@ -188,6 +188,8 @@ $post-hero-height-large: 500px;
 
 .share-btns {
 	.sd-content {
+		display: inline-flex;
+		align-items: center;
 		ul {
 			margin: 0 !important;
 			li {
@@ -225,5 +227,11 @@ $post-hero-height-large: 500px;
 			@include share-btn;
 			background-image: url('../assets/social-media/linkedin-pink.png');				
 		}
-	}		
+	}
+	
+	.share-icon {
+		width: 25px;
+		height: 25px;
+	}
 }
+
