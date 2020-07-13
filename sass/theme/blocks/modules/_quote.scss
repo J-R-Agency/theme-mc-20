@@ -44,10 +44,9 @@ $fcs-desktop-height: 400px;
 	justify-content: center;
 	padding: 2rem;
 	text-align: center;
-	background-image: url('../assets/images/quote-bg-img.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;	
-	
+		
 	@include respond-to('md') {
 		padding: 3rem 5rem;
 	}
@@ -55,6 +54,7 @@ $fcs-desktop-height: 400px;
 		padding: 2rem 5rem;
 	}
 }
+
 
 /* -- POST QUOTE -- */
 .wp-block-quote {

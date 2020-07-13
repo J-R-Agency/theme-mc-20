@@ -50,11 +50,21 @@ include( locate_template( 'header.php', false, false ) );  ?>
         // Get sub field values.
         $csq_quote = get_sub_field('csq_quote');
         $csq_citation = get_sub_field('csq_citation');
-
+		$csq_background_image = get_sub_field('csq_background_image');
+		$csq_background_image_url = $csq_background_image['url'];
+		
         ?>
         
         <?php if($csq_quote): ?>
-	        <section class='fcs-quote-block'>
+	        <section class='fcs-quote-block'
+		        	 style='background-image:url(
+			        	<?php
+				        	if ($csq_background_image){
+					        	echo $csq_background_image['url'];
+						    } else {
+							    echo get_template_directory_uri().'/assets/images/quote-bg-img.jpg';
+							}
+						?>);'>
 		        <div class='fcs-content'>
 			    	<h3><?php echo strip_tags($csq_quote); ?></h3>
 					<p><?php echo strip_tags($csq_citation); ?></p>

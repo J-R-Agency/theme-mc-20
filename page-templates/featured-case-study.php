@@ -79,7 +79,15 @@ include( locate_template( 'header.php', false, false ) );  ?>
         $fcsq_citation = get_sub_field('fcsq_citation');
 
         ?>
-        <section class='fcs-quote-block'>
+        <section class='fcs-quote-block'
+	        	 style='background-image:url(
+		        	<?php
+			        	if ($csq_background_image){
+				        	echo $csq_background_image['url'];
+					    } else {
+						    echo get_template_directory_uri().'/assets/images/quote-bg-img.jpg';
+						}
+					?>);'>
 	        <div class='fcs-content'>
 		    	<h3><?php echo strip_tags($fcsq_quote); ?></h3>
 				<p><?php echo strip_tags($fcsq_citation); ?></p>
