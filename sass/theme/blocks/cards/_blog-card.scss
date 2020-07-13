@@ -141,9 +141,12 @@
 
 	.blog-title {
 		color: $navy;
-		max-height: 80px;
+		max-height: 100px;
 		overflow: hidden;
 		display: inline-block;
+		@include respond-to ('lg') {
+			max-height: 80px;
+		}
 	}
 	.blog-author {
 		padding: 0 0 1rem 0;
