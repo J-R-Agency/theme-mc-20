@@ -36,7 +36,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			
 			<!-- Privacy Policy and Legal -->
 			<div class='legal-pages'>
-				<a href='<?php echo get_site_url(); ?>/privacy-policy'>Privacy Policy</a> | <a href='<?php echo get_site_url(); ?>/legal'>Legal</a>
+				<a href='<?php echo get_site_url(); ?>/legal'>Legal</a>
 			</div>
 		</div>
 		
