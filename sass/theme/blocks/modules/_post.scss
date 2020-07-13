@@ -200,10 +200,11 @@ $post-hero-height-large: 500px;
 		background-color: transparent;
 	}
 	
-	li.share-twitter a.sd-button {
-		&:before {
-			content: none;
-		}			
+	.sd-social-icon .sd-content ul li.share-twitter a::before {
+		content: none;
+	}
+	
+	li.share-twitter a.sd-button {			
 		span {
 			@include share-btn;
 			background-image: url('../assets/social-media/twitter-pink.png');
@@ -214,11 +215,12 @@ $post-hero-height-large: 500px;
 	.sd-social-icon .sd-content ul li[class*="share-"].share-linkedin a.sd-button {
 		background-color: transparent;
 	}
+	
+	.sd-social-icon .sd-content ul li.share-linkedin a::before {
+		content: none;
+	}
 			
-	li.share-linkedin a.sd-button {
-		&:before {
-			content: none;
-		}						
+	li.share-linkedin a.sd-button {						
 		span {
 			@include share-btn;
 			background-image: url('../assets/social-media/linkedin-pink.png');				
