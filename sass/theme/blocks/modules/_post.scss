@@ -176,3 +176,52 @@ $post-hero-height-large: 500px;
 		display: block;
 	}
 }
+
+@mixin share-btn {
+	width: 25px;
+	height: 25px;
+	display: inline-flex;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+.share-btns {
+	.sd-content {
+		ul {
+			margin: 0 !important;
+			li {
+				margin: 0;
+			}
+		}
+	}
+	// Twitter
+	.sd-social-icon .sd-content ul li[class*="share-"].share-twitter a.sd-button {
+		background-color: transparent;
+	}
+	
+	li.share-twitter a.sd-button {
+		&:before {
+			content: none;
+		}			
+		span {
+			@include share-btn;
+			background-image: url('../assets/social-media/twitter-logo-pink.png');
+		}
+	}
+	
+	//Linkedin
+	.sd-social-icon .sd-content ul li[class*="share-"].share-linkedin a.sd-button {
+		background-color: transparent;
+	}
+			
+	li.share-linkedin a.sd-button {
+		&:before {
+			content: none;
+		}						
+		span {
+			@include share-btn;
+			background-image: url('../assets/social-media/linkedin-logo-pink.png');				
+		}
+	}		
+}

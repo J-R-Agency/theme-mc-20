@@ -32,8 +32,10 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 			</div>
 			
-			<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
-
+			<div class='share-btns'>
+				<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+			</div>
+			
 		</div><!-- .entry-meta -->
 
 	</header><!-- .entry-header -->
