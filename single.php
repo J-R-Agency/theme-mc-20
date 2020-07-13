@@ -72,7 +72,7 @@ include( locate_template( 'header.php', false, false ) );
 		$(".hero-filter").remove();
 		$(".hero").remove();
 		$(".sd-content").append("<img class='share-icon' src='<?=get_template_directory_uri()?>/assets/social-media/share-icon.png'>");
-	})(jQuery);
+	})(jQuery); 
 </script>
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
