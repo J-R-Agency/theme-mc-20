@@ -29,7 +29,7 @@ include( locate_template( 'header.php', false, false ) ); ?>
     	
 		$args = array(
 		    'post_type'      => 'post', //write slug of post type
-		    'posts_per_page' => 2,
+		    'posts_per_page' => 6,
 		    'order'          => 'DESC',
 		    'post_status'	 => 'publish',
 		    //'category__not_in' => $excluded_cats,
