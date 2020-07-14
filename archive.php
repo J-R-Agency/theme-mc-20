@@ -18,7 +18,7 @@ include( locate_template( 'header.php', false, false ) ); ?>
 
 <section class="generic bg-white">
 	
-	<a class='take-back' href="javascript:history.back()">Take me back</a>
+	<a class='take-back pink' href="javascript:history.back()">Take me back</a>
 	
 	<h1><?php echo the_title(); ?></h1>
 	
@@ -29,7 +29,7 @@ include( locate_template( 'header.php', false, false ) ); ?>
     	
 		$args = array(
 		    'post_type'      => 'post', //write slug of post type
-		    'posts_per_page' => 6,
+		    'posts_per_page' => 2,
 		    'order'          => 'DESC',
 		    'post_status'	 => 'publish',
 		    //'category__not_in' => $excluded_cats,
