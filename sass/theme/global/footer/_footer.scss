@@ -42,3 +42,12 @@
 		}
 	}
 }
+
+#menu-footer-menu > li > a {
+	color: white;
+	font-family: dm-sans-regular;
+	font-size: 1rem;
+	&:hover {
+		text-decoration: none;
+	}
+}

@@ -36,7 +36,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 			
 			<!-- Privacy Policy and Legal -->
 			<div class='legal-pages'>
-				<a href='<?php echo get_site_url(); ?>/legal'>Legal</a>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'footer-menu'
+					)
+				);
+				?>	
+			</div>
+			
+			<div class='company-no'>
+				<span>Co No: <?php echo the_field('company_number', 'option');?></span>
 			</div>
 		</div>
 		
