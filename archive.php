@@ -20,7 +20,7 @@ include( locate_template( 'header.php', false, false ) ); ?>
 	
 	<a class='take-back pink' href="javascript:history.back()">Take me back</a>
 	
-	<h1><?php echo the_title(); ?></h1>
+	<!--h1><?php echo the_title(); ?></h1-->
 	
 	<?php
 		//$masterclasses = get_cat_ID('masterclasses');
