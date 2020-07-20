@@ -23,7 +23,7 @@ include( locate_template( 'header.php', false, false ) ); ?>
 	
 	<a class='take-back <?php echo $category_color; ?>' href="javascript:history.back()">Take me back</a>
 	
-	<h1><?php echo the_title(); ?></h1>
+	<!--h1><?php echo the_title(); ?></h1-->
 	
 	<?php
 		//$masterclasses = get_cat_ID('masterclasses');
