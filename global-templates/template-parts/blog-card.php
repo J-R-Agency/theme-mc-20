@@ -50,6 +50,5 @@ $category_color = get_field('category_color', $categories[0]);
 				}
 			?>
 		</a>
-	</div>				     
-	
+	</div>
 </div>

@@ -1,7 +1,27 @@
+// NAV
+nav {
+	&.white_fade {
+		background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	}
+	&.fixed {
+		position: fixed;
+	}
+	&.relative {
+		position: relative;
+	}
+	&.absolute {
+		position: absolute;
+	}
+}
+
+
+// HAMBURGER
 button:focus {
 	outline: none;
 }
 
+
+// MEGA MENU
 #mega-menu {
 	background-color: $light-grey;
 	padding: 0 2rem 2rem 2rem;

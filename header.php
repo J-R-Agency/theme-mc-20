@@ -27,16 +27,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 	
 	<input type="hidden" id="header_pos" value="<?php echo $header_position; ?>">
 	
-	<?php if ($header_position != 'absolute') {
-		$header_position = 'relative';
-	} ?>
-	
 	<!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar">
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark" aria-labelledby="main-nav-label" style='position:<?php echo $header_position; ?>'>
+		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark <?php the_field('header_style')?> <?php echo $header_position; ?>" aria-labelledby="main-nav-label">
 
 			<h2 id="main-nav-label" class="sr-only">
 				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>

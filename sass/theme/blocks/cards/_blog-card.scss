@@ -36,7 +36,14 @@
     padding: 10px;
     background: $pink;
     left: -1em;
-	bottom: -2em;
+	bottom: 14em;
+
+	@include respond-to('md') {
+		bottom: 32em;
+	}
+	@include respond-to('lg') {
+		bottom: 2em;
+	}
 	
 	&.ribbon-green {
 		background: $green;
@@ -53,9 +60,7 @@
 	&.ribbon-yellow {
 		background: $yellow;
 	}
-	@include respond-to('lg') {
-		bottom: 2em;
-	}
+
 	
 }
 
@@ -89,7 +94,7 @@
 
 .blog-card-container {
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	margin: 1rem 0;
 	flex-wrap: wrap;
 	height: auto;
@@ -134,7 +139,7 @@
 }
 
 .blog-card-info {
-	padding: 4rem 2rem 3rem 2rem;
+	padding: 0rem 2rem 3rem 2rem;
 	@include respond-to ('lg') {
 		padding: 0 0 0 2rem;
 	}
