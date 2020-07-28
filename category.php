@@ -21,7 +21,7 @@ include( locate_template( 'header.php', false, false ) ); ?>
 
 <section class="generic bg-white">
 	
-	<a class='take-back <?php echo $category_color; ?>' href="javascript:history.back()">Take me back</a>
+	<a class='take-back pink' href="<?php site_url(); ?>/helpful-stuff">Take me back to Helpful Stuff</a>
 	
 	<!--h1><?php echo the_title(); ?></h1-->
 	
