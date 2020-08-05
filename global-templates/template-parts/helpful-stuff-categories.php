@@ -30,7 +30,7 @@ $theme_path = get_template_directory_uri();
 			<h2><?php echo $bc_title; ?></h2>
 			<p class='hs-subtitle'><?php echo $bc_subtitle; ?></p>
 			
-			<div class='case-studies-container'>
+			<div class='small-card-container'>
 			<?php		
 				$args = array(
 				    'post_type'      => 'post', //write slug of post type

@@ -193,7 +193,7 @@ if( have_rows('flexible_content_block') ):
 			echo "
 			<section class='generic bg-white case-studies-block'>
 				<h2>".$csb_title."</h2>
-				<div class='case-studies-container'>
+				<div class='small-card-container'>
 				";		
 				$pageSlug = get_page_by_path( 'our-work' );
 								

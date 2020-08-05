@@ -1,156 +1,66 @@
-$cs-thumb-margin-desktop: 0 1rem;
-$cs-thumb-margin-mobile: 1rem 0;
-
-@mixin case-studies-container {
+.small-card-container {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
+	
 	a {
+		width: 100%;
+		height: 200px;
 		margin: 1rem 0;
+		color: $navy;
 		@include respond-to('md') {
+			width: 31%;
+			height: 15vw;
 			margin: 0 1rem 1rem 0;	
-		}
-		@include respond-to('lg') {
-			margin: 1rem 1rem 1rem 0;
-		}
+		}			
 	}
+	
 	@include respond-to('md') {
 		flex-direction: row;
-		justify-content: space-evenly;
+		justify-content: flex-start;
 	}
-}
-
-@mixin cs-thumb-wrapper {
-	background-size: cover;
-	background-position: center;
-}
-
-@mixin cs-thumb-filter {
-	position: absolute;
-	padding: 1rem;
-	background-color: rgba(255, 255, 255, 0.3);
-	color: $navy;
-	&:hover {
-		color: white;
-		background-image: url('../assets/graphics/cs-thumb-arrow.svg');
-		background-size: 50%;
-		background-repeat: no-repeat;
-		background-position: center 75%;
-	}
-	
-	.separator:last-of-type {
-		display: none; 
-	}
-	h3 {
-		font-size: 1.5rem;
-		max-height: 60px;
-		overflow: hidden;
-	}
-}
-
-.case-studies-container {
-	$cs-thumb-width-desktop: 300px;
-	$cs-thumb-width-mobile: 280px;
-	
-	$cs-thumb-height-desktop: 200px;
-	$cs-thumb-height-mobile: 180px;
-	
-	@include case-studies-container;
 	
 	.cs-thumb-wrapper { 
-		width: $cs-thumb-width-mobile;
-		height: $cs-thumb-height-mobile;
-		@include cs-thumb-wrapper;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: 1rem;
+		background-size: cover;
+		background-position: center;
+		background-color: rgba(255, 255, 255, 0.3);
+		background-blend-mode: lighten;
 		
-		@include respond-to('lg') {
-			width: $cs-thumb-width-desktop;
-			height: $cs-thumb-height-desktop;		
-		}			
-		
-	}
-	
-	.cs-thumb-filter {
-		width: $cs-thumb-width-mobile;
-		height: $cs-thumb-height-mobile;
-		
-		@include cs-thumb-filter;
-		
-		@include respond-to('lg') {
-			width: $cs-thumb-width-desktop;
-			height: $cs-thumb-height-desktop;		
+		&:hover {
+			background-image: url('../assets/graphics/cs-thumb-arrow.svg') !important;
+			background-size: 50%;
+			background-repeat: no-repeat;
+			background-position: center 75%;
+			background-blend-mode: normal;
 		}
 		
+		.separator:last-of-type {
+			display: none; 
+		}
+		
+		h3 {
+			font-size: 1.5rem;
+			max-height: 60px;
+			overflow: hidden;
+		}
+				
 		&.pink:hover {
 			background-color: $pink;
 		}
 		&.green:hover {
 			background-color: $green;
-			color: $navy;
 		}
 		&.cyan:hover {
 			background-color: $cyan;
-			color: $navy;
 		}
 		&.yellow:hover {
 			background-color: $yellow;
-			color: $navy;
-		}		
-		
-	}	
+		}	
+	}
 	
 }
-
-.more-case-studies-container {
-	$mcs-thumb-width-desktop: 400px;
-	$mcs-thumb-width-mobile: 300px;
-	
-	$mcs-thumb-height-desktop: 250px;
-	$mcs-thumb-height-mobile: 180px;
-	
-	$mcs-thumb-margin-desktop: 0 1rem;
-	$mcs-thumb-margin-mobile: 1rem 0;
-	
-	@include case-studies-container;
-	a {
-	.cs-thumb-wrapper { 
-		width: $mcs-thumb-width-mobile;
-		height: $mcs-thumb-height-mobile;
-		@include cs-thumb-wrapper;
-		
-		@include respond-to('lg') {
-			width: $mcs-thumb-width-desktop;
-			height: $mcs-thumb-height-desktop;		
-		}			
-	}
-	
-	.cs-thumb-filter {
-		width: $mcs-thumb-width-mobile;
-		height: $mcs-thumb-height-mobile;
-		
-		@include cs-thumb-filter;
-		
-		@include respond-to('lg') {
-			width: $mcs-thumb-width-desktop;
-			height: $mcs-thumb-height-desktop;		
-		}
-		
-		&.pink:hover {
-			background-color: $pink;
-		}
-		&.green:hover {
-			background-color: $green;
-			color: $navy;
-		}
-		&.cyan:hover {
-			background-color: $cyan;
-			color: $navy;
-		}
-		&.yellow:hover {
-			background-color: $yellow;
-			color: $navy;
-		}
-	}
-	}
-}
-
 

@@ -99,7 +99,7 @@ $theme_path = get_template_directory_uri();
 				    
 				    foreach($categories as $category) {
 				        echo "<div class='tab-pane' id='". $category->slug."'>
-				        		<div class='blog-posts-container case-studies-container bpc-".$category->slug."'>
+				        		<div class='blog-posts-container small-card-container bpc-".$category->slug."'>
 				        ";
 				        
 				        $args = array(

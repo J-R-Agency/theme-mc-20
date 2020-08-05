@@ -23,8 +23,7 @@ include( locate_template( 'header.php', false, false ) ); ?>
 	
 	<a class='take-back pink' href="<?php site_url(); ?>/helpful-stuff">Take me back to Helpful Stuff</a>
 	
-	<!--h1><?php echo the_title(); ?></h1-->
-	
+	<div class='small-card-container'>
 	<?php
 		//$masterclasses = get_cat_ID('masterclasses');
     	//$female_founders = get_cat_ID('female founders');
@@ -48,17 +47,18 @@ include( locate_template( 'header.php', false, false ) ); ?>
 		 
 		    while ( $query->have_posts() ) : $query->the_post();
 			 	
-				$card_color = 'light-grey';
+				$mc_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+				$hover_color = 'pink';
 				$categories = get_the_category();
 				
-				include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
-				
+				include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
 				
 			endwhile;
 			
 		endif; 
 		wp_reset_postdata();
 	?>
+	</div>
 	
 	<div class='understrap-pagination'>
 		<?php understrap_pagination(); ?>

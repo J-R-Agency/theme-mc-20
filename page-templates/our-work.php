@@ -32,12 +32,12 @@ include( locate_template( 'header.php', false, false ) );  ?>
 <!-- CASE STUDIES -->
 <section class="generic bg-white">
 	<?php include_once (get_template_directory() . '/global-templates/template-parts/case-study-tabs.php'); ?>
-	<div class='case-studies-container'>		
+	<div class='small-card-container'>		
 		<?php
 		    echo '<div class="tab-content">';
 		    
 		    echo "<div class='tab-pane active' id='all'>
-		    		<div class='case-studies-container all'>
+		    		<div class='small-card-container all'>
 		    ";
 		    
 		        $pageSlug = get_page_by_path( 'our-work' );
@@ -81,7 +81,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 				        		<ul class='pager-".$category->slug."' curr='0'></ul>
 							</div>
 						</div>
-		        		<div class='case-studies-container csc-".$category->slug."'>
+		        		<div class='small-card-container csc-".$category->slug."'>
 		        ";
 		        
 				$pageSlug = get_page_by_path( 'our-work' );
