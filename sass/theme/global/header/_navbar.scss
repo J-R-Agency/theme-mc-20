@@ -216,7 +216,10 @@ button:focus {
 
 // MENU BURGER
 .menu-burger, .menu-close {
-	width: 75px;
+	width: 50px;
+	@include respond-to('lg') {
+		width: 75px;
+	}
 }
 
 .hamburger, .close-menu {
@@ -227,7 +230,10 @@ button:focus {
 // LOGO
 
 .logo {
-	width: 200px;	
+	width: 125px;
+	@include respond-to('lg') {
+		width: 200px;
+	}	
 }
 
 .logo-mini {
