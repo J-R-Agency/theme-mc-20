@@ -22,7 +22,7 @@ p, li:not(.menu-item) {
 	line-height: $line-height;
 }
 
-h1, h2, h3, h5, h6 {
+h1, h2, h3, h5, h6, blockquote {
 	@include _dm-sans-bold;
 }
 

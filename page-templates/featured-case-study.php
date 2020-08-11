@@ -90,7 +90,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 						}
 					?>);'>
 	        <div class='fcs-content'>
-		    	<h3><?php echo strip_tags($fcsq_quote); ?></h3>
+		    	<blockquote><?php echo strip_tags($fcsq_quote); ?></blockquote>
 				<p><?php echo strip_tags($fcsq_citation); ?></p>
 	        </div>
         </section>

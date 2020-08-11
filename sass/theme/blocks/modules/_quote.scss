@@ -2,14 +2,20 @@ $fcs-mobile-height: 600px;
 $fcs-desktop-height: 400px;
 
 @mixin quote-img {
-	padding: 0 1rem;
-	height: 25px;
-	width: 20px;
+	padding: 0 0.5rem;
+	height: 15px;
+	width: 10px;
 	content: "";
 	background-repeat: no-repeat;
-	background-size: 15px;
+	background-size: 10px;
 	background-position: top center;
 	display: inline-block;
+	@include respond-to ('lg') {
+		padding: 0 1rem;
+		height: 25px;
+		width: 20px;
+		background-size: 15px;	
+	}
 }
 
 .fcs-content, .cs-content {
@@ -18,15 +24,24 @@ $fcs-desktop-height: 400px;
 	padding: 2rem 0;
 	color: white;
 	filter: brightness(100%);
-	h3, h2 {
+	blockquote {
 		margin-bottom: 2rem;
+		font-size: 1rem;
+		
+		@include respond-to ('lg') {
+			font-size: 1.7rem;
+		}
+		
 		&:before {
 			@include quote-img;
 			background-image: url("../assets/graphics/left-quote.svg");
+			margin-left: -.4em;
 		}
+		
 		&:after {
 			@include quote-img;
 			background-image: url("../assets/graphics/right-quote.svg");
+			margin-right: -.4em;
 		}
 	}
 }
