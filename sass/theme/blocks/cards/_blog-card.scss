@@ -36,7 +36,11 @@
     padding: 10px;
     background: $pink;
     left: -1em;
-    top: -14em;
+    top: -2em;
+    
+    @include respond-to('lg') {
+	   top: -14em; 
+    }
 	
 	&.ribbon-green {
 		background: $green;
