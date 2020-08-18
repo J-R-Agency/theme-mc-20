@@ -26,7 +26,7 @@ $theme_path = get_template_directory_uri();
 		
 		?>
 		
-		<section class='generic bg-white'>
+		<section class='container generic bg-white'>
 			<h2><?php echo $bc_title; ?></h2>
 			<p class='hs-subtitle'><?php echo $bc_subtitle; ?></p>
 			
@@ -58,8 +58,10 @@ $theme_path = get_template_directory_uri();
 			?>
 			</div>
 		</section>
-		<section class='link-block bg-light-grey'>
-			<a href='<?php echo site_url();?>/category/<?php echo $bc_cat_object->slug; ?>'><?php echo $bc_link_text; ?><div class='arrow-link-<?php echo $bc_color; ?>'></div></a>
+		<section class='bg-light-grey'>
+			<div class='container link-block '>
+				<a href='<?php echo site_url();?>/category/<?php echo $bc_cat_object->slug; ?>'><?php echo $bc_link_text; ?><div class='arrow-link-<?php echo $bc_color; ?>'></div></a>
+			</div>
 		</section>
 		
 	<?php endwhile; ?>

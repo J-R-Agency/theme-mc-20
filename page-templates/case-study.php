@@ -19,7 +19,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <!-- SERVICE, IMPACT AND EMPATHY -->
 <?php if( have_rows('service_impact_empathy') ): ?>
-	<section class='sie-container'>
+	<section class='container sie-container'>
     <?php while( have_rows('service_impact_empathy') ): the_row();
 	    $sie_title = get_sub_field('sie_title');
 	    $sie_image = get_sub_field('sie_image');

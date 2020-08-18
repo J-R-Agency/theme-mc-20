@@ -38,9 +38,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 			</h2>
 
-		<?php if ( 'container' === $container ) : ?>
+		
 			<div class="container">
-		<?php endif; ?>
+	
 
 			<!-- Your site title as branding in the menu --> 
 			<div class='site-logo'>
@@ -71,11 +71,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 					/assets/menu/menu-close-<?php echo $page_color; ?>.png">
 			</button>
 			
-			<?php if ( 'container' === $container ) : ?>
 			</div><!-- .container -->
-			<?php endif; ?>
+			
 		</nav><!-- .site-navigation -->
-			<div id='mega-menu' class='mega-menu-<?php echo $page_color; ?>'>
+			<div id='mega-menu' class='container mega-menu-<?php echo $page_color; ?>'>
 				
 				<div class='menu-container'>
 					

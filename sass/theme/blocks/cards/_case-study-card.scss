@@ -10,9 +10,11 @@
 		color: $navy;
 		@include respond-to('md') {
 			width: 31%;
-			height: 15vw;
 			margin: 0 1rem 1rem 0;	
-		}			
+		}	
+		@include respond-to('xl') {
+			height: 300px;
+		}
 	}
 	
 	@include respond-to('md') {

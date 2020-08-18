@@ -26,7 +26,7 @@ if( have_rows('flexible_content_block') ):
        if( get_row_layout() == 'wp_content' ):
        		
        		echo "<!-- WP Content Block -->
-				<section class='generic bg-white'>";
+				<section class='container generic bg-white'>";
 				
 			if (have_posts()) : while (have_posts()) : the_post();
 					the_content();
@@ -54,33 +54,37 @@ if( have_rows('flexible_content_block') ):
             if ($cb_style == 'primary'):
             	echo "
             		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
-            			<h2>".strip_tags($cb_copy,'<span><p>')."</h2>
+            			<div class='container'>
+            				<h2>".strip_tags($cb_copy,'<span><p>')."</h2>
+            			</div>
             		</section>
             	";
             elseif ($cb_style == 'secondary'):
             	echo "
             		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
-            		
-            			<h2>".strip_tags($cb_title,'<span>')."</h2>
-            			
-            			<div class='cb-container'>
-	            			<div class='cb-left'>
-	            				".$cb_column_left."
-	            			</div>
+            			<div class='container'>
+	            			<h2>".strip_tags($cb_title,'<span>')."</h2>
 	            			
-	            			<div class='cb-right'>
-	            				".$cb_column_right."
-	            			</div>
+	            			<div class='cb-container'>
+		            			<div class='cb-left'>
+		            				".$cb_column_left."
+		            			</div>
+		            			
+		            			<div class='cb-right'>
+		            				".$cb_column_right."
+		            			</div>
+		            		</div>
 	            		</div>
-	            		
             		</section>
             	";
             elseif ($cb_style == 'tertiary'):
             	echo "
             		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
-            			<img src='".$cb_image['url']."' alt='".$cb_image['alt']."'>
-            			<h2>".strip_tags($cb_title,'<span>')."</h2>
-            			<p>".strip_tags($cb_copy,'<span>')."</p>
+            			<div class='container'>
+	            			<img src='".$cb_image['url']."' alt='".$cb_image['alt']."'>
+	            			<h2>".strip_tags($cb_title,'<span>')."</h2>
+	            			<p>".strip_tags($cb_copy,'<span>')."</p>
+	            		</div>
             		</section>
             	";
             endif;
@@ -101,7 +105,7 @@ if( have_rows('flexible_content_block') ):
 			
 			echo "<section class='generic bg-".$isb_background_color." icon-set'>
 						<h2>".strip_tags($isb_title,'<span>')."</h2>
-							<div class='icon-set-container'>";
+							<div class='container icon-set-container'>";
 						
 							if( have_rows('isb_icons') ):
 								while( have_rows('isb_icons') ): the_row(); 
@@ -156,30 +160,32 @@ if( have_rows('flexible_content_block') ):
 			$cta_image = get_sub_field('cta_image');
 			
 			echo "
-			<div class='cta-filter ".$cta_filter." ".$cta_style."'>";
-			
-			if ($cta_style == 'secondary'):
-				echo "<div class='cta-post-it'>";
-			endif;
-			
-			echo "<h1>".$cta_title."</h1>
-				 <p>".$cta_intro."</p>";
-				 
-			if ($cta_link_type == "link") {
-				echo "<div class='button-navy'><a href='".$cta_link['url']."' target='".$cta_link['target']."'>".$cta_link['title']."</a></div>";
-			} elseif ($cta_link_type == "file") {
-				echo "<div class='button-navy'><a href='".$cta_file['url']."' download>Tell me more</a></div>";
-			}
-			
-			
-			if ($cta_style == 'secondary'):
-				echo "</div>";
-			endif;
-				 
-			echo "
-			</div>
-			<div class='cta-block ".$cta_style."' style='background-image:url(".$cta_image['url'].")'>
+			<div class='container' style='position: relative;'>
+				<div class='cta-filter ".$cta_filter." ".$cta_style."'>";
 				
+				if ($cta_style == 'secondary'):
+					echo "<div class='cta-post-it'>";
+				endif;
+				
+				echo "<h1>".$cta_title."</h1>
+					 <p>".$cta_intro."</p>";
+					 
+				if ($cta_link_type == "link") {
+					echo "<div class='button-navy'><a href='".$cta_link['url']."' target='".$cta_link['target']."'>".$cta_link['title']."</a></div>";
+				} elseif ($cta_link_type == "file") {
+					echo "<div class='button-navy'><a href='".$cta_file['url']."' download>Tell me more</a></div>";
+				}
+				
+				
+				if ($cta_style == 'secondary'):
+					echo "</div>";
+				endif;
+					 
+				echo "
+				</div>
+				<div class='cta-block ".$cta_style."' style='background-image:url(".$cta_image['url'].")'>
+					
+				</div>
 			</div>
 			";
 
@@ -191,7 +197,7 @@ if( have_rows('flexible_content_block') ):
             $csb_title = get_sub_field('csb_title');
 			
 			echo "
-			<section class='generic bg-white case-studies-block'>
+			<section class='container generic bg-white case-studies-block'>
 				<h2>".$csb_title."</h2>
 				<div class='small-card-container'>
 				";		
@@ -221,8 +227,10 @@ if( have_rows('flexible_content_block') ):
 								
 			echo "</div>
 			</section>
-			<section class='link-block bg-light-grey'>
-				<a href='".site_url()."/our-work'>See more projects<div class='arrow-link-pink'></div></a>
+			<section class='bg-light-grey'>
+				<div class='container link-block '>
+					<a href='".site_url()."/our-work'>See more projects<div class='arrow-link-pink'></div></a>
+				</div>
 			</section>
 			";
 
@@ -236,8 +244,10 @@ if( have_rows('flexible_content_block') ):
             $lb_background_color = get_sub_field('lb_background_color');
 			
 			echo "
-			<section class='link-block bg-".$lb_background_color."'>
-				<a href='".$lb_link['url']."'>".$lb_link['title']."<div class='arrow-link-".$page_color."'></div></a>
+			<section class='bg-".$lb_background_color."'>
+				<div class='container link-block '>
+					<a href='".$lb_link['url']."'>".$lb_link['title']."<div class='arrow-link-".$page_color."'></div></a>
+				</div>
 			</section>
 			";
 			
@@ -252,7 +262,7 @@ if( have_rows('flexible_content_block') ):
             $plb_pages = get_sub_field('plb_pages');
 			
 			echo "
-			<section class='generic bg-white page-links-block'>
+			<section class='container generic bg-white page-links-block'>
 				<h2>".$plb_title."</h2>
 				<div class='plb-container'>";
 				
@@ -291,7 +301,7 @@ if( have_rows('flexible_content_block') ):
 			
 			echo "
 			<section class='slant bg-light-grey'>
-				<div class='ph-container'>
+				<div class='container ph-container'>
 				
 					<div class='ph-left'>
 						<h2>".$phb_title."</h2>
@@ -333,7 +343,7 @@ if( have_rows('flexible_content_block') ):
 			echo "
 			<section class='slant-top bg-navy team-block'>
 				<h2>".$tb_title."</h2>
-				<div class='tb-container'>";
+				<div class='container tb-container'>";
 							
 					if( have_rows('tb_team_members') ):
 					   while( have_rows('tb_team_members') ): the_row(); 
@@ -368,7 +378,7 @@ if( have_rows('flexible_content_block') ):
 				if( have_rows('testimonials') ):
 					$i = 1; // Set the increment variable
 					echo "
-					<section class='generic bg-navy testimonials-block'>
+					<section class='container generic bg-navy testimonials-block'>
 						<div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
 							<div class='carousel-inner'>
 					";
@@ -422,7 +432,7 @@ if( have_rows('flexible_content_block') ):
 			echo "
 			<section class='slant-bottom bg-light-grey image-content-block'>
 				
-				<div class='icb-container'>
+				<div class='container icb-container'>
 					<div class='icb-left'>
 						<img src='".$icb_image['url']."' alt='".$icb_image['alt']."'>
 					</div>
@@ -454,21 +464,23 @@ if( have_rows('flexible_content_block') ):
 				if ( $query->have_posts() ) :
 					echo "
 					<section class='generic bg-".$bpb_background_color."'>
-						<h2 style='text-align: center; padding-bottom: 2rem;'>".$bpb_title."</h2>";				 
-				    while ( $query->have_posts() ) : $query->the_post();
-					 						 	
-					 	if ($bpb_background_color == "white") {
-						 	$card_color = 'light-grey';
-					 	} elseif ($bpb_background_color == "light-grey") {
-						 	$card_color = 'white';
-					 	}
-					 	
-						$categories = get_the_category();
+						<div class='container'>
+							<h2 style='text-align: center; padding-bottom: 2rem;'>".$bpb_title."</h2>";				 
+					    while ( $query->have_posts() ) : $query->the_post();
+						 						 	
+						 	if ($bpb_background_color == "white") {
+							 	$card_color = 'light-grey';
+						 	} elseif ($bpb_background_color == "light-grey") {
+							 	$card_color = 'white';
+						 	}
+						 	
+							$categories = get_the_category();
+							
+							include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
 						
-						include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
-					
-					endwhile;
-					echo "</section>";
+						endwhile;
+					echo "</div>
+					</section>";
 				endif; 
 				wp_reset_query();
 		

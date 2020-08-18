@@ -16,7 +16,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
 <section class='footer bg-navy'>
-	<div class='footer-container'>
+	<div class='container footer-container'>
 		
 		<div class='footer-container-left'>
 			<!-- Logo -->

@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 $theme_path = get_template_directory_uri();
 ?>
 
-<div class='case-studies-header'>
+<div class='container case-studies-header'>
 	<h2 id='cs-title'>More Inspiring Stories</h2>
 	<?php
 		

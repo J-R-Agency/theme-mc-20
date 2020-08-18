@@ -20,7 +20,7 @@ $theme_path = get_template_directory_uri();
 		
 		?>
 
-		<section class="generic bg-white">
+		<section class="container generic bg-white">
 			
 			<!-- Blog tabs -->
 			<div class='blog-posts-header'>
@@ -138,8 +138,10 @@ $theme_path = get_template_directory_uri();
 			
 		</section>
 		
-		<section class='link-block bg-light-grey'>
-			<a href='<?php echo site_url();?>/archive'><?php echo $bt_link_text; ?><div class='arrow-link-pink'></div></a>
+		<section class='bg-light-grey'>
+			<div class='container link-block'>
+				<a href='<?php echo site_url();?>/archive'><?php echo $bt_link_text; ?><div class='arrow-link-pink'></div></a>
+			</div>
 		</section>
 
 	<?php endwhile; ?>

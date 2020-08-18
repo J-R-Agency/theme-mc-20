@@ -24,13 +24,15 @@ button:focus {
 // MEGA MENU
 #mega-menu {
 	background-color: $light-grey;
-	padding: 0 2rem 2rem 2rem;
+	padding: 1rem;
 	@include respond-to('md') {
-		padding: 0 3rem 3rem 3rem;
+		padding: 1rem 7.5rem;
 	}
-	@include respond-to('lg') {
-		padding: 0 9rem 3rem 9rem;
+	
+	@include respond-to('xxl') {
+		padding: 1rem 0 2rem 0;
 	}
+	
 	a {
 		color: $navy;
 	}

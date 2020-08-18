@@ -11,9 +11,9 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<header class="container entry-header">
 		
-		<a class='take-back' href="javascript:history.back()">Take me back</a>
+		<a class='take-back pink' href="<?php site_url(); ?>/helpful-stuff">Take me back</a>
 		
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
@@ -46,7 +46,7 @@ defined( 'ABSPATH' ) || exit;
 	?>
 	
 	<?php if (has_post_thumbnail()): ?>
-	<div class='post-hero-container'>
+	<div class='container post-hero-container'>
 		<div class='post-hero-filter <?php the_field('hero_filter');?>'></div>
 		<div class='post-hero' style="
 						background-image: url('<?php echo $thumb; ?>');
@@ -59,7 +59,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<?php endif; ?>
 	
-	<div class="entry-content">
+	<div class="container entry-content">
 
 		<?php the_content(); ?>
 
@@ -74,7 +74,7 @@ defined( 'ABSPATH' ) || exit;
 
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="container entry-footer">
 
 		<?php understrap_entry_footer(); ?>
 

@@ -33,7 +33,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	if ( $children->have_posts() ) :
 	 	echo "
 	 	<section class='generic bg-light-grey'>
-	 		<div class='icon-set-container service-nav-page'>";
+	 		<div class='container icon-set-container service-nav-page'>";
 	    while ( $children->have_posts() ) : $children->the_post();
 		 	
 		 	$page_icon = get_field('page_icon');

@@ -1,7 +1,6 @@
 ( function( $ ) {
 	
 $(document).ready(function() {
-	
 	// Hide menu and close button on start
 	$( "#mega-menu" ).hide();
 	$( ".close-menu" ).hide();
@@ -9,7 +8,7 @@ $(document).ready(function() {
 	
 	// Click on hamburger to show menu
 	$( ".hamburger" ).click(function() {
-		$( "#main-nav" ).css("background-color","#F5F5F5");
+		$( "#wrapper-navbar" ).css("background-color","#F5F5F5");
 		$( ".logo" ).hide("fast");
 		$( ".logo-mini" ).show("fast");
 		$( ".menu-container" ).show();
@@ -24,7 +23,7 @@ $(document).ready(function() {
 	
 	// Click close to hide menu
 	$( ".close-menu" ).click(function() {
-		$( "#main-nav" ).css("background-color","transparent");
+		$( "#wrapper-navbar" ).css("background-color","transparent");
 		$( ".logo" ).show("fast");
 		$( ".logo-mini" ).hide("fast");
 		$( ".menu-container" ).hide();
