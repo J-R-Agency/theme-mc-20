@@ -65,7 +65,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 							    echo get_template_directory_uri().'/assets/images/quote-bg-img.jpg';
 							}
 						?>);'>
-		        <div class='fcs-content'>
+		        <div class='container fcs-content'>
 			    	<h3><?php echo strip_tags($csq_quote); ?></h3>
 					<p><?php echo strip_tags($csq_citation); ?></p>
 		        </div>
@@ -76,7 +76,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 <?php endif; ?>
 
 <!-- WP CONTENT -->
-<section class='cs-content-container generic'>
+<section class='container cs-content-container generic'>
 <?php
 	if (have_posts()) : while (have_posts()) : the_post();
 			the_content();

@@ -19,8 +19,8 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <!-- Intro -->
 <?php if( have_rows('services_and_impact') ): ?>
-	<section class = 'generic bg-white'>
-		<div class='cs-intro-container'>
+	<section class = 'container generic bg-white'>
+		<div class = 'cs-intro-container'>
 			
 			<div class='cs-intro-left'>
 		    <?php while( have_rows('services_and_impact') ): the_row(); ?>
@@ -89,7 +89,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 						    echo get_template_directory_uri().'/assets/images/quote-bg-img.jpg';
 						}
 					?>);'>
-	        <div class='fcs-content'>
+	        <div class='container fcs-content'>
 		    	<blockquote><?php echo strip_tags($fcsq_quote); ?></blockquote>
 				<p><?php echo strip_tags($fcsq_citation); ?></p>
 	        </div>
@@ -100,7 +100,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 
 
-<section class='generic bg-white fcs-content-container'>
+<section class='container generic bg-white fcs-content-container'>
 <h2>Our <span class='underline-green-1'>Response</span></h2>
 <?php
 	if (have_posts()) : while (have_posts()) : the_post();

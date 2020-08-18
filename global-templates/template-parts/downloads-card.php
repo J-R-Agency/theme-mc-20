@@ -17,15 +17,28 @@ $theme_path = get_template_directory_uri();
 		$file_name = get_sub_field('file_name');
 		$image = get_sub_field('image');
 		$file = get_sub_field('file');
+		$link = get_sub_field('link');
 		$color = get_sub_field('color');
-		
+
 		?>
 		
 		<div class="download-card-container">
-			<a href="<?php echo $file['url']; ?>" download>
+			<?php
+				if ($file) {
+					echo "<a href='".$file['url']."' download>";
+				} elseif ($link) {
+					echo "<a href='".$link['url']."'>";
+				} else {
+					echo "";
+				}
+			?>
+			
+				<?php if ($file_name):?>
 				<div class='download-card-header <?php echo $color; ?>'>
 					<h3><?php echo $file_name; ?></h3>
 				</div>
+				<?php endif; ?>
+				
 				<div class='download-card-img' style="background-image:url(<?php echo $image['url']; ?>)"></div>
 				
 				<div class='ribbon-wrapper'>
