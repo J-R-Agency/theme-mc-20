@@ -26,10 +26,12 @@ $theme_path = get_template_directory_uri();
 			<?php
 				if ($file) {
 					echo "<a href='".$file['url']."' download>";
-				} elseif ($link) {
-					echo "<a href='".$link['url']."'>";
 				} else {
-					echo "";
+				}
+				
+				if ($link) {
+					echo "<a href='".$link['url']."' target='".$link['target']."'>";
+				} else {
 				}
 			?>
 			
