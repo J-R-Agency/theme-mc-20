@@ -47,7 +47,7 @@
 	flex-direction: column;
 	align-items: center;
 	@include respond-to ('lg') {
-		padding: 5rem 10rem 1rem 10rem;
+		padding: 5rem 7.5rem 1rem 7.5rem;
 		display: block;
 	}
 	@include respond-to('xxl') {
