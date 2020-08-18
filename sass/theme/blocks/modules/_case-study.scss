@@ -50,6 +50,9 @@
 		padding: 5rem 10rem 1rem 10rem;
 		display: block;
 	}
+	@include respond-to('xxl') {
+		padding: 5rem 0rem 1rem 0rem;
+	}
 }
 
 
