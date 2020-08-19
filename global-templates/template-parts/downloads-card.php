@@ -25,13 +25,23 @@ $theme_path = get_template_directory_uri();
 		<div class="download-card-container">
 			<?php
 				if ($file) {
+
 					echo "<a href='".$file['url']."' download>";
+
 				} else {
+
+					// Do nothing
+					
 				}
 				
 				if ($link) {
+
 					echo "<a href='".$link['url']."' target='".$link['target']."'>";
+
 				} else {
+
+					// Do nothing
+
 				}
 			?>
 			
@@ -51,3 +61,4 @@ $theme_path = get_template_directory_uri();
 		
 	<?php endwhile; ?>
 <?php endif; ?>
+<!-- // REVERTING STATE TO COMMIT b3c34eebaf3f299cf6e0b87cc00787eac1a3b7c5: Download card fix -->
