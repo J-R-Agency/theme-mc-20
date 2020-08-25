@@ -78,3 +78,18 @@ function sv_remove_jp_sharing() {
     }
 }
 add_action( 'loop_start', 'sv_remove_jp_sharing' );
+
+// Fix category page pagination 404 error
+add_action( 'init', 'wpa58471_category_base' );
+function wpa58471_category_base() {
+    add_rewrite_rule(
+        'blog/([^/]+)/page/(\d+)/?$',
+        'index.php?category_name=$matches[1]&paged=$matches[2]',
+        'top' 
+    );
+    add_rewrite_rule( 
+        'blog/([^/]+)/(feed|rdf|rss|rss2|atom)/?$',
+        'index.php?category_name=$matches[1]&feed=$matches[2]', 
+        'top' 
+    );
+}

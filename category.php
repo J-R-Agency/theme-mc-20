@@ -37,7 +37,8 @@ include( locate_template( 'header.php', false, false ) ); ?>
 			    'post_status'	 => 'publish',
 			    //'category__not_in' => $excluded_cats,
 			    'category__in'   => $selected_category,
-			    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 0)
+			    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 0),
+			    'page'  => ( get_query_var('paged') ? get_query_var('paged') : 0)
 			 );
 			 
 			$query = new WP_Query( $args );
