@@ -11,6 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $categories = get_the_category();
+$term = get_queried_object_id();
 $category_color = get_field('category_color', $categories[0]);
 
 $bw = 'black';
@@ -22,23 +23,21 @@ include( locate_template( 'header.php', false, false ) ); ?>
 <section class="generic bg-white">
 	
 	<div class='container'>
-		<a class='take-back pink' href="<?php site_url(); ?>/helpful-stuff">Take me back to Helpful Stuff</a>
+		<a class='take-back pink' href="<?php site_url(); ?>/helpful-stuff">Take me back to Helpful Stuff</a>	
 		
 		<div class='small-card-container'>
 		<?php
 			//$masterclasses = get_cat_ID('masterclasses');
 	    	//$female_founders = get_cat_ID('female founders');
-	    	//$excluded_cats = array( $masterclasses, $female_founders );
-	    	$selected_category = $categories[0];
+	    	//$excluded_cats = array( $masterclasses, $female_founders );	    	
 	    	
 			$args = array(
 			    'post_type'      => 'post', //write slug of post type
 			    'order'          => 'DESC',
 			    'post_status'	 => 'publish',
 			    //'category__not_in' => $excluded_cats,
-			    'category__in'   => $selected_category,
-			    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 0),
-			    'page'  => ( get_query_var('paged') ? get_query_var('paged') : 0)
+			    'category__in'   => $term,
+			    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 0)
 			 );
 			 
 			$query = new WP_Query( $args );
