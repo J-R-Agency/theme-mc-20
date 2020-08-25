@@ -37,39 +37,37 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<h2 id="main-nav-label" class="sr-only">
 				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 			</h2>
-
 		
 			<div class="container">
-	
-
-			<!-- Your site title as branding in the menu --> 
-			<div class='site-logo'>
-				<a href="<?php echo get_site_url(); ?>">
-					<!-- Regular logo -->
-					<img class="logo"
-					src="<?php echo get_template_directory_uri(); ?>
-					/assets/logos/logo-<?php echo $bw; ?>-<?php echo $page_color; ?>.png"
-					alt="Matchstick Creative Logo">
-					
-					<!-- Mini logo -->
-					<img class="logo-mini"
-					src="<?php echo get_template_directory_uri(); ?>
-					/assets/logos/logo-mini-<?php echo $page_color; ?>.png"
-					alt="Matchstick Creative Logo">
-				</a>
-			</div>		
-			
-			<!-- Hamburger -->
-			<button class="hamburger" type="button">
-				<img class='menu-burger' src="<?php echo get_template_directory_uri(); ?>
-					/assets/menu/menu-burger-<?php echo $page_color; ?>.png">
-			</button>
-			
-			<!-- Close button -->
-			<button class="close-menu" type="button">
-				<img class='menu-close' src="<?php echo get_template_directory_uri(); ?>
-					/assets/menu/menu-close-<?php echo $page_color; ?>.png">
-			</button>
+				
+				<!-- Your site title as branding in the menu --> 
+				<div class='site-logo'>
+					<a href="<?php echo get_site_url(); ?>">
+						<!-- Regular logo -->
+						<img class="logo"
+						src="<?php echo get_template_directory_uri(); ?>
+						/assets/logos/logo-<?php echo $bw; ?>-<?php echo $page_color; ?>.png"
+						alt="Matchstick Creative Logo">
+						
+						<!-- Mini logo -->
+						<img class="logo-mini"
+						src="<?php echo get_template_directory_uri(); ?>
+						/assets/logos/logo-mini-<?php echo $page_color; ?>.png"
+						alt="Matchstick Creative Logo">
+					</a>
+				</div>		
+				
+				<!-- Hamburger -->
+				<button class="hamburger" type="button">
+					<img class='menu-burger' src="<?php echo get_template_directory_uri(); ?>
+						/assets/menu/menu-burger-<?php echo $page_color; ?>.png">
+				</button>
+				
+				<!-- Close button -->
+				<button class="close-menu" type="button">
+					<img class='menu-close' src="<?php echo get_template_directory_uri(); ?>
+						/assets/menu/menu-close-<?php echo $page_color; ?>.png">
+				</button>
 			
 			</div><!-- .container -->
 			

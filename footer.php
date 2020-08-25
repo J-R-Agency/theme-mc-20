@@ -53,10 +53,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class='footer-container-right'>
 			<div class='footer-info'>
 				<a href='tel:<?php the_field('company_phone', 'option'); ?>'>
-					<h5><?php the_field('company_phone', 'option'); ?></h5>
+					<h5 class='phone'><?php the_field('company_phone', 'option'); ?></h5>
 				</a>
 				<a href='mailto:<?php the_field('company_email', 'option'); ?>'>
-					<h5><?php the_field('company_email', 'option'); ?></h5>
+					<h5 class='email'><?php the_field('company_email', 'option'); ?></h5>
 				</a>
 				<?php the_field('company_address', 'option'); ?>
 			</div>

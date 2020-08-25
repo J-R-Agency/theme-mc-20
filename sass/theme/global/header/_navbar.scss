@@ -25,12 +25,8 @@ button:focus {
 #mega-menu {
 	background-color: $light-grey;
 	padding: 1rem;
-	@include respond-to('md') {
+	@include respond-to('lg') {
 		padding: 1rem 7.5rem;
-	}
-	
-	@include respond-to('xxl') {
-		padding: 1rem 0 2rem 0;
 	}
 	
 	a {
@@ -69,8 +65,12 @@ button:focus {
 	padding: 1rem;
 	width: 100%;
 	z-index: 99;
-	@include respond-to('md') {
-		padding: 1rem 7.5rem;
+	
+	.container {
+		padding: 1rem;
+		@include respond-to('lg') {
+			padding: 0rem 7.5rem;
+		}		
 	}
 }
 

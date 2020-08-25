@@ -1,6 +1,6 @@
 .carousel-item {
 	text-align: center;
-	padding: 20% 1rem;
+	padding: 0 1rem;
 	height: 500px;
 	overflow: hidden;
 	@include respond-to ('md') {
@@ -27,8 +27,8 @@
 }
 
 .quote-icon {
-	padding: 1rem;
-	height: 70px;
+	padding: 0 0 1rem 0;
+	height: 50px;
 }
 
 .testimonial-quote {

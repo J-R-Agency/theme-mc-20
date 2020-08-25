@@ -1,6 +1,6 @@
 .footer {
 	color: white;
-	padding: 2rem;
+	padding: 1rem;
 	@include respond-to('md') {
 		padding: 3rem 7.5rem;
 	}
@@ -40,6 +40,12 @@
 		img {
 			width: 25px;
 		}
+	}
+}
+
+.footer-info {
+	.email, .phone {
+		font-size: 16px;
 	}
 }
 

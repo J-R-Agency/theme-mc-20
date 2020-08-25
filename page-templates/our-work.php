@@ -56,7 +56,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 				 
 				    while ( $children->have_posts() ) : $children->the_post();
 					 	
-						$cs_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+						$cs_img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' )[0];
 						$categories = get_the_category();
 						
 						include (get_template_directory().'/global-templates/template-parts/case-study-card.php');	

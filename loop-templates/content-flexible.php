@@ -103,9 +103,9 @@ if( have_rows('flexible_content_block') ):
             $isb_page = sanitize_title(get_the_title());
 			
 			
-			echo "<section class='generic bg-".$isb_background_color." icon-set'>
+			echo "<section class='container generic bg-".$isb_background_color." icon-set'>
 						<h2>".strip_tags($isb_title,'<span>')."</h2>
-							<div class='container icon-set-container'>";
+							<div class='icon-set-container'>";
 						
 							if( have_rows('isb_icons') ):
 								while( have_rows('isb_icons') ): the_row(); 
@@ -122,7 +122,7 @@ if( have_rows('flexible_content_block') ):
 										echo "<a href='".$isb_link['url']."' target='".$isb_link['target']."'>";
 									}
 									
-									echo "<img src='".$isb_icon['url']."'>";										
+									echo "<img src='".$isb_icon['sizes']['medium']."'>";										
 											
 										if ($isb_caption) {
 											echo "<h5>".$isb_caption."</h5>";
@@ -216,7 +216,7 @@ if( have_rows('flexible_content_block') ):
 				 
 				    while ( $children->have_posts() ) : $children->the_post();
 					 	
-						$cs_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+						$cs_img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' )[0];
 						$categories = get_the_category();
 						
 						include (get_template_directory().'/global-templates/template-parts/case-study-card.php');	
@@ -354,7 +354,7 @@ if( have_rows('flexible_content_block') ):
 									
 							echo "
 							<div class='tb-wrapper'>
-								<img class='team-portrait' src='".$team_member_portrait['url']."' alt='".$team_member_portrait['alt']."'>
+								<img class='team-portrait' src='".$team_member_portrait['sizes']['large']."' alt='".$team_member_portrait['alt']."'>
 								<h3>".$team_member_name."</h3>
 								<p>".$team_member_position."</p>
 							</div>";
@@ -434,7 +434,7 @@ if( have_rows('flexible_content_block') ):
 				
 				<div class='container icb-container'>
 					<div class='icb-left'>
-						<img src='".$icb_image['url']."' alt='".$icb_image['alt']."'>
+						<img src='".$icb_image['sizes']['large']."' alt='".$icb_image['alt']."'>
 					</div>
 					<div class='icb-right'>
 						<h2>".$icb_title."</h2>

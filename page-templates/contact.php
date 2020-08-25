@@ -64,6 +64,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	<?php echo do_shortcode("[contact-form-7 id='5' title='Contact Form']"); ?>
 </section>
 
+<!-- FRIENDLY FACES -->
 <section class='friendly-faces generic bg-navy'>
 	<h2>Friendly Faces</h2>
 	<div class='ff-container'>
@@ -81,7 +82,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 					
 				echo "
 				<div class='ff-wrapper'>
-					<img class='team-portrait' src='".$ff_portrait['url']."' alt='".$ff_portrait['alt']."'>
+					<img class='team-portrait' src='".$ff_portrait['sizes']['large']."' alt='".$ff_portrait['alt']."'>
 					<div class='ff-info'>
 						<p>".$ff_name."</p>
 						<p>".$ff_position."</p>";

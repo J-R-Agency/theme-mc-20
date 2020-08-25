@@ -33,4 +33,6 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	?>
 </section>
 
+<?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
+
 <?php include( locate_template( 'footer.php', false, false ) ); ?>

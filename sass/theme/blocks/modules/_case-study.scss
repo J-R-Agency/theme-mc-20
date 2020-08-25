@@ -42,17 +42,9 @@
 }
 
 .case-studies-block {
-	padding: 3rem 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	@include respond-to ('xl') {
-		padding: 5rem 7.5rem 1rem 7.5rem;
-		display: block;
-	}
-	@include respond-to('xxl') {
-		padding: 5rem 0rem 1rem 0rem;
-	}
 }
 
 
