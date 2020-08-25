@@ -60,7 +60,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		        	 style='background-image:url(
 			        	<?php
 				        	if ($csq_background_image){
-					        	echo $csq_background_image['url'];
+					        	echo $csq_background_image['sizes']['large'];
 						    } else {
 							    echo get_template_directory_uri().'/assets/images/quote-bg-img.jpg';
 							}
