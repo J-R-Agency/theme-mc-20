@@ -11,7 +11,10 @@ $theme_path = get_template_directory_uri();
 ?>
 
 <a href="<?php the_permalink(); ?>">
-	<div class='cs-thumb-wrapper pink' style='background-image:url("<?php echo $cs_img; ?>");'>
+	<div class='cs-thumb-wrapper pink' style='background-image:
+											 linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+											 url("<?php echo $cs_img; ?>");'>
+			
 		<h3><?php the_title(); ?></h3>
 		<p>
 		<?php foreach ( $categories as $i => $category ) {

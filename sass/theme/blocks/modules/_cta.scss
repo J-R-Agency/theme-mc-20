@@ -24,10 +24,12 @@ $mobile-cta-height: 400px;
 	p {
 		margin-bottom: 2rem;
 		width: 100%;
+		
 		@include respond-to('md') {
 			width: 50%;
 		}
 	}
+
 	&.none {
 		background: transparent;
 		h1, p {
@@ -35,7 +37,7 @@ $mobile-cta-height: 400px;
 		}
 	}
 	&.darken {
-		@include darken;
+		@include darken;	
 	}
 	&.lighten {
 		@include lighten;

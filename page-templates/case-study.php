@@ -58,6 +58,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
         <?php if($csq_quote): ?>
 	        <section class='fcs-quote-block'
 		        	 style='background-image:url(
+			        	 
 			        	<?php
 				        	if ($csq_background_image){
 					        	echo $csq_background_image['sizes']['large'];
