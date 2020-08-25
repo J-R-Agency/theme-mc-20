@@ -1,11 +1,11 @@
 @mixin global-padding {
 	padding: 3rem 1rem;
 	@include respond-to('md'){
-		padding: 3rem 1rem;
+		padding: 3rem;
 	}
-	@include respond-to('lg'){
+	@include respond-to('xl'){
 		padding: 5rem 10rem;
-	}		
+	}	
 }
 
 @mixin vertical-center {
