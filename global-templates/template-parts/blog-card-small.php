@@ -16,7 +16,9 @@ $category_color = get_field('category_color', $categories[0]);
 
 <a href="<?php the_permalink(); ?>">
 	<div class='cs-thumb-wrapper <?php echo $category_color; ?>'
-		 style='background-image:url("<?php if ( has_post_thumbnail() ) {
+		 style='background-image:
+			 	linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+				url("<?php if ( has_post_thumbnail() ) {
 		    		echo get_the_post_thumbnail_url(get_the_ID(),'medium');
 				} else { 
 					echo get_template_directory_uri()."/assets/images/blog-card-placeholder.jpg";
