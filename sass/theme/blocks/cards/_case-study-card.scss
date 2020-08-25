@@ -46,6 +46,12 @@
 			background-repeat: no-repeat;
 			background-position: center 75%;
 			background-blend-mode: normal;
+			h3 {
+				max-height: 55px;
+			}
+			p {
+				display: none;
+			}
 		}
 		
 		.separator:last-of-type {
@@ -53,8 +59,8 @@
 		}
 		
 		h3 {
-			font-size: 1.5rem;
-			max-height: 60px;
+			font-size: 1.4rem;
+			max-height: 105px;
 			overflow: hidden;
 		}
 				
