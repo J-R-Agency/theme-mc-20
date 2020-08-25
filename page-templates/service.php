@@ -19,62 +19,65 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <?php 
 if ( have_posts() ) : 
-	echo "<section class='generic bg-slant service-content'>";
+	echo "<section class='generic bg-slant service-content'>
+	<div class='container'>
+	";
     while ( have_posts() ) : the_post(); 
         the_content();
     endwhile; 
-    echo "</section>";
+    echo "</div>
+    </section>";
 endif; 
 ?>
 
 <?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
 
 <section class='generic bg-light-grey'>
-	
-	<h2 style='display: flex; justify-content: center;'>Other <?php $parent_title = get_the_title($post->post_parent); echo $parent_title; ?> Services</h2>
-	
-	<?php
+	<div class='container'>
+		<h2 style='display: flex; justify-content: center;'>Other <?php $parent_title = get_the_title($post->post_parent); echo $parent_title; ?> Services</h2>
 		
-	$currentID = get_the_ID();
-	$parentId = wp_get_post_parent_id( get_the_ID() );
-		
-	$args = array(
-	    'post_type'      => 'page', //write slug of post type
-	    'posts_per_page' => 4,
-	    'post_parent'    => $parentId,
-		'post__not_in' => array($currentID),
-	    'order'          => 'DESC'
-	 );
-	 
-	$children = new WP_Query( $args );
-	 
-	if ( $children->have_posts() ) :
-	 	echo "<div class='icon-set-container service-page'>";
-	    while ( $children->have_posts() ) : $children->the_post();
-		 	
-		 	$page_icon = get_field('page_icon');
-		 	
-		 	echo "
-			 	<div class='icon-set-wrapper four-columns'>
-			 		<a href='",the_permalink(),"'>
-			 	";
-			 	if ($page_icon) {
-				 	echo "<img src='".$page_icon['url']."' alt='".$page_icon['alt']."'>";
-			 	} else {
-				 	echo "<img src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
-			 	}
-			 	the_title("<h5>","</h5>");
+		<?php
+			
+		$currentID = get_the_ID();
+		$parentId = wp_get_post_parent_id( get_the_ID() );
+			
+		$args = array(
+		    'post_type'      => 'page', //write slug of post type
+		    'posts_per_page' => 4,
+		    'post_parent'    => $parentId,
+			'post__not_in' => array($currentID),
+		    'order'          => 'DESC'
+		 );
+		 
+		$children = new WP_Query( $args );
+		 
+		if ( $children->have_posts() ) :
+		 	echo "<div class='icon-set-container service-page'>";
+		    while ( $children->have_posts() ) : $children->the_post();
 			 	
-			 	echo "</a>
-		 	</div>";
+			 	$page_icon = get_field('page_icon');
+			 	
+			 	echo "
+				 	<div class='icon-set-wrapper four-columns'>
+				 		<a href='",the_permalink(),"'>
+				 	";
+				 	if ($page_icon) {
+					 	echo "<img src='".$page_icon['url']."' alt='".$page_icon['alt']."'>";
+				 	} else {
+					 	echo "<img src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
+				 	}
+				 	the_title("<h5>","</h5>");
+				 	
+				 	echo "</a>
+			 	</div>";
+			
+			endwhile;
+			echo "</div>";
+		endif; 
+		wp_reset_query();	
 		
-		endwhile;
-		echo "</div>";
-	endif; 
-	wp_reset_query();	
-	
-	?>
-	
+		?>
+	</div>
 </section>
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
