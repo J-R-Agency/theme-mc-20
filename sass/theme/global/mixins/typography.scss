@@ -16,6 +16,10 @@ a {
 	}
 }
 
+bold, strong {
+	@include _dm-sans-bold;
+}
+
 p, li:not(.menu-item) {
 	@include _dm-sans-regular;
 	font-size: 1rem;
