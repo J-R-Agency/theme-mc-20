@@ -12,7 +12,7 @@ a {
 	color: $pink;
 	@include _dm-sans-regular;
 	&:hover {
-		color: $pink;
+		color: inherit;
 	}
 }
 

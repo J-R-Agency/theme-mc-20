@@ -19,11 +19,7 @@ $header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
 
-<section class='generic bg-white'>
-	<h1><?php echo the_title(); ?></h1>
-	
-	<hr>
-	
+<section class='generic bg-white'>	
 	<?php
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post();
