@@ -26,12 +26,14 @@ $theme_path = get_template_directory_uri();
 			<?php
 				if ($file) {
 					echo "<a href='".$file['url']."' download>";
-				} else {
 				}
 				
 				if ($link) {
 					echo "<a href='".$link['url']."' target='".$link['target']."'>";
-				} else {
+				}
+				
+				if (!$image) {
+					$image['url'] = $theme_path."/assets/images/download-card-placeholder.jpg";
 				}
 			?>
 			
