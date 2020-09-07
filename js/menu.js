@@ -13,7 +13,8 @@ $(document).ready(function() {
 		$( ".logo-mini" ).show("fast");
 		$( ".menu-container" ).show();
 		$( "#main-nav" ).css("position","relative");
-		$('html, body').animate({ scrollTop: 0 }, 'medium');
+		$('html').animate({ scrollTop: 0 }, 'medium');
+		$('body').animate({ scrollTop: 0 }, 'medium');
 		
 		$( "#mega-menu" ).slideDown( "slow", function() {
 			$( ".close-menu" ).show();
