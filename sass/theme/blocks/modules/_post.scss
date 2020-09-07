@@ -235,3 +235,11 @@ $post-hero-height-large: 500px;
 	}
 }
 
+/*-- WP CONTENT --*/
+
+.wp-block-image .aligncenter {
+	display: flex !important;
+	justify-content: center;
+}
+
+
