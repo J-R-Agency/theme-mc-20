@@ -20,6 +20,7 @@ $theme_path = get_template_directory_uri();
 		// vars
 		$file_name = get_sub_field('file_name');
 		$image = get_sub_field('image');
+		$file_or_link = get_sub_field('file_or_link');
 		$file = get_sub_field('file');
 		$link = get_sub_field('link');
 		$color = get_sub_field('color');
@@ -32,26 +33,19 @@ $theme_path = get_template_directory_uri();
 					$image['url'] = $theme_path."/assets/images/download-card-placeholder.jpg";
 				}
 				
+				if (!$link['target']) {
+					$link['target'] = '_self';
+				}
+				
 			?>
 			
-			<?php if ($file): ?>
+			<?php if ($file_or_link == 'file'): ?>
 			<a href='<?php echo $file['url']; ?>' download>
-				<?php if ($file_name):?>
-				<div class='download-card-header <?php echo $color; ?>'>
-					<h3><?php echo $file_name; ?></h3>
-				</div>
-				<?php endif; ?>
-				
-				<div class='download-card-img' style="background-image:url(<?php echo $image['url']; ?>)"></div>
-				
-				<div class='ribbon-wrapper'>
-					<div class='download-card-ribbon <?php echo $color; ?>'></div>
-				</div>
-			</a>				
+			
+			<? elseif ($file_or_link == 'link'): ?>
+			<a href='<?php echo $link['url']; ?>' target='<?php echo $link['target']; ?>'>
 			<?php endif; ?>
 			
-			<? if ($link): ?>
-			<a href='<?php echo $link['url']; ?>' target='<?php echo $link['target']; ?>'>
 				<?php if ($file_name):?>
 				<div class='download-card-header <?php echo $color; ?>'>
 					<h3><?php echo $file_name; ?></h3>
@@ -63,8 +57,7 @@ $theme_path = get_template_directory_uri();
 				<div class='ribbon-wrapper'>
 					<div class='download-card-ribbon <?php echo $color; ?>'></div>
 				</div>
-			</a>				
-			<?php endif; ?>
+			</a>
 			
 		</div> <!-- end download card container -->
 		
