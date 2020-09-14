@@ -26,17 +26,17 @@ $theme_path = get_template_directory_uri();
 			<?php				
 				if (!$image) {
 					$image['url'] = $theme_path."/assets/images/download-card-placeholder.jpg";
-				}
-				
-				if ($file) {
-					$link_type = 'download'
-				} else {
-					$link_type = '';
-				}				
+				}			
 			?>
 			
-			<?php if ($link): ?>
-			<a href='<?php echo $link['url']; ?>' target='<?php echo $link['target']; ?>' <?php echo $link_type; ?>>
+			<?php if ($file): ?>
+			<a href='<?php echo $file['url']; ?>' download>
+			<?php endif; ?>
+			
+			<? if ($link): ?>
+			<a href='<?php echo $link['url']; ?>' target='<?php echo $link['target']; ?>'>
+			<?php endif; ?>
+			
 				<?php if ($file_name):?>
 				<div class='download-card-header <?php echo $color; ?>'>
 					<h3><?php echo $file_name; ?></h3>
@@ -49,7 +49,6 @@ $theme_path = get_template_directory_uri();
 					<div class='download-card-ribbon <?php echo $color; ?>'></div>
 				</div>
 			</a>
-			<?php endif; ?>
 			
 		</div>
 		
