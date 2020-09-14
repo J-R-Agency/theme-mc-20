@@ -33,13 +33,7 @@ $theme_path = get_template_directory_uri();
 				}			
 			?>
 			
-			<?php if ($file): ?>
-			<a href='<?php echo $file['url']; ?>' download>
-			<?php endif; ?>
-			
-			<? if ($link): ?>
-			<a href='<?php echo $link['url']; ?>' target='<?php echo $link['target']; ?>'>
-			<?php endif; ?>
+
 			
 				<?php if ($file_name):?>
 				<div class='download-card-header <?php echo $color; ?>'>
@@ -52,7 +46,7 @@ $theme_path = get_template_directory_uri();
 				<div class='ribbon-wrapper'>
 					<div class='download-card-ribbon <?php echo $color; ?>'></div>
 				</div>
-			</a>
+	
 			
 		</div> <!-- end download card container -->
 		
