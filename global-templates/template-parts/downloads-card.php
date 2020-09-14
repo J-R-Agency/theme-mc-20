@@ -11,7 +11,10 @@ $theme_path = get_template_directory_uri();
 ?>
 
 <?php if( have_rows('downloads') ): ?>
-	<!-- Download cards working -->
+<section class='container generic bg-white'>
+	<h2>Free <span class='underline-green-1'>Downloads</span></h2>
+	<p class='hs-subtitle'>Essential Digital Marketing Resources</p>
+	<div class='downloads-container'>
 	<?php while( have_rows('downloads') ): the_row(); 
 
 		// vars
@@ -54,4 +57,6 @@ $theme_path = get_template_directory_uri();
 		</div> <!-- end download card container -->
 		
 	<?php endwhile; ?>
+	</div> <!-- end downloads container -->
+</section>	
 <?php endif; ?>
