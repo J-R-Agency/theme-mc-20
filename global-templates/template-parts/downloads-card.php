@@ -47,6 +47,7 @@ $theme_path = get_template_directory_uri();
 			
 			echo "
 				<div class='download-card-img' style='background-image:url(".$fc_image['url'].")'></div>
+				<span role='img' aria-label='".$fc_image['alt']."'> </span>
 				<div class='ribbon-wrapper'>
 					<div class='download-card-ribbon ".$fc_color."'></div>
 				</div>
@@ -84,6 +85,7 @@ $theme_path = get_template_directory_uri();
 			
 			echo "
 				<div class='download-card-img' style='background-image:url(".$lc_image['url'].")'></div>
+				<span role='img' aria-label='".$lc_image['alt']."'> </span>
 				<div class='ribbon-wrapper'>
 					<div class='download-card-ribbon ".$lc_color."'></div>
 				</div>
