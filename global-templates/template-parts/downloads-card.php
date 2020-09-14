@@ -11,6 +11,7 @@ $theme_path = get_template_directory_uri();
 ?>
 
 <?php if( have_rows('downloads') ): ?>
+	<!-- Download cards working -->
 	<?php while( have_rows('downloads') ): the_row(); 
 
 		// vars
@@ -50,7 +51,7 @@ $theme_path = get_template_directory_uri();
 				</div>
 			</a>
 			
-		</div>
+		</div> <!-- end download card container -->
 		
 	<?php endwhile; ?>
 <?php endif; ?>
