@@ -33,7 +33,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	<p class='hs-subtitle'>Essential Digital Marketing Resources</p>
 	<div class='downloads-container'>
 		<?php include (get_template_directory().'/global-templates/template-parts/downloads-card.php'); ?>
-	</div>
+	</div> <!-- end downloads container -->
 </section>
 
 <?php endif; ?>
