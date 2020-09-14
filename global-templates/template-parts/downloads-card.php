@@ -17,47 +17,81 @@ $theme_path = get_template_directory_uri();
 	<div class='downloads-container'>
 	<?php while( have_rows('downloads') ): the_row(); 
 
-		// vars
-		$file_name = get_sub_field('file_name');
-		$image = get_sub_field('image');
-		$file_or_link = get_sub_field('file_or_link');
-		$file = get_sub_field('file');
-		$link = get_sub_field('link');
-		$color = get_sub_field('color');
+        if( get_row_layout() == 'file_card' ):
 
-		?>
-		
-		<div class="download-card-container">
-			<?php				
-				if (!$image) {
-					$image['url'] = $theme_path."/assets/images/download-card-placeholder.jpg";
-				}
-				
-				if (!$link['target']) {
-					$link['target'] = '_self';
-				}
-				
-			?>
+			$fc_file_name = get_sub_field('fc_file_name');
+			$fc_image = get_sub_field('fc_image');
+			$fc_file = get_sub_field('fc_file');
+			$fc_color = get_sub_field('fc_color');
+
+			if (!$fc_image) {
+				$fc_image['url'] = $theme_path."/assets/images/download-card-placeholder.jpg";
+			}
 			
-			<?php if ($file_or_link == 'file'): ?>
-			<a href='<?php echo $file['url']; ?>' download>
+			if (!$fc_link['target']) {
+				$fc_link['target'] = '_self';
+			}
+
+			echo "
+			<div class='download-card-container'>
+				<a href='".$fc_file['url']."' download>
+			";
 			
-			<? elseif ($file_or_link == 'link'): ?>
-			<a href='<?php echo $link['url']; ?>' target='<?php echo $link['target']; ?>'>
-			<?php endif; ?>
+			if ($fc_file_name) {
+			echo "
+				<div class='download-card-header ".$fc_color."'>
+					<h3>".$fc_file_name."</h3>
+				</div>			
+			";
+			}
 			
-				<?php if ($file_name):?>
-				<div class='download-card-header <?php echo $color; ?>'>
-					<h3><?php echo $file_name; ?></h3>
-				</div>
-				<?php endif; ?>
-				
-				<div class='download-card-img' style="background-image:url(<?php echo $image['url']; ?>)"></div>
-				
+			echo "
+				<div class='download-card-img' style='background-image:url(".$fc_image['url'].")'></div>
 				<div class='ribbon-wrapper'>
-					<div class='download-card-ribbon <?php echo $color; ?>'></div>
+					<div class='download-card-ribbon ".$fc_color."'></div>
 				</div>
 			</a>
+			";
+			
+        elseif( get_row_layout() == 'link_card' ): 
+
+			// vars
+			$lc_file_name = get_sub_field('lc_file_name');
+			$lc_image = get_sub_field('lc_image');
+			$lc_link = get_sub_field('lc_link');
+			$lc_color = get_sub_field('lc_color');
+
+			if (!$lc_image) {
+				$lc_image['url'] = $theme_path."/assets/images/download-card-placeholder.jpg";
+			}
+			
+			if (!$lc_link['target']) {
+				$lc_link['target'] = '_self';
+			}
+						
+			echo "
+			<div class='download-card-container'>
+				<a href='".$lc_link['url']."' target='".$lc_link['target']."'>
+			";
+			
+			if ($lc_file_name) {
+			echo "
+				<div class='download-card-header ".$lc_color."'>
+					<h3>".$lc_file_name."</h3>
+				</div>			
+			";
+			}
+			
+			echo "
+				<div class='download-card-img' style='background-image:url(".$lc_image['url'].")'></div>
+				<div class='ribbon-wrapper'>
+					<div class='download-card-ribbon ".$lc_color."'></div>
+				</div>
+			</a>
+			";
+
+        endif;
+		?>
 			
 		</div> <!-- end download card container -->
 		
