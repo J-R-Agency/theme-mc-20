@@ -149,6 +149,7 @@
 		display: inline-block;
 		@include respond-to ('lg') {
 			max-height: 80px;
+			max-width: 90%;
 		}
 	}
 	.blog-author {
