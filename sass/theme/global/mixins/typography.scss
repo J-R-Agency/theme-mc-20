@@ -43,21 +43,3 @@ h2 {
 		font-size: 2rem;
 	}	
 }
-
-h3 {
-	font-size: 1rem;
-	@include respond-to ('lg') {
-		font-size: 1.7rem;
-	}
-}
-
-h4 {
-	@include _dm-sans-regular;
-	font-size: 1rem;
-	margin-bottom: 1rem;
-	line-height: $line-height;
-	
-	@include respond-to ('lg') {
-		font-size: 1.5rem;
-	}
-}
