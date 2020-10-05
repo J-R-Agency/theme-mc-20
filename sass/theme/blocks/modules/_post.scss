@@ -1,5 +1,5 @@
 article {
-	padding: 0rem 1rem;
+	padding: 0rem;
 	@include respond-to('md'){
 		padding: 0rem 3rem;
 	}
@@ -15,8 +15,13 @@ article {
 
 .entry-content {
 	p {
-		margin: 1rem 0 2rem 0;
+		margin: 1rem 0;
 	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		margin: 1rem 0;
+	}
+	
 	img {
 		margin: 2rem 0;
 	}
