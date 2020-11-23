@@ -19,7 +19,6 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
 
-
 <?php
 	 
 	$args = array(
@@ -31,9 +30,9 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	$c_keep = array();
 	
 	foreach($categories as $category){
-		$cat_type = get_field('category_type', 'category_'.$category->term_id);
+			$cat_type = get_field('category_type', 'category_'.$category->term_id);
 		if ($cat_type=='case-studies') {
-		$c_keep[] = $category;
+			$c_keep[] = $category;
 		}
 	}	 
 	 
@@ -85,14 +84,13 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		    </div>";
 		    
 		    foreach($c_keep as $category) { 
-		        echo "<div class='tab-pane' id='". $category->slug."'>
-		        		<div>
-				        	<div class='cs-pagination pagination-large pagination-".$category->slug."'>
-				        		<ul class='pager-".$category->slug."' curr='0'></ul>
-							</div>
-						</div>				
-		        		<div class='small-card-container csc-".$category->slug."'>
-		        		
+			    			    
+		        echo "
+		        	<div class='tab-pane' id='". $category->slug."'>
+			        	<div class='cs-pagination pagination-large pagination-".$category->slug."'>
+			        		<ul class='pager-".$category->slug."' curr='0'></ul>
+						</div>		
+	        		<div class='small-card-container csc-".$category->slug."'>
 		        ";
 		        
 				$pageSlug = get_page_by_path( 'our-work' );
@@ -102,7 +100,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 				    'posts_per_page' => -1,
 				    'post_parent'    => $pageSlug->ID, //place here id of your parent page
 				    'order'          => 'DESC',
-				    'category_name' => $category->slug,
+				    'category_name'  => $category->slug,
 				    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 0)
 				 );
 				 
@@ -118,6 +116,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 						include (get_template_directory().'/global-templates/template-parts/case-study-card.php');	
 						
 					endwhile;
+					
 				endif;
 				
 				echo "</div>";

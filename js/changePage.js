@@ -1,5 +1,5 @@
 ( function( $ ) {
-					
+			
 		function changePage(listElement, pager) {
 			//var listElement = $('.all');
 			//var pager = '.pager-all';
