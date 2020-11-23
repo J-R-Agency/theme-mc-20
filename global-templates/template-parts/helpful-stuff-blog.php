@@ -35,7 +35,9 @@ $theme_path = get_template_directory_uri();
 				    
 					$args = array(
 						'taxonomy' => 'category',
-						'hide_empty' => 0
+						'hide_empty' => 0,
+						'orderby' => 'name',
+				        'order' => 'ASC'
 					);
 					
 					$c = get_categories($args);
@@ -55,7 +57,9 @@ $theme_path = get_template_directory_uri();
 				                    '.$cat->name.'
 				                </a>
 				            </li>';
-					} 
+					}
+					
+				    echo '</ul>';
 				?>
 			</div>
 			
