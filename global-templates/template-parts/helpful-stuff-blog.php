@@ -32,20 +32,30 @@ $theme_path = get_template_directory_uri();
 				            </li>
 				    
 				    ';
-				    $args = array(
-				        'orderby' => 'name',
-				        'order' => 'ASC'
-				    );
-				    $categories = get_categories($args);
-				    foreach($categories as $category) { 
+				    
+					$args = array(
+						'taxonomy' => 'category',
+						'hide_empty' => 0
+					);
+					
+					$c = get_categories($args);
+					$c_keep = array();
+					
+					foreach($c as  $cat){
+						$cat_type = get_field('category_type', 'category_'.$cat->term_id);
+						if ($cat_type=='blog-posts') {
+						$c_keep[] = $cat;
+						}
+					}
+					
+					foreach($c_keep as $cat){
 				        echo 
 				            '<li>
-				                <a id="tab-'.$category->slug.'" href="#'.$category->slug.'" data-toggle="tab">    
-				                    '.$category->name.'
+				                <a id="tab-'.$cat->slug.'" href="#'.$cat->slug.'" data-toggle="tab">    
+				                    '.$cat->name.'
 				                </a>
 				            </li>';
-				    }
-				    echo '</ul>';
+					} 
 				?>
 			</div>
 			

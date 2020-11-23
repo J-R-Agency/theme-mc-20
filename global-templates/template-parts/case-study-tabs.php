@@ -21,29 +21,30 @@ $theme_path = get_template_directory_uri();
             </li>
 	    ';
 	    
-	    $content = get_cat_ID('content');
-	    $experience = get_cat_ID('experience');
-	    $full_service = get_cat_ID('full service');
-	    $identity = get_cat_ID('identity');
-	    
-	    $included_cats = array( $content, $experience, $full_service, $identity );
-	    
-	    $args = array(
-	        'orderby' => 'name',
-	        'order' => 'ASC',
-	        'include' => $included_cats
-	    );
-	    
-	    $categories = get_categories($args);
-	    
-	    foreach($categories as $category) { 
+		$args = array(
+			'taxonomy' => 'category',
+			'hide_empty' => 0
+		);
+		
+		$c = get_categories($args);
+		$c_keep = array();
+		
+		foreach($c as  $cat){
+			$cat_type = get_field('category_type', 'category_'.$cat->term_id);
+			if ($cat_type=='case-studies') {
+			$c_keep[] = $cat;
+			}
+		}
+		
+		foreach($c_keep as $cat){
 	        echo 
 	            '<li>
-	                <a id="tab-'.$category->slug.'" href="#'.$category->slug.'" data-toggle="tab">    
-	                    '.$category->name.'
+	                <a id="tab-'.$cat->slug.'" href="#'.$cat->slug.'" data-toggle="tab">    
+	                    '.$cat->name.'
 	                </a>
 	            </li>';
-	    }
+		} 
+	  
 	    echo '</ul>';
 	?>
 </div>

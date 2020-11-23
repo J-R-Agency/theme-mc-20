@@ -23,7 +23,6 @@ $theme_path = get_template_directory_uri();
 		
 		$bc_cat_object = get_category($bc_category);
 		
-		
 		?>
 		
 		<section class='container generic bg-white'>

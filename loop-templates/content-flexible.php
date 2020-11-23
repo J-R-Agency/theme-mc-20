@@ -160,33 +160,34 @@ if( have_rows('flexible_content_block') ):
 			$cta_image = get_sub_field('cta_image');
 			
 			echo "
-			<div class='container' style='position: relative;'>
-				<div class='cta-filter ".$cta_filter." ".$cta_style."'>";
-				
-				if ($cta_style == 'secondary'):
-					echo "<div class='cta-post-it'>";
-				endif;
-				
-				echo "<h1>".$cta_title."</h1>
-					 <p>".$cta_intro."</p>";
-					 
-				if ($cta_link_type == "link") {
-					echo "<a href='".$cta_link['url']."' target='".$cta_link['target']."'><div class='button-navy'>".$cta_link['title']."</div></a>";
-				} elseif ($cta_link_type == "file") {
-					echo "<a href='".$cta_file['url']."' download><div class='button-navy'>Tell me more</div></a>";
-				}
-				
-				
-				if ($cta_style == 'secondary'):
-					echo "</div>";
-				endif;
-					 
-				echo "
-				</div>
-				<div class='cta-block ".$cta_style."' style='background-image:url(".$cta_image['url'].")'>
+			<section class='cta-block ".$cta_style." ".$cta_filter."' style='background-image:url(".$cta_image['url'].")'>
+				<div class='container'>
+			";
 					
-				</div>
-			</div>
+					// POST IT
+					if ($cta_style == 'secondary'):
+						echo "<div class='cta-post-it'>";
+					endif;
+					
+					// TITLE & INTRO
+					echo "<h1>".$cta_title."</h1>
+						 <p>".$cta_intro."</p>";
+						 
+					// LINK
+					if ($cta_link_type == "link") {
+						echo "<a href='".$cta_link['url']."' target='".$cta_link['target']."'><div class='button-navy'>".$cta_link['title']."</div></a>";
+					} elseif ($cta_link_type == "file") {
+						echo "<a href='".$cta_file['url']."' download><div class='button-navy'>Tell me more</div></a>";
+					}
+					
+					// END POST-IT
+					if ($cta_style == 'secondary'):
+						echo "</div>";
+					endif;
+						 
+					echo "
+				</div> <!-- end container -->
+			</section>
 			";
 
           // --------------------------- //
@@ -378,41 +379,43 @@ if( have_rows('flexible_content_block') ):
 				if( have_rows('testimonials') ):
 					$i = 1; // Set the increment variable
 					echo "
-					<section class='container generic bg-navy testimonials-block'>
-						<div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
-							<div class='carousel-inner'>
-					";
-				    while( have_rows('testimonials') ): the_row(); 
-				
-				        $quote = get_sub_field('quote');
-				        $citation = get_sub_field('citation');
-				        $activeState;
-						
-						if($i == 1) {
-							$activeState = 'active';
-						} else {
-							$activeState = '';
-						}
-							
-						echo "
-							<div class='carousel-item ".$activeState."'>
-								<img class='quote-icon' src='".$theme_path."/assets/graphics/left-quote-pink.svg'>
-								<blockquote class='testimonial-quote'>".$quote."</blockquote>
-								<p class='testimonial-citation'>".$citation."</p>
-							</div>
+					<section class='generic bg-navy testimonials-block'>
+						<div class='container'>
+							<div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
+								<div class='carousel-inner'>
 						";
-						$i++;
-					endwhile;
-					echo "
+					    while( have_rows('testimonials') ): the_row(); 
+					
+					        $quote = get_sub_field('quote');
+					        $citation = get_sub_field('citation');
+					        $activeState;
+							
+							if($i == 1) {
+								$activeState = 'active';
+							} else {
+								$activeState = '';
+							}
+								
+							echo "
+								<div class='carousel-item ".$activeState."'>
+									<img class='quote-icon' src='".$theme_path."/assets/graphics/left-quote-pink.svg'>
+									<blockquote class='testimonial-quote'>".$quote."</blockquote>
+									<p class='testimonial-citation'>".$citation."</p>
+								</div>
+							";
+							$i++;
+						endwhile;
+						echo "
+							</div>
+							<a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
+						    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+						    <span class='sr-only'>Previous</span>
+						  </a>
+						  <a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>
+						    <span class='carousel-control-next-icon' aria-hidden='true'></span>
+						    <span class='sr-only'>Next</span>
+						  </a>
 						</div>
-						<a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
-					    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-					    <span class='sr-only'>Previous</span>
-					  </a>
-					  <a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>
-					    <span class='carousel-control-next-icon' aria-hidden='true'></span>
-					    <span class='sr-only'>Next</span>
-					  </a>
 					</div>
 				</section>
 				";	

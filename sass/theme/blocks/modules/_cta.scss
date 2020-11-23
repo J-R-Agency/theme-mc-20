@@ -1,69 +1,21 @@
 $desktop-cta-height: 500px;
 $mobile-cta-height: 400px;
 
-.cta-filter {
+.cta-block {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	justify-content: center;
-	position: absolute;
-	width: 100%;
+	justify-content: center;	
 	height: $mobile-cta-height;
+	background-size: cover;
+	background-position: top center;
 	@include global-padding;
 	
 	@include respond-to('md') {
 		height: $desktop-cta-height;
-	}
-	h1 {
-		margin-bottom: 1rem;
-		width: 100%;
-		@include respond-to('md') {
-			width: 50%;
-		}
-	}
-	p {
-		margin-bottom: 2rem;
-		width: 100%;
-		
-		@include respond-to('md') {
-			width: 50%;
-		}
-	}
-
-	&.none {
-		background: transparent;
-		h1, p {
-			color: $navy;
-		}
-	}
-	&.darken {
-		@include darken;	
-	}
-	&.lighten {
-		@include lighten;
-	}
-	&.radial {
-		@include radial;
-	}
-	&.tertiary {
-		height: 350px;
-		background-color: $light-grey;
-		position: relative;
-		@include respond-to('md'){
-			position: absolute;
-			background-color: transparent;
-		}
-	}
-}
-
-.cta-block {
-	height: $mobile-cta-height;
-	background-size: cover;
-	background-position: center;
-	@include respond-to('md') {
-		height: $desktop-cta-height;
 		background-position: top;
 	}
+	
 	&.tertiary {
 		height: 200px;
 		background-color: $light-grey;
@@ -75,10 +27,49 @@ $mobile-cta-height: 400px;
 			background-position: bottom right;
 		}
 	}
+	
 	&.secondary {
 		background-position:center;
 	}
-
+	
+	h1 {
+		margin-bottom: 1rem;
+		width: 100%;
+		@include respond-to('md') {
+			width: 50%;
+		}
+	}
+	
+	p {
+		margin-bottom: 2rem;
+		width: 100%;
+		
+		@include respond-to('md') {
+			width: 50%;
+		}
+	}
+	
+	&.none {
+		background: transparent;
+		h1, p {
+			color: $navy;
+		}
+	}
+	
+	&.darken {
+		background-blend-mode: multiply;
+		@include darken;	
+	}
+	
+	&.lighten {
+		background-blend-mode: screen;
+		@include lighten;
+	}
+	
+	&.radial {
+		background-blend-mode: multiply;
+		@include radial;
+	}	
 }
 
 .cta-post-it {
