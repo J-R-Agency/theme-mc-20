@@ -21,12 +21,22 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 
 <?php
-	$args = array(
-	        'category__in'   => wp_get_post_categories( $post->ID ),
-	        'post__not_in'   => array( $post->ID )
-	 );
 	 
+	$args = array(
+		'taxonomy' => 'category',
+		'hide_empty' => 0
+	);
+	
 	$categories = get_categories($args);
+	$c_keep = array();
+	
+	foreach($categories as $category){
+		$cat_type = get_field('category_type', 'category_'.$category->term_id);
+		if ($cat_type=='case-studies') {
+		$c_keep[] = $category;
+		}
+	}	 
+	 
 ?>
 
 <!-- CASE STUDIES -->
@@ -74,14 +84,15 @@ include( locate_template( 'header.php', false, false ) );  ?>
 			    </div>
 		    </div>";
 		    
-		    foreach($categories as $category) { 
+		    foreach($c_keep as $category) { 
 		        echo "<div class='tab-pane' id='". $category->slug."'>
 		        		<div>
-			        		<div class='cs-pagination pagination-large pagination-".$category->slug."'>
+				        	<div class='cs-pagination pagination-large pagination-".$category->slug."'>
 				        		<ul class='pager-".$category->slug."' curr='0'></ul>
 							</div>
-						</div>
+						</div>				
 		        		<div class='small-card-container csc-".$category->slug."'>
+		        		
 		        ";
 		        
 				$pageSlug = get_page_by_path( 'our-work' );
@@ -109,11 +120,10 @@ include( locate_template( 'header.php', false, false ) );  ?>
 					endwhile;
 				endif;
 				
-				echo "</div>"; // End csc
+				echo "</div>";
 				
 				wp_reset_query();	
 				
-		        
 		        echo "</div>"; // End container
 		    }
 		    
@@ -124,11 +134,3 @@ include( locate_template( 'header.php', false, false ) );  ?>
 </section>
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
-
-<script>
-	(function ($) {
-		$("#tab-masterclasses").closest('li').remove();
-		$("#tab-female-founders ").closest('li').remove();
-		$("#tab-digital-marketing-basics ").closest('li').remove();
-	})(jQuery);
-</script>

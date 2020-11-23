@@ -75,10 +75,12 @@
 		changePage($('.csc-experience'), '.pager-experience');
 		changePage($('.csc-full-service'), '.pager-full-service');
 		changePage($('.csc-identity'), '.pager-identity');
+		changePage($('.csc-web-development'), '.pager-web-development');
 		
 		$('#content').append( $('.pagination-content') );
 		$('#experience').append( $('.pagination-experience') );
 		$('#full-service').append( $('.pagination-full-service') );
 		$('#identity').append( $('.pagination-identity') );
-
+		$('#web-development').append( $('.pagination-web-development') );
+		
 } )( jQuery );
