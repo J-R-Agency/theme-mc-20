@@ -7,8 +7,7 @@ $mobile-cta-height: 400px;
 	align-items: flex-start;
 	justify-content: center;	
 	height: $mobile-cta-height;
-	background-size: cover;
-	background-position: top center;
+	background-size: cover !important;
 	@include global-padding;
 	
 	@include respond-to('md') {
