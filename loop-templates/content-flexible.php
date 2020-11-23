@@ -158,9 +158,10 @@ if( have_rows('flexible_content_block') ):
             $cta_file = get_sub_field('cta_file');
             $cta_link = get_sub_field('cta_link');
 			$cta_image = get_sub_field('cta_image');
+			$cta_image_position = get_sub_field('cta_image_position');
 			
 			echo "
-			<section class='cta-block ".$cta_style." ".$cta_filter."' style='background-image:url(".$cta_image['url'].")'>
+			<section class='cta-block ".$cta_style." ".$cta_filter."' style='background-image:url(".$cta_image['url']."); background-position:".$cta_image_position."'>
 				<div class='container'>
 			";
 					

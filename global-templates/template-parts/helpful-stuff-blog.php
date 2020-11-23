@@ -74,14 +74,11 @@ $theme_path = get_template_directory_uri();
 				    echo "<div class='tab-pane active' id='all'>
 				    		<div class='blog-posts-container all'>
 				    ";
-				    	//$female_founders = get_cat_ID('#FemaleFounders');
-				    	//$excluded_cats = array( $female_founders );
 				    	
 						$args = array(
 						    'post_type'      => 'post', //write slug of post type
 						    'posts_per_page' => 2,
 						    'order'          => 'DESC',
-						    //'category__not_in' => $excluded_cats,
 						 );
 						 
 						$query = new WP_Query( $args );
