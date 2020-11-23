@@ -7,7 +7,7 @@ $mobile-cta-height: 400px;
 	align-items: flex-start;
 	justify-content: center;	
 	height: $mobile-cta-height;
-	background-size: cover !important;
+	background-size: cover;
 	@include global-padding;
 	
 	@include respond-to('md') {
@@ -15,41 +15,45 @@ $mobile-cta-height: 400px;
 		background-position: top;
 	}
 	
-	&.tertiary {
-		height: 200px;
-		background-color: $light-grey;
-		background-position: bottom center;
-		background-size: contain;
-		background-repeat: no-repeat;
+	.container {
+		display: flex;
+		flex-direction: column;
 		@include respond-to('md') {
-			height: 350px;
+			flex-direction: row;	
+		}
+	}
+	
+	&.tertiary {
+		height: 350px;
+		background-size: 0px;
+		@include respond-to('md') {
+			background-color: $light-grey;
 			background-position: bottom right;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 	}
 	
 	&.secondary {
-		background-position:center;
+		background-position: center;
 	}
 	
 	h1 {
 		margin-bottom: 1rem;
 		width: 100%;
-		@include respond-to('md') {
-			width: 50%;
-		}
 	}
 	
 	p {
 		margin-bottom: 2rem;
 		width: 100%;
-		
-		@include respond-to('md') {
-			width: 50%;
-		}
+	}
+	
+	img {
+		width: 50%;
 	}
 	
 	&.none {
-		background: transparent;
+		background-color: transparent;
 		h1, p {
 			color: $navy;
 		}
@@ -71,7 +75,12 @@ $mobile-cta-height: 400px;
 	}	
 }
 
-.cta-post-it {
+.cta-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.cta-content .secondary {
 	background-color: rgba(255, 255, 255, 0.8);
 	padding: 3rem 2rem;
 	width: 100%;

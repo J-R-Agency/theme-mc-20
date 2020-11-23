@@ -164,15 +164,19 @@ if( have_rows('flexible_content_block') ):
 				$cta_image_position = 'center';
 			}
 			
-			echo "
-			<section class='cta-block ".$cta_style." ".$cta_filter."' style='background-image:url(".$cta_image['url']."); background-position:".$cta_image_position."'>
-				<div class='container'>
-			";
+			if ($cta_style == 'tertiary') {
+				echo "
+				<section class='cta-block ".$cta_style."' style='background-image:url(".$cta_image['url'].")'>";		
+			} else {
+				echo "
+				<section class='cta-block ".$cta_style." ".$cta_filter."' style='background-image:url(".$cta_image['url']."); background-position:".$cta_image_position."'>
+				";					
+			}
+			
+			echo "<div class='container'>";
 					
-					// POST IT
-					if ($cta_style == 'secondary'):
-						echo "<div class='cta-post-it'>";
-					endif;
+					echo "<div class='cta-content ".$cta_style."'>";
+					
 					
 					// TITLE & INTRO
 					echo "<h1>".$cta_title."</h1>
@@ -185,10 +189,10 @@ if( have_rows('flexible_content_block') ):
 						echo "<a href='".$cta_file['url']."' download><div class='button-navy'>Tell me more</div></a>";
 					}
 					
-					// END POST-IT
-					if ($cta_style == 'secondary'):
-						echo "</div>";
-					endif;
+					echo "</div>";
+					
+					echo "</div>";
+					
 						 
 					echo "
 				</div> <!-- end container -->
