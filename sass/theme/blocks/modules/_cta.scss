@@ -78,6 +78,7 @@ $mobile-cta-height: 400px;
 .cta-content {
 	display: flex;
 	flex-direction: column;
+	flex-basis: 50%;
 }
 
 .cta-content .secondary {
