@@ -150,6 +150,9 @@
 		@include respond-to ('lg') {
 			max-height: 80px;
 			max-width: 90%;
+			h2 {
+				font-size: 1.75rem;
+			}
 		}
 	}
 	.blog-author {
