@@ -48,7 +48,6 @@ include( locate_template( 'header.php', false, false ) ); ?>
 					
 					include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
 					
-					
 				endwhile;
 				
 			endif; 
@@ -56,9 +55,7 @@ include( locate_template( 'header.php', false, false ) ); ?>
 		?>
 	</div>
 	
-	<div class='understrap-pagination'>
-		<?php understrap_pagination(); ?>
-	</div>
+	<?php include (get_template_directory().'/global-templates/pagination.php'); ?>
 	
 </section>
 
