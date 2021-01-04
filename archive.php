@@ -55,8 +55,10 @@ include( locate_template( 'header.php', false, false ) ); ?>
 		?>
 	</div>
 	
-	<?php include (get_template_directory().'/global-templates/pagination.php'); ?>
-	
+	<div class='understrap-pagination'>
+		<?php understrap_pagination(); ?>
+	</div>
+		
 </section>
 
 <?php include( locate_template( 'footer.php', false, false ) ); ?>
