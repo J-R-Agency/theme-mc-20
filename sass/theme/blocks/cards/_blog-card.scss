@@ -144,11 +144,9 @@
 
 	.blog-title {
 		color: $navy;
-		max-height: 100px;
 		overflow: hidden;
 		display: inline-block;
 		@include respond-to ('lg') {
-			max-height: 80px;
 			max-width: 90%;
 			h2 {
 				font-size: 1.75rem;
