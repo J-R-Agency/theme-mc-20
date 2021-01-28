@@ -14,7 +14,12 @@
 defined( 'ABSPATH' ) || exit;
 
 $bw = 'black';
-$page_color = get_field('page_color');
+if ($page_color) {
+	$page_color = get_field('page_color');	
+} else {
+	$page_color = 'pink;'
+}
+
 $header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
