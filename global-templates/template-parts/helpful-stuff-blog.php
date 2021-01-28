@@ -35,7 +35,7 @@ $theme_path = get_template_directory_uri();
 				    
 					$args = array(
 						'taxonomy' => 'category',
-						'hide_empty' => 0,
+						'hide_empty' => 1,
 						'orderby' => 'name',
 				        'order' => 'ASC'
 					);
