@@ -494,6 +494,37 @@ if( have_rows('flexible_content_block') ):
 					</section>";
 				endif; 
 				wp_reset_query();
+				
+				
+          // ----------------------------- //
+         // ----- CASE: QUOTE BLOCK ----- //
+        // ----------------------------- //
+        elseif( get_row_layout() == 'quote_block' ):
+        
+	        $qb_quote = get_sub_field('qb_quote');
+	        $qb_citation = get_sub_field('qb_citation');
+			$qb_background_image = get_sub_field('qb_background_image');
+			
+			if($qb_quote) {
+				echo "
+		        <section class='fcs-quote-block' style='background-image:url(
+		        ";
+				        	 
+			        	if ($qb_background_image){
+				        	echo $qb_background_image['sizes']['large'];
+					    } else {
+						    echo get_template_directory_uri().'/assets/images/quote-bg-img.jpg';
+						}
+						
+				echo ");'>
+			        <div class='container fcs-content'>
+				    	<h3>".strip_tags($qb_quote)."</h3>
+						<p>".strip_tags($qb_citation)."</p>
+			        </div>
+		        </section>				
+				";
+			}		
+		
 		
 		endif; // Final endif        
     // End loop.

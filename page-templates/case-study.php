@@ -51,8 +51,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
         $csq_quote = get_sub_field('csq_quote');
         $csq_citation = get_sub_field('csq_citation');
 		$csq_background_image = get_sub_field('csq_background_image');
-		$csq_background_image_url = $csq_background_image['url'];
-		
+				
         ?>
         
         <?php if($csq_quote): ?>
