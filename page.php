@@ -17,7 +17,7 @@ $bw = 'black';
 if ($page_color) {
 	$page_color = get_field('page_color');	
 } else {
-	$page_color = 'pink;'
+	$page_color = 'pink';
 }
 
 $header_position = get_field('header_position');
