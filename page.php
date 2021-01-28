@@ -14,7 +14,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $bw = 'black';
-if ($page_color) {
+if (!$page_color) {
 	$page_color = get_field('page_color');	
 } else {
 	$page_color = 'pink';
