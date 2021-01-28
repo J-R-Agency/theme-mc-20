@@ -19,7 +19,6 @@ if( have_rows('flexible_content_block') ):
     // Loop through rows.
     while ( have_rows('flexible_content_block') ) : the_row();
 
-
  	   	  // -------------------------- //
          // -- CASE: WP CONTENT BLOCK -//
         // -------------------------- //
@@ -55,7 +54,7 @@ if( have_rows('flexible_content_block') ):
             	echo "
             		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
             			<div class='container'>
-            				<h2>".strip_tags($cb_copy,'<span><p>')."</h2>
+            				<h2>".strip_tags($cb_copy,'<span><p><h1><h2><h3><a><strong>')."</h2>
             			</div>
             		</section>
             	";
@@ -83,7 +82,7 @@ if( have_rows('flexible_content_block') ):
             			<div class='container'>
 	            			<img src='".$cb_image['url']."' alt='".$cb_image['alt']."'>
 	            			<h2>".strip_tags($cb_title,'<span>')."</h2>
-	            			<p>".strip_tags($cb_copy,'<span>')."</p>
+	            			<p>".strip_tags($cb_copy,'<span><p><h1><h2><h3><a><strong>')."</p>
 	            		</div>
             		</section>
             	";

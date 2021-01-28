@@ -19,15 +19,15 @@ $header_position = get_field('header_position');
 
 include( locate_template( 'header.php', false, false ) );  ?>
 
-<section class='generic bg-white'>	
-	<?php
-	if ( have_posts() ) :
-		while ( have_posts() ) : the_post();
-			the_content();
-		endwhile;
-	endif;
-	?>
-</section>
+<?php
+if ( have_posts() ) :
+	echo "<section class='generic bg-white'>";
+	while ( have_posts() ) : the_post();
+		the_content();
+	endwhile;
+	echo "</section>";
+endif;
+?>
 
 <?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
 
