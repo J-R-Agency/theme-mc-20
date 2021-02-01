@@ -103,7 +103,7 @@ if( have_rows('flexible_content_block') ):
 			
 			
 			echo "<section class='container generic bg-".$isb_background_color." icon-set'>
-						<h2>".strip_tags($isb_title,'<span>')."</h2>
+						".strip_tags($isb_title,'<span><h1><h2><h3><p>')."
 							<div class='icon-set-container'>";
 						
 							if( have_rows('isb_icons') ):
