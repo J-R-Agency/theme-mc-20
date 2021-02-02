@@ -12,6 +12,12 @@
 		padding: 2% 3rem;
 		height: 350px;
 	}
+	
+	&.active {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 }
 
 .carousel-control-next, .carousel-control-prev {
