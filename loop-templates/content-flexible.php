@@ -511,7 +511,7 @@ if( have_rows('flexible_content_block') ):
 		        ";
 				        	 
 			        	if ($qb_background_image){
-				        	echo $qb_background_image['sizes']['large'];
+				        	echo $qb_background_image['url'];
 					    } else {
 						    echo get_template_directory_uri().'/assets/images/quote-bg-img.jpg';
 						}
