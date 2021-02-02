@@ -47,3 +47,10 @@ h2 {
 		font-size: 2rem;
 	}	
 }
+
+h3 {
+	font-size: 1.25rem;
+	@include respond-to ('lg') {
+		font-size: 1.75rem;
+	}	
+}
