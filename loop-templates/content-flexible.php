@@ -527,8 +527,8 @@ if( have_rows('flexible_content_block') ):
 				echo "
 		        <section class='fcs-quote-block' style='
 		        ";
-		        	if ($csq_background_image){
-			        	echo 'background-image:url('.$csq_background_image['url'].');';
+		        	if ($qb_background_image){
+			        	echo 'background-image:url('.$qb_background_image['url'].');';
 				    } else {
 					    echo 'background-color: #0e182d;';
 					}

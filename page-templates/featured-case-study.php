@@ -81,14 +81,14 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		
         ?>
         <section class='fcs-quote-block'
-	        	 style='background-image:url(
+	        	 style='
 		        	<?php
 			        	if ($fcsq_background_image){
-				        	echo $fcsq_background_image['url'];
+				        	echo 'background-image:url('.$fcsq_background_image['url'].');';
 					    } else {
-						    echo get_template_directory_uri().'/assets/images/quote-bg-img.jpg';
+						    echo 'background-color: #0e182d;';
 						}
-					?>);'>
+					?>'>
 	        <div class='container fcs-content'>
 		    	<blockquote><?php echo strip_tags($fcsq_quote); ?></blockquote>
 				<p><?php echo strip_tags($fcsq_citation); ?></p>
