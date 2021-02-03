@@ -60,8 +60,9 @@ $desktop-hero-height: 600px;
 		@include dark-radial;
 	}
 	&.small {
+		height: 200px;
 		@include respond-to ('lg') {
-			height: 70vh;
+			height: 450px;
 		}
 	}
 }
