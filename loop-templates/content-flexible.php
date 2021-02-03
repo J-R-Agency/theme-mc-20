@@ -61,10 +61,13 @@ if( have_rows('flexible_content_block') ):
             elseif ($cb_style == 'secondary'):
             	echo "
             		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
-            			<div class='container'>
-	            			<h2>".strip_tags($cb_title,'<span>')."</h2>
+            			<div class='container'>";
+            			
+            	if ($cb_title) {
+	            	echo "<h2>".strip_tags($cb_title,'<span>')."</h2>";	
+            	}
 	            			
-	            			<div class='cb-container'>
+	            echo		"<div class='cb-container'>
 		            			<div class='cb-left'>
 		            				".$cb_column_left."
 		            			</div>
@@ -96,11 +99,15 @@ if( have_rows('flexible_content_block') ):
         elseif( get_row_layout() == 'icon_set_block' ):
 
             $isb_columns = get_sub_field('isb_columns'); // Text
+            $isb_icon_size = get_sub_field('isb_icon_size'); // Text
             $isb_background_color = get_sub_field('isb_background_color'); // WYSIWYG block
             $isb_title = get_sub_field('isb_title'); // Image
             $isb_icons = get_sub_field('isb_icons'); // Select 
             $isb_page = sanitize_title(get_the_title());
-			
+            
+            if (!$isb_icon_size) {
+	            $isb_icon_size = 'small';
+            }
 			
 			echo "<section class='container generic bg-".$isb_background_color." icon-set'>
 						".strip_tags($isb_title,'<span><h1><h2><h3><p>')."
@@ -121,7 +128,7 @@ if( have_rows('flexible_content_block') ):
 										echo "<a href='".$isb_link['url']."' target='".$isb_link['target']."'>";
 									}
 									
-									echo "<img src='".$isb_icon['sizes']['medium']."'>";										
+									echo "<img class='".$isb_icon_size."' src='".$isb_icon['sizes']['medium']."'>";										
 											
 										if ($isb_caption) {
 											echo "<h5>".$isb_caption."</h5>";
@@ -383,7 +390,12 @@ if( have_rows('flexible_content_block') ):
         elseif( get_row_layout() == 'testimonials_block' ):
 
             $testimonials = get_sub_field('testimonials');
-            		
+            $testimonials_size = get_sub_field('testimonials_size');
+            
+            if (!$testimonials_size) {
+	            $testimonials_size = 'medium';
+            }
+                        		
 				if( have_rows('testimonials') ):
 					$i = 1; // Set the increment variable
 					echo "
@@ -405,7 +417,7 @@ if( have_rows('flexible_content_block') ):
 							}
 								
 							echo "
-								<div class='carousel-item ".$activeState."'>
+								<div class='carousel-item ".$activeState." ".$testimonials_size."'>
 									<div class='testimonial-block'>
 										<img class='quote-icon' src='".$theme_path."/assets/graphics/left-quote-pink.svg'>
 										<blockquote class='testimonial-quote'>".$quote."</blockquote>
@@ -464,6 +476,10 @@ if( have_rows('flexible_content_block') ):
 			$bpb_background_color = get_sub_field('bpb_background_color');
             $bpb_title = get_sub_field('bpb_title');
 			$bpb_category = get_sub_field('bpb_category');
+			
+			if (!$bpb_title) {
+				$bpb_title = 'Our Blog Posts';
+			}
 								
 				$args = array(
 				    'post_type'      => 'post', //write slug of post type

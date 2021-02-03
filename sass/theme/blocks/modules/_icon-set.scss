@@ -40,9 +40,21 @@
 	}
 	img {
 		width: 150px;
-		height: 100px;
 		object-fit: contain;
 		object-position: bottom;
+		
+		&.small {
+			height: 75px;
+		}
+		
+		&.medium {
+			height: 100px;			
+		}
+		
+		&.large {
+			height: 150px;
+		}
+		
 	}
 	h5{
 		margin: 2rem 0 0 0;
