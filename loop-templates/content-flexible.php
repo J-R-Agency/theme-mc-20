@@ -106,7 +106,7 @@ if( have_rows('flexible_content_block') ):
             $isb_page = sanitize_title(get_the_title());
             
             if (!$isb_icon_size) {
-	            $isb_icon_size = 'small';
+	            $isb_icon_size = 'medium';
             }
 			
 			echo "<section class='container generic bg-".$isb_background_color." icon-set'>
