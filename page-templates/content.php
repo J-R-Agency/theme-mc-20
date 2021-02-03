@@ -43,9 +43,9 @@ include( locate_template( 'header.php', false, false ) );  ?>
 			 		<a href='",the_permalink(),"'>
 			 	";
 			 	if ($page_icon) {
-				 	echo "<img src='".$page_icon['url']."' alt='".$page_icon['alt']."'>";
+				 	echo "<img class='small' src='".$page_icon['url']."' alt='".$page_icon['alt']."'>";
 			 	} else {
-				 	echo "<img src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
+				 	echo "<img class='small' src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
 			 	}
 			 	the_title("<h5>","</h5>");
 			 	
