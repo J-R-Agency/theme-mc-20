@@ -525,16 +525,14 @@ if( have_rows('flexible_content_block') ):
 			
 			if($qb_quote) {
 				echo "
-		        <section class='fcs-quote-block' style='background-image:url(
+		        <section class='fcs-quote-block' style='
 		        ";
-				        	 
-			        	if ($qb_background_image){
-				        	echo $qb_background_image['url'];
-					    } else {
-						    echo get_template_directory_uri().'/assets/images/quote-bg-img.jpg';
-						}
-						
-				echo ");'>
+		        	if ($csq_background_image){
+			        	echo 'background-image:url('.$csq_background_image['url'].');';
+				    } else {
+					    echo 'background-color: #0e182d;';
+					}
+				echo "'>
 			        <div class='container fcs-content'>
 				    	<h3>".strip_tags($qb_quote)."</h3>
 						<p>".strip_tags($qb_citation)."</p>
