@@ -62,9 +62,9 @@ endif;
 				 		<a href='",the_permalink(),"'>
 				 	";
 				 	if ($page_icon) {
-					 	echo "<img src='".$page_icon['url']."' alt='".$page_icon['alt']."'>";
+					 	echo "<img class='medium' src='".$page_icon['url']."' alt='".$page_icon['alt']."'>";
 				 	} else {
-					 	echo "<img src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
+					 	echo "<img class='medium' src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
 				 	}
 				 	the_title("<h5>","</h5>");
 				 	
