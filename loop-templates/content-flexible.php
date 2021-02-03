@@ -419,7 +419,7 @@ if( have_rows('flexible_content_block') ):
 							echo "
 								<div class='carousel-item ".$activeState." ".$testimonials_size."'>
 									<div class='testimonial-block'>
-										<img class='quote-icon' src='".$theme_path."/assets/graphics/left-quote-pink.svg'>
+										<img class='quote-icon' src='".$theme_path."/assets/graphics/left-quote-".$page_color.".svg'>
 										<blockquote class='testimonial-quote'>".$quote."</blockquote>
 										<p class='testimonial-citation'>".$citation."</p>
 									</div>
@@ -430,11 +430,11 @@ if( have_rows('flexible_content_block') ):
 						echo "
 							</div>
 							<a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
-						    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+						    <span class='carousel-control prev-icon ".$page_color."' aria-hidden='true'></span>
 						    <span class='sr-only'>Previous</span>
 						  </a>
 						  <a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>
-						    <span class='carousel-control-next-icon' aria-hidden='true'></span>
+						    <span class='carousel-control next-icon ".$page_color."' aria-hidden='true'></span>
 						    <span class='sr-only'>Next</span>
 						  </a>
 						</div>

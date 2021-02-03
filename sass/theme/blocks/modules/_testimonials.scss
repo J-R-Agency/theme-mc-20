@@ -37,13 +37,33 @@
 	opacity: 1;
 }
 
-.carousel-control-prev-icon {
-	background-image: url('../assets/graphics/arrow-link-pink.svg');
-	transform: scaleX(-1);
-}
+.carousel-control  {
+	width: 50px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	
+	&.pink {
+		background-image: url('../assets/graphics/arrow-link-pink.svg');
+	}
+	
+	&.cyan {
+		background-image: url('../assets/graphics/arrow-link-cyan.svg');
+	}
+	
+	&.green {
+		background-image: url('../assets/graphics/arrow-link-green.svg');
+	}	
 
-.carousel-control-next-icon {
-	background-image: url('../assets/graphics/arrow-link-pink.svg');
+	&.yellow {
+		background-image: url('../assets/graphics/arrow-link-yellow.svg');
+	}
+	
+	&.prev-icon {
+		transform: scaleX(-1);
+	}
+	
 }
 
 .quote-icon {
