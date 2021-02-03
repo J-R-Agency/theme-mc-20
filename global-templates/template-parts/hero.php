@@ -35,7 +35,7 @@ $theme_path = get_template_directory_uri();
 	<?php elseif (is_page_template('page-templates/featured-case-study.php') or is_page_template('page-templates/case-study.php')):?>
 		<div class='hero-filter small <?php the_field('hero_filter');?>'>
 			<h1>
-				<span class='underline-<?php echo $page_color; ?>-1' style='padding: 1.5rem 0;'>
+				<span class='underline-<?php echo $page_color; ?>-1' style='padding: 1rem 0;'>
 					<?php echo strip_tags($hero['hero_title'],'<span>'); ?>
 				</span>
 			</h1>
