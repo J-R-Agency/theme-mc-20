@@ -48,6 +48,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class='company-no'>
 				<span>Co No: <?php echo the_field('company_number', 'option');?></span>
 			</div>
+			
+			<div class='vat-no'>
+				<span>VAT No: <?php echo the_field('vat_number', 'option');?></span>
+			</div>			
 		</div>
 		
 		<div class='footer-container-right'>
