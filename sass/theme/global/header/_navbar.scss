@@ -38,24 +38,23 @@ button:focus {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	@include respond-to('md') {
 		flex-direction: row;	
 	}
+	
+	&-left {
+		flex-basis: 22%;
+	}
+	
+	&-center {
+		flex-basis: 48%;
+	}
+	
 	&-right {
-		padding: 2rem;
-		text-align: center;
-		
-		@include respond-to('md') {
-			padding: 3rem 5rem;	
-		}
-		
-		a:hover {
-			text-decoration: none;
-		}
+		flex-basis: 20%;
 	}
 }
-
-
 
 #main-nav {
 	background-color: transparent;
@@ -78,12 +77,39 @@ button:focus {
 	padding: .3rem 0;
 }
 
+@mixin menu-icon($image_url) {
+	.menu-icon {
+		content: url($image_url);
+		width: 25px;
+		height: 25px;		
+		margin-right: 1rem;	
+	}
+	
+}
+
+.work {
+	@include menu-icon('../assets/menu/menu-work.svg');
+}
+
+.content {
+	@include menu-icon('../assets/menu/menu-content.svg');
+}
+
+.identity {
+	@include menu-icon('../assets/menu/menu-identity.svg');
+}
+
+.experience {
+	@include menu-icon('../assets/menu/menu-experience.svg');
+}
+
 .menu  {
 	padding: 0;
 	li {
 		list-style: none;
-		height: 35px;
+		height: 50px;
 		a {
+		display: flex;
 		color: $navy;
 		font-size: 1.2rem;
 		@include _dm-sans-bold;
@@ -105,115 +131,79 @@ button:focus {
 	}
 }
 
-@mixin underline-hover {
-	display: block;
-	height: 5px;
-	background-position: left;
-	width: 30%;	
+@mixin underline-hover($underline_image) {
+	li > a {
+		position: relative;
+		width: max-content;
+		&:hover {
+			&:after {
+				position: absolute;
+				display: block;
+				height: 100%;
+				background-position: bottom left;
+				background-size: contain;
+				background-image:url($underline_image);
+				width: 100%;
+				padding-bottom: 2rem;
+			}
+		}
+	}
 }
 
-@mixin arrow-hover {
-	display: inline-block;
-	height: 15px;
-	background-position: center;
-	width: 50px;
+@mixin arrow-hover($arrow_image) {
+	li > a {
+		align-items: center;
+		&:hover {
+			&:after {
+				display: inline-block;
+				height: 15px;
+				background-position: center;
+				background-image:url($arrow_image);
+				width: 50px;				
+			}
+		}
+	}
 }
 
 
 // CYAN ARROW
-#main-menu-cyan {
-	li > a {
-		&:hover {
-			&:after {
-				@include arrow-hover;
-				background-image: url("../assets/graphics/arrow-menu-mini-cyan.png");
-			}
-		}
-	}
+#secondary-menu-cyan {
+	@include arrow-hover("../assets/graphics/arrow-menu-mini-cyan.png");
 }
 
 // GREEN ARROW
-#main-menu-green {
-	li > a {
-		&:hover {
-			&:after {
-				@include arrow-hover;
-				background-image: url("../assets/graphics/arrow-menu-mini-green.png");
-			}
-		}
-	}
+#secondary-menu-green {
+	@include arrow-hover("../assets/graphics/arrow-menu-mini-green.png");
 }
 
 // PINK ARROW
-#main-menu-pink {
-	li > a {
-		&:hover {
-			&:after {
-				@include arrow-hover;
-				background-image: url("../assets/graphics/arrow-menu-mini-pink.png");
-			}
-		}
-	}
+#secondary-menu-pink {
+	@include arrow-hover("../assets/graphics/arrow-menu-mini-pink.png");
 }
 
 // YELLOW ARROW
-#main-menu-yellow {
-	li > a {
-		&:hover {
-			&:after {
-				@include arrow-hover;
-				background-image: url("../assets/graphics/arrow-menu-mini-yellow.png");
-			}
-		}
-	}
+#secondary-menu-yellow {
+	@include arrow-hover("../assets/graphics/arrow-menu-mini-yellow.png");	
 }
 
 // CYAN UNDERLINE
-#secondary-menu-cyan {
-	li > a {
-		&:hover {
-			&:after {
-				@include underline-hover;
-				background-image: url("../assets/graphics/underline-menu-cyan.png");
-			}
-		}
-	}
+#main-menu-cyan {
+	@include underline-hover("../assets/graphics/underline-menu-cyan.svg");
 }
 
 // GREEN UNDERLINE
-#secondary-menu-green {
-	li > a {
-		&:hover {
-			&:after {
-				@include underline-hover;
-				background-image: url("../assets/graphics/underline-menu-green.png");
-			}
-		}
-	}
+#main-menu-green {
+	@include underline-hover("../assets/graphics/underline-menu-green.svg");
 }
 
 // PINK UNDERLINE
-#secondary-menu-pink {
-	li > a {
-		&:hover {
-			&:after {
-				@include underline-hover;
-				background-image: url("../assets/graphics/underline-menu-pink.png");
-			}
-		}
-	}
+#main-menu-pink {
+	@include underline-hover("../assets/graphics/underline-menu-pink.png");
 }
 
 // YELLOW UNDERLINE
-#secondary-menu-yellow {
-	li > a {
-		&:hover {
-			&:after {
-				@include underline-hover;
-				background-image: url("../assets/graphics/underline-menu-yellow.png");
-			}
-		}
-	}
+#main-menu-yellow {
+	@include underline-hover("../assets/graphics/underline-menu-yellow.png");
 }
 
 // MENU BURGER
@@ -244,9 +234,55 @@ button:focus {
 
 // HEADER INFO
 .header-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	margin: 2rem 0;
+	align-items: baseline;
+	flex-wrap: wrap;
+	
+	.header-phone-number {
+		flex-basis: 100%;
+		margin-bottom: 1rem;
+		@include respond-to('md') {
+			flex-basis: 20%;
+			margin: 0;
+		}
+	}
+	
+	.header-email {
+		flex-basis: 100%;
+		margin-bottom: 1rem;
+		@include respond-to('md') {
+			flex-basis: 50%;
+			display: flex;
+			justify-content: center;
+			margin: 0;		
+		}		
+	}
+	
+	.header-social-media {
+		flex-basis: 100%;
+		margin-bottom: 1rem;
+		@include respond-to('md') {
+			flex-basis: 30%;
+			display: flex;
+			justify-content: center;
+			margin: 0;
+		}
+	}
+	
+	@include respond-to('md') {
+		flex-direction: row;
+	}
+	
 	a:hover {
 		text-decoration: none;
+	}
+	a {
+		h5 {
+			margin: 0;
+		}
 	}
 }
 
@@ -274,6 +310,27 @@ button:focus {
 }
 
 /*-- MENU HIGHLIGHT --*/
+.menu-highlight-menu-container {
+	ul {
+		li {
+			display: flex;
+			align-items: center;
+			height: 100px;
+		    padding: 1rem;
+		    background-color: #e6e6e6;
+		    margin-right: 10%;
+		    margin-bottom: 1rem;
+			a {
+				display: flex;
+				flex-direction: column;
+				span {
+					@include _dm-sans-regular;
+				}
+			}
+		}
+	}
+}
+
 .menu-highlight-icon {
 	padding: 2rem;
 	width: 200px;

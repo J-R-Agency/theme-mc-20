@@ -87,10 +87,29 @@ $container = get_theme_mod( 'understrap_container_type' );
 							array(
 								'theme_location'  => 'primary',
 								'menu_id'         => 'main-menu-'.$page_color,
+								'link_before'	  => '<span class="menu-icon"></span>',
+							)
+						);
+						?>
+
+					</div>
+					
+					<div class='menu-container-center'>
+
+						<!-- Highlight Menu -->
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location'  => 'highlight-menu',
+								'menu_id'         => 'highlight-menu-'.$page_color,
 							)
 						);
 						?>
 						
+					</div>
+					
+					<div class='menu-container-right'>
+
 						<!-- Secondary Menu -->
 						<?php
 						wp_nav_menu(
@@ -101,38 +120,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 						);
 						?>
 						
-						<div class='header-info'>
-							<a href='tel:<?php the_field('company_phone', 'option'); ?>'>
-								<h5><?php the_field('company_phone', 'option'); ?></h5>
-							</a>
-							<a href='mailto:<?php the_field('company_email', 'option'); ?>'>
-								<h5><?php the_field('company_email', 'option'); ?></h5>
-							</a>
-						</div>
-						
-						<div class='header-social-media' style="background-image:url('<?php echo get_template_directory_uri();?>/assets/graphics/header-sm-bg-<?php echo $page_color;?>.png');">
-							<?php include(get_template_directory() . '/global-templates/template-parts/social-media.php'); ?>
-						</div>
-					</div>
-					
-					<div class='menu-container-right'>
-						<?php $menu_highlight_section = get_field('menu_highlight_section', 'option');
-							
-							if ($menu_highlight_section):
-						?>
-						
-						<a href="<?php echo $menu_highlight_section['mhs_link']['url']; ?>" target="<?php echo $menu_highlight_section['mhs_link']['target']; ?>">
-							<img class='menu-highlight-icon' src='<?php echo $menu_highlight_section['mhs_icon']['url'];?>'>
-							<h3><?php echo $menu_highlight_section['mhs_title']; ?></h3>
-							<p><?php echo $menu_highlight_section['mhs_blurb']; ?></p>
-							<img class='menu-highlight-arrow'
-							src="<?php echo get_template_directory_uri(); ?>/assets/graphics/arrow-menu-<?php echo $page_color; ?>.png">
-						</a>
-						
-						<?php endif; ?>
 					</div>
 					
 				</div> <!-- end menu-container -->
+				
+				<div class='header-info'>
+					<a class='header-phone-number' href='tel:<?php the_field('company_phone', 'option'); ?>'>
+						<h5><?php the_field('company_phone', 'option'); ?></h5>
+					</a>
+					<a class='header-email' href='mailto:<?php the_field('company_email', 'option'); ?>'>
+						<h5><?php the_field('company_email', 'option'); ?></h5>
+					</a>
+					<div class='header-social-media' style="background-image:url('<?php echo get_template_directory_uri();?>/assets/graphics/header-sm-bg-<?php echo $page_color;?>.png');">
+						<?php include(get_template_directory() . '/global-templates/template-parts/social-media.php'); ?>
+					</div>						
+					
+				</div>				
 			</div> <!-- end $mega-menu -->
 			<?php include( locate_template( 'global-templates/template-parts/hero.php', false, false ) ); ?>
 	</div><!-- #wrapper-navbar end -->

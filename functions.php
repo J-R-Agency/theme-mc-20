@@ -51,6 +51,7 @@ add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 function register_my_menu() {
 	register_nav_menu('secondary-menu',__( 'Secondary Menu' ));
 	register_nav_menu('footer-menu',__( 'Footer Menu' ));
+	register_nav_menu('highlight-menu',__( 'Highlight Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
 
@@ -93,3 +94,40 @@ function wpa58471_category_base() {
         'top' 
     );
 }
+
+// Add menu item custom fields
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+function my_wp_nav_menu_objects( $items, $args ) {
+	
+	foreach( $items as &$item ) {
+		
+		//$menu_icon = get_field('menu_icon', $item);
+		$menu_caption = get_field('menu_caption', $item);
+		
+/*
+		if( $menu_icon ) {
+			$item->title = "<div class='test'></div>" . $item->title;
+		}
+*/
+		
+		if ($menu_caption) {
+			$item->title .= '<span>'.$menu_caption.'</span>';
+		}
+		
+	}
+	return $items;
+}
+
+// START Stop removing div tags from WordPress - Linklay
+function ikreativ_tinymce_fix( $init )
+{
+    // html elements being stripped
+    $init['extended_valid_elements'] = 'div[*]';
+
+    // pass back to wordpress
+    return $init;
+}
+add_filter('tiny_mce_before_init', 'ikreativ_tiny_mce_fix');
+
+// END Stop removing div tags from WordPress - Linklay
