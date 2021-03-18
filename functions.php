@@ -112,6 +112,7 @@ function my_wp_nav_menu_objects( $items, $args ) {
 */
 		
 		if ($menu_caption) {
+			$item->title = '<strong>'.$item->title.'</strong>';
 			$item->title .= '<span>'.$menu_caption.'</span>';
 		}
 		

@@ -310,6 +310,20 @@ button:focus {
 }
 
 /*-- MENU HIGHLIGHT --*/
+@mixin circle-hover($circle_image) {
+	li:hover {
+		background-color: #d1d1d1;
+		a > strong {
+			background-image: url($circle_image);
+			background-repeat: no-repeat;
+		    background-size: contain;
+		    background-position: center;
+		    display: inline;	
+		}
+	}	
+	
+}
+
 .menu-highlight-menu-container {
 	ul {
 		li {
@@ -319,16 +333,35 @@ button:focus {
 		    padding: 1rem;
 		    background-color: #e6e6e6;
 		    margin-right: 10%;
-		    margin-bottom: 1rem;
+		    margin-bottom: 1rem;	    
 			a {
 				display: flex;
 				flex-direction: column;
+				strong {
+					width: max-content;
+				}
 				span {
 					@include _dm-sans-regular;
 				}
 			}
 		}
 	}
+}
+
+#highlight-menu-cyan {
+	@include circle-hover("../assets/graphics/circle-cyan-1.svg");
+}
+
+#highlight-menu-green {
+	@include circle-hover("../assets/graphics/circle-green-1.svg");
+}
+
+#highlight-menu-pink {
+	@include circle-hover("../assets/graphics/circle-pink-1.svg");
+}
+
+#highlight-menu-yellow {
+	@include circle-hover("../assets/graphics/circle-yellow-1.svg");
 }
 
 .menu-highlight-icon {
