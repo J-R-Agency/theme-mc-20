@@ -66,6 +66,8 @@ $theme_path = get_template_directory_uri();
 			<!-- Subtitle -->
 			<p class='hs-subtitle'><?php echo $bt_subtitle; ?></p>
 			
+			<?= custom_search_form( null, 'Search Posts', '', 'post'); ?>
+			
 			<!-- Blog posts -->
 			<div class='blog-posts-container'>		
 				<?php
@@ -90,7 +92,7 @@ $theme_path = get_template_directory_uri();
 								$card_color = 'light-grey';
 								$categories = get_the_category();
 		
-								include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
+								include (get_template_directory().'/global-templates/template-parts/blog-card-large.php');	
 								
 								
 							endwhile;

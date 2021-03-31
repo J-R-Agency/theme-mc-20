@@ -41,7 +41,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 <!-- CASE STUDIES -->
 <section class="generic bg-white">
 	<?php include_once (get_template_directory() . '/global-templates/template-parts/case-study-tabs.php'); ?>
-	<div class='container small-card-container'>		
+	<div class='container'>		
 		<?php
 		    echo '<div class="tab-content">';
 		    

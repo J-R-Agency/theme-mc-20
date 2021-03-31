@@ -23,7 +23,8 @@ include( locate_template( 'header.php', false, false ) ); ?>
 <section class="generic bg-white">
 	
 	<div class='container'>
-		<a class='take-back pink' href="<?php site_url(); ?>/helpful-stuff">Take me back to Helpful Stuff</a>	
+		<a class='take-back pink' href="<?php site_url(); ?>/helpful-stuff">Take me back to Helpful Stuff</a>
+		<h1><?php echo get_cat_name($term); ?></h1>	
 		
 		<div class='small-card-container'>
 		<?php

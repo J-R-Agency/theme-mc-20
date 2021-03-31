@@ -38,6 +38,18 @@ $mobile-cta-height: 400px;
 		background-position: center;
 	}
 	
+	&.video {
+		position: relative;
+		background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 32%, rgba(255,255,255,0) 100%);
+		video {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			z-index: -1;
+		}
+	}
+	
 	h1 {
 		margin-bottom: 1rem;
 		width: 100%;
@@ -79,6 +91,9 @@ $mobile-cta-height: 400px;
 	display: flex;
 	flex-direction: column;
 	flex-basis: 50%;
+	a {
+		width: max-content;
+	}
 }
 
 .cta-content .secondary {

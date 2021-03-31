@@ -27,7 +27,7 @@ $theme_path = get_template_directory_uri();
 		
 		<section class='container generic bg-white'>
 			<h2><?php echo $bc_title; ?></h2>
-			<p class='hs-subtitle'><?php echo $bc_subtitle; ?></p>
+			<p class='hs-subtitle'><?php echo $bc_subtitle; ?></p>			
 			
 			<div class='small-card-container'>
 			<?php		

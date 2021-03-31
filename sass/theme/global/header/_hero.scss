@@ -95,3 +95,13 @@ $desktop-hero-height: 600px;
 		}
 	}
 }
+
+.scroll-down {
+	background-repeat: no-repeat;
+	background-size: contain;
+	height:50px;
+	img {
+		height: 100%;
+		padding: 10px;
+	}
+}

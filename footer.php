@@ -19,6 +19,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class='container footer-container'>
 		
 		<div class='footer-container-left'>
+			<?php include(get_template_directory() . '/global-templates/template-parts/mailchimp-signup.php'); ?>
+		</div>
+		
+		<div class='footer-container-center'>
 			<!-- Logo -->
 			<div class='site-logo'>
 				<a href="<?php echo get_site_url(); ?>">
@@ -34,6 +38,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php include(get_template_directory() . '/global-templates/template-parts/social-media-footer.php'); ?>
 			</div>
 			
+			<a href='tel:<?php the_field('company_phone', 'option'); ?>'>
+				<h5 class='phone'><?php the_field('company_phone', 'option'); ?></h5>
+			</a>
+			<a href='mailto:<?php the_field('company_email', 'option'); ?>'>
+				<h5 class='email'><?php the_field('company_email', 'option'); ?></h5>
+			</a>	
+		</div>
+		
+		<div class='footer-container-right'>
+			<div class='footer-info'>
+				<?php the_field('company_address', 'option'); ?>
+			</div>
+			
 			<!-- Privacy Policy and Legal -->
 			<div class='legal-pages'>
 				<?php
@@ -43,27 +60,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				);
 				?>	
-			</div>
-			
+			</div>		
+				
 			<div class='company-no'>
 				<span>Co No: <?php echo the_field('company_number', 'option');?></span>
 			</div>
 			
 			<div class='vat-no'>
 				<span>VAT No: <?php echo the_field('vat_number', 'option');?></span>
-			</div>			
-		</div>
-		
-		<div class='footer-container-right'>
-			<div class='footer-info'>
-				<a href='tel:<?php the_field('company_phone', 'option'); ?>'>
-					<h5 class='phone'><?php the_field('company_phone', 'option'); ?></h5>
-				</a>
-				<a href='mailto:<?php the_field('company_email', 'option'); ?>'>
-					<h5 class='email'><?php the_field('company_email', 'option'); ?></h5>
-				</a>
-				<?php the_field('company_address', 'option'); ?>
 			</div>
+						
 		</div>
 	</div>
 </section>

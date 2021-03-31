@@ -17,6 +17,7 @@
 	@include respond-to('md') {
 		flex-direction: row;
 	}
+	
 	.footer-container-left {
 		display: flex;
 		flex-direction: column;
@@ -26,6 +27,24 @@
 			align-items: flex-end;
 			padding: 0;
 		}
+	}
+	
+	.footer-container-center {
+		display: flex;
+		flex-direction: column;	
+		justify-content: center;
+		align-items: start;
+		div {
+			text-align: center;
+		}
+		@include respond-to('md') {
+			align-items: center;
+		}
+	}
+	
+	.footer-container-right {
+		display: flex;
+		flex-direction: column;		
 	}
 }
 
@@ -49,11 +68,46 @@
 	}
 }
 
-#menu-footer-menu > li > a {
-	color: white;
-	font-family: dm-sans-regular;
-	font-size: 1rem;
-	&:hover {
-		text-decoration: none;
+#menu-footer-menu {
+	li {
+		height: auto;
+		a {
+			color: white;
+			font-family: dm-sans-regular;
+			font-size: 1rem;
+			&:hover {
+				text-decoration: none;
+			}
+		}		
 	}
+}
+
+// Mailchimp signup
+#mc_embed_signup_scroll {
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    @include respond-to('md') {
+	    align-items: flex-end;
+    }
+    
+    label {
+	    font-family: dm-sans-bold;
+	    text-transform: uppercase;
+	    font-size: 1.25rem;
+    }
+    input[type='email'] {
+	    font-family: dm-sans-regular;
+	    margin-bottom: 1rem;
+	    padding: 0.25rem 1rem;
+    }
+    input[type='submit'] {
+	    font-family: dm-sans-regular;
+	    color: white;
+	    background-color: $navy;
+	    border: 1px solid white;
+	    border-radius: 2px;
+	    padding: 0 2rem;
+    }
 }

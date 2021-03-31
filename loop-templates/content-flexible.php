@@ -103,15 +103,20 @@ if( have_rows('flexible_content_block') ):
             $isb_background_color = get_sub_field('isb_background_color'); // WYSIWYG block
             $isb_title = get_sub_field('isb_title'); // Image
             $isb_icons = get_sub_field('isb_icons'); // Select 
+            $isb_icon_style = get_sub_field('isb_icon_style'); // Select 
             $isb_page = sanitize_title(get_the_title());
             
             if (!$isb_icon_size) {
 	            $isb_icon_size = 'medium';
             }
+            
+            if (!$isb_icon_style) {
+	            $isb_icon_style = 'none';
+            }
 			
-			echo "<section class='container generic bg-".$isb_background_color." icon-set'>
+			echo "<section class='generic bg-".$isb_background_color." icon-set style-".$isb_icon_style."'>
 						".strip_tags($isb_title,'<span><h1><h2><h3><p>')."
-							<div class='icon-set-container'>";
+							<div class='container icon-set-container'>";
 						
 							if( have_rows('isb_icons') ):
 								while( have_rows('isb_icons') ): the_row(); 
@@ -165,6 +170,7 @@ if( have_rows('flexible_content_block') ):
             $cta_link = get_sub_field('cta_link');
 			$cta_image = get_sub_field('cta_image');
 			$cta_image_position = get_sub_field('cta_image_position');
+			$cta_video = get_sub_field('cta_video');
 			
 			if (!$cta_image_position) {
 				$cta_image_position = 'center';
@@ -173,6 +179,13 @@ if( have_rows('flexible_content_block') ):
 			if ($cta_style == 'tertiary') {
 				echo "
 				<section class='cta-block ".$cta_style."' style='background-image:url(".$cta_image['url'].")'>";		
+			} elseif ($cta_style == 'video') {
+				echo "
+				<section class='cta-block ".$cta_style."'>
+				<video autoplay muted loop>
+					<source src='".$cta_video['url']."' type='video/mp4'>
+				</video>
+				";
 			} else {
 				echo "
 				<section class='cta-block ".$cta_style." ".$cta_filter."' style='background-image:url(".$cta_image['url']."); background-position:".$cta_image_position."'>
@@ -185,20 +198,25 @@ if( have_rows('flexible_content_block') ):
 					
 					
 					// TITLE & INTRO
-					echo "<h1>".$cta_title."</h1>
-						 <p>".$cta_intro."</p>";
+					if ($cta_title) {
+						echo "<h1>".$cta_title."</h1>";
+					}
+					
+					if ($cta_intro) {
+						echo "<p>".$cta_intro."</p>";
+					}
+					
 						 
 					// LINK
-					if ($cta_link_type == "link") {
+					if ($cta_link_type == "link" and $cta_link) {
 						echo "<a href='".$cta_link['url']."' target='".$cta_link['target']."'><div class='button-navy'>".$cta_link['title']."</div></a>";
-					} elseif ($cta_link_type == "file") {
+					} elseif ($cta_link_type == "file" and $cta_file) {
 						echo "<a href='".$cta_file['url']."' download><div class='button-navy'>Tell me more</div></a>";
 					}
 					
 					echo "</div>";
 					
 					echo "</div>";
-					
 						 
 					echo "
 				</div> <!-- end container -->
@@ -475,17 +493,29 @@ if( have_rows('flexible_content_block') ):
 			
 			$bpb_background_color = get_sub_field('bpb_background_color');
             $bpb_title = get_sub_field('bpb_title');
+            $bpb_blog_card_size = get_sub_field('bpb_blog_card_size');
 			$bpb_category = get_sub_field('bpb_category');
 			
+			if (!$bpb_blog_card_size) {
+				$bpb_blog_card_size = 'small';
+			}
+						
 			if (!$bpb_title) {
 				$bpb_title = 'Our Blog Posts';
+			}
+			
+			if ($bpb_blog_card_size = 'medium') {
+				$number_of_posts = 4;
+			} else {
+				$number_of_posts = 6;
 			}
 								
 				$args = array(
 				    'post_type'      => 'post', //write slug of post type
-				    'posts_per_page' => 3,
+				    'posts_per_page' => $number_of_posts,
 				    'order'          => 'DESC',
-				    'category__in'	 => $bpb_category
+				    'category__in'	 => $bpb_category,
+				    'ignore_sticky_posts' => 1
 				 );
 				 
 				 $query = new WP_Query($args);
@@ -494,21 +524,23 @@ if( have_rows('flexible_content_block') ):
 					echo "
 					<section class='generic bg-".$bpb_background_color."'>
 						<div class='container'>
-							<h2 style='text-align: center; padding-bottom: 2rem;'>".$bpb_title."</h2>";				 
-					    while ( $query->have_posts() ) : $query->the_post();
-						 						 	
-						 	if ($bpb_background_color == "white") {
-							 	$card_color = 'light-grey';
-						 	} elseif ($bpb_background_color == "light-grey") {
-							 	$card_color = 'white';
-						 	}
-						 	
-							$categories = get_the_category();
-							
-							include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
-						
-						endwhile;
+							<h2 style='text-align: center; padding-bottom: 2rem;'>".$bpb_title."</h2>
+								<div class='blog-posts-container ".$bpb_blog_card_size."-card-container'>";				 
+							    while ( $query->have_posts() ) : $query->the_post();
+								 						 	
+								 	if ($bpb_background_color == "white") {
+									 	$card_color = 'light-grey';
+								 	} elseif ($bpb_background_color == "light-grey") {
+									 	$card_color = 'white';
+								 	}
+								 	
+									$categories = get_the_category();
+									
+									include (get_template_directory().'/global-templates/template-parts/blog-card-'.$bpb_blog_card_size.'.php');	
+								
+								endwhile;
 					echo "</div>
+						</div>
 					</section>";
 				endif; 
 				wp_reset_query();

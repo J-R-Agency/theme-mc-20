@@ -1,9 +1,14 @@
-.button-navy {
+.button-navy, [type=button], [type=reset], [type=submit], button {
 	background-color: $navy;
 	color: white;
 	padding: 1rem 2rem;
 	display: inline;
+	border: 0;
 	a {
 		color: white;
 	}
+}
+
+[type=button], [type=reset], [type=submit], button {
+	padding: 0.25rem 2rem;
 }

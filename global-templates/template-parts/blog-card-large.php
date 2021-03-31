@@ -1,6 +1,6 @@
 <?php
 /**
- * Case study card
+ *  Blog-card-large
  *
  * @package understrap
  */
@@ -14,10 +14,11 @@ $featured_image_position = get_field('featured_image_position');
 $category_color = get_field('category_color', $categories[0]);
 ?>
 
+<!-- Large blog card -->
 <div class='blog-card-container <?php echo $card_color; ?>'>
 	
 	<div class='blog-card-left'>
-		<div class='ribbon-container blog-category ribbon-<?php echo $category_color; ?>'>
+		<div class='ribbon blog-category ribbon-<?php echo $category_color; ?>'>
 			<?php 
 			if ( ! empty( $categories ) ) {
 				echo 
@@ -37,7 +38,6 @@ $category_color = get_field('category_color', $categories[0]);
 			<a href="<?php the_permalink(); ?>">
 				<div class='button-navy'>Tell me more</div>
 			</a>
-			
 		</div>
 	</div>
 	

@@ -44,6 +44,7 @@ if( function_exists('acf_add_options_page') ) {
 function my_theme_scripts() {
     wp_enqueue_script( 'menu', get_template_directory_uri() . '/js/menu.js', array( 'jquery' ), '1.0.0', true );
     wp_enqueue_script( 'changePage', get_template_directory_uri() . '/js/changePage.js', array( 'jquery' ), '1.0.0', true );
+    wp_enqueue_script( 'scrollDown', get_template_directory_uri() . '/js/scrollDown.js', array( 'jquery' ), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 
@@ -61,6 +62,19 @@ function add_taxonomies_to_pages() {
  register_taxonomy_for_object_type( 'category', 'page' );
  }
 add_action( 'init', 'add_taxonomies_to_pages' );
+
+// Custom search form
+function custom_search_form( $form, $form_placeholder, $value = "Search", $post_type = 'post' ) {
+    $form_value = (isset($value)) ? $value : attribute_escape(apply_filters('the_search_query', get_search_query()));
+    $form = '<form method="get" id="searchform" action="' . get_option('home') . '/" >
+    <div>
+        <input type="hidden" name="post_type" value="'.$post_type.'" />
+        <input type="text" placeholder="'.$form_placeholder.'" value="' . $form_value . '" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="'.attribute_escape(__('Search')).'" />
+    </div>
+    </form>';
+    return $form;
+}
 
 //Add read time
 function prefix_estimated_reading_time( $content = '', $wpm = 300 ) {

@@ -74,6 +74,28 @@
 
 }
 
+// STYLES
+.style-grayscale {
+	.icon-set-container {
+		.icon-set-wrapper {
+			a {
+				img {
+					filter: none;
+					@include respond-to('lg') {
+						filter: grayscale(1) opacity(0.75);
+						transition: filter 0.5s;
+						&:hover {
+							filter: grayscale(0) opacity(1);
+							transition: filter 0.5s;
+						}						
+					}
+
+				}
+			}
+		}
+	}
+}
+
 /*-- SERVICE PAGES --*/
 
 @mixin highlight-hover($bg-image, $text-color) {

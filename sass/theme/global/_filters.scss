@@ -11,6 +11,9 @@
 	.button-navy {
 		box-shadow: 2px 2px 2px black;
 	}	
+	.scroll-down > img {
+		filter: brightness(100)drop-shadow(1px 3px 2px black);
+	}	
 }
 
 @mixin lighten {
@@ -37,7 +40,10 @@
 	}
 	.button-navy {
 		box-shadow: 2px 2px 2px black;
-	}	
+	}
+	.scroll-down > img {
+		filter: brightness(100)drop-shadow(1px 3px 2px black);
+	}
 }
 
 .none {

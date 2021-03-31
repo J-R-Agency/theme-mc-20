@@ -1,10 +1,12 @@
 ( function( $ ) {
-	
-$(document).ready(function() {
+
 	// Hide menu and close button on start
 	$( "#mega-menu" ).hide();
 	$( ".close-menu" ).hide();
 	$( ".logo-mini" ).hide();
+	
+$(document).ready(function() {
+
 	
 	// Click on hamburger to show menu
 	$( ".hamburger" ).click(function() {

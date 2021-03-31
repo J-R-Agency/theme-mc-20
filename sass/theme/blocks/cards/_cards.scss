@@ -1,0 +1,21 @@
+@mixin grid($rows) {
+	display: grid;
+	grid-template-columns: repeat($rows,1fr);
+	grid-gap: 20px;	
+}
+
+.small-card-container {
+	@include grid(1);
+	
+	@include respond-to('md') {
+		@include grid(3);
+	}
+}
+
+.medium-card-container {
+	@include grid(1);
+	
+	@include respond-to('md') {
+		@include grid(2);
+	}
+}
