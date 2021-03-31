@@ -66,7 +66,7 @@ add_action( 'init', 'add_taxonomies_to_pages' );
 // Custom search form
 function custom_search_form( $form, $form_placeholder, $value = "Search", $post_type = 'post' ) {
     $form_value = (isset($value)) ? $value : attribute_escape(apply_filters('the_search_query', get_search_query()));
-    $form = '<form method="get" id="searchform" action="' . get_option('home') . '/" >
+    $form = '<form method="get" id="searchform" action="' . get_home_url() . '/" >
     <div>
         <input type="hidden" name="post_type" value="'.$post_type.'" />
         <input type="text" placeholder="'.$form_placeholder.'" value="' . $form_value . '" name="s" id="s" />
