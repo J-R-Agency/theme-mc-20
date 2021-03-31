@@ -19,7 +19,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class='container footer-container'>
 		
 		<div class='footer-container-left'>
-			<?php include(get_template_directory() . '/global-templates/template-parts/mailchimp-signup.php'); ?>
+			<?php //include(get_template_directory() . '/global-templates/template-parts/mailchimp-signup.php'); ?>
+			<?php
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'secondary-footer-menu'
+					)
+				);
+			?>	
+			
 		</div>
 		
 		<div class='footer-container-center'>

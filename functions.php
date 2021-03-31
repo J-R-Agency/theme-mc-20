@@ -52,6 +52,7 @@ add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 function register_my_menu() {
 	register_nav_menu('secondary-menu',__( 'Secondary Menu' ));
 	register_nav_menu('footer-menu',__( 'Footer Menu' ));
+	register_nav_menu('secondary-footer-menu',__( 'Secondary Footer Menu' ));
 	register_nav_menu('highlight-menu',__( 'Highlight Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
