@@ -31,9 +31,9 @@ include( locate_template( 'header.php', false, false ) );
 </section>
 
 <!-- More Blog Posts -->
-<section class='generic bg-light-grey'>
-	<div class='container'>
-		<h2 style="text-align: center; padding-bottom: 2rem;">Even more Helpful Stuff</h2>
+<section class='container generic bg-light-grey'>
+	<h2 style="text-align: center; padding-bottom: 2rem;">Even more Helpful Stuff</h2>
+	<div class='small-card-container'>
 		<?php
 			
 			$currentID = get_the_ID();
@@ -55,7 +55,7 @@ include( locate_template( 'header.php', false, false ) );
 				 	$card_color = 'white';
 					$categories = get_the_category();
 					
-					include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
+					include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
 				
 				endwhile;
 			endif; 
