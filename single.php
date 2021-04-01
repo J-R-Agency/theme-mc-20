@@ -42,6 +42,8 @@ include( locate_template( 'header.php', false, false ) );
 			    'post_type'      => 'post', //write slug of post type
 			    'posts_per_page' => 3,
 			    'order'          => 'DESC',
+			    'orderby'		 => 'rand',
+			    'ignore_sticky_posts' => 1,
 			    'post__not_in' => array($currentID)
 			 );
 			 
