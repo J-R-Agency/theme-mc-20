@@ -35,8 +35,8 @@ $category_color = get_field('category_color', $categories[0]);
 			</a>
 			<p class='blog-author'>By <?php the_author(); ?></p>	
 			
-			<a href="<?php the_permalink(); ?>">
-				<div class='button-navy'>Tell me more</div>
+			<a class='button-navy' href="<?php the_permalink(); ?>">
+				Tell me more
 			</a>
 		</div>
 	</div>

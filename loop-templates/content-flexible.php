@@ -209,9 +209,9 @@ if( have_rows('flexible_content_block') ):
 						 
 					// LINK
 					if ($cta_link_type == "link" and $cta_link) {
-						echo "<a href='".$cta_link['url']."' target='".$cta_link['target']."'><div class='button-navy'>".$cta_link['title']."</div></a>";
+						echo "<a class='button-navy' href='".$cta_link['url']."' target='".$cta_link['target']."'>".$cta_link['title']."</a>";
 					} elseif ($cta_link_type == "file" and $cta_file) {
-						echo "<a href='".$cta_file['url']."' download><div class='button-navy'>Tell me more</div></a>";
+						echo "<a class='button-navy' href='".$cta_file['url']."' download>Tell me more</a>";
 					}
 					
 					echo "</div>";
