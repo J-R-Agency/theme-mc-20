@@ -73,27 +73,65 @@ include( locate_template( 'header.php', false, false ) );  ?>
 <!-- QUOTE -->
 <?php if( have_rows('fcs_quote') ): ?>
     <?php while( have_rows('fcs_quote') ): the_row(); 
-
-        // Get sub field values.
-        $fcsq_quote = get_sub_field('fcsq_quote');
-        $fcsq_citation = get_sub_field('fcsq_citation');
 		$fcsq_background_image = get_sub_field('fcsq_background_image');
-		
+		$fcsq_size = get_sub_field('fcsq_size');
+		if (!$fcsq_size) {
+			$fcsq_size = 'medium';
+		}
         ?>
-        <section class='fcs-quote-block'
-	        	 style='
-		        	<?php
-			        	if ($fcsq_background_image){
-				        	echo 'background-image:url('.$fcsq_background_image['url'].');';
-					    } else {
-						    echo 'background-color: #0e182d;';
-						}
-					?>'>
-	        <div class='container fcs-content'>
-		    	<blockquote><?php echo strip_tags($fcsq_quote); ?></blockquote>
-				<p><?php echo strip_tags($fcsq_citation); ?></p>
-	        </div>
-        </section>
+        
+        <?php if( have_rows('fcsq_testimonials') ):
+	        $i = 1;
+        ?>
+	        <section class='fcs-quote-block'
+		        	 style='
+			        	<?php
+				        	if ($fcsq_background_image){
+					        	echo 'background-image:url('.$fcsq_background_image['url'].');';
+						    } else {
+							    echo 'background-color: #0e182d;';
+							}
+						?>'>
+		        <div class='container fcs-content'>
+			        <div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
+				        <div class='carousel-inner'>   
+        
+		        <?php while( have_rows('fcsq_testimonials') ): the_row(); ?>
+		        
+		        <?php
+			        // Get sub field values.
+			        $fcsq_quote = get_sub_field('fcsq_quote');
+			        $fcsq_citation = get_sub_field('fcsq_citation');
+			        $activeState;
+					
+					if($i == 1) {
+						$activeState = 'active';
+					} else {
+						$activeState = '';
+					}			        	        
+			    ?>
+						<div class='carousel-item <?php echo $activeState; ?> <?php echo $fcsq_size; ?>'>
+				    		<blockquote><?php echo strip_tags($fcsq_quote); ?></blockquote>
+							<p><?php echo strip_tags($fcsq_citation); ?></p>
+						</div>
+	
+						<?php $i++; ?>
+		        <?php endwhile; ?>
+				        </div>
+				        <?php if ($i <= 1): ?>
+						  <a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
+					      <span class='carousel-control prev-icon white' aria-hidden='true'></span>
+					      <span class='sr-only'>Previous</span>
+						  </a>
+						  <a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>
+						    <span class='carousel-control next-icon white' aria-hidden='true'></span>
+						    <span class='sr-only'>Next</span>
+						  </a>
+						<?php endif; ?>				        
+			        </div>
+		        </div>
+	        </section>	        
+        <?php endif; ?>
         
     <?php endwhile; ?>
 <?php endif; ?>

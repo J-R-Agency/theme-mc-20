@@ -26,10 +26,11 @@ $fcs-desktop-height: 400px;
 	filter: brightness(100%);
 	blockquote {
 		margin-bottom: 2rem;
-		font-size: 1rem;
+		font-size: 1.3rem;
+		padding: 0 10%;
 		
 		@include respond-to ('lg') {
-			font-size: 1.7rem;
+			font-size: 1.5rem;
 		}
 		
 		&:before {
@@ -63,6 +64,7 @@ $fcs-desktop-height: 400px;
 	background-repeat: no-repeat;	
 	background-blend-mode: darken;
 	background-color: rgba(0,0,0,0.5);
+	background-position: center;
 		
 	@include respond-to('md') {
 		padding: 3rem 5rem;
