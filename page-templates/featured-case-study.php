@@ -118,7 +118,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 						<?php $i++; ?>
 		        <?php endwhile; ?>
 				        </div>
-				        <?php if ($i <= 1): ?>
+				        <?php if ($i > 2): ?>
 						  <a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
 					      <span class='carousel-control prev-icon white' aria-hidden='true'></span>
 					      <span class='sr-only'>Previous</span>
