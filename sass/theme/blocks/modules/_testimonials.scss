@@ -6,21 +6,21 @@
 	
 	&.small {
 		height: 350px;
-		@include respond-to('md') {
+		@include respond-to('lg') {
 			height: 300px;
 		}
 	}
 	
 	&.medium {
 		height: 450px;
-		@include respond-to('md') {
+		@include respond-to('lg') {
 			height: 400px;
 		}		
 	}
 	
 	&.large {
 		height: 550px;
-		@include respond-to('md') {
+		@include respond-to('lg') {
 			height: 500px;
 		}		
 	}
