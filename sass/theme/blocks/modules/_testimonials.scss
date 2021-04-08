@@ -5,15 +5,24 @@
 	overflow: hidden;
 	
 	&.small {
-		height: 300px;
+		height: 350px;
+		@include respond-to('md') {
+			height: 300px;
+		}
 	}
 	
 	&.medium {
-		height: 400px;
+		height: 450px;
+		@include respond-to('md') {
+			height: 400px;
+		}		
 	}
 	
 	&.large {
-		height: 500px;
+		height: 550px;
+		@include respond-to('md') {
+			height: 500px;
+		}		
 	}
 
 	@include respond-to ('md') {
