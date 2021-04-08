@@ -5,7 +5,7 @@
 	overflow: hidden;
 	
 	&.small {
-		height: 350px;
+		height: 400px;
 		@include respond-to('lg') {
 			height: 300px;
 		}
