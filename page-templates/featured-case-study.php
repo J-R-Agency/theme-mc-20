@@ -111,8 +111,10 @@ include( locate_template( 'header.php', false, false ) );  ?>
 					}			        	        
 			    ?>
 						<div class='carousel-item <?php echo $activeState; ?> <?php echo $fcsq_size; ?>'>
-				    		<blockquote><?php echo strip_tags($fcsq_quote); ?></blockquote>
-							<p><?php echo strip_tags($fcsq_citation); ?></p>
+							<div class='carousel-item-inner'>
+				    			<blockquote><?php echo strip_tags($fcsq_quote); ?></blockquote>
+								<p><?php echo strip_tags($fcsq_citation); ?></p>
+							</div>
 						</div>
 	
 						<?php $i++; ?>
