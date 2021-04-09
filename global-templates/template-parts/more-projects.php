@@ -32,6 +32,7 @@ $theme_path = get_template_directory_uri();
 		    'post_type'      => 'page', //write slug of post type
 		    'posts_per_page' => 3,
 		    'post_parent'    => $pageSlug->ID, //place here id of your parent page
+		    'orderby'		 => 'rand',
 		    'order'          => 'DESC',
 		    'post__not_in' => array($currentID)
 		 );
