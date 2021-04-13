@@ -42,10 +42,16 @@
 	background-image: url('../assets/graphics/arrow-link-cyan.svg');
 }
 
+.arrow-link-black {
+	@include arrow-link;
+	background-image: url('../assets/graphics/arrow-link-black.svg');
+}
+
 .arrow-link-pink {
 	@include arrow-link;
 	background-image: url('../assets/graphics/arrow-link-pink.svg');
 }
+
 .arrow-link-green {
 	@include arrow-link;
 	background-image: url('../assets/graphics/arrow-link-green.svg');

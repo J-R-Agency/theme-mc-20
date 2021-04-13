@@ -57,11 +57,15 @@ $theme_path = get_template_directory_uri();
 			?>
 			</div>
 		</section>
-		<section class='bg-light-grey'>
-			<div class='container link-block '>
-				<a href='<?php echo site_url();?>/category/<?php echo $bc_cat_object->slug; ?>'><?php echo $bc_link_text; ?><div class='arrow-link-<?php echo $bc_color; ?>'></div></a>
+		
+		<section class='blog-link'>
+			<div class='container'>
+				<a href='<?php echo site_url();?>/archive'>
+					<p class='highlight-<?php echo $bc_color; ?>'><?php echo $bc_link_text; ?></p>
+					<div class='arrow-link-black'></div>
+				</a>
 			</div>
-		</section>
+		</section>		
 		
 	<?php endwhile; ?>
 <?php endif; ?>

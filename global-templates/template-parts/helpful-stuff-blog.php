@@ -151,9 +151,12 @@ $theme_path = get_template_directory_uri();
 			
 		</section>
 		
-		<section class='bg-light-grey'>
-			<div class='container link-block'>
-				<a href='<?php echo site_url();?>/archive'><?php echo $bt_link_text; ?><div class='arrow-link-pink'></div></a>
+		<section class='blog-link'>
+			<div class='container'>
+				<a href='<?php echo site_url();?>/archive'>
+					<p class='highlight-pink'><?php echo $bt_link_text; ?></p>
+					<div class='arrow-link-black'></div>
+				</a>
 			</div>
 		</section>
 
