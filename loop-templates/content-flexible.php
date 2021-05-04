@@ -114,8 +114,8 @@ if( have_rows('flexible_content_block') ):
 	            $isb_icon_style = 'none';
             }
 			
-			echo "<section class='generic bg-".$isb_background_color." icon-set style-".$isb_icon_style."'>
-						".strip_tags($isb_title,'<span><h1><h2><h3><p>')."
+			echo "<section class='generic bg-".$isb_background_color."'>
+						<h2 class='icon-set-title'>".$isb_title."</h2>
 							<div class='container icon-set-container'>";
 						
 							if( have_rows('isb_icons') ):
@@ -126,22 +126,31 @@ if( have_rows('flexible_content_block') ):
 									$isb_caption = get_sub_field('isb_caption');
 									$isb_description= get_sub_field('isb_description');
 									$isb_link = get_sub_field('isb_link');
+									$isb_lottie_animation = get_sub_field('isb_lottie_animation');
 									
-									echo "<div class='icon-set-wrapper ".$isb_columns."-columns'>";
+									echo "<div class='icon-set-wrapper icon-size-".$isb_icon_size." ".$isb_columns."-columns icon-set style-".$isb_icon_style."'>";
 									
+									// Begin Link
 									if ($isb_link) {
 										echo "<a href='".$isb_link['url']."' target='".$isb_link['target']."'>";
 									}
 									
-									echo "<img class='".$isb_icon_size."' src='".$isb_icon['sizes']['medium']."'>";										
-											
-										if ($isb_caption) {
-											echo "<h5>".$isb_caption."</h5>";
-										}
-										if ($isb_description) {
-											echo "<p>".$isb_description."</p>";
-										}
-										
+									// Lottie Animation/Image
+									if ($isb_lottie_animation) {
+										echo $isb_lottie_animation;
+									} else {
+										echo "<img class='".$isb_icon_size."' src='".$isb_icon['sizes']['medium']."'>";
+									}
+									
+									// Caption
+									if ($isb_caption) {
+										echo "<p class='caption'>".$isb_caption."</p>";
+									}
+									if ($isb_description) {
+										echo "<p>".$isb_description."</p>";
+									}
+									
+									// End Link
 									if ($isb_link) {
 										echo "</a>";
 									}										

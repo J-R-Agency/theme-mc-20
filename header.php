@@ -19,6 +19,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php the_field('google_analytics_script', 'option'); ?>
 	<!-- Other scripts -->
 	<?php the_field('other_scripts', 'option'); ?>
+	<!-- Lottie animations -->
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">

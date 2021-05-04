@@ -1,4 +1,16 @@
+@mixin icon-size($height) {
+	a {
+		img, lottie-player {
+			height: $height;
+		}			
+	}
+}
+
 .icon-set {
+	text-align: center;
+}
+
+.icon-set-title {
 	text-align: center;
 }
 
@@ -33,35 +45,53 @@
 	}	
 }
 
+// Global
+
 .icon-set-wrapper {
 	padding: 1rem 0;
 	@include respond-to('lg') {
 		padding: 3rem 0;
 	}
-	img {
+	
+	&.icon-size-small {
+		@include icon-size(75px);
+	}
+	
+	&.icon-size-medium {
+		@include icon-size(100px);
+	}
+	
+	&.icon-size-large {
+		@include icon-size(150px);
+	}
+	
+	img, lottie-player {
+		transform: scale(1);
+		transition: transform 0.5s;
 		width: 150px;
 		object-fit: contain;
-		object-position: bottom;
-		
-		&.small {
-			height: 75px;
-		}
-		
-		&.medium {
-			height: 100px;			
-		}
-		
-		&.large {
-			height: 150px;
-		}
-		
+		object-position: bottom;		
 	}
-	h5{
+	
+	.caption {
 		margin: 2rem 0 0 0;
 		padding: 0 2rem;
+		font-size: 1.3rem;
+		font-family: 'dm-sans-bold';
 	}
+	
 	a {
 		color: $navy;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		&:hover {
+			text-decoration: none;
+			.caption {
+				text-decoration: underline;
+			}
+		}
 	}
 	p {
 		padding: 0.5rem 2rem;
@@ -76,25 +106,32 @@
 
 // STYLES
 .style-grayscale {
-	.icon-set-container {
-		.icon-set-wrapper {
-			a {
-				img {
-					filter: none;
-					@include respond-to('lg') {
-						filter: grayscale(1) opacity(0.75);
-						transition: filter 0.5s;
-						&:hover {
-							filter: grayscale(0) opacity(1);
-							transition: filter 0.5s;
-						}						
-					}
-
-				}
+	a {
+		img {
+			filter: none;
+			@include respond-to('lg') {
+				filter: grayscale(1) opacity(0.75);
+				transition: filter 0.5s;
+				&:hover {
+					filter: grayscale(0) opacity(1);
+					transition: filter 0.5s;
+				}		
 			}
 		}
 	}
 }
+
+.style-none {
+	a {
+		&:hover {
+			img, lottie-player {
+				transform: scale(1.15);
+				transition: transform 0.5s;
+			}			
+		}
+	}
+}
+
 
 /*-- SERVICE PAGES --*/
 

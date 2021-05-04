@@ -17,7 +17,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <section class='footer bg-navy'>
 	<div class='container footer-container'>
-		
 		<div class='footer-container-left'>
 			<?php //include(get_template_directory() . '/global-templates/template-parts/mailchimp-signup.php'); ?>
 			<?php
