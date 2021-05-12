@@ -123,6 +123,7 @@ if( have_rows('flexible_content_block') ):
 							
 									// vars
 									$isb_icon = get_sub_field('isb_icon');
+									$isb_icon_size = get_sub_field('isb_icon_size');
 									$isb_caption = get_sub_field('isb_caption');
 									$isb_description= get_sub_field('isb_description');
 									$isb_link = get_sub_field('isb_link');

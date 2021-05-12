@@ -58,7 +58,7 @@ endif;
 			 	$page_icon = get_field('page_icon');
 			 	
 			 	echo "
-				 	<div class='icon-set-wrapper four-columns'>
+				 	<div class='icon-set-wrapper icon-size-medium four-columns'>
 				 		<a href='",the_permalink(),"'>
 				 	";
 				 	if ($page_icon) {

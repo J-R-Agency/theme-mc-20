@@ -39,7 +39,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		 	$page_icon = get_field('page_icon');
 		 	
 		 	echo "
-			 	<div class='icon-set-wrapper three-columns'>
+			 	<div class='icon-set-wrapper icon-size-medium three-columns'>
 			 		<a href='",the_permalink(),"'>
 			 	";
 			 	if ($page_icon) {
