@@ -113,21 +113,21 @@ if( have_rows('flexible_content_block') ):
             if (!$isb_icon_style) {
 	            $isb_icon_style = 'none';
             }
-			
 			echo "<section class='generic bg-".$isb_background_color."'>
 						<h2 class='icon-set-title'>".$isb_title."</h2>
 							<div class='container icon-set-container'>";
+							
 						
 							if( have_rows('isb_icons') ):
 								while( have_rows('isb_icons') ): the_row(); 
 							
 									// vars
 									$isb_icon = get_sub_field('isb_icon');
-									$isb_icon_size = get_sub_field('isb_icon_size');
 									$isb_caption = get_sub_field('isb_caption');
 									$isb_description= get_sub_field('isb_description');
 									$isb_link = get_sub_field('isb_link');
 									$isb_lottie_animation = get_sub_field('isb_lottie_animation');
+									
 									
 									echo "<div class='icon-set-wrapper icon-size-".$isb_icon_size." ".$isb_columns."-columns icon-set style-".$isb_icon_style."'>";
 									
