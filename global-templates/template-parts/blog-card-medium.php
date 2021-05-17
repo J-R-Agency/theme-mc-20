@@ -43,7 +43,7 @@ $category_color = get_field('category_color', $categories[0]);
 		</div>	     
 	</a> 
 	
-	<div class='blog-card-info'>
+	<div class='blog-card-info <?php echo $card_color; ?>'>
 		<a class='blog-title' href="<?php the_permalink(); ?>">
 			<h3><?php echo wp_trim_words( get_the_title(), 15 ); ?></h3>
 		</a>

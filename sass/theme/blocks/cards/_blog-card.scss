@@ -231,8 +231,16 @@
     }
     
     .blog-card-info {
-	    background-color: $light-grey;
 	    padding: 2rem;
+	    
+	    &.light-grey {
+		    background-color: $light-grey;
+	    }
+	    
+	    &.white {
+		    background-color: white;
+	    }
+	    
 	    .blog-title {
 		    max-width: 100%;
 		    height: 50px;

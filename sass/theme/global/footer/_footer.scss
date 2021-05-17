@@ -119,3 +119,12 @@
 	    padding: 0 2rem;
     }
 }
+
+.company-badges {
+	.company-badge {
+		width: 150px;
+		height: 150px;
+		margin: 0rem 1rem 1rem 0;
+		object-fit: contain;
+	}	
+}

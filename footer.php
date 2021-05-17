@@ -20,12 +20,38 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class='footer-container-left'>
 			<?php //include(get_template_directory() . '/global-templates/template-parts/mailchimp-signup.php'); ?>
 			<?php
-				wp_nav_menu(
+				/*wp_nav_menu(
 					array(
 						'theme_location'  => 'secondary-footer-menu'
 					)
-				);
-			?>	
+				);*/
+			?>
+			
+			<?php
+				if( have_rows('company_badges', 'options') ):
+					
+					echo "<div class='company-badges'>";
+					
+				    while( have_rows('company_badges', 'options') ) : the_row();
+				
+				        $badge_image = get_sub_field('badge_image', 'options');
+				        $badge_link = get_sub_field('badge_link', 'options');
+						
+						if ($badge_link) {
+							echo "<a href='".$badge_link['url']."' target='".$badge_link['target']."'>";
+						}
+						echo "<img class='company-badge' src='".$badge_image['url']."' alt='".$badge_image['alt']."'>";
+						
+						if ($badge_link) {
+							echo "</a>";	
+						}
+				
+				    endwhile;
+				    
+				    echo "</div>";
+				    
+				endif;				
+			?>
 			
 		</div>
 		
