@@ -143,6 +143,11 @@ if( have_rows('flexible_content_block') ):
 										echo "<img class='".$isb_icon_size."' src='".$isb_icon['sizes']['medium']."'>";
 									}
 									
+									// End Link
+									if ($isb_link) {
+										echo "</a>";
+									}										
+									
 									// Caption
 									if ($isb_caption) {
 										echo "<p class='caption'>".$isb_caption."</p>";
@@ -151,10 +156,7 @@ if( have_rows('flexible_content_block') ):
 										echo "<p>".$isb_description."</p>";
 									}
 									
-									// End Link
-									if ($isb_link) {
-										echo "</a>";
-									}										
+									
 										
 									echo "</div>";
 									
