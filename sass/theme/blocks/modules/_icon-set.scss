@@ -24,6 +24,13 @@
 	justify-content: space-evenly;
 }
 
+.two-columns {
+	flex-basis: 100%;
+	@include respond-to('md') {
+		flex-basis: 50%;
+	}
+}
+
 .three-columns {
 	flex-basis: 100%;
 	@include respond-to ('md') {
@@ -93,7 +100,7 @@
 		&:hover {
 			text-decoration: none;
 			.caption {
-				text-decoration: underline;
+				text-decoration: none;
 			}
 		}
 		
