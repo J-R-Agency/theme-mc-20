@@ -23,6 +23,7 @@ button:focus {
 
 // MEGA MENU
 #mega-menu {
+	display: none;
 	background-color: $light-grey;
 	padding: 1rem;
 	@include respond-to('lg') {
