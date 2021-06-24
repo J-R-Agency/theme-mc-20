@@ -7,6 +7,12 @@
 	a {
 		color: white;
 	}
+	
+	&:hover {
+		filter: brightness(0.75);
+		color: white;
+		text-decoration: none;
+	}
 }
 
 [type=button], [type=reset], [type=submit], button {
