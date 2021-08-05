@@ -391,7 +391,7 @@ if( have_rows('flexible_content_block') ):
             $tb_title = get_sub_field('tb_title');
             $tb_team_members = get_sub_field('tb_team_members');
 			$tb_background_style = get_sub_field('tb_background_style');
-			
+
 			if (!$tb_background_style) {
 				$tb_background_style = 'navy-slant-top';
 			}
@@ -586,8 +586,6 @@ if( have_rows('flexible_content_block') ):
 	        <section class='generic shortcode-block bg-".$shortcode_background_color."'>
 	        	<div class='container'>
 	        ";
-
-	        echo $shortcode_supporting_text;
 
 	        echo do_shortcode($shortcode);
 
