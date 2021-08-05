@@ -1,4 +1,4 @@
-33<?php
+<?php
 /**
  * Partial template for flexible content in templates
  *
@@ -586,6 +586,8 @@ if( have_rows('flexible_content_block') ):
 	        <section class='generic shortcode-block bg-".$shortcode_background_color."'>
 	        	<div class='container'>
 	        ";
+
+	        echo $shortcode_supporting_text;
 
 	        echo do_shortcode($shortcode);
 
