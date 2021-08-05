@@ -1,4 +1,4 @@
-<?php
+33<?php
 /**
  * Partial template for flexible content in templates
  *
@@ -344,9 +344,14 @@ if( have_rows('flexible_content_block') ):
             $phb_image = get_sub_field('phb_image');
             $phb_content = get_sub_field('phb_content');
             $phb_social_media = get_sub_field('phb_social_media');
+            $phb_background_style = get_sub_field('phb_background_style');
+
+            if(!$phb_background_style) {
+            	$phb_background_style = 'white';
+            }
 			
 			echo "
-			<section class='slant bg-light-grey'>
+			<section class='bg-".$phb_background_style."'>
 				<div class='container ph-container'>
 				
 					<div class='ph-left'>
@@ -385,9 +390,14 @@ if( have_rows('flexible_content_block') ):
 
             $tb_title = get_sub_field('tb_title');
             $tb_team_members = get_sub_field('tb_team_members');
+			$tb_background_style = get_sub_field('tb_background_style');
 			
+			if (!$tb_background_style) {
+				$tb_background_style = 'navy-slant-top';
+			}
+
 			echo "
-			<section class='slant-top bg-navy team-block'>
+			<section class='bg-".$tb_background_style." team-block'>
 				<h2>".$tb_title."</h2>
 				<div class='container tb-container'>";
 							
@@ -483,9 +493,14 @@ if( have_rows('flexible_content_block') ):
             $icb_image = get_sub_field('icb_image');
             $icb_title = get_sub_field('icb_title');
             $icb_content = get_sub_field('icb_content');
+            $icb_background_style = get_sub_field('$icb_background_style');
+
+            if(!$icb_background_style) {
+            	$icb_background_style = "light-grey-slant-bottom";
+            }
 			
 			echo "
-			<section class='slant-bottom bg-light-grey image-content-block'>
+			<section class='bg-".$icb_background_style." image-content-block'>
 				
 				<div class='container icb-container'>
 					<div class='icb-left'>
@@ -557,7 +572,28 @@ if( have_rows('flexible_content_block') ):
 					</section>";
 				endif; 
 				wp_reset_query();
-				
+
+          // --------------------------------- //
+         // ----- CASE: SHORTCODE BLOCK ----- //
+        // --------------------------------- //
+        elseif( get_row_layout() == 'shortcode_block' ):
+        
+	        $shortcode = get_sub_field('shortcode');
+	        $shortcode_background_color = get_sub_field('shortcode_background_color');
+	        $shortcode_supporting_text = get_sub_field('shortcode_supporting_text');
+
+	        echo "
+	        <section class='generic shortcode-block bg-".$shortcode_background_color."'>
+	        	<div class='container'>
+	        ";
+
+	        echo $shortcode_supporting_text;
+
+	        echo do_shortcode($shortcode);
+
+	        echo "
+	        	</div>
+	        </section>";
 				
           // ----------------------------- //
          // ----- CASE: QUOTE BLOCK ----- //
@@ -584,8 +620,7 @@ if( have_rows('flexible_content_block') ):
 			        </div>
 		        </section>				
 				";
-			}		
-		
+			}
 		
 		endif; // Final endif        
     // End loop.

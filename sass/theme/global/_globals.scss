@@ -13,6 +13,39 @@
 	align-items: center;
 }
 
+@mixin slant {
+	padding: 10rem 1rem;
+	@include respond-to('md'){
+		padding: 10rem 5rem;
+	}
+	@include respond-to('lg'){
+		padding: 10rem 10rem;
+	}
+	clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+@mixin slant-top {
+	padding: 10rem 1rem 3rem 1rem;
+	@include respond-to('md'){
+		padding: 10rem 5rem 3rem 5rem;
+	}
+	@include respond-to('lg'){
+		padding: 10rem 10rem 3rem 10rem;
+	}
+	clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);	
+}
+
+@mixin slant-bottom {
+	padding: 4rem 1rem 9rem 1rem;
+	@include respond-to('md'){
+		padding: 4rem 5rem 9rem 5rem;
+	}
+	@include respond-to('lg'){
+		padding: 4rem 10rem 9rem 10rem;
+	}
+	clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90%);	
+}
+
 .vertical-center {
 	@include vertical-center;
 }
@@ -25,39 +58,6 @@
 .generic {
 	@include global-padding;
 	color: $navy;
-}
-
-.slant {
-	padding: 10rem 1rem;
-	@include respond-to('md'){
-		padding: 10rem 5rem;
-	}
-	@include respond-to('lg'){
-		padding: 10rem 10rem;
-	}
-	clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
-}
-
-.slant-top {
-	padding: 10rem 1rem 3rem 1rem;
-	@include respond-to('md'){
-		padding: 10rem 5rem 3rem 5rem;
-	}
-	@include respond-to('lg'){
-		padding: 10rem 10rem 3rem 10rem;
-	}
-	clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
-}
-
-.slant-bottom {
-	padding: 4rem 1rem 9rem 1rem;
-	@include respond-to('md'){
-		padding: 4rem 5rem 9rem 5rem;
-	}
-	@include respond-to('lg'){
-		padding: 4rem 10rem 9rem 10rem;
-	}
-	clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90%);
 }
 
 form {
@@ -87,9 +87,26 @@ input[type='text'] {
 	color: $navy;
 }
 
-.bg-slant {
-	background-image: linear-gradient(176deg, white 12%, $light-grey calc(1% + 2px));
-	@include respond-to('md') {
-		background-image: linear-gradient(176deg, white 25%, $light-grey calc(1% + 2px));
-	}
+.bg-light-grey-slant {
+	color: $black;
+	background-color: $light-grey;
+	@include slant;
+}
+
+.bg-navy-slant {
+	color: white;
+	background-color: $navy;
+	@include slant;
+}
+
+.bg-navy-slant-top {
+	color: white;
+	background-color: $navy;
+	@include slant-top;
+}
+
+.bg-light-grey-slant-top {
+	color: white;
+	background-color: $light-grey;
+	@include slant-top;	
 }

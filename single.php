@@ -30,6 +30,8 @@ include( locate_template( 'header.php', false, false ) );
 	</main><!-- #main -->
 </section>
 
+
+<?php if (is_singular('post')): ?>
 <!-- More Blog Posts -->
 <section class='container generic bg-light-grey'>
 	<h2 style="text-align: center; padding-bottom: 2rem;">Even more Helpful Stuff</h2>
@@ -72,6 +74,8 @@ include( locate_template( 'header.php', false, false ) );
 		<a href='<?php echo site_url();?>/helpful-stuff'>Take me to more helpful stuff<div class='arrow-link-pink'></div></a>
 	</div>
 </section>
+
+<?php endif; ?>
 
 <script>
 	(function ($) {

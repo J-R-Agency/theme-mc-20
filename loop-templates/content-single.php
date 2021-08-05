@@ -12,11 +12,14 @@ defined( 'ABSPATH' ) || exit;
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="container entry-header">
-		
+
+		<?php if (is_singular('post')): ?>
 		<a class='take-back pink' href="<?php site_url(); ?>/helpful-stuff">Take me back</a>
+		<?php endif; ?>
 		
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
+		<?php if (is_singular('post')): ?>
 		<div class="entry-meta">
 			
 			<div class='author-meta'>
@@ -37,7 +40,8 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			
 		</div><!-- .entry-meta -->
-
+		<?php endif; ?>
+		
 	</header><!-- .entry-header -->
 	
 	<?php
