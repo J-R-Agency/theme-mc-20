@@ -351,7 +351,7 @@ if( have_rows('flexible_content_block') ):
             }
 			
 			echo "
-			<section class='bg-".$phb_background_style."'>
+			<section class='person-highlight-block bg-".$phb_background_style."'>
 				<div class='container ph-container'>
 				
 					<div class='ph-left'>
