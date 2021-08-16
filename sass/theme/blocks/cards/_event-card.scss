@@ -1,3 +1,12 @@
+.iee_archive {
+	display: flex;
+	flex-direction: column;
+
+	@include respond-to("lg") {
+		flex-direction: row;
+	}
+}
+
 .iee_archive .archive-event .iee_event {
 	height:  300px;
 }
