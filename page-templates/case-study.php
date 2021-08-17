@@ -76,7 +76,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 <?php endif; ?>
 
 <!-- WP CONTENT -->
-<section class='container cs-content-container generic'>
+<section class='container cs-content-container bg-white'>
 <?php
 	if (have_posts()) : while (have_posts()) : the_post();
 			the_content();

@@ -25,7 +25,7 @@ if( have_rows('flexible_content_block') ):
        if( get_row_layout() == 'wp_content' ):
        		
        		echo "<!-- WP Content Block -->
-				<section class='container generic bg-white'>";
+				<section class='container bg-white'>";
 				
 			if (have_posts()) : while (have_posts()) : the_post();
 					the_content();
@@ -50,17 +50,20 @@ if( have_rows('flexible_content_block') ):
             $cb_column_left = get_sub_field('cb_column_left');
             $cb_column_right = get_sub_field('cb_column_right');
             
+            // PRIMARY
             if ($cb_style == 'primary'):
             	echo "
-            		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
+            		<section class='bg-".$cb_background_color." content-".$cb_style."'>
             			<div class='container'>
-            				<h2>".strip_tags($cb_copy,'<span><p><h1><h2><h3><a><strong>')."</h2>
+            				".$cb_copy."
             			</div>
             		</section>
             	";
+
+            // SECONDARY
             elseif ($cb_style == 'secondary'):
             	echo "
-            		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
+            		<section class='bg-".$cb_background_color." content-".$cb_style."'>
             			<div class='container'>";
             			
             	if ($cb_title) {
@@ -76,16 +79,6 @@ if( have_rows('flexible_content_block') ):
 		            				".$cb_column_right."
 		            			</div>
 		            		</div>
-	            		</div>
-            		</section>
-            	";
-            elseif ($cb_style == 'tertiary'):
-            	echo "
-            		<section class='generic bg-".$cb_background_color." content-".$cb_style."'>
-            			<div class='container'>
-	            			<img src='".$cb_image['url']."' alt='".$cb_image['alt']."'>
-	            			<h2>".strip_tags($cb_title,'<span>')."</h2>
-	            			<p>".strip_tags($cb_copy,'<span><p><h1><h2><h3><a><strong>')."</p>
 	            		</div>
             		</section>
             	";
@@ -113,7 +106,7 @@ if( have_rows('flexible_content_block') ):
             if (!$isb_icon_style) {
 	            $isb_icon_style = 'none';
             }
-			echo "<section class='generic bg-".$isb_background_color."'>
+			echo "<section class='bg-".$isb_background_color."'>
 						<h2 class='icon-set-title'>".$isb_title."</h2>
 							<div class='container icon-set-container'>";
 							
@@ -243,7 +236,7 @@ if( have_rows('flexible_content_block') ):
             $csb_title = get_sub_field('csb_title');
 			
 			echo "
-			<section class='container generic bg-white case-studies-block'>
+			<section class='container bg-white case-studies-block'>
 				<h2>".$csb_title."</h2>
 				<div class='small-card-container'>
 				";		
@@ -273,9 +266,9 @@ if( have_rows('flexible_content_block') ):
 								
 			echo "</div>
 			</section>
-			<section class='bg-light-grey'>
-				<div class='container link-block '>
-					<a href='".site_url()."/our-work'>See more projects<div class='arrow-link-pink'></div></a>
+			<section class='link-block bg-light-grey'>
+				<div class='container'>
+					<a href='".site_url()."/our-work'>See more projects<div class='arrow arrow-link__pink'></div></a>
 				</div>
 			</section>
 			";
@@ -290,9 +283,9 @@ if( have_rows('flexible_content_block') ):
             $lb_background_color = get_sub_field('lb_background_color');
 			
 			echo "
-			<section class='bg-".$lb_background_color."'>
-				<div class='container link-block '>
-					<a href='".$lb_link['url']."'>".$lb_link['title']."<div class='arrow-link-".$page_color."'></div></a>
+			<section class='link-block bg-".$lb_background_color."'>
+				<div class='container'>
+					<a href='".$lb_link['url']."'>".$lb_link['title']."<div class='arrow arrow-link__".$page_color."'></div></a>
 				</div>
 			</section>
 			";
@@ -308,7 +301,7 @@ if( have_rows('flexible_content_block') ):
             $plb_pages = get_sub_field('plb_pages');
 			
 			echo "
-			<section class='container generic bg-white page-links-block'>
+			<section class='container bg-white page-links-block'>
 				<h2>".$plb_title."</h2>
 				<div class='plb-container'>";
 				
@@ -323,7 +316,7 @@ if( have_rows('flexible_content_block') ):
 								<a href='".$plb_page['url']."'>
 									<img class='plb-icon' src='".$plb_icon['url']."' alt='".$plb_icon['alt']."'>
 									<h3>".$plb_page['title']."</h3>
-									<div class='arrow-link-".$page_color."'></div>
+									<div class='arrow arrow-link__".$page_color."'></div>
 								</a>
 							</div>";
 									
@@ -391,6 +384,15 @@ if( have_rows('flexible_content_block') ):
             $tb_title = get_sub_field('tb_title');
             $tb_team_members = get_sub_field('tb_team_members');
 			$tb_background_style = get_sub_field('tb_background_style');
+			$tb_display_socials = get_sub_field('tb_display_socials');
+
+			if (!$tb_display_socials) {
+				$card_size = 'small';
+				$columns = 'three';
+			} else {
+				$card_size = 'large';
+				$columns = 'two';
+			}
 
 			if (!$tb_background_style) {
 				$tb_background_style = 'navy-slant-top';
@@ -398,24 +400,38 @@ if( have_rows('flexible_content_block') ):
 
 			echo "
 			<section class='bg-".$tb_background_style." team-block'>
-				<h2>".$tb_title."</h2>
-				<div class='container tb-container'>";
+				".$tb_title."
+				<div class='container grid-".$columns."'>";
 							
-					if( have_rows('tb_team_members') ):
-					   while( have_rows('tb_team_members') ): the_row(); 
-					
-					        $team_member_portrait = get_sub_field('team_member_portrait');
-					        $team_member_name = get_sub_field('team_member_name');
-					        $team_member_position = get_sub_field('team_member_position');
+					if( $tb_team_members ):
+
+						foreach( $tb_team_members as $team_member ):					
+					        $team_portrait = get_field('team_portrait', $team_member->ID);
+					        $team_name = get_field('team_name', $team_member->ID);
+					        $team_position = get_field('team_position', $team_member->ID);
 									
-							echo "
-							<div class='tb-wrapper'>
-								<img class='team-portrait' src='".$team_member_portrait['sizes']['large']."' alt='".$team_member_portrait['alt']."'>
-								<h3>".$team_member_name."</h3>
-								<p>".$team_member_position."</p>
-							</div>";
+					        include (get_template_directory().'/global-templates/template-parts/team-member-card-'.$card_size.'.php');
 									
-						endwhile;
+						endforeach;
+						wp_reset_postdata();
+					else:
+
+						$args = array('post_type'=>'team-members','post_status'=>'publish', 'orderby'=>'date', 'order'=>'ASC');
+						$query = new WP_Query($args);
+
+						if($query->have_posts()) {
+						    while($query->have_posts())
+						    {
+						    	$query->the_post();
+
+						        $team_portrait = get_field('team_portrait');
+						        $team_name = get_field('team_name');
+						        $team_position = get_field('team_position');
+										
+								include (get_template_directory().'/global-templates/template-parts/team-member-card-'.$card_size.'.php');
+						    }
+						    wp_reset_postdata();
+						}				
 					endif;
 							
 			echo "
@@ -439,7 +455,7 @@ if( have_rows('flexible_content_block') ):
 				if( have_rows('testimonials') ):
 					$i = 1; // Set the increment variable
 					echo "
-					<section class='generic bg-navy testimonials-block'>
+					<section class='bg-navy testimonials-block'>
 						<div class='container'>
 							<div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
 								<div class='carousel-inner'>
@@ -550,7 +566,7 @@ if( have_rows('flexible_content_block') ):
 				if ( $query->have_posts() ) :
 				
 					echo "
-					<section class='generic bg-".$bpb_background_color."'>
+					<section class='bg-".$bpb_background_color."'>
 						<div class='container'>
 							<h2 style='text-align: center; padding-bottom: 2rem;'>".$bpb_title."</h2>
 								<div class='blog-posts-container ".$bpb_blog_card_size."-card-container'>";				 
@@ -583,7 +599,7 @@ if( have_rows('flexible_content_block') ):
 	        $shortcode_supporting_text = get_sub_field('shortcode_supporting_text');
 
 	        echo "
-	        <section class='generic shortcode-block bg-".$shortcode_background_color."'>
+	        <section class='shortcode-block bg-".$shortcode_background_color."'>
 	        	<div class='container'>
 	        ";
 

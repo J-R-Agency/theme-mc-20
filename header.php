@@ -31,7 +31,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php do_action( 'wp_body_open' ); ?>
 
 <?php if (!$page_color) { $page_color = pink; }  ?>
-<div class="site" id="page">
+<div class="site color-scheme-<?php echo $page_color; ?>" id="page">
 	
 	<input type="hidden" id="header_pos" value="<?php echo $header_position; ?>">
 	

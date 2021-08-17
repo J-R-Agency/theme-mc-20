@@ -11,8 +11,8 @@ $theme_path = get_template_directory_uri();
 ?>
 
 <!-- MORE PROJECTS -->
-<section class='bg-light-grey'>
-	<div class='container link-block '>
+<section class='link-block bg-light-grey'>
+	<div class='container'>
 		<a href='<?php echo site_url(); ?>/contact'>Get in Touch<div class='arrow-link-<?php echo $page_color; ?>'></div></a>
 	</div>
 </section>

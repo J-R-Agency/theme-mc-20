@@ -147,3 +147,68 @@ function ikreativ_tinymce_fix( $init )
 add_filter('tiny_mce_before_init', 'ikreativ_tiny_mce_fix');
 
 // END Stop removing div tags from WordPress - Linklay
+
+
+//-------------------------------------------------------//
+//----------------- CUSTOM POST TYPES ------------------//
+//-----------------------------------------------------//
+
+function team_members() {
+ 
+// Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Team Members', 'Post Type General Name'),
+        'singular_name'       => _x( 'Team Member', 'Post Type Singular Name'),
+        'menu_name'           => __( 'Team Members'),
+        'parent_item_colon'   => __( 'Parent Team Member'),
+        'all_items'           => __( 'All Team Members'),
+        'view_item'           => __( 'View Team Member'),
+        'add_new_item'        => __( 'Add New Team Member'),
+        'add_new'             => __( 'Add New'),
+        'edit_item'           => __( 'Edit Team Member'),
+        'update_item'         => __( 'Update Team Member'),
+        'search_items'        => __( 'Search Team Member'),
+        'not_found'           => __( 'Not Found'),
+        'not_found_in_trash'  => __( 'Not found in Trash'),
+    );
+     
+// Set other options for Custom Post Type
+     
+    $args = array(
+        'label'               => __( 'Team Members'),
+        'description'         => __( 'The team at Matchstick Creative'),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'revisions', 'custom-fields', 'menu_order'),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'menu_icon'			  => 'dashicons-buddicons-buddypress-logo',
+        'capability_type'     => 'post',
+        'show_in_rest' => true,
+ 
+    );
+     
+    // Registering your Custom Post Type
+    register_post_type( 'team-members', $args );
+ 
+}
+ 
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not 
+* unnecessarily executed. 
+*/
+ 
+add_action( 'init', 'team_members', 0 );

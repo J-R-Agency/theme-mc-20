@@ -21,7 +21,7 @@
 	@include respond-to('lg'){
 		padding: 10rem 10rem;
 	}
-	clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+	clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
 }
 
 @mixin slant-top {
@@ -32,7 +32,7 @@
 	@include respond-to('lg'){
 		padding: 10rem 10rem 3rem 10rem;
 	}
-	clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);	
+	clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);	
 }
 
 @mixin slant-bottom {
@@ -43,7 +43,7 @@
 	@include respond-to('lg'){
 		padding: 4rem 10rem 9rem 10rem;
 	}
-	clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90%);	
+	clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 95%);	
 }
 
 .vertical-center {
@@ -55,26 +55,15 @@
 	padding: 0;
 }
 
-.generic {
-	@include global-padding;
-	color: $navy;
-}
-
-form {
-	margin: 1rem 0; 
-}
-
-input[type='text'] {
-	padding: 0.2rem 0.5rem;
-}
-
 // COLORS ----
 .bg-white {
+	@include global-padding;
 	background-color: white;
 	color: $navy;
 }
 
 .bg-navy {
+	@include global-padding;
 	background-color: $navy;
 	color: white;
 	a {
@@ -83,6 +72,7 @@ input[type='text'] {
 }
 
 .bg-light-grey {
+	@include global-padding;
 	background-color: $light-grey;
 	color: $navy;
 }
@@ -94,6 +84,7 @@ input[type='text'] {
 }
 
 .bg-navy-slant {
+	position: relative;
 	color: white;
 	background-color: $navy;
 	@include slant;

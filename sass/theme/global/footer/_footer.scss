@@ -1,6 +1,6 @@
 .footer {
 	color: white;
-	padding: 1rem;
+	padding: 3rem;
 	@include respond-to('md') {
 		padding: 3rem 7.5rem;
 	}
@@ -16,19 +16,24 @@
 
 .footer-container {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	@include respond-to('md') {
-		flex-direction: row;
-	}
 	
 	.footer-container-left {
 		display: flex;
+		flex-basis: 100%;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 		padding: 1.5rem 0;
+
 		@include respond-to('md') {
-			align-items: flex-end;
+			flex-basis: 100%;
+		}
+
+		@include respond-to('lg') {
+			flex-basis: 20%;
+			align-items: flex-start;
 			padding: 0;
 		}
 	}
@@ -36,19 +41,34 @@
 	.footer-container-center {
 		display: flex;
 		flex-direction: column;	
-		justify-content: center;
-		align-items: start;
-		div {
-			text-align: center;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-basis: 100%;
+		.email {
+			font-size: 1rem;
+			@include respond-to('md') {
+				font-size: inherit;
+			}
 		}
 		@include respond-to('md') {
+			flex-basis: 40%;
+		}
+		@include respond-to('lg') {
+			flex-basis: 60%;
 			align-items: center;
 		}
 	}
 	
 	.footer-container-right {
 		display: flex;
-		flex-direction: column;		
+		flex-direction: column;
+		flex-basis: 100%;
+		@include respond-to('md') {
+			flex-basis: 40%;
+		}
+		@include respond-to('lg') {
+			flex-basis: 20%;
+		}
 	}
 }
 
@@ -57,9 +77,17 @@
 	display: flex;
 	a {
 		margin: 0 1rem 0 0;
+
 		@include respond-to('md') {
 			margin: 0 0 0 1rem;
 		}
+
+		&:hover {
+			img {
+				filter: brightness(0) invert(1);
+			}
+		}
+
 		img {
 			width: 25px;
 		}

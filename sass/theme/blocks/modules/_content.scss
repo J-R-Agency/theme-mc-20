@@ -1,9 +1,5 @@
 .content-primary {
-	text-align: center;
-	h2 > p {
-		@include _dm-sans-bold;
-		margin: 0;
-	}
+
 }
 
 .content-secondary {
@@ -31,7 +27,6 @@
 }
 
 .content-tertiary {
-	text-align: center;
 	p {
 		font-size: 1.5rem;
 	}

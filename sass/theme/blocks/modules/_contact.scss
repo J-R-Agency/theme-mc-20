@@ -1,6 +1,11 @@
 .contact-header {
 	border-bottom: 1px solid gray;
 	padding-bottom: 1rem;
+	text-align: center;
+
+	@include respond-to('lg') {
+		text-align: left;
+	}
 }
 
 .contact-info {
@@ -25,73 +30,20 @@
 }
 
 .contact-detail {
-	margin-bottom: 1rem;
+	text-align: center;
+	margin-bottom: 2rem;
 	p {
 		font-size: 1rem;
 		margin: 0;
 	}
 	@include respond-to('lg') {
 		margin: 0;
+		text-align: left;
 	}
 }
 
 .contact-map {
 	line-height: 0;
-}
-
-// FRIENDLY FACES
-
-.friendly-faces {
-	h2 {
-		text-align: center;
-	}
-}
-
-.ff-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	@include respond-to('lg') {
-		flex-direction: row;
-	}
-}
-
-.ff-wrapper {
-	display: flex;
-	margin: 2rem 0 0 0;
-	align-items: center;
-	flex-direction: column;
-	@include respond-to('lg') {
-		margin: 2rem 5rem 0 0;
-		flex-direction: row;
-	}
-}
-
-.ff-info {
-	display: flex;
-	flex-direction: column;
-	margin: 0 0 0 1rem;
-	width: 100%;
-	align-items: center;
-	@include respond-to('lg') {
-		align-items: flex-start;
-	}
-	p {
-		margin: 0;
-	}
-	.ff-social-media {
-		display: flex;
-		flex-direction: row;
-		margin: 1rem 0 0 0;
-		img {
-			width: 20px;
-			height: 20px;
-			margin-right: 1rem;
-			object-fit: contain;
-			object-position: bottom;
-		}
-	}
-	
 }
 
 // CONTACT FORM

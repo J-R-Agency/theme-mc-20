@@ -6,13 +6,52 @@
 	font-family: 'dm-sans-bold';	
 }
 
+@mixin color-scheme-link($color) {
+	p {
+		a {
+		  color: inherit;
+		  background:
+		     linear-gradient(
+		       to bottom, $color 0%,
+		       $color 100%
+		     );
+		  background-position: 0 100%;
+		  background-repeat: repeat-x;
+		  background-size: 4px 4px;
+		  text-decoration: none;
+		  transition: background-size .75s ease, color .75s;
+		  &:hover {
+		  	background-size: 4px 50px;
+		  	color: $navy;
+		  	transition: background-size .75s ease, color .75s;
+		  }     
+		}
+	}
+}
+
+.color-scheme-pink {
+	@include color-scheme-link($pink);
+}
+
+.color-scheme-cyan {
+	@include color-scheme-link($cyan);
+}
+
+.color-scheme-green {
+	@include color-scheme-link($green);
+}
+
+.color-scheme-yellow {
+	@include color-scheme-link($yellow);
+}
+
 $line-height: 2em;
 
 a {
-	color: $pink;
-	@include _dm-sans-regular;
+	font-family: inherit;
 	&:hover {
 		color: inherit;
+		text-decoration: none;
 	}
 }
 
@@ -54,3 +93,5 @@ h3 {
 		font-size: 1.75rem;
 	}	
 }
+
+

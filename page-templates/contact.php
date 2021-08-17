@@ -59,58 +59,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	</div>
 </section>
 
-<!-- CONTACT FORM -->
-<section class='slant-top bg-light-grey'>
-	<?php echo do_shortcode("[contact-form-7 id='5' title='Contact Form']"); ?>
-</section>
-
-<!-- FRIENDLY FACES -->
-<section class='friendly-faces generic bg-navy'>
-	<h2>Friendly Faces</h2>
-	<div class='ff-container'>
-		
-		<?php
-		$friendly_face = get_field("friendly_face"); 
-		
-		if( have_rows('friendly_face') ):
-		   while( have_rows('friendly_face') ): the_row(); 
-		
-		        $ff_name = get_sub_field('ff_name');
-		        $ff_position = get_sub_field('ff_position');
-		        $ff_portrait = get_sub_field('ff_portrait');
-				$ff_social_media = get_sub_field('ff_social_media');
-					
-				echo "
-				<div class='ff-wrapper'>
-					<img class='team-portrait' src='".$ff_portrait['sizes']['large']."' alt='".$ff_portrait['alt']."'>
-					<div class='ff-info'>
-						<p>".$ff_name."</p>
-						<p>".$ff_position."</p>";
-						
-						if( have_rows('ff_social_media') ):
-						
-							echo "<div class='ff-social-media'>";
-							while( have_rows('ff_social_media') ): the_row();
-							
-							$ffsm_type = get_sub_field('ffsm_type');
-							$ffsm_link = get_sub_field('ffsm_link');
-							
-							echo "<a href='".$ffsm_link['url']."' target='_blank'>
-										<img src='".$theme_path."/assets/social-media/".$ffsm_type."-cyan.png'>
-									</a>";
-							endwhile;
-							echo "</div>";
-						endif;
-					
-				echo "</div>
-				</div>";
-						
-			endwhile;
-		endif; ?>
-		
-		
-	</div>
-</section>
+<?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
 
 <!-- MAP -->
 <section class='contact-map'>

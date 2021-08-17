@@ -33,45 +33,47 @@ include( locate_template( 'header.php', false, false ) );
 
 <?php if (is_singular('post')): ?>
 <!-- More Blog Posts -->
-<section class='container generic bg-light-grey'>
-	<h2 style="text-align: center; padding-bottom: 2rem;">Even more Helpful Stuff</h2>
-	<div class='small-card-container'>
-		<?php
-			
-			$currentID = get_the_ID();
+<section class='bg-light-grey'>
+	<div class='container'>
+		<h2 style="text-align: center; padding-bottom: 2rem;">Even more Helpful Stuff</h2>
+		<div class='small-card-container'>
+			<?php
 				
-			$args = array(
-			    'post_type'      => 'post', //write slug of post type
-			    'posts_per_page' => 3,
-			    'order'          => 'DESC',
-			    'orderby'		 => 'rand',
-			    'ignore_sticky_posts' => 1,
-			    'post__not_in' => array($currentID)
-			 );
-			 
-			 $query = new WP_Query($args);
-			 
-			 
-			if ( $query->have_posts() ) :
-			 
-			    while ( $query->have_posts() ) : $query->the_post();
-				 	
-				 	$card_color = 'white';
-					$categories = get_the_category();
+				$currentID = get_the_ID();
 					
-					include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
-				
-				endwhile;
-			endif; 
-			wp_reset_query();	
+				$args = array(
+				    'post_type'      => 'post', //write slug of post type
+				    'posts_per_page' => 3,
+				    'order'          => 'DESC',
+				    'orderby'		 => 'rand',
+				    'ignore_sticky_posts' => 1,
+				    'post__not_in' => array($currentID)
+				 );
+				 
+				 $query = new WP_Query($args);
+				 
+				 
+				if ( $query->have_posts() ) :
+				 
+				    while ( $query->have_posts() ) : $query->the_post();
+					 	
+					 	$card_color = 'white';
+						$categories = get_the_category();
+						
+						include (get_template_directory().'/global-templates/template-parts/blog-card-small.php');	
 					
-		?>	
+					endwhile;
+				endif; 
+				wp_reset_query();	
+						
+			?>	
+		</div>
 	</div>
 </section>
 
-<section class='bg-white'>
-	<div class='link-block container'>
-		<a href='<?php echo site_url();?>/helpful-stuff'>Take me to more helpful stuff<div class='arrow-link-pink'></div></a>
+<section class='link-block bg-white'>
+	<div class='container'>
+		<a href='<?php echo site_url();?>/helpful-stuff'>Take me to more helpful stuff<div class='arrow arrow-link__pink'></div></a>
 	</div>
 </section>
 

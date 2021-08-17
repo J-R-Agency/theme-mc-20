@@ -27,15 +27,14 @@ $(document).ready(function() {
 	
 	// Click close to hide menu
 	$( ".close-menu" ).click(function() {
-		$( "#wrapper-navbar" ).css("background-color","transparent");
-		$( ".logo" ).show("fast");
-		$( ".logo-mini" ).hide("fast");
-		$( ".menu-container" ).hide();
-		$( "#main-nav" ).css("position", $('#header_pos').val());
-		
 		$( "#mega-menu" ).slideUp( "slow", function() {
 			$( ".close-menu" ).hide();
 			$( ".hamburger" ).show();
+			$( "#wrapper-navbar" ).css("background-color","transparent");
+					$( ".logo" ).show("fast");
+			$( ".logo-mini" ).hide("fast");
+			$( ".menu-container" ).hide();
+			$( "#main-nav" ).css("position", $('#header_pos').val());
 		});
 	});
 });

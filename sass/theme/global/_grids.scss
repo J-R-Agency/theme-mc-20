@@ -1,0 +1,138 @@
+@mixin grid {
+  display: grid;
+  grid-gap: 10px;
+  justify-items: center;
+  align-self: center;
+
+  @include respond-to("md") {
+    grid-gap: 30px;
+  }
+}
+
+// TWO COLUMNS
+@mixin grid-two {
+  @include grid;
+
+  grid-template-columns: repeat(1, 1fr);
+
+  @include respond-to("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// THREE COLUMNS
+@mixin grid-three {
+  @include grid;
+
+  grid-template-columns: repeat(1, 1fr);
+
+  @include respond-to("lg") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to("xl") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// FOUR COLUMNS
+@mixin grid-four {
+  @include grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  @include respond-to("lg") {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// FIVE COLUMNS
+@mixin grid-five {
+  @include grid;
+
+  grid-template-columns: repeat(1, 1fr);
+
+  @include respond-to("md") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond-to("lg") {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+// SIX COLUMNS
+@mixin grid-six {
+  @include grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  @include respond-to("lg") {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+// SEVEN COLUMNS
+@mixin grid-seven {
+  @include grid;
+
+  grid-template-columns: repeat(1, 1fr);
+
+  @include respond-to("lg") {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+// EIGHT COLUMNS
+@mixin grid-eight {
+  @include grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  @include respond-to("lg") {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+// NINE COLUMNS
+@mixin grid-nine {
+  @include grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  @include respond-to("lg") {
+    grid-template-columns: repeat(9, 1fr);
+  }
+}
+
+.grid-two {
+  @include grid-two;
+}
+
+.grid-three {
+  @include grid-three;
+}
+
+.grid-four {
+  @include grid-four;
+}
+
+.grid-five {
+  @include grid-five;
+}
+
+.grid-six {
+  @include grid-six;
+}
+
+.grid-seven {
+  @include grid-seven;
+}
+
+.grid-eight {
+  @include grid-eight;
+}
+
+.grid-nine {
+  @include grid-nine;
+}
