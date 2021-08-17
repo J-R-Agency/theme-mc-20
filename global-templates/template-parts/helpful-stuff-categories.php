@@ -62,7 +62,7 @@ $theme_path = get_template_directory_uri();
 			<div class='container'>
 				<a href='<?php echo site_url();?>/category/<?php echo $bc_cat_object->slug ?>'>
 					<p class='highlight-<?php echo $bc_color; ?>'><?php echo $bc_link_text; ?></p>
-					<div class='arrow-link-black'></div>
+					<div class='arrow-link__black'></div>
 				</a>
 			</div>
 		</section>		

@@ -2,13 +2,13 @@
 	border-bottom: solid 2px $light-grey;
 	text-align: right;
 	padding: 1rem 1rem;
-	@include respond-to('md'){
+	@include respond-to('md') {
 		padding: 1rem 5rem;
 	}
-	@include respond-to('lg'){
+	@include respond-to('lg') {
 		padding: 1rem 10rem;
 	}
-	@include respond-to('xxl'){
+	@include respond-to('xxl') {
 		padding: 1rem 0rem;
 	}		
 	
@@ -61,14 +61,14 @@
 .arrow-link__green {
 	@include arrow-link;
 	background-image: url('../assets/graphics/arrow-link-green.svg');
-	&-prev {
-		@include arrow-link;
-		margin: 0 1rem 0 0;
-		background-image: url('../assets/graphics/arrow-link-green.svg');
-		transform:scaleX(-1);
-	}
 }
+
 .arrow-link__yellow {
 	@include arrow-link;
 	background-image: url('../assets/graphics/arrow-link-yellow.svg');
+}
+
+.prev {
+	margin: 0 1rem 0 0;
+	transform:scaleX(-1);
 }

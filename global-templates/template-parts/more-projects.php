@@ -13,13 +13,13 @@ $theme_path = get_template_directory_uri();
 <!-- MORE PROJECTS -->
 <section class='link-block bg-light-grey'>
 	<div class='container'>
-		<a href='<?php echo site_url(); ?>/contact'>Get in Touch<div class='arrow-link-<?php echo $page_color; ?>'></div></a>
+		<a href='<?php echo site_url(); ?>/contact'>Get in Touch<div class='arrow-link__<?php echo $page_color; ?>'></div></a>
 	</div>
 </section>
 
 <section class='container generic bg-white'>
 	<div class='more-projects-header'>
-		<a class='link' href='<?php echo site_url(); ?>/our-work#cs-title'><div class='arrow-link-<?php echo $page_color; ?>-prev'></div>Back to all projects</a>
+		<a class='link' href='<?php echo site_url(); ?>/our-work#cs-title'><div class='arrow arrow-link__<?php echo $page_color; ?> prev'></div>Back to all projects</a>
 		<h2>More Projects</h2>
 	</div>
 	<div class='small-card-container'>
