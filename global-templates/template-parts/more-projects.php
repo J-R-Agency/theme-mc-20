@@ -13,7 +13,7 @@ $theme_path = get_template_directory_uri();
 <!-- MORE PROJECTS -->
 <section class='link-block bg-light-grey'>
 	<div class='container'>
-		<a href='<?php echo site_url(); ?>/contact'>Get in Touch<div class='arrow-link__<?php echo $page_color; ?>'></div></a>
+		<a href='<?php echo site_url(); ?>/contact'>Get in Touch<div class='arrow arrow-link__<?php echo $page_color; ?>'></div></a>
 	</div>
 </section>
 
