@@ -7,7 +7,7 @@
 }
 
 @mixin color-scheme-link($color) {
-	p {
+	p, span {
 		a {
 		  color: inherit;
 		  background:
