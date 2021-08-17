@@ -268,7 +268,7 @@ if( have_rows('flexible_content_block') ):
 			</section>
 			<section class='link-block bg-light-grey'>
 				<div class='container'>
-					<a href='".site_url()."/our-work'>See more projects<div class='arrow arrow-link__pink'></div></a>
+					<a href='".site_url()."/our-work'>See more projects<div class='arrow-link__pink'></div></a>
 				</div>
 			</section>
 			";
@@ -285,7 +285,7 @@ if( have_rows('flexible_content_block') ):
 			echo "
 			<section class='link-block bg-".$lb_background_color."'>
 				<div class='container'>
-					<a href='".$lb_link['url']."'>".$lb_link['title']."<div class='arrow arrow-link__".$page_color."'></div></a>
+					<a href='".$lb_link['url']."'>".$lb_link['title']."<div class='arrow-link__".$page_color."'></div></a>
 				</div>
 			</section>
 			";
@@ -316,7 +316,7 @@ if( have_rows('flexible_content_block') ):
 								<a href='".$plb_page['url']."'>
 									<img class='plb-icon' src='".$plb_icon['url']."' alt='".$plb_icon['alt']."'>
 									<h3>".$plb_page['title']."</h3>
-									<div class='arrow arrow-link__".$page_color."'></div>
+									<div class='arrow-link__".$page_color."'></div>
 								</a>
 							</div>";
 									

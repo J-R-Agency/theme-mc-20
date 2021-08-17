@@ -155,7 +155,7 @@ $theme_path = get_template_directory_uri();
 			<div class='container'>
 				<a href='<?php echo site_url();?>/archive'>
 					<p class='highlight-pink'><?php echo $bt_link_text; ?></p>
-					<div class='arrow arrow-link__black'></div>
+					<div class='arrow-link__black'></div>
 				</a>
 			</div>
 		</section>

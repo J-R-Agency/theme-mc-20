@@ -73,7 +73,7 @@ include( locate_template( 'header.php', false, false ) );
 
 <section class='link-block bg-white'>
 	<div class='container'>
-		<a href='<?php echo site_url();?>/helpful-stuff'>Take me to more helpful stuff<div class='arrow arrow-link__pink'></div></a>
+		<a href='<?php echo site_url();?>/helpful-stuff'>Take me to more helpful stuff<div class='arrow-link__pink'></div></a>
 	</div>
 </section>
 

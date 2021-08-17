@@ -19,7 +19,7 @@
 		align-items: center;
 		justify-content: flex-end;
 		&:hover {
-			.arrow {
+			.arrow-link__cyan, .arrow-link__black, .arrow-link__pink, .arrow-link__green, .arrow-link__yellow {
 				  -webkit-animation: slide-right 0.75s linear infinite alternate both;
           	animation: slide-right 0.75s linear infinite alternate both;
 			}
