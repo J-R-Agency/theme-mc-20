@@ -105,5 +105,14 @@ $fcs-desktop-height: 400px;
 	}
 	cite {
 		font-style: normal;
+		& > * {
+			color: black;
+			font-size: 1rem;
+			color: $navy;
+			@include _dm-sans-bold;
+			&:before, &:after {
+				display: none;
+			}
+		}
 	}
 }
