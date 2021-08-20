@@ -85,6 +85,20 @@
 	
 }
 
+.testimonials-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 2rem 0;
+	text-align: center;
+	background-size: cover;
+	background-repeat: no-repeat;	
+	background-blend-mode: darken;
+	background-color: rgba(0,0,0,0.5);
+	background-position: center;
+	color: white;
+}
+
 .quote-icon {
 	padding: 0 0 1rem 0;
 	height: 50px;

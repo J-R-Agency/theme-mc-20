@@ -28,8 +28,8 @@ $mobile-cta-height: 400px;
 	&.tertiary {
 		height: 350px;
 		background-size: 0px;
+		background-color: $light-grey;
 		@include respond-to('md') {
-			background-color: $light-grey;
 			background-position: bottom right;
 			background-size: contain;
 			background-repeat: no-repeat;

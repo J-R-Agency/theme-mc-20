@@ -438,7 +438,6 @@ if( have_rows('flexible_content_block') ):
 				</div>
 			</section>
 			";			
-			
 
           // ----------------------------- //
          // -- CASE: TESTIMONIAL BLOCK -- //
@@ -447,18 +446,30 @@ if( have_rows('flexible_content_block') ):
 
             $testimonials = get_sub_field('testimonials');
             $testimonials_size = get_sub_field('testimonials_size');
+            $testimonials_count = count($testimonials);
+            $testimonials_background_image = get_sub_field('testimonials_background_image');
             
             if (!$testimonials_size) {
 	            $testimonials_size = 'medium';
             }
-                        		
+            
 				if( have_rows('testimonials') ):
 					$i = 1; // Set the increment variable
 					echo "
-					<section class='bg-navy testimonials-block'>
-						<div class='container'>
-							<div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
-								<div class='carousel-inner'>
+			        <section class='testimonials-block' style='
+			        ";
+			        	if ($testimonials_background_image){
+				        	echo 'background-image:url('.$testimonials_background_image['url'].');';
+					    } else {
+						    echo 'background-color: #0e182d;';
+						}
+					echo "'>
+
+						<div class='container'>";
+					if($testimonials_count > 1):
+						echo	"<div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>";
+					endif;
+					echo		"<div class='carousel-inner'>
 						";
 					    while( have_rows('testimonials') ): the_row(); 
 					
@@ -483,21 +494,26 @@ if( have_rows('flexible_content_block') ):
 							";
 							$i++;
 						endwhile;
-						echo "
-							</div>
-							<a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
-						    <span class='carousel-control prev-icon ".$page_color."' aria-hidden='true'></span>
-						    <span class='sr-only'>Previous</span>
-						  </a>
-						  <a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>
-						    <span class='carousel-control next-icon ".$page_color."' aria-hidden='true'></span>
-						    <span class='sr-only'>Next</span>
-						  </a>
-						</div>
+						echo "</div>";
+
+						if($testimonials_count > 1):
+							echo "
+								<a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
+							    <span class='carousel-control prev-icon ".$page_color."' aria-hidden='true'></span>
+							    <span class='sr-only'>Previous</span>
+							  </a>
+							  <a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>
+							    <span class='carousel-control next-icon ".$page_color."' aria-hidden='true'></span>
+							    <span class='sr-only'>Next</span>
+							  </a>
+							</div>";
+						endif;
+				echo "
 					</div>
 				</section>
 				";	
 				endif;
+
 
 
 
@@ -610,7 +626,7 @@ if( have_rows('flexible_content_block') ):
 	        echo "
 	        	</div>
 	        </section>";
-				
+
           // ----------------------------- //
          // ----- CASE: QUOTE BLOCK ----- //
         // ----------------------------- //
@@ -636,7 +652,7 @@ if( have_rows('flexible_content_block') ):
 			        </div>
 		        </section>				
 				";
-			}
+			}				
 		
 		endif; // Final endif        
     // End loop.
