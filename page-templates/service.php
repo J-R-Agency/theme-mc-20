@@ -19,7 +19,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <?php 
 if ( have_posts() ) : 
-	echo "<section class='generic bg-slant service-content'>
+	echo "<section class='generic bg-light-grey-slant-top service-content'>
 	<div class='container'>
 	";
     while ( have_posts() ) : the_post(); 
