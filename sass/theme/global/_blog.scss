@@ -2,8 +2,11 @@
 	background-image: url($imgPath);
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-position: bottom;
-	padding: 0 3rem;	
+	background-position: center;
+	padding: 0 3rem;
+	@include respond-to("md") {
+		background-size: cover;
+	}
 }
 
 .blog-link {
@@ -14,6 +17,7 @@
 			flex-direction: column;
 			align-items: center;
 			transition: transform 0.3s;
+			text-align: center;
 			
 			&:hover {
 				text-decoration: none;
@@ -23,6 +27,7 @@
 			
 			p {
 				font-size: 1.25rem;
+				line-height: 1.2;
 				font-family: 'dm-sans-bold';
 				
 				&.highlight-pink {
