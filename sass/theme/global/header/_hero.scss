@@ -9,7 +9,7 @@ $desktop-hero-height: 600px;
 		height: $desktop-hero-height;
 	}
 	&.small {
-		height: 200px;
+		height: 300px;
 		@include respond-to ('lg') {
 			height: 450px;
 		}
@@ -61,7 +61,7 @@ $desktop-hero-height: 600px;
 		@include dark-radial;
 	}
 	&.small {
-		height: 200px;
+		height: 300px;
 		@include respond-to ('lg') {
 			height: 450px;
 		}

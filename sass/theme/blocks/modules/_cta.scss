@@ -1,4 +1,5 @@
 $desktop-cta-height: 500px;
+$tablet-cta-height: 300px;
 $mobile-cta-height: 400px;
 
 .cta-block {
@@ -11,8 +12,12 @@ $mobile-cta-height: 400px;
 	@include global-padding;
 	
 	@include respond-to('md') {
-		height: $desktop-cta-height;
+		height: $tablet-cta-height;
 		background-position: top;
+	}
+
+	@include respond-to('lg') {
+		height: $desktop-cta-height;
 	}
 	
 	.container {
@@ -43,12 +48,19 @@ $mobile-cta-height: 400px;
 	&.video {
 		position: relative;
 		background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 32%, rgba(255,255,255,0) 100%);
+		overflow: hidden;
 		video {
 			position: absolute;
 			right: 0;
 			bottom: 0;
-			width: 100%;
+		    height: 100%;
+		    width: auto;
 			z-index: -1;
+
+			@include respond-to('md') {
+				width: 100%;
+				height: auto;
+			}
 		}
 	}
 	
@@ -99,8 +111,12 @@ $mobile-cta-height: 400px;
 
 	&.secondary {
 		flex-basis: 40%;
-		width: 50%;
+		width: 100%;
 		background-color: rgba(255,255,255,0.75);
 		padding: 2rem;
+		
+		@include respond-to('md') {
+			width: 50%;
+		}
 	}
 }
