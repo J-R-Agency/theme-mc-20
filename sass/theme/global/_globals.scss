@@ -13,37 +13,78 @@
 	align-items: center;
 }
 
-@mixin slant {
-	padding: 10rem 1rem;
+@mixin slant($background-color) {
+	position: relative;
+	padding: 8rem 1rem;
+
 	@include respond-to('md'){
-		padding: 10rem 5rem;
+		padding: 8rem 5rem;
 	}
 	@include respond-to('lg'){
-		padding: 10rem 10rem;
+		padding: 8rem 10rem;
 	}
-	clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+
+	:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;		
+		z-index: -1;
+		background-color: $background-color;
+		-webkit-clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+		clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+	}
 }
 
-@mixin slant-top {
-	padding: 10rem 1rem 3rem 1rem;
+@mixin slant-top($background-color) {
+	position: relative;
+
 	@include respond-to('md'){
 		padding: 10rem 5rem 3rem 5rem;
 	}
 	@include respond-to('lg'){
 		padding: 10rem 10rem 3rem 10rem;
 	}
-	clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);	
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;		
+		z-index: -1;
+		background-color: $background-color;
+		-webkit-clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);	
+		clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);	
+	}	
 }
 
 @mixin slant-bottom {
+	position: relative;
 	padding: 4rem 1rem 9rem 1rem;
+
 	@include respond-to('md'){
 		padding: 4rem 5rem 9rem 5rem;
 	}
 	@include respond-to('lg'){
 		padding: 4rem 10rem 9rem 10rem;
 	}
-	clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 95%);	
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;		
+		z-index: -1;
+		background-color: $background-color;
+		-webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 95%);	
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 95%);		
+	}
 }
 
 .vertical-center {
@@ -79,25 +120,20 @@
 
 .bg-light-grey-slant {
 	color: $black;
-	background-color: $light-grey;
-	@include slant;
+	@include slant($background-color: $light-grey);
 }
 
 .bg-navy-slant {
-	position: relative;
 	color: white;
-	background-color: $navy;
-	@include slant;
+	@include slant($background-color: $navy);
 }
 
 .bg-navy-slant-top {
 	color: white;
-	background-color: $navy;
-	@include slant-top;
+	@include slant-top($background-color: $navy);
 }
 
 .bg-light-grey-slant-top {
 	color: black;
-	background-color: $light-grey;
-	@include slant-top;	
+	@include slant-top($background-color: $light-grey);
 }

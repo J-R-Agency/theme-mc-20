@@ -46,4 +46,7 @@
 	.wp-block-image img {
 		max-height: 300px;
 	}
+	&:before {
+		top: 150px;
+	}
 }
