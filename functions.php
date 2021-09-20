@@ -153,6 +153,9 @@ add_filter('tiny_mce_before_init', 'ikreativ_tiny_mce_fix');
 //----------------- CUSTOM POST TYPES ------------------//
 //-----------------------------------------------------//
 
+
+// TEAM MEMBERS
+
 function team_members() {
  
 // Set UI labels for Custom Post Type
@@ -179,7 +182,7 @@ function team_members() {
         'description'         => __( 'The team at Matchstick Creative'),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
-        'supports'            => array( 'title', 'revisions', 'custom-fields', 'menu_order'),
+        'supports'            => array( 'title', 'revisions', 'custom-fields', 'menu_order', 'page-attributes'),
         /* A hierarchical CPT is like Pages and can have
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.
@@ -192,7 +195,7 @@ function team_members() {
         'show_in_admin_bar'   => true,
         'menu_position'       => 5,
         'can_export'          => true,
-        'has_archive'         => true,
+        'has_archive'         => false,
         'exclude_from_search' => false,
         'publicly_queryable'  => true,
         'menu_icon'			  => 'dashicons-buddicons-buddypress-logo',
@@ -206,9 +209,81 @@ function team_members() {
  
 }
  
-/* Hook into the 'init' action so that the function
-* Containing our post type registration is not 
-* unnecessarily executed. 
-*/
- 
 add_action( 'init', 'team_members', 0 );
+
+// CASE STUDIES
+function case_studies() {
+ 
+// Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Case Studies', 'Post Type General Name'),
+        'singular_name'       => _x( 'Case Study', 'Post Type Singular Name'),
+        'menu_name'           => __( 'Case Studies'),
+        'parent_item_colon'   => __( 'Parent Case Study'),
+        'all_items'           => __( 'All Case Studies'),
+        'view_item'           => __( 'View Case Study'),
+        'add_new_item'        => __( 'Add New Case Study'),
+        'add_new'             => __( 'Add New'),
+        'edit_item'           => __( 'Edit Case Study'),
+        'update_item'         => __( 'Update Case Study'),
+        'search_items'        => __( 'Search Case Study'),
+        'not_found'           => __( 'Not Found'),
+        'not_found_in_trash'  => __( 'Not found in Trash'),
+    );
+     
+// Set other options for Custom Post Type
+     
+    $args = array(
+        'label'               => __( 'Case Studies'),
+        'description'         => __( 'Collection of our work'),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'revisions', 'custom-fields', 'menu_order', 'thumbnail', 'page-attributes'),
+        'taxonomies'          => array( 'case-study-category' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => true,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 6,
+        'can_export'          => true,
+        'has_archive'         => false,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'menu_icon'           => 'dashicons-portfolio',
+        'capability_type'     => 'post',
+        'show_in_rest' => true,
+        'rewrite' => array('slug' => 'our-work')
+    );
+     
+    // Registering your Custom Post Type
+    register_post_type( 'case-studies', $args );
+ 
+}
+ 
+add_action( 'init', 'case_studies', 0 );
+
+
+// ================================= Custom Post Type Taxonomies =================================
+function create_case_study_taxonomy() {  
+    register_taxonomy(  
+        'case-study-category',             // This is a name of the taxonomy. Make sure it's not a capital letter and no space in between
+        'case-studies',                   //post type name
+        array(  
+            'hierarchical' => true,  
+            'label' => 'Categories',   //Display name
+            'query_var' => true,
+            'has_archive' => false,
+            "show_ui" => true,
+            'show_admin_column' => true
+        )  
+    );  
+}  
+add_action( 'init', 'create_case_study_taxonomy');
+
+

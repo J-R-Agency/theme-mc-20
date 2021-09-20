@@ -416,7 +416,7 @@ if( have_rows('flexible_content_block') ):
 						wp_reset_postdata();
 					else:
 
-						$args = array('post_type'=>'team-members','post_status'=>'publish', 'orderby'=>'date', 'order'=>'ASC');
+						$args = array('post_type'=>'team-members','post_status'=>'publish', 'orderby'=>'menu_order date', 'order'=>'ASC');
 						$query = new WP_Query($args);
 
 						if($query->have_posts()) {

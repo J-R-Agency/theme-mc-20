@@ -45,6 +45,7 @@ $desktop-hero-height: 600px;
 		padding: 0 0.5rem;
 		@include respond-to ('lg') {
 			font-size: 1.25rem;
+			max-width: 1000px;
 		}
 	}
 	

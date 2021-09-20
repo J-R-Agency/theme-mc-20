@@ -20,17 +20,26 @@
 		justify-content: flex-end;
 		&:hover {
 			.arrow-link__cyan, .arrow-link__black, .arrow-link__pink, .arrow-link__green, .arrow-link__yellow {
-				  -webkit-animation: slide-right 0.75s linear infinite alternate both;
-          	animation: slide-right 0.75s linear infinite alternate both;
+          		animation: slide-right 0.75s linear infinite alternate both;
 			}
 		}
-	}
-	
+	}	
 }
 
 .link {
 	display: flex;
 	align-items: center;
+
+	.prev {
+		margin: 0 1rem 0 0;
+		transform:scaleX(-1);
+	}
+
+	&:hover {
+		.prev {
+			animation: slide-left-flip 0.75s linear infinite alternate both;
+		}
+	}
 }
 
 @mixin arrow-link {
@@ -68,7 +77,4 @@
 	background-image: url('../assets/graphics/arrow-link-yellow.svg');
 }
 
-.prev {
-	margin: 0 1rem 0 0;
-	transform:scaleX(-1);
-}
+

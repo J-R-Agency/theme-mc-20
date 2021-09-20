@@ -19,54 +19,37 @@ include( locate_template( 'header.php', false, false ) );  ?>
 
 <?php include( locate_template( 'loop-templates/content-flexible.php', false, false ) );  ?>
 
-<?php
-	 
-	$args = array(
-		'taxonomy' => 'category',
-		'hide_empty' => 0
-	);
-	
-	$categories = get_categories($args);
-	$c_keep = array();
-	
-	foreach($categories as $category){
-			$cat_type = get_field('category_type', 'category_'.$category->term_id);
-		if ($cat_type=='case-studies') {
-			$c_keep[] = $category;
-		}
-	}	 
-	 
-?>
-
 <!-- CASE STUDIES -->
-<section class="generic bg-white">
+<section id='case-studies-list' class="generic bg-white">
 	<?php include_once (get_template_directory() . '/global-templates/template-parts/case-study-tabs.php'); ?>
 	<div class='container'>		
 		<?php
 		    echo '<div class="tab-content">';
 		    
+		    //----------------//
+		    //------ALL------//
+		    //--------------//
 		    echo "<div class='tab-pane active' id='all'>
 		    		<div class='small-card-container all'>
 		    ";
 		    
-		        $pageSlug = get_page_by_path( 'our-work' );
 								
 				$args = array(
-				    'post_type'      => 'page', //write slug of post type
+				    'post_type'      => 'case-studies', //write slug of post type
 				    'posts_per_page' => -1,
-				    'post_parent'    => $pageSlug->ID, //place here id of your parent page
 				    'order'          => 'DESC',
+				    'post_parent' => 0,
 				    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 0)
 				 );
 				 
-				$children = new WP_Query( $args );
+				$catPosts = new WP_Query( $args );
 				 
-				if ( $children->have_posts() ) :
+				if ( $catPosts->have_posts() ) :
 				 
-				    while ( $children->have_posts() ) : $children->the_post();
+				    while ( $catPosts->have_posts() ) : $catPosts->the_post();
 					 	
 						$cs_img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' )[0];
-						$categories = get_the_category();
+						$categories = get_the_terms( $post->ID, 'case-study-category' );
 						
 						include (get_template_directory().'/global-templates/template-parts/case-study-card.php');	
 					
@@ -82,9 +65,14 @@ include( locate_template( 'header.php', false, false ) );  ?>
 			        <ul class='pager-all' curr='0'></ul>
 			    </div>
 		    </div>";
+
+		    //-----------------//
+		    //---CATEGORIES---//
+		    //---------------//
+
+		    $categories = get_terms(['taxonomy' => 'case-study-category', 'hide_empty' => false,]);
 		    
-		    foreach($c_keep as $category) { 
-			    			    
+		    foreach($categories as $category) { 
 		        echo "
 		        	<div class='tab-pane' id='". $category->slug."'>
 			        	<div class='cs-pagination pagination-large pagination-".$category->slug."'>
@@ -93,25 +81,30 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	        		<div class='small-card-container csc-".$category->slug."'>
 		        ";
 		        
-				$pageSlug = get_page_by_path( 'our-work' );
 								
 				$args = array(
-				    'post_type'      => 'page', //write slug of post type
+				    'post_type'      => 'case-studies', //write slug of post type
 				    'posts_per_page' => -1,
-				    'post_parent'    => $pageSlug->ID, //place here id of your parent page
 				    'order'          => 'DESC',
-				    'category_name'  => $category->slug,
+				    'post_parent' => 0,
+				    'tax_query' => array(
+				        array (
+				            'taxonomy' => 'case-study-category',
+				            'field' => 'slug',
+				            'terms' => $category->slug,
+				        )
+				    ),
 				    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 0)
 				 );
 				 
-				$children = new WP_Query( $args );
+				$catPosts = new WP_Query( $args );
 				 
-				if ( $children->have_posts() ) :
+				if ( $catPosts->have_posts() ) :
 				 
-				    while ( $children->have_posts() ) : $children->the_post();
+				    while ( $catPosts->have_posts() ) : $catPosts->the_post();
 					 	
 						$cs_img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' )[0];
-						$categories = get_the_category();
+						$categories = get_the_terms( $post->ID, 'case-study-category' );
 						
 						include (get_template_directory().'/global-templates/template-parts/case-study-card.php');	
 						

@@ -21,22 +21,22 @@ $theme_path = get_template_directory_uri();
             </li>
 	    ';
 	    
-		$args = array(
-			'taxonomy' => 'category',
-			'hide_empty' => 0
-		);
+		// $args = array(
+		// 	'taxonomy' => 'category',
+		// 	'hide_empty' => 0
+		// );
 		
-		$categories = get_categories($args);
-		$c_keep = array();
+		$categories = get_terms(['taxonomy' => 'case-study-category', 'hide_empty' => false,]);
+		// $c_keep = array();
+		
+		// foreach($categories as $category){
+		// 	$cat_type = get_field('category_type', 'category_'.$category->term_id);
+		// 	if ($cat_type=='case-studies') {
+		// 	$c_keep[] = $category;
+		// 	}
+		// }
 		
 		foreach($categories as $category){
-			$cat_type = get_field('category_type', 'category_'.$category->term_id);
-			if ($cat_type=='case-studies') {
-			$c_keep[] = $category;
-			}
-		}
-		
-		foreach($c_keep as $category){
 	        echo 
 	            '<li>
 	                <a id="tab-'.$category->slug.'" href="#'.$category->slug.'" data-toggle="tab">    

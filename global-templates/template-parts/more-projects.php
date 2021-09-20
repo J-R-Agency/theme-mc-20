@@ -29,9 +29,9 @@ $theme_path = get_template_directory_uri();
 		$currentID = get_the_ID();
 			
 		$args = array(
-		    'post_type'      => 'page', //write slug of post type
+		    'post_type'      => 'case-studies', //write slug of post type
 		    'posts_per_page' => 3,
-		    'post_parent'    => $pageSlug->ID, //place here id of your parent page
+		    'post_parent' => 0,
 		    'orderby'		 => 'rand',
 		    'order'          => 'DESC',
 		    'post__not_in' => array($currentID)
@@ -44,7 +44,7 @@ $theme_path = get_template_directory_uri();
 		    while ( $children->have_posts() ) : $children->the_post();
 			 	
 				$cs_img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' )[0];
-				$categories = get_the_category();
+				$categories = get_the_terms( $post->ID, 'case-study-category' );
 				
 				include (get_template_directory().'/global-templates/template-parts/case-study-card.php');	
 			

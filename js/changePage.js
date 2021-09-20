@@ -11,7 +11,7 @@
 			
 			var curr = 0;
 			while(numPages > curr){
-			  $('<li><a href="#small-card-container" class="page_link">'+(curr+1)+'</a></li>').appendTo(pager);
+			  $('<li><a href="#case-studies-list" class="page_link">'+(curr+1)+'</a></li>').appendTo(pager);
 			  curr++;
 			}
 			

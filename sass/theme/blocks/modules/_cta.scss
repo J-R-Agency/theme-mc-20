@@ -44,6 +44,16 @@ $mobile-cta-height: 400px;
 	&.secondary {
 		background-position: center;
 	}
+
+	&.container {
+		display: flex;
+		flex-direction: column;
+		margin: 2rem auto;
+
+		.container {
+			flex-direction: column;
+		}
+	}
 	
 	&.video {
 		position: relative;

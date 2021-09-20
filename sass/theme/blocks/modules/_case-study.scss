@@ -6,6 +6,7 @@
 	.cs-intro-left {
 		flex-basis: 100%;
 		text-align: center;
+		padding: 0 2rem;
 		ul {
 			list-style: none;
 			padding: 0;
@@ -17,21 +18,30 @@
 		@include respond-to ('md') {
 			flex-basis: 30%;
 			text-align: left;
+			padding: 0;
 		}
 	}
 	.cs-intro-right {
 		flex-basis: 100%;
+		padding: 2rem 1rem 0 1rem;
 		
 		@include respond-to ('md') {
 			flex-basis: 65%;
+			padding: 0;
 		}
-		h2 {
-			padding: 1rem 0;
+
+		p {
+			margin: 1rem 0 2rem 0;
 		}
 	}
 }
 
 .fcs-content-container {
+	padding: 2rem 1rem;
+
+	@include respond-to('lg') {
+		padding: 3rem 10rem;
+	}
 	.wp-block-columns {
 		margin-top: 28px;
 		.wp-block-column {
@@ -47,6 +57,12 @@
 	align-items: center;
 }
 
+.services-and-impact {
+	padding: 1rem;
+	@include respond-to("lg") {
+		padding: 3rem 10rem;
+	}
+}
 
 // Service, Impact, Empathy
 
@@ -75,7 +91,7 @@
 		padding: 0;
 		li {
 			margin: 1rem 0;
-			color: $green;
+			color: black;
 		}
 	}
 }
@@ -179,6 +195,8 @@
 	
 	.link {
 		margin-bottom: 1rem;
+		@include _dm-sans-bold;
+
 		@include respond-to('lg') {
 			margin-bottom: 0;
 		}
@@ -190,5 +208,8 @@
 	
 	h2 {
 		margin: 0 auto;
+		@include respond-to('lg') {
+			margin: 0 auto 0 20%;
+		}
 	}
 }

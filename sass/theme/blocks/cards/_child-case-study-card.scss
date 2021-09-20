@@ -1,0 +1,75 @@
+.child-case-studies {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	position: relative;
+	height: auto;
+
+	@include respond-to("lg") {
+		height: 150px;
+	}
+}
+
+.child-case-study-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	width: 100px;
+	height: 100px;
+	background-color: white;
+	color: black;
+	text-align: center;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	position: relative;
+	top: -50px;
+	box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
+	transform: scale(1);
+	transition: transform 0.5s, box-shadow 0.5s;
+
+	@include respond-to("md") {
+		width: 200px;
+		height: 200px;
+		margin: 1rem;
+		top: -100px;
+		padding: 1rem 2rem;
+	}
+
+	&__title {
+		@include _dm-sans-bold;
+		margin: 0;
+		line-height: 1.5;
+		font-size: 0.75rem;
+
+		@include respond-to('md') {
+			font-size: 1rem;
+		}
+	}
+
+	&__icon {
+		display: none;
+		width: 75px;
+		height: 75px;
+		object-fit: contain;
+		margin: 0 0 1rem 0;
+		@include respond-to("md") {
+			display: block;
+		}
+	}
+
+	&.current {
+		background-color: $light-grey;
+		transform: scale(0.95);
+		box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.75);
+		pointer-events: none;
+	}
+
+	&:hover {
+		transform: scale(0.95);
+		box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.75);
+		transition: transform 0.5s, box-shadow 0.5s;
+	}
+}
