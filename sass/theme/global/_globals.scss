@@ -33,8 +33,13 @@
 		height: 100%;		
 		z-index: -1;
 		background-color: $background-color;
-		-webkit-clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
-		clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+		-webkit-clip-path: polygon(0 2%, 100% 0%, 100% 98%, 0% 100%);
+		clip-path: polygon(0 2%, 100% 0%, 100% 98%, 0% 100%);
+		
+		@include respond-to('lg') {
+			-webkit-clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+			clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);			
+		}
 	}
 }
 

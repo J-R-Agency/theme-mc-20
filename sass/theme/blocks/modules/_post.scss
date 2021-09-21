@@ -279,4 +279,11 @@ $post-hero-height-large: 500px;
 	}
 }
 
+// VIDEO
+
+.wp-embed-responsive .wp-has-aspect-ratio iframe {
+	width: 100% !important;
+	height: 100% !important;
+}
+
 
