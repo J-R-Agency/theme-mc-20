@@ -347,7 +347,7 @@ if( have_rows('flexible_content_block') ):
 				
 					<div class='ph-left'>
 						<h2>".$phb_title."</h2>
-						<img class='portrait' src='".$phb_image['url']."'>
+						<img class='portrait' src='".$phb_image['url']."' alt='".$phb_image['alt']."'>
 						<div class='ph-social-media' style='background-image:url(".$theme_path."/assets/graphics/header-sm-bg-".$page_color.".png);'>";
 							
 						if( have_rows('phb_social_media') ):
@@ -357,7 +357,7 @@ if( have_rows('flexible_content_block') ):
 						        $phb_sm_link = get_sub_field('phb_sm_link');
 										
 								echo "<a href='".$phb_sm_link['url']."' target='_blank'>
-									<img src='".$theme_path."/assets/social-media/".$phb_sm_type."-navy.png'>
+									<img src='".$theme_path."/assets/social-media/".$phb_sm_type."-navy.png' alt='".$phb_sm_type."'>
 								</a>";
 										
 							endwhile;
@@ -484,7 +484,7 @@ if( have_rows('flexible_content_block') ):
 							echo "
 								<div class='carousel-item ".$activeState." ".$testimonials_size."'>
 									<div class='testimonial-block'>
-										<img class='quote-icon' src='".$theme_path."/assets/graphics/left-quote-".$page_color.".svg'>
+										<img class='quote-icon' src='".$theme_path."/assets/graphics/left-quote-".$page_color.".svg' alt=''>
 										<blockquote class='testimonial-quote'>".$quote."</blockquote>
 										<p class='testimonial-citation'>".$citation."</p>
 									</div>
