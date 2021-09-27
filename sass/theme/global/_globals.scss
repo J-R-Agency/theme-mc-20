@@ -16,6 +16,7 @@
 @mixin slant($background-color) {
 	position: relative;
 	padding: 8rem 1rem;
+	-webkit-backface-visibility: hidden;
 
 	@include respond-to('md'){
 		padding: 8rem 5rem;
@@ -33,6 +34,7 @@
 		height: 100%;		
 		z-index: -1;
 		background-color: $background-color;
+		-webkit-backface-visibility: hidden;
 		-webkit-clip-path: polygon(0 2%, 100% 0%, 100% 98%, 0% 100%);
 		clip-path: polygon(0 2%, 100% 0%, 100% 98%, 0% 100%);
 		

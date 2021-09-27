@@ -119,9 +119,7 @@ if( have_rows('flexible_content_block') ):
 									$isb_caption = get_sub_field('isb_caption');
 									$isb_description= get_sub_field('isb_description');
 									$isb_link = get_sub_field('isb_link');
-									$isb_lottie_animation = get_sub_field('isb_lottie_animation');
-									
-									
+									$isb_lottie_animation = get_sub_field('isb_lottie_animation');									
 									echo "<div class='icon-set-wrapper icon-size-".$isb_icon_size." ".$isb_columns."-columns icon-set style-".$isb_icon_style."'>";
 									
 									// Begin Link
@@ -133,7 +131,7 @@ if( have_rows('flexible_content_block') ):
 									if ($isb_lottie_animation) {
 										echo $isb_lottie_animation;
 									} else {
-										echo "<img class='".$isb_icon_size."' src='".$isb_icon['sizes']['medium']."'>";
+										echo "<img class='".$isb_icon_size."' src='".$isb_icon['sizes']['medium']."' alt='".$isb_icon['alt']."'>";
 									}
 									
 									// End Link
