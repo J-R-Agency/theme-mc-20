@@ -81,18 +81,11 @@ $desktop-hero-height: 600px;
 		background-size: contain;
 		background-position: center;
 		display: inline;
-		padding: 0 1rem;
-		&.our-work {
-			background-image: url('../assets/graphics/title-our-work-pink.svg');
-		}
-		&.content {
-			background-image: url('../assets/graphics/title-content-pink.svg');
-		}
-		&.experience {
-			background-image: url('../assets/graphics/title-experience-pink.svg');
-		}
-		&.identity {
-			background-image: url('../assets/graphics/title-identity-pink.svg');
+		padding: 0 2rem;
+
+		&.hero-title {
+			background-image: url('../assets/graphics/headline-marker-pink.svg');
+			background-size: 100% 100%;
 		}
 	}
 }
