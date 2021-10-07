@@ -104,6 +104,10 @@ button:focus {
 	@include menu-icon('../assets/menu/menu-experience.svg');
 }
 
+.workshops {
+	@include menu-icon('../assets/menu/menu-workshops.svg');
+}
+
 .menu  {
 	padding: 0;
 	li {
