@@ -1,3 +1,9 @@
+.eventbrite_events {
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5); 
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+	padding: 0;
+}
+
 .iee_archive {
 	display: flex;
 	flex-direction: column;
@@ -13,4 +19,5 @@
 
 .iee_archive .iee_event .img_placeholder {
 	height:  100%;
+	background-position: center !important;
 }
