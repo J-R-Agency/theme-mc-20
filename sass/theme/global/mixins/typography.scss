@@ -50,9 +50,9 @@ $line-height: 2em;
 a {
 	font-family: inherit;
 	color: $navy;
+	text-decoration: none;
 	&:hover {
 		color: inherit;
-		text-decoration: none;
 	}
 }
 
