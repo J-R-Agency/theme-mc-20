@@ -257,6 +257,10 @@ button:focus {
 	margin: 2rem 0;
 	align-items: baseline;
 	flex-wrap: wrap;
+
+	@include respond-to('md') {
+		flex-direction: row;
+	}	
 	
 	.header-phone-number {
 		flex-basis: 100%;
@@ -264,6 +268,10 @@ button:focus {
 		@include respond-to('md') {
 			flex-basis: 20%;
 			margin: 0;
+		}
+
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 	
@@ -275,28 +283,36 @@ button:focus {
 			display: flex;
 			justify-content: center;
 			margin: 0;		
-		}		
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}			
 	}
 	
 	.header-social-media {
 		flex-basis: 100%;
 		margin-bottom: 1rem;
+		
 		@include respond-to('md') {
 			flex-basis: 30%;
 			display: flex;
 			justify-content: center;
 			margin: 0;
 		}
+
+		a {
+			transform: scale(1.0);
+			transition: transform 0.2s;
+
+			&:hover {
+				text-decoration: none;
+				transform: scale(0.8);
+				transition: transform 0.2s;
+			}
+		}
 	}
-	
-	@include respond-to('md') {
-		flex-direction: row;
-	}
-	
-	a:hover {
-		text-decoration: none;
-		filter: brightness(0) invert(1);
-	}
+
 	a {
 		h5 {
 			margin: 0;
@@ -312,17 +328,11 @@ button:focus {
 	background-position: center;
 	width: 130px;
 	a {
-		&:hover {
-			text-decoration: none;
-		}
 		img {
 			height: 40px;
 			width: 40px;
 			object-fit: contain;
 			padding: 0 0.6rem;
-			&:hover {
-				filter: brightness(0) invert(1);
-			}
 		}
 	}
 }
