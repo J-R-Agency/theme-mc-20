@@ -36,6 +36,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 								
 				$args = array(
 				    'post_type'      => 'case-studies', //write slug of post type
+				    'post_status'	 => 'publish',
 				    'posts_per_page' => -1,
 				    'order'          => 'DESC',
 				    'post_parent' => 0,
@@ -84,6 +85,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 								
 				$args = array(
 				    'post_type'      => 'case-studies', //write slug of post type
+				    'post_status'	 => 'publish',
 				    'posts_per_page' => -1,
 				    'order'          => 'DESC',
 				    'post_parent' => 0,
