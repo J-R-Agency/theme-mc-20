@@ -4,6 +4,7 @@
 	background-size: contain;
 	background-position: center;
 	padding: 0 3rem;
+	width: max-content;
 	@include respond-to("md") {
 		background-size: cover;
 	}
@@ -11,6 +12,8 @@
 
 .blog-link {
 	.container {
+		display: flex;
+		justify-content: center;
 		a {
 			color: black;
 			display: flex;
