@@ -46,7 +46,7 @@ include( locate_template( 'header.php', false, false ) );  ?>
 		if($post->post_parent > 0):
 
 			$page_icon = get_field('page_icon', $post->post_parent);
-			$title = 'Landing Page';
+			$title = 'Case Study Overview';
 			$permalink = get_the_permalink($post->post_parent);
 
 			include (get_template_directory().'/global-templates/template-parts/child-case-study-card.php');
