@@ -609,11 +609,18 @@ if( have_rows('flexible_content_block') ):
         elseif( get_row_layout() == 'shortcode_block' ):
         
 	        $shortcode = get_sub_field('shortcode');
+	        $shortcode_id = get_sub_field('shortcode_id');
 	        $shortcode_background_color = get_sub_field('shortcode_background_color');
 	        $shortcode_supporting_text = get_sub_field('shortcode_supporting_text');
 
+	        if($shortcode_id) {
+	        	$id = "id='".get_sub_field('shortcode_id')."'";
+	        } else {
+	        	$id = '';
+	        }
+
 	        echo "
-	        <section class='shortcode-block bg-".$shortcode_background_color."'>
+	        <section class='shortcode-block bg-".$shortcode_background_color."' ".$id.">
 	        	<div class='container'>
 	        ";
 
