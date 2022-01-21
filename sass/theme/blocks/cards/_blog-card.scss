@@ -1,8 +1,7 @@
 // Ribbon
 @mixin ribbon( $ribbon-color:black, $size-left:1em, $size-right:1em) {
-    position: absolute;
-    z-index: 99;
-    top: 20px;
+    position: relative;
+    top: 0;
 
     &:before,
     &:after {
@@ -170,7 +169,7 @@
 }
 
 // Blog card small
-.blog-card-small { 
+.blog-card__small { 
 	position: relative;
 	width: 100%;
 	height: 225px;
@@ -222,7 +221,7 @@
 }
 
 // Blog card medium
-.blog-card-medium {
+.blog-card__medium {
 	display: flex;
 	flex-direction: column;
 
@@ -266,5 +265,13 @@
 		    margin: 0;
 	    }	    
     }
+}
+
+.blog-card__large {
+	.ribbon-container {
+		position: absolute;
+		z-index: 99;
+		top: 20px;
+	}
 }
 

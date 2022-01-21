@@ -16,7 +16,7 @@ $category_color = get_field('category_color', $categories[0]);
 
 <!-- Medium blog card -->
 
-<div class='blog-card-medium <?php echo $category_color; ?>'>
+<div class='blog-card__medium <?php echo $category_color; ?>'>
 	
 	<div class='ribbon-container'>
 		<div class='ribbon blog-category ribbon-<?php echo $category_color; ?>'>

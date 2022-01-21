@@ -15,7 +15,7 @@ $category_color = get_field('category_color', $categories[0]);
 ?>
 
 <!-- Small blog card -->
-<a href="<?php the_permalink(); ?>" class='blog-card-small <?php echo $category_color; ?>'
+<a href="<?php the_permalink(); ?>" class='blog-card__small <?php echo $category_color; ?>'
 		 style='background-image:
 			 	linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
 				url("<?php if ( has_post_thumbnail() ) {

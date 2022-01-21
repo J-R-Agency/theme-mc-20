@@ -15,17 +15,19 @@ $category_color = get_field('category_color', $categories[0]);
 ?>
 
 <!-- Large blog card -->
-<div class='blog-card-container <?php echo $card_color; ?>'>
+<div class='blog-card__large blog-card-container <?php echo $card_color; ?>'>
 	
-	<div class='ribbon blog-category ribbon-<?php echo $category_color; ?>'>
-		<?php 
-		if ( ! empty( $categories ) ) {
-			echo 
-			'<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">'
-				. esc_html( $categories[0]->name ) .
-			'</a>';
-		}
-		?>
+	<div class='ribbon-container'>
+		<div class='ribbon blog-category ribbon-<?php echo $category_color; ?>'>
+			<?php 
+			if ( ! empty( $categories ) ) {
+				echo 
+				'<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">'
+					. esc_html( $categories[0]->name ) .
+				'</a>';
+			}
+			?>
+		</div>
 	</div>
 
 	<div class='blog-card-left'>
