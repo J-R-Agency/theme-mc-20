@@ -1,6 +1,9 @@
 // Ribbon
 @mixin ribbon( $ribbon-color:black, $size-left:1em, $size-right:1em) {
-    position: relative;
+    position: absolute;
+    z-index: 99;
+    top: 20px;
+
     &:before,
     &:after {
         content: "";
@@ -95,6 +98,7 @@
 	flex-wrap: wrap;
 	height: auto;
 	color: $navy;
+	position: relative;
 	
 	@include respond-to ('lg') {
 		flex-direction: row;
@@ -144,7 +148,7 @@
 }
 
 .blog-card-info {
-	padding: 0rem 2rem 3rem 2rem;
+	padding: 2rem 2rem 3rem 2rem;
 	@include respond-to ('lg') {
 		padding: 0 0 0 2rem;
 	}
