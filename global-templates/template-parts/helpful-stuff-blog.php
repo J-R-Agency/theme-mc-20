@@ -22,45 +22,77 @@ $theme_path = get_template_directory_uri();
 
 		<section class="container generic bg-white">
 			
-			<!-- Blog tabs -->
+			
 			<div class='blog-posts-header'>
-			<h2 id='bp-title'><?php echo $bt_title; ?></h2>
-				<?php
-					echo '<ul class="nav nav-tabs bp-categories-list" role="tablist">
-				    		<li>
-				                <a class="tab" id="tab-all" class="active" href="#all" role="tab" data-toggle="tab">All</a>
-				            </li>
-				    
-				    ';
-				    
-					$args = array(
-						'taxonomy' => 'category',
-						'hide_empty' => 1,
-						'orderby' => 'name',
-				        'order' => 'ASC'
-					);
-					
-					$c = get_categories($args);
-					$c_keep = array();
-					
-					foreach($c as  $cat){
-						$cat_type = get_field('category_type', 'category_'.$cat->term_id);
-						if ($cat_type=='blog-posts') {
-						$c_keep[] = $cat;
+				<h2 id='bp-title'><?php echo $bt_title; ?></h2>
+
+					<!-- Blog tabs -->
+					<div id='categories-tabs'>
+					<?php
+						echo '<ul class="nav nav-tabs bp-categories-list" role="tablist">
+					    		<li>
+					                <a class="tab" id="tab-all" class="active" href="#all" role="tab" data-toggle="tab">All</a>
+					            </li>
+					    
+					    ';
+					    
+						$args = array(
+							'taxonomy' => 'category',
+							'hide_empty' => 1,
+							'orderby' => 'name',
+					        'order' => 'ASC'
+						);
+						
+						$c = get_categories($args);
+						$c_keep = array();
+						
+						foreach($c as  $cat){
+							$cat_type = get_field('category_type', 'category_'.$cat->term_id);
+							if ($cat_type=='blog-posts') {
+							$c_keep[] = $cat;
+							}
 						}
-					}
-					
-					foreach($c_keep as $cat){
-				        echo 
-				            '<li>
-				                <a id="tab-'.$cat->slug.'" href="#'.$cat->slug.'" data-toggle="tab">    
-				                    '.$cat->name.'
-				                </a>
-				            </li>';
-					}
-					
-				    echo '</ul>';
-				?>
+						
+						foreach($c_keep as $cat){
+					        echo 
+					            '<li>
+					                <a id="tab-'.$cat->slug.'" href="#'.$cat->slug.'" data-toggle="tab">    
+					                    '.$cat->name.'
+					                </a>
+					            </li>';
+						}
+						
+					    echo '</ul>';
+					?>
+					</div>
+
+					<!-- Blog tabs (mobile) -->
+					<div id='categories-dropdown'>
+						<span>Choose a category</span>
+						<select name="cat" onchange="location = this.value;">
+							<option value="<?php echo get_site_url() ?>/blog-resources#categories-dropdown">All</option>
+							<?php
+								$args = array(
+								    'category__in'   => wp_get_post_categories( $post->ID ),
+								 );
+								 
+								$categories = get_categories($args);
+								$cat = $_POST["cat"];
+								
+								foreach($categories as $category):
+									$cat_name = $category->name;
+									$selected = '';
+									$link = get_category_link($category->term_id);
+									$url = "https://".$_SERVER['SERVER_NAME']  . $_SERVER['REQUEST_URI'];
+								?>
+
+									<option value="<?php echo $link ?>'#categories-dropdown" <?php if ($url == $link) echo "selected" ?>>
+										<?php echo $cat_name ?>
+									</option>
+								
+							<?php endforeach; ?>		
+						</select>
+					</div>
 			</div>
 			
 			<!-- Subtitle -->
