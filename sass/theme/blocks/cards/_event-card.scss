@@ -1,6 +1,7 @@
 .iee_archive {
 	display: flex;
 	flex-direction: column;
+	flex-wrap: wrap;
 
 	@include respond-to("lg") {
 		flex-direction: row;
