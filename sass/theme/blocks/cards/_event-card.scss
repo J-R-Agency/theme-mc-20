@@ -29,6 +29,10 @@
     justify-content: center;
 }
 
+.iee_archive .iee_event .event_desc .event_title {
+	white-space: normal;
+}
+
 .iee_archive .iee_event .event_desc {
     height: 100%;
     display: flex;
@@ -38,5 +42,5 @@
 
 .iee_archive .iee_event .img_placeholder {
 	background-size: contain !important;
-	background-color: $light-grey;
+	background-color: $navy !important;
 }
