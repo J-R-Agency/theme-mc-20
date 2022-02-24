@@ -12,7 +12,31 @@
 	height:  300px;
 }
 
+.iee_archive .iee_event .event_details {
+	height: 120px;
+}
+
 .iee_archive .iee_event .img_placeholder {
 	height:  100%;
 	background-position: center !important;
+}
+
+.iee_archive .iee_event .event_date {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.iee_archive .iee_event .event_desc {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;	
+}
+
+.iee_archive .iee_event .img_placeholder {
+	background-size: contain !important;
+	background-color: $light-grey;
 }
