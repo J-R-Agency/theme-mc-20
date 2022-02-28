@@ -42,5 +42,9 @@
 
 .iee_archive .iee_event .img_placeholder {
 	background-size: contain !important;
-	background-color: $light-grey !important;
+	background-color: #211f5c !important;
+	min-height: 400px;
+	@include respond-to('lg') {
+		min-height:175px;
+	}
 }
