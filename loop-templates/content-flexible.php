@@ -603,6 +603,28 @@ if( have_rows('flexible_content_block') ):
 				endif; 
 				wp_reset_query();
 
+          // ---------------------------------------- //
+         // ----- CASE: RESPONSIVE IMAGE BLOCK ----- //
+        // ---------------------------------------- //
+        elseif( get_row_layout() == 'responsive_image_block' ):
+        
+	        $rib_image_large_screens = get_sub_field('rib_image_large_screens');
+	        $rib_image_small_screens = get_sub_field('rib_image_small_screens');
+			
+			echo "
+			<section class='responsive-image-block'>
+				<div class='container'>
+					<img class='responsive-image-block__large'
+						 src='".$rib_image_large_screens['url']."'
+						 alt='".$rib_image_large_screens['alt']."'>
+
+					<img class='responsive-image-block__small'
+						 src='".$rib_image_small_screens['url']."'
+						 alt='".$rib_image_small_screens['alt']."'>						 
+				</div>
+			</section>				
+			";
+
           // --------------------------------- //
          // ----- CASE: SHORTCODE BLOCK ----- //
         // --------------------------------- //
@@ -657,7 +679,7 @@ if( have_rows('flexible_content_block') ):
 			        </div>
 		        </section>				
 				";
-			}				
+			}		
 		
 		endif; // Final endif        
     // End loop.

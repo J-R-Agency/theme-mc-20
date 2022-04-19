@@ -30,7 +30,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 
-<?php if (!$page_color) { $page_color = pink; }  ?>
+<?php
+	$header_style = get_field('header_style');
+
+	if (!$page_color) { $page_color = pink; }
+
+	if($header_style == 'transparent-light') {
+		$bw = 'white';
+	} else {
+		$bw = 'black';
+	}
+?>
+
 <div class="site color-scheme-<?php echo $page_color; ?>" id="page">
 	
 	<input type="hidden" id="header_pos" value="<?php echo $header_position; ?>">
@@ -40,7 +51,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark <?php the_field('header_style')?> <?php echo $header_position; ?>" aria-labelledby="main-nav-label">
+		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark <?php echo $header_style; ?> <?php echo $header_position; ?>" aria-labelledby="main-nav-label">
 
 			<h2 id="main-nav-label" class="sr-only">
 				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -68,7 +79,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<!-- Hamburger -->
 				<button class="hamburger" type="button">
 					<img class='menu-burger' src="<?php echo get_template_directory_uri(); ?>
-						/assets/menu/menu-burger-<?php echo $page_color; ?>.png">
+						/assets/menu/<?php echo $bw; ?>-menu-burger-<?php echo $page_color; ?>.png">
 				</button>
 				
 				<!-- Close button -->

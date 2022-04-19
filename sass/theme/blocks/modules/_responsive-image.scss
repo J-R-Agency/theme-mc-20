@@ -1,0 +1,26 @@
+.responsive-image-block {
+	padding: 3rem 0;
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-content: center;
+	}
+
+	&__large {
+		display: none;
+
+		@include respond-to('lg') {
+			display: block;
+		}
+	}
+
+	&__small {
+		display: block;
+
+		@include respond-to('lg') {
+			display: none;
+		}
+	}
+}
