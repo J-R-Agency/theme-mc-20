@@ -45,6 +45,19 @@ $mobile-cta-height: 400px;
 		background-position: center;
 	}
 
+	&.centred {
+		text-align: center;
+		h1 {
+			font-size: 1.5rem;
+		}
+		p, span{
+			font-size: 1.25rem;
+		}
+		.cta-content {
+			flex-basis: 100%;
+		}
+	}
+
 	&.container {
 		display: flex;
 		flex-direction: column;

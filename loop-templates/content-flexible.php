@@ -106,9 +106,9 @@ if( have_rows('flexible_content_block') ):
             if (!$isb_icon_style) {
 	            $isb_icon_style = 'none';
             }
-			echo "<section class='bg-".$isb_background_color."'>
-						<h2 class='icon-set-title'>".$isb_title."</h2>
-							<div class='container icon-set-container'>";
+			echo "<section class='icon-set-block bg-".$isb_background_color."'>";
+			echo $isb_title;
+			echo		"<div class='container icon-set-container'>";
 							
 						
 							if( have_rows('isb_icons') ):

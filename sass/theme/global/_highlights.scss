@@ -23,6 +23,15 @@
 	display: inline;
 }
 
+@mixin highlight {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+	display: inline;
+	padding: 4rem;
+	text-shadow: none;
+}
+
 .circle {
 	&-cyan-1 {
 		@include circle;
@@ -103,5 +112,27 @@
 		padding-bottom: 0.5rem;
 		background-image: url('../assets/graphics/underline-yellow-2.svg');	
 	}
-	
+}
+
+.highlight {
+	&-cyan {
+		@include highlight;
+		background-image: url('../assets/graphics/highlight-bg-cyan.svg');
+		color: $navy;
+	}
+
+	&-pink {
+		@include highlight;
+		background-image: url('../assets/graphics/highlight-bg-pink.svg');	
+	}
+
+	&-green {
+		@include highlight;
+		background-image: url('../assets/graphics/highlight-bg-green.svg');	
+	}
+
+	&-yellow {
+		@include highlight;
+		background-image: url('../assets/graphics/highlight-bg-yellow.svg');	
+	}
 }
