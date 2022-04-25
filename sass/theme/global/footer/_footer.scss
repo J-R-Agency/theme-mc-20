@@ -153,10 +153,15 @@
 }
 
 .company-badges {
+	display: flex;
+	flex-direction: row;
 	.company-badge {
 		width: 150px;
 		height: 150px;
-		margin: 0rem 1rem 1rem 0;
+		margin: 0rem 2rem 1rem 0;
 		object-fit: contain;
-	}	
+	}
+	.company-badge:last-of-type {
+		margin: 0 0 1rem 0;
+	}
 }
