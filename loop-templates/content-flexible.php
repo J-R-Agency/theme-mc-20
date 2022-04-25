@@ -311,6 +311,8 @@ if( have_rows('flexible_content_block') ):
             $plb_pages = get_sub_field('plb_pages');
 			$plb_icon_size = get_sub_field('plb_icon_size');
 
+			$plb_icon_size = $plb_icon_size ? $plb_icon_size : 'small';
+
 			echo "
 			<section class='page-links-block bg-white'>
 				<div class='container'>
