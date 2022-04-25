@@ -9,6 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $theme_path = get_template_directory_uri();
+$default_padding = 3;
 ?>
 
 <?php
@@ -45,15 +46,23 @@ if( have_rows('flexible_content_block') ):
             $cb_image = get_sub_field('cb_image'); // Image
             $cb_style = get_sub_field('cb_style'); // Select
             $cb_image = get_sub_field('cb_image');
+			$cb_id = get_sub_field('cb_id');
             $cb_background_color = get_sub_field('cb_background_color');
             $cb_copy = get_sub_field('cb_copy');
             $cb_column_left = get_sub_field('cb_column_left');
             $cb_column_right = get_sub_field('cb_column_right');
-            
+			$cb_padding_top = get_sub_field('cb_padding_top');
+            $cb_padding_bottom = get_sub_field('cb_padding_bottom');
+
+			$cb_padding_top = $cb_padding_top ? $cb_padding_top : $default_padding;
+			$cb_padding_bottom = $cb_padding_bottom ? $cb_padding_bottom : $default_padding;
+
             // PRIMARY
             if ($cb_style == 'primary'):
             	echo "
-            		<section class='bg-".$cb_background_color." content-".$cb_style."'>
+            		<section style='padding-top: ".$cb_padding_top."rem; padding-bottom: ".$cb_padding_bottom."rem;'
+							 id='".$cb_id."'
+							 class='bg-".$cb_background_color." content-".$cb_style."'>
             			<div class='container'>
             				".$cb_copy."
             			</div>
@@ -63,7 +72,9 @@ if( have_rows('flexible_content_block') ):
             // SECONDARY
             elseif ($cb_style == 'secondary'):
             	echo "
-            		<section class='bg-".$cb_background_color." content-".$cb_style."'>
+            		<section style='padding-top: ".$cb_padding_top."rem; padding-bottom: ".$cb_padding_bottom."rem;'
+							 id='".$cb_id."'
+							 class='bg-".$cb_background_color." content-".$cb_style."'>
             			<div class='container'>";
             			
             	if ($cb_title) {
@@ -98,7 +109,8 @@ if( have_rows('flexible_content_block') ):
             $isb_icons = get_sub_field('isb_icons'); // Select 
             $isb_icon_style = get_sub_field('isb_icon_style'); // Select 
             $isb_page = sanitize_title(get_the_title());
-            
+            $isb_id = get_sub_field('isb_id'); // Select 
+
             if (!$isb_icon_size) {
 	            $isb_icon_size = 'medium';
             }
@@ -106,7 +118,7 @@ if( have_rows('flexible_content_block') ):
             if (!$isb_icon_style) {
 	            $isb_icon_style = 'none';
             }
-			echo "<section class='icon-set-block bg-".$isb_background_color."'>";
+			echo "<section id='".$isb_id."' class='icon-set-block bg-".$isb_background_color."'>";
 			echo $isb_title;
 			echo		"<div class='container icon-set-container'>";
 							
@@ -297,11 +309,13 @@ if( have_rows('flexible_content_block') ):
 
             $plb_title = get_sub_field('plb_title');
             $plb_pages = get_sub_field('plb_pages');
-			
+			$plb_icon_size = get_sub_field('plb_icon_size');
+
 			echo "
-			<section class='container bg-white page-links-block'>
+			<section class='page-links-block bg-white'>
+				<div class='container'>
 				<h2>".$plb_title."</h2>
-				<div class='plb-container'>";
+				<div class='page-links-block__links'>";
 				
 					if( have_rows('plb_pages') ):
 					   while( have_rows('plb_pages') ): the_row(); 
@@ -310,18 +324,22 @@ if( have_rows('flexible_content_block') ):
 					        $plb_page = get_sub_field('plb_page');
 									
 							echo "
-							<div class='plb-wrapper'>
-								<a href='".$plb_page['url']."'>
-									<img class='plb-icon' src='".$plb_icon['url']."' alt='".$plb_icon['alt']."'>
-									<h3>".$plb_page['title']."</h3>
-									<div class='arrow-link__".$page_color."'></div>
-								</a>
-							</div>";
+							<a class='page-links-block__page' href='".$plb_page['url']."'>
+								<img class='plb-icon plb-icon--".$plb_icon_size."'
+									 src='".$plb_icon['url']."'
+									 alt='".$plb_icon['alt']."'>
+								<h3 class='page-links-block__title page-links-block--".$page_color."'>"
+									.$plb_page['title'].
+								"</h3>
+								<div class='arrow-link__".$page_color."'></div>
+							</a>
+							";
 									
 						endwhile;
 					endif;	
 									
 			echo "</div>
+				</div>
 			</section>
 			";			
 			

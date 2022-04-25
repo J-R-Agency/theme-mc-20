@@ -1,30 +1,78 @@
+@mixin highlight($bg-image) {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+	display: inline-block;
+	padding: 2rem 0;
+	text-shadow: none;
+	background-image: $bg-image;
+}
+
 .page-links-block {
 	text-align: center;
 	a {
 		color: $navy;
-		h3 {
-			margin: 2rem 0;
+	}
+
+	&__title {
+		padding: 2rem 0;
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	&__page {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex-basis: 100%;
+		padding: 2rem 0;
+
+		@include respond-to('md'){
+			flex-basis: 33%;
+		}
+
+		&:hover {
+			text-decoration: none;
+			.page-links-block--cyan {
+				@include highlight(url('../assets/graphics/highlight-bg-cyan.svg'));
+				color: $navy;
+			}
+			.page-links-block--pink {
+				@include highlight(url('../assets/graphics/highlight-bg-pink.svg'));
+				color: white;
+			}
+			.page-links-block--green {
+				@include highlight(url('../assets/graphics/highlight-bg-green.svg'));
+				color: $navy;
+			}
+			.page-links-block--yellow {
+				@include highlight(url('../assets/graphics/highlight-bg-yellow.svg'));
+				color: $navy;
+			}			
+			.arrow-link__cyan, .arrow-link__black, .arrow-link__pink, .arrow-link__green, .arrow-link__yellow {
+				animation: slide-right 0.75s linear infinite alternate both;
+		  	}
 		}
 	}
 }
 
 .plb-icon {
-	height: 100px;
-	width: 100px;
 	object-fit: contain;
-}
 
-.plb-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	flex-wrap: wrap;
-	
-	.plb-wrapper {
-		flex-basis: 100%;
-		padding: 2rem 0;
-		@include respond-to('md'){
-			flex-basis: 33%;
-		}
+	&--small {
+		height: 100px;
+	}
+
+	&--medium {
+		height: 150px;
+	}
+
+	&--large {
+		height: 200px;
 	}
 }
