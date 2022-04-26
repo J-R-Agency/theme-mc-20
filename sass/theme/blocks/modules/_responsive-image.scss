@@ -10,6 +10,7 @@
 
 	&__large {
 		display: none;
+		max-height: 500px;
 
 		@include respond-to('lg') {
 			display: block;
