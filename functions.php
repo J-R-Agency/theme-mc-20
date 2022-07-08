@@ -285,5 +285,3 @@ function create_case_study_taxonomy() {
     );  
 }  
 add_action( 'init', 'create_case_study_taxonomy');
-
-
