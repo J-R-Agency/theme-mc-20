@@ -25,6 +25,10 @@
 		}		
 	}
 
+	&.responsive {
+		height: auto;
+	}
+
 	@include respond-to ('md') {
 		height: 400px;
 	}
