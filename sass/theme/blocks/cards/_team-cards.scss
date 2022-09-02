@@ -13,21 +13,24 @@
 	display: flex;
 	flex-direction: column;
 	margin: 0 0 0 1rem;
-	width: 100%;
 	align-items: center;
 	text-align: center;
+
 	@include respond-to('lg') {
 		align-items: flex-start;
 		text-align: left;
 	}
+
 	h3 {
 		color: $yellow;
 		font-size: 1.2rem;
 		margin: 0;
 	}
+
 	p {
 		margin: 0;
 	}
+
 	.ff-social-media {
 		display: flex;
 		flex-direction: row;
