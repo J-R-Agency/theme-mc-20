@@ -38,9 +38,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				        $badge_link = get_sub_field('badge_link', 'options');
 						
 						if ($badge_link) {
-							echo "<a href='".$badge_link['url']."' target='".$badge_link['target']."'>";
+							echo "<a class='company-badge' href='".$badge_link['url']."' target='".$badge_link['target']."'>";
 						}
-						echo "<img class='company-badge' src='".$badge_image['url']."' alt='".$badge_image['alt']."'>";
+						echo "<img src='".$badge_image['url']."' alt='".$badge_image['alt']."'>";
 						
 						if ($badge_link) {
 							echo "</a>";	

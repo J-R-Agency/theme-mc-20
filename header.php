@@ -15,8 +15,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<!-- Google Analytics -->
-	<?php the_field('google_analytics_script', 'option'); ?>
+
 	<!-- Other scripts -->
 	<?php the_field('other_scripts', 'option'); ?>
 	<!-- Lottie animations -->
