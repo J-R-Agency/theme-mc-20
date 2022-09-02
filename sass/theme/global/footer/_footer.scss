@@ -1,6 +1,7 @@
 .footer {
 	color: white;
 	padding: 3rem;
+
 	@include respond-to('md') {
 		padding: 3rem 7.5rem;
 	}
