@@ -63,106 +63,101 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark <?php echo $header_style; ?> <?php echo $header_position; ?>" aria-labelledby="main-nav-label">
+		<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark navbar--<?php echo $header_style; ?> navbar--<?php echo $header_position; ?>" aria-labelledby="main-nav-label">
 
 			<h2 id="main-nav-label" class="sr-only">
 				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 			</h2>
 		
-			<div class="container">
-				
-				<!-- Your site title as branding in the menu --> 
-				<div class='site-logo'>
-					<a href="<?php echo get_site_url(); ?>">
-						<!-- Regular logo -->
-						<img class="logo"
-						src="<?php echo get_template_directory_uri(); ?>
-						/assets/logos/logo-<?php echo $bw; ?>-<?php echo $page_color; ?>.png"
-						alt="Matchstick Creative Logo">
+			<!-- Top Menu -->
+			<div class='navbar--large'>
+				<div class='navbar__top'>
+					<div class="container">
 						
-						<!-- Mini logo -->
-						<img class="logo-mini"
-						src="<?php echo get_template_directory_uri(); ?>
-						/assets/logos/logo-mini-<?php echo $page_color; ?>.png"
-						alt="Matchstick Creative Logo">
-					</a>
-				</div>		
-				
-				<!-- Hamburger -->
-				<button class="hamburger" type="button">
-					<img class='menu-burger' src="<?php echo get_template_directory_uri(); ?>
-						/assets/menu/<?php echo $bw; ?>-menu-burger-<?php echo $page_color; ?>.png">
-				</button>
-				
-				<!-- Close button -->
-				<button class="close-menu" type="button">
-					<img class='menu-close' src="<?php echo get_template_directory_uri(); ?>
-						/assets/menu/menu-close-<?php echo $page_color; ?>.png">
-				</button>
-			
-			</div><!-- .container -->
-			
-		</nav><!-- .site-navigation -->
-			<div id='mega-menu' class='container mega-menu-<?php echo $page_color; ?>'>
-				
-				<div class='menu-container'>
-					
-					<div class='menu-container-left'>
-						<!-- Main Menu -->
+						<!-- Your site title as branding in the menu --> 
+						<div class='navbar__site-logo'>
+							<a href="<?php echo get_site_url(); ?>">
+
+								<!-- Regular logo -->
+								<img class="logo"
+								src="<?php echo get_template_directory_uri(); ?>
+								/assets/logos/logo-<?php echo $bw; ?>-<?php echo $page_color; ?>.png"
+								alt="Matchstick Creative Logo">
+								
+							</a>
+						</div>
+
+						<!-- Header Info -->
+						<?php include( locate_template( 'global-templates/template-parts/header-info.php', false, false ) ); ?>
+
+					</div> <!-- .container -->
+				</div>
+
+				<!-- Navigation menu (bottom) -->
+				<div class='navbar--<?php echo $page_color; ?> navbar__bottom'>
+								
+					<!-- Main Menu -->
+					<div class='container'>
 						<?php
 						wp_nav_menu(
 							array(
 								'theme_location'  => 'primary',
-								'menu_id'         => 'main-menu-'.$page_color,
-								'link_before'	  => '<span class="menu-icon"></span>',
+								'add_li_class'    => 'menu-item--' . $page_color,
 							)
 						);
 						?>
-
 					</div>
-					
-					<div class='menu-container-center'>
+									
+				</div> <!-- end navbar__bottom -->
+			</div>
 
-						<!-- Highlight Menu -->
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'highlight-menu',
-								'menu_id'         => 'highlight-menu-'.$page_color,
-							)
-						);
-						?>
-						
-					</div>
-					
-					<div class='menu-container-right'>
+			<div class='navbar--small'>
+				<div class='container'>
 
-						<!-- Secondary Menu -->
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'secondary-menu',
-								'menu_id'         => 'secondary-menu-'.$page_color,
-							)
-						);
-						?>
-						
+					<!-- Your site title as branding in the menu --> 
+					<div class='navbar__site-logo'>
+						<a href="<?php echo get_site_url(); ?>">
+
+							<!-- Regular logo -->
+							<img class="logo"
+							src="<?php echo get_template_directory_uri(); ?>
+							/assets/logos/logo-<?php echo $bw; ?>-<?php echo $page_color; ?>.png"
+							alt="Matchstick Creative Logo">
+							
+						</a>
 					</div>
-					
-				</div> <!-- end menu-container -->
-				
-				<div class='header-info'>
-					<a class='header-phone-number' href='tel:<?php the_field('company_phone', 'option'); ?>'>
-						<h5><?php the_field('company_phone', 'option'); ?></h5>
-					</a>
-					<a class='header-email' href='mailto:<?php the_field('company_email', 'option'); ?>'>
-						<h5><?php the_field('company_email', 'option'); ?></h5>
-					</a>
-					<div class='header-social-media' style="background-image:url('<?php echo get_template_directory_uri();?>/assets/graphics/header-sm-bg-<?php echo $page_color;?>.png');">
-						<?php include(get_template_directory() . '/global-templates/template-parts/social-media.php'); ?>
-					</div>						
-					
-				</div>				
-			</div> <!-- end $mega-menu -->
+
+					<!-- Hamburger -->
+					<button class="hamburger" id="toggle-button" type="button">
+						<img class='navbar__burger' src="<?php echo get_template_directory_uri(); ?>
+							/assets/menu/<?php echo $bw; ?>-menu-burger-<?php echo $page_color; ?>.png">
+					</button>
+
+					<!-- MOBILE NAV -->
+					<div class='navbar--mobile'>
+						<div class='container'>
+
+							<!-- Main Menu -->
+								<?php
+								wp_nav_menu(
+									array(
+										'theme_location'  => 'primary',
+									)
+								);
+								?>
+
+								<!-- Header Info -->
+								<?php include( locate_template( 'global-templates/template-parts/header-info.php', false, false ) ); ?>
+						</div>
+					</div> <!-- End mobile nav-->
+
+				</div>
+			</div>
+			
+
+
+		</nav><!-- .site-navigation -->
+
+			<!-- HERO -->
 			<?php include( locate_template( 'global-templates/template-parts/hero.php', false, false ) ); ?>
 	</div><!-- #wrapper-navbar end -->

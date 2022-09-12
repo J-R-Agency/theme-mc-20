@@ -268,6 +268,16 @@ function case_studies() {
  
 add_action( 'init', 'case_studies', 0 );
 
+// Add custom li class in wp_nav_menu
+
+function add_additional_class_on_li($classes, $item, $args) {
+    if(isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
 
 // ================================= Custom Post Type Taxonomies =================================
 function create_case_study_taxonomy() {  

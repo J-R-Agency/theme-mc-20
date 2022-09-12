@@ -1,18 +1,24 @@
 $mobile-hero-height: 500px;
-$desktop-hero-height: 600px;
+$desktop-hero-height: 900px;
 
 .hero {
 	height: $mobile-hero-height;
 	background-size: cover;
 	width: 100%;
+
 	@include respond-to ('lg') {
 		height: $desktop-hero-height;
 	}
+
 	&.small {
 		height: 300px;
 		@include respond-to ('lg') {
-			height: 450px;
+			height: 700px;
 		}
+	}
+
+	&__link {
+		margin: 0 0 2rem 0;
 	}
 }
 

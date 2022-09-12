@@ -17,6 +17,7 @@ $theme_path = get_template_directory_uri();
 		$hero = get_field('hero');
 		$hero_size = get_field('hero_size');
 		$title = get_the_title();
+		$hero_link = $hero['hero_link'];
 		
 		if(!$hero_size) {
 			$hero_size = 'big';
@@ -43,8 +44,20 @@ $theme_path = get_template_directory_uri();
 		
 	<?php elseif ($hero_size=='big'):?>	
 		<div class='hero-filter <?php the_field('hero_filter');?>'>
+
+			<!-- Title -->
 			<h1><?php echo strip_tags($hero['hero_title'],'<span>'); ?></h1>
+
+			<!-- Subtitle -->
 			<p><?php echo strip_tags($hero['hero_subtitle'],'<span>'); ?></p>
+
+			<!-- Link -->
+			<?php if($hero_link): ?>
+				<a class='hero__link button-navy' href='<?php echo $hero_link['link'] ?>' target='<?php echo $hero_link['target'] ?>'>
+					<?php echo $hero_link['title'] ?>
+				</a>
+			<?php endif; ?>
+			
 			<a href='#contentstart' class='scroll-down' style='background-image:url("<?php echo $theme_path; ?>/assets/graphics/marker-background-graphic-<?php echo $page_color; ?>.svg");'>
 				<img class='slide-bottom' src='<?php echo $theme_path; ?>/assets/graphics/down-arrow-black.svg' alt='Scroll down arrow'>
 			</a>
