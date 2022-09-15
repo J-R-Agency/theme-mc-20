@@ -12,6 +12,8 @@
 	border-bottom: solid 2px $light-grey;
 	text-align: right;
 	padding: 1rem 1rem;
+	min-height: 50px;
+
 	@include respond-to('md') {
 		padding: 1rem 5rem;
 	}
