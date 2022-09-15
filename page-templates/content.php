@@ -33,24 +33,22 @@ include( locate_template( 'header.php', false, false ) );  ?>
 	if ( $children->have_posts() ) :
 	 	echo "
 	 	<section class='generic bg-light-grey'>
-	 		<div class='container icon-set-container service-nav-page'>";
+	 		<div class='container icon-set service-nav-page'>";
 	    while ( $children->have_posts() ) : $children->the_post();
 		 	
-		 	$page_icon = get_field('page_icon');
-		 	
-		 	echo "
-			 	<div class='icon-set-wrapper icon-size-medium three-columns'>
-			 		<a href='",the_permalink(),"'>
-			 	";
-			 	if ($page_icon) {
-				 	echo "<img class='medium' src='".$page_icon['url']."' alt='".$page_icon['alt']."'>";
-			 	} else {
-				 	echo "<img class='medium' src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
-			 	}
-			 	the_title("<h5>","</h5>");
-			 	
-			 	echo "</a>
-		 	</div>";
+			$page_icon = get_field('page_icon');
+					
+			echo "<a class='icon four-columns' href='",the_permalink(),"'>";
+
+				if ($page_icon) {
+					echo "<img class='icon__image icon--medium' src='".$page_icon['url']."' alt='".$page_icon['alt']."'>";
+				} else {
+					echo "<img class='icon__image icon--medium' src='".get_template_directory_uri()."/assets/graphics/placeholder-icon.png'>";
+				}
+
+				the_title("<h5 class='icon__caption'>","</h5>");
+				
+			echo "</a>";
 		
 		endwhile;
 		echo "</div>

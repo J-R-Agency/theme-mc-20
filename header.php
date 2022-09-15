@@ -74,22 +74,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class='navbar__top'>
 					<div class="container">
 						
-						<!-- Your site title as branding in the menu --> 
-						<div class='navbar__site-logo'>
-							<a href="<?php echo get_site_url(); ?>">
+						<div class='navbar__large-header'>
+							<!-- Your site title as branding in the menu --> 
+							<div class='navbar__site-logo'>
+								<a href="<?php echo get_site_url(); ?>">
 
-								<!-- Regular logo -->
-								<img class="logo"
-								src="<?php echo get_template_directory_uri(); ?>
-								/assets/logos/logo-<?php echo $bw; ?>-<?php echo $page_color; ?>.png"
-								alt="Matchstick Creative Logo">
-								
-							</a>
+									<!-- Regular logo -->
+									<img class="logo"
+									src="<?php echo get_template_directory_uri(); ?>
+									/assets/logos/logo-<?php echo $bw; ?>-<?php echo $page_color; ?>.png"
+									alt="Matchstick Creative Logo">
+									
+								</a>
+							</div>
+
+							<!-- Header Info -->
+							<?php include( locate_template( 'global-templates/template-parts/header-info.php', false, false ) ); ?>
 						</div>
-
-						<!-- Header Info -->
-						<?php include( locate_template( 'global-templates/template-parts/header-info.php', false, false ) ); ?>
-
 					</div> <!-- .container -->
 				</div>
 
@@ -113,28 +114,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 			<div class='navbar--small'>
 				<div class='container'>
+					
+					<div class='navbar__mobile-header'>
+						<!-- Your site title as branding in the menu --> 
+						<div class='navbar__site-logo'>
+							<a href="<?php echo get_site_url(); ?>">
 
-					<!-- Your site title as branding in the menu --> 
-					<div class='navbar__site-logo'>
-						<a href="<?php echo get_site_url(); ?>">
+								<!-- Regular logo -->
+								<img class="logo"
+								src="<?php echo get_template_directory_uri(); ?>
+								/assets/logos/logo-<?php echo $bw; ?>-<?php echo $page_color; ?>.png"
+								alt="Matchstick Creative Logo">
+								
+							</a>
+						</div>
 
-							<!-- Regular logo -->
-							<img class="logo"
-							src="<?php echo get_template_directory_uri(); ?>
-							/assets/logos/logo-<?php echo $bw; ?>-<?php echo $page_color; ?>.png"
-							alt="Matchstick Creative Logo">
-							
-						</a>
+						<!-- Hamburger -->
+						<button class="hamburger" id="toggle-button" type="button">
+							<img class='navbar__burger' src="<?php echo get_template_directory_uri(); ?>
+								/assets/menu/<?php echo $bw; ?>-menu-burger-<?php echo $page_color; ?>.png">
+						</button>
 					</div>
 
-					<!-- Hamburger -->
-					<button class="hamburger" id="toggle-button" type="button">
-						<img class='navbar__burger' src="<?php echo get_template_directory_uri(); ?>
-							/assets/menu/<?php echo $bw; ?>-menu-burger-<?php echo $page_color; ?>.png">
-					</button>
-
 					<!-- MOBILE NAV -->
-					<div class='navbar--mobile'>
+					<div class='navbar__mobile-menu'>
 						<div class='container'>
 
 							<!-- Main Menu -->

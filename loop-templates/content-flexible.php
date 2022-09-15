@@ -119,8 +119,8 @@ if( have_rows('flexible_content_block') ):
 	            $isb_icon_style = 'none';
             }
 			echo "<section id='".$isb_id."' class='icon-set-block bg-".$isb_background_color."'>";
-			echo $isb_title;
-			echo		"<div class='container icon-set-container'>";
+			echo "<div class='icon-set__title'>".$isb_title."</div>";
+			echo		"<div class='container icon-set'>";
 							
 						
 							if( have_rows('isb_icons') ):
@@ -132,7 +132,7 @@ if( have_rows('flexible_content_block') ):
 									$isb_description= get_sub_field('isb_description');
 									$isb_link = get_sub_field('isb_link');
 									$isb_lottie_animation = get_sub_field('isb_lottie_animation');									
-									echo "<div class='icon-set-wrapper icon-size-".$isb_icon_size." ".$isb_columns."-columns icon-set style-".$isb_icon_style."'>";
+									echo "<div class='icon ".$isb_columns."-columns icon style-".$isb_icon_style."'>";
 									
 									// Begin Link
 									if ($isb_link) {
@@ -143,7 +143,7 @@ if( have_rows('flexible_content_block') ):
 									if ($isb_lottie_animation) {
 										echo $isb_lottie_animation;
 									} else {
-										echo "<img class='".$isb_icon_size."' src='".$isb_icon['sizes']['medium']."' alt='".$isb_icon['alt']."'>";
+										echo "<img class='icon__image icon--".$isb_icon_size."' src='".$isb_icon['sizes']['medium']."' alt='".$isb_icon['alt']."'>";
 									}
 									
 									// End Link
@@ -153,13 +153,12 @@ if( have_rows('flexible_content_block') ):
 									
 									// Caption
 									if ($isb_caption) {
-										echo "<p class='caption'>".$isb_caption."</p>";
-									}
-									if ($isb_description) {
-										echo "<p>".$isb_description."</p>";
+										echo "<div class='icon__caption'>".$isb_caption."</div>";
 									}
 									
-									
+									if($isb_link['title']) {
+										echo "<a class='button-navy' href='".$isb_link['url']."' target='".$isb_link['target']."'>".$isb_link['title']."</a>";
+									}
 										
 									echo "</div>";
 									
@@ -291,15 +290,44 @@ if( have_rows('flexible_content_block') ):
 
             $lb_link = get_sub_field('lb_link');
             $lb_background_color = get_sub_field('lb_background_color');
+			$lb_style = get_sub_field('lb_style') ?: 'default';
+			$lb_color = get_sub_field('lb_color');
 			
-			echo "
-			<section class='link-block bg-".$lb_background_color."'>
-				<div class='container'>
-					<a href='".$lb_link['url']."'>".$lb_link['title']."<div class='arrow-link__".$page_color."'></div></a>
-				</div>
-			</section>
-			";
-			
+			if ($lb_style == 'default'):
+				echo "
+				<section class='link-block bg-".$lb_background_color."'>
+					<div class='container'>
+						<a class='link-block__default' href='".$lb_link['url']."'>
+							".$lb_link['title']."
+							<div class='arrow-link__".$page_color."'></div>
+						</a>
+					</div>
+				</section>
+				";
+			elseif ($lb_style == 'post-it'):
+				echo "
+				<section class='link-block bg-light-grey'>
+					<div class='container'>
+						<a class='link-block__post-it link-block__post-it-".$lb_color."'
+						   href='".$lb_link['url']."'>
+								<p>".$lb_link['title']."</p>
+						   		<div class='link-block__marker-arrow'></div>
+						</a>
+					</div>
+				</section>
+				";
+			elseif ($lb_style == 'centred-highlight'):
+				echo "
+				<section class='blog-link'>
+					<div class='container'>
+						<a href='".$lb_link['url']."'>
+							<p class='highlight-".$lb_color."'>".$lb_link['title']."</p>
+							<div class='arrow-link__black'></div>
+						</a>
+					</div>
+				</section>		
+				";
+			endif;
 			
 			
           // ---------------------------- //
@@ -572,6 +600,7 @@ if( have_rows('flexible_content_block') ):
             $bpb_title = get_sub_field('bpb_title');
             $bpb_blog_card_size = get_sub_field('bpb_blog_card_size');
 			$bpb_category = get_sub_field('bpb_category');
+			$bpb_amount = get_sub_field('bpb_amount') ?: 3;
 						
 			if (!$bpb_blog_card_size) {
 				$bpb_blog_card_size = 'small';
@@ -580,16 +609,10 @@ if( have_rows('flexible_content_block') ):
 			if (!$bpb_title) {
 				$bpb_title = 'Our Blog Posts';
 			}
-			
-			if ($bpb_blog_card_size == 'medium') {
-				$number_of_posts = 4;
-			} else {
-				$number_of_posts = 6;
-			}
 								
 				$args = array(
 				    'post_type'      => 'post', //write slug of post type
-				    'posts_per_page' => $number_of_posts,
+				    'posts_per_page' => $bpb_amount,
 				    'order'          => 'DESC',
 				    'category__in'	 => $bpb_category,
 				    'ignore_sticky_posts' => 1

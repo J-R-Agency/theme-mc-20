@@ -16,6 +16,6 @@
 	@include grid(1);
 	
 	@include respond-to('md') {
-		@include grid(2);
+		@include grid(3);
 	}
 }

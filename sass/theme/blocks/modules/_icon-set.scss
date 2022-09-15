@@ -1,23 +1,8 @@
 @mixin icon-size($height) {
-	a {
-		img, lottie-player {
-			height: $height;
-		}			
-	}
-	img {
-		height: $height;
-	}
+	height: $height;
 }
 
 .icon-set {
-	text-align: center;
-}
-
-.icon-set-title {
-	text-align: center;
-}
-
-.icon-set-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
@@ -56,21 +41,34 @@
 
 // Global
 
-.icon-set-wrapper {
+.icon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	padding: 1rem 0;
+
+	&:hover {
+		text-decoration: none;
+
+		img, lottie-player {		
+			transform: scale(1.15);
+			transition: transform 0.5s;		
+		}
+	}
+
 	@include respond-to('lg') {
 		padding: 3rem 0;
 	}
 	
-	&.icon-size-small {
+	&--small {
 		@include icon-size(75px);
 	}
 	
-	&.icon-size-medium {
+	&--medium {
 		@include icon-size(100px);
 	}
 	
-	&.icon-size-large {
+	&--large {
 		@include icon-size(150px);
 	}
 	
@@ -79,10 +77,10 @@
 		transition: transform 0.5s;
 		width: 150px;
 		object-fit: contain;
-		object-position: center;		
+		object-position: center;
 	}
 	
-	.caption {
+	&__caption {
 		margin: 2rem 0 0 0;
 		padding: 0 2rem;
 		font-size: 1.3rem;
@@ -90,25 +88,9 @@
 		font-family: 'dm-sans-bold';
 	}
 	
-	a {
-		color: $navy;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		
-		&:hover {
-			text-decoration: none;
-			.caption {
-				text-decoration: none;
-			}
-		}
-		
-		h5 {
-			margin: 0;
-			padding: 1rem;
-			text-align: center;
-		}
+	.button-navy {
+		font-size: 0.8rem;
+		padding: 0.75rem 1rem;
 	}
 }
 
@@ -134,17 +116,6 @@
 					transition: filter 0.5s, transform 0.5s;
 				}		
 			}
-		}
-	}
-}
-
-.style-none {
-	a {
-		&:hover {
-			img, lottie-player {
-				transform: scale(1.15);
-				transition: transform 0.5s;
-			}			
 		}
 	}
 }

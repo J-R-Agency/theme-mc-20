@@ -1,4 +1,14 @@
+@mixin arrow-link {
+	height: 20px;
+	width: 30px;
+	display: inline-block;
+	margin: 0 1rem;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
 .link-block {
+	position: relative;
 	border-bottom: solid 2px $light-grey;
 	text-align: right;
 	padding: 1rem 1rem;
@@ -12,7 +22,7 @@
 		padding: 1rem 0rem;
 	}		
 	
-	a {
+	&__default {
 		color: black;
 		@include _dm-sans-bold;
 		display: flex;
@@ -23,7 +33,76 @@
           		animation: slide-right 0.75s linear infinite alternate both;
 			}
 		}
-	}	
+	}
+
+	&__post-it {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		align-content: center;
+		padding: 0.75rem;
+		width: 125px;
+		height: 125px;
+		overflow: hidden;
+		right: 10%;
+		top: -30px;
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+		transform: rotate(-15deg);
+		transition-property: transform;
+		transition-duration: 0.25s;
+
+		&:hover {
+			text-decoration: none;
+			transform: rotate(0deg);
+			transition-property: transform;
+			transition-duration: 0.25s;
+		}
+
+		p {
+			font-size: 1rem;
+			line-height: 1.5;
+			text-align: center;
+			margin: 0 0 0.5rem 0;
+			font-family: 'permanent-marker', 'dm-sans';
+		}
+
+		@include respond-to('lg') {
+			width: 150px;
+			height: 150px;
+
+			p {
+				font-size: 1.25rem;
+			}
+		}
+
+		&-yellow {
+			background-color: $yellow;
+		}
+
+		&-cyan {
+			background-color: $cyan;
+		}
+
+		&-pink {
+			background-color: $pink;
+		}
+
+		&-green {
+			background-color: $green;
+		}
+	}
+
+	&__marker-arrow {
+		height: 30px;
+		width: 50px;
+		display: inline-block;
+		margin: 0 1rem;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-image: url('../assets/graphics/cs-thumb-arrow.svg');
+	}
 }
 
 .link {
@@ -40,15 +119,6 @@
 			animation: slide-left-flip 0.75s linear infinite alternate both;
 		}
 	}
-}
-
-@mixin arrow-link {
-	height: 20px;
-	width: 30px;
-	display: inline-block;
-	margin: 0 1rem;
-	background-repeat: no-repeat;
-	background-size: contain;
 }
 
 	

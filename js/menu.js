@@ -3,7 +3,7 @@
 	$(document).ready(function() {
 
 		// Hide menu and close button on start
-		$('.navbar--mobile').hide();
+		$('.navbar__mobile-menu').hide();
 
 		/* MOBILE MENU TOGGLE */
 		
@@ -15,7 +15,7 @@
 		});
 
 		$('#toggle-button').click(function() {
-			$('.navbar--mobile').toggle();
+			$('.navbar__mobile-menu').toggle();
 			$('#main-nav').toggleClass('navbar--mobile-expanded');
 		});
 
