@@ -31,7 +31,7 @@
 		align-items: center;
 		justify-content: flex-end;
 		&:hover {
-			.arrow-link__cyan, .arrow-link__black, .arrow-link__pink, .arrow-link__green, .arrow-link__yellow {
+			.arrow-link__cyan, .arrow-link__black, .arrow-link__pink, .arrow-link__green, .arrow-link__yellow, .arrow-link__white {
           		animation: slide-right 0.75s linear infinite alternate both;
 			}
 		}
@@ -132,6 +132,11 @@
 .arrow-link__black {
 	@include arrow-link;
 	background-image: url('../assets/graphics/arrow-link-black.svg');
+}
+
+.arrow-link__white {
+	@include arrow-link;
+	background-image: url('../assets/graphics/arrow-link-white.svg');
 }
 
 .arrow-link__pink {

@@ -24,3 +24,18 @@ input[type='text'] {
 	text-align: center;
 	padding: 1rem 0 0;
 }
+
+.the-form {
+	&__name-pronouns, &__org-email {
+		display: flex;
+		flex-direction: column;
+
+		@include respond-to('md') {
+			flex-direction: row;
+
+			p:first-of-type {
+				padding: 0 2rem 0 0;
+			}
+		}
+	}
+}

@@ -43,7 +43,7 @@ $theme_path = get_template_directory_uri();
 		</div>
 		
 	<?php elseif ($hero_size=='big'):?>	
-		<div class='hero-filter <?php the_field('hero_filter');?>'>
+		<div class='hero__content hero-filter <?php the_field('hero_filter');?>'>
 
 			<!-- Title -->
 			<h1><?php echo strip_tags($hero['hero_title'],'<span>'); ?></h1>

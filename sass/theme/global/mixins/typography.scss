@@ -8,7 +8,7 @@
 
 @mixin color-scheme-link($color) {
 	p, span {
-		a {
+		a:not(.button-navy) {
 		  color: inherit;
 		  background:
 		     linear-gradient(

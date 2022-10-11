@@ -5,10 +5,6 @@
 	&--white_fade {
 		background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
 
-		@include respond-to('lg') {
-			padding-bottom: 100px;
-		}
-
 		a {
 			color: $navy;
 		}
@@ -47,12 +43,14 @@
 
 	@include respond-to('lg') {
 		display: block;
+		padding: 0 10rem;
 	}
 }
 
 .navbar--small {
 	width: 100%;
 	display: block;
+	padding: 2rem 3rem 0 3rem;
 
 	@include respond-to('lg') {
 		display: none;
@@ -444,12 +442,10 @@ $colors: ('green': $green, 'cyan': $cyan, 'pink': $pink, 'yellow': $yellow);
 					text-decoration: none; 
 				}
 				> a:hover {
-					text-decoration-color: $color;
-					text-decoration: underline;
+					text-decoration: underline solid $color;
 					text-decoration-thickness: 5px;
 				}
 			} 
 		}
-
 	}
 }

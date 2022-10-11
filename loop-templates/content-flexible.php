@@ -49,8 +49,8 @@ if( have_rows('flexible_content_block') ):
 			$cb_id = get_sub_field('cb_id');
             $cb_background_color = get_sub_field('cb_background_color');
             $cb_copy = get_sub_field('cb_copy');
-            $cb_column_left = get_sub_field('cb_column_left');
-            $cb_column_right = get_sub_field('cb_column_right');
+            $cb_column_left = get_sub_field('cb_column_left', false, false);
+            $cb_column_right = get_sub_field('cb_column_right', false, false);
 			$cb_padding_top = get_sub_field('cb_padding_top');
             $cb_padding_bottom = get_sub_field('cb_padding_bottom');
 
@@ -317,12 +317,19 @@ if( have_rows('flexible_content_block') ):
 				</section>
 				";
 			elseif ($lb_style == 'centred-highlight'):
+
+				if($lb_background_color == 'navy') {
+					$arrow_link_color = 'white';
+				} else {
+					$arrow_link_color = 'black';
+				}
+
 				echo "
-				<section class='blog-link'>
+				<section class='blog-link bg-".$lb_background_color."'>
 					<div class='container'>
 						<a href='".$lb_link['url']."'>
 							<p class='highlight-".$lb_color."'>".$lb_link['title']."</p>
-							<div class='arrow-link__black'></div>
+							<div class='arrow-link__".$arrow_link_color."'></div>
 						</a>
 					</div>
 				</section>		

@@ -8,6 +8,10 @@ $desktop-hero-height: 900px;
 
 	@include respond-to ('lg') {
 		height: $desktop-hero-height;
+
+		&__content {
+			padding-top: 5rem;
+		}
 	}
 
 	&.small {
